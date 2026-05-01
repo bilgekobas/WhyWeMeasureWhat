@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>INTRODUCTION &#8212; WHY WE MEASURE WHAT, HOW, AND WHERE</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/introduction/index';</script>
+    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PHYSIOLOGICAL SIGNALS" href="../physiological-signals/index.html" />
+    <link rel="prev" title="FOREWORD" href="../foreword/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    WHY WE MEASURE WHAT, HOW, AND WHERE
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">INTRODUCTION</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/skin-temperature.html">Skin temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/sweat-skin-moisture-and-skin-conductance.html">Sweat, skin moisture and skin conductance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/heart-rate-and-heart-rate-variability.html">Heart rate and heart rate variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/blood-pressure.html">Blood pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/other-physiological-indicators.html">Other physiological indicators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../terminological-alignment/index.html">TERMINOLOGICAL ALIGNMENT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/symbolic-notation-and-variable-conventions.html">Symbolic notation and variable conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/standardization-challenges-in-derived-metrics.html">Standardization challenges in derived metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/anatomical-reference-taxonomy.html">Anatomical reference taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html">Controlled vocabulary and glossary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sample-checklists-schemas/index.html">SAMPLE CHECKLISTS &amp; SCHEMAS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/introduction/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>INTRODUCTION</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Physiological measurements can be crucial to understanding how the thermal environment impacts human physiology, well-being, and, in the long term, health. In building and environmental design research, however, they are often used pragmatically; selected for convenience, familiarity, or sensor availability, rather than from a coherent physiological rationale. Meanwhile, closely related disciplines such as thermal physiology, environmental ergonomics, and chronobiology have developed precise conventions for assessing thermoregulatory function. These frameworks already describe <em>what</em> to measure, <em>why</em> it matters, and <em>how</em> to interpret it under defined experimental conditions.</p>
+<p>The present paper revisits those established foundations with the aim of translating them into the context of built-environment research. Rather than documenting how studies are currently conducted, it asks how they <em>could</em> be structured if guided by shared physiological reasoning. The intent is to provide a reference that links measurement choices to underlying mechanisms, clarifies which contextual data are required for interpretation, and supports greater methodological consistency across building-scale experiments.</p>
+<p>Across laboratory and field studies, a small set of physiological variables is consistently used to represent thermoregulatory function. These include internal temperature, surface temperature, cardiovascular activity, sudomotor responses, and, where relevant, respiration and metabolic heat production <span id="id1">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id3" title="Glen Kenny, P. Human thermoregulation: separating thermal and nonthermal effects on heat loss. Front Biosci, 15(1):259, 2010. URL: https://imrpress.com/journal/FBL/15/1/10.2741/3620 (visited on 2026-03-01), doi:10.2741/3620.">Kenny, 2010</a>, <a class="reference internal" href="../references/index.html#id2" title="Ken Parsons, editor. Human thermal environments. CRC Press, 0 edition, October 1993. ISBN 978-0-429-21948-1. URL: https://www.taylorfrancis.com/books/9780203302620/chapters/10.1201/9780203302620-10 (visited on 2026-03-01), doi:10.1201/9780203302620-10.">Parsons, 1993</a>]</span>. Together, these signals offer complementary views of heat storage, heat transfer, and heat dissipation, and they can be obtained with established sensor technologies suitable for both controlled and applied protocols <span id="id2">[<a class="reference internal" href="../references/index.html#id2" title="Ken Parsons, editor. Human thermal environments. CRC Press, 0 edition, October 1993. ISBN 978-0-429-21948-1. URL: https://www.taylorfrancis.com/books/9780203302620/chapters/10.1201/9780203302620-10 (visited on 2026-03-01), doi:10.1201/9780203302620-10.">Parsons, 1993</a>, <a class="reference internal" href="../references/index.html#id4" title="George Havenith. Individualized model of human thermoregulation for the simulation of heat stress response. Journal of Applied Physiology, 90(5):1943–1954, May 2001. URL: https://www.physiology.org/doi/10.1152/jappl.2001.90.5.1943 (visited on 2026-03-01), doi:10.1152/jappl.2001.90.5.1943.">Havenith, 2001</a>]</span>.</p>
+<p>Although thermoregulation is multi-systemic, a small set of representative indicators is widely used because it captures key processes with acceptable burden and reliability. Core body temperature reflects internal heat storage and overall thermal strain <span id="id3">[<a class="reference internal" href="../references/index.html#id5" title="A. A. Romanovsky. Skin temperature: its role in thermoregulation. Acta Physiologica, 210(3):498–507, March 2014. URL: https://onlinelibrary.wiley.com/doi/10.1111/apha.12231 (visited on 2026-03-01), doi:10.1111/apha.12231.">Romanovsky, 2014</a>, <a class="reference internal" href="../references/index.html#id6" title="Nigel A.S. Taylor. Human Heat Adaptation. Comprehensive Physiology, 4(1):325–365, January 2014. URL: https://onlinelibrary.wiley.com/doi/10.1002/j.2040-4603.2014.tb00547.x (visited on 2026-03-01), doi:10.1002/j.2040-4603.2014.tb00547.x.">Taylor, 2014</a>]</span>. Skin temperature describes peripheral heat exchange at the body–environment interface and is closely associated with thermal sensation and comfort reports <span id="id4">[<a class="reference internal" href="../references/index.html#id4" title="George Havenith. Individualized model of human thermoregulation for the simulation of heat stress response. Journal of Applied Physiology, 90(5):1943–1954, May 2001. URL: https://www.physiology.org/doi/10.1152/jappl.2001.90.5.1943 (visited on 2026-03-01), doi:10.1152/jappl.2001.90.5.1943.">Havenith, 2001</a>, <a class="reference internal" href="../references/index.html#id8" title="H. Zhang, C. Huizenga, E. Arens, and D. Wang. Thermal sensation and comfort in transient non-uniform thermal environments. Eur J Appl Physiol, 92(6):728–733, September 2004. URL: http://link.springer.com/10.1007/s00421-004-1137-y (visited on 2026-03-01), doi:10.1007/s00421-004-1137-y.">Zhang <em>et al.</em>, 2004</a>, <a class="reference internal" href="../references/index.html#id7" title="Hui Zhang, Edward Arens, Charlie Huizenga, and Taeyoung Han. Thermal sensation and comfort models for non-uniform and transient environments, part III: Whole-body sensation and comfort. Building and Environment, 45(2):399–410, February 2010. URL: https://linkinghub.elsevier.com/retrieve/pii/S0360132309001619 (visited on 2026-03-01), doi:10.1016/j.buildenv.2009.06.020.">Zhang <em>et al.</em>, 2010</a>]</span>. Heart rate and heart rate variability index autonomic cardiovascular adjustments that support thermal balance and can indicate the stability of physiological regulation under load <span id="id5">[<a class="reference internal" href="../references/index.html#id9" title="Fred Shaffer and J. P. Ginsberg. An Overview of Heart Rate Variability Metrics and Norms. Front. Public Health, 5:258, September 2017. URL: http://journal.frontiersin.org/article/10.3389/fpubh.2017.00258/full (visited on 2026-03-01), doi:10.3389/fpubh.2017.00258.">Shaffer and Ginsberg, 2017</a>]</span>. Measures of sweating, skin moisture, or electrodermal activity reflect sudomotor activation and the potential for evaporative heat loss <span id="id6">[<a class="reference internal" href="../references/index.html#id11" title="Wolfram Boucsein. Electrodermal Activity. Springer US, Boston, MA, 2012. ISBN 978-1-4614-1125-3 978-1-4614-1126-0. URL: https://link.springer.com/10.1007/978-1-4614-1126-0 (visited on 2026-03-01), doi:10.1007/978-1-4614-1126-0.">Boucsein, 2012</a>, <a class="reference internal" href="../references/index.html#id17" title="E. R. Nadel, J. W. Mitchell, B. Saltin, and J. A. Stolwijk. Peripheral modifications to the central drive for sweating. Journal of Applied Physiology, 31(6):828–833, December 1971. URL: https://www.physiology.org/doi/10.1152/jappl.1971.31.6.828 (visited on 2026-03-01), doi:10.1152/jappl.1971.31.6.828.">Nadel <em>et al.</em>, 1971</a>, <a class="reference internal" href="../references/index.html#id10" title="M.J. Patterson, J.D. Cotter, and N.A.S. Taylor. Human sudomotor responses to heating and cooling upper‐body skin surfaces: cutaneous thermal sensitivity. Acta Physiologica Scandinavica, 163(3):289–296, June 1998. URL: https://onlinelibrary.wiley.com/doi/10.1046/j.1365-201x.1998.00379.x (visited on 2026-03-01), doi:10.1046/j.1365-201x.1998.00379.x.">Patterson <em>et al.</em>, 1998</a>, <a class="reference internal" href="../references/index.html#id12" title="L. A. Stephenson, C. B. Wenger, B. H. O'Donovan, and E. R. Nadel. Circadian rhythm in sweating and cutaneous blood flow. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 246(3):R321–R324, March 1984. URL: https://www.physiology.org/doi/10.1152/ajpregu.1984.246.3.R321 (visited on 2026-03-01), doi:10.1152/ajpregu.1984.246.3.R321.">Stephenson <em>et al.</em>, 1984</a>]</span>. These variables are not redundant; each contributes a distinct but complementary perspective on the same thermoregulatory episode.</p>
+<p>This paper therefore serves three aims:
+i. to summarise the physiological meaning and standard measurement approaches of each variable;
+ii. to identify participant, environmental, and procedural factors that modify these signals and should be documented for proper interpretation; and
+iii. to outline common preprocessing and feature-extraction steps that enable comparability between studies. The purpose is not to prescribe new standards, but to re-articulate the established physiological basis of these measures within the methodological reality of building research.</p>
+<p>The scope focuses on healthy adults under sedentary or light-activity conditions typical of buildings and similar environments. Evidence from exercise, clinical, and chronobiological studies is referenced where it clarifies mechanisms that also govern resting or mild-activity thermoregulation. Each section translates these mechanisms into practical guidance for experimental design for the experiments for the built environment; emphasizing how choices in sensor type, body site, timing, and data treatment shape the resulting signal.</p>
+<p>Finally, because thermoregulation is inherently multi-systemic, many studies interpret it through several concurrent variables. A synthesis section therefore outlines how these indicators can be combined to describe the same physiological episode from complementary perspectives. The remainder of the paper is organised as follows: Section 2 presents, for each physiological signal, its mechanistic meaning (<em>why</em>), sensor options (<em>how</em>), and typical body sites (<em>where</em>), along with relevant modifiers and data-handling practices. Section 3 summarises common composite metrics and interpretive frameworks, and Section 4 discusses implications for documentation and comparability across research domains.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../foreword/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">FOREWORD</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../physiological-signals/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PHYSIOLOGICAL SIGNALS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bilge Kobas et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

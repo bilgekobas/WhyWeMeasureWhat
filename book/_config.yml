@@ -1,0 +1,27 @@
+title: WHY WE MEASURE WHAT, HOW, AND WHERE
+author: Bilge Kobas et al.
+only_build_toc_files: true
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - linkify
+
+html:
+  extra_css:
+    - _static/custom.css
+
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.bibtex
+  config:
+    html_static_path:
+      - _static
+    html_extra_path:
+      - assets
+    html_js_files:
+      - glossary-search.js
+    bibtex_bibfiles:
+      - WhyWeMeasure_v04.bib
+    bibtex_reference_style: author_year
+

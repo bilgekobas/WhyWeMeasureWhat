@@ -1,0 +1,9 @@
+# FOREWORD
+
+## Background
+
+Physiological measurements provide evidence of how humans respond to thermal environments. A century-old field of thermophysiology offers very strong foundations in methodologies, however in building research not all of these are consistently adopted. This manuscript consolidates established knowledge from thermal physiology, environmental ergonomics, and chronobiology to clarify the rationale behind the variables most commonly used to characterise thermoregulatory function under sedentary and light-activity conditions. It currently outlines five commonly used signals; core body temperature, skin temperature, heart rate/heart-rate variability, blood pressure, and sweating/electrodermal activity. For each, the paper summarises its mechanistic meaning (*why* we measure it), commonly used measurement types (*how* we measure it), typical body sites (*where* we measure it), influencing factors, and data-handling conventions. The goal is to provide a systematic snapshot of the existing know-how, rather than document what the field currently is doing. By doing so, it aims to provide a shared foundation for more comparable, transparent, and physiologically grounded research on human thermal responses in buildings.
+
+## Framework
+
+Lorem ipsum

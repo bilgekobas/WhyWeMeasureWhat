@@ -1,0 +1,1841 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Standardization challenges in derived metrics &#8212; WHY WE MEASURE WHAT, HOW, AND WHERE</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/terminological-alignment/standardization-challenges-in-derived-metrics';</script>
+    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Anatomical reference taxonomy" href="anatomical-reference-taxonomy.html" />
+    <link rel="prev" title="Symbolic notation and variable conventions" href="symbolic-notation-and-variable-conventions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    WHY WE MEASURE WHAT, HOW, AND WHERE
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/skin-temperature.html">Skin temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/sweat-skin-moisture-and-skin-conductance.html">Sweat, skin moisture and skin conductance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/heart-rate-and-heart-rate-variability.html">Heart rate and heart rate variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/blood-pressure.html">Blood pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/other-physiological-indicators.html">Other physiological indicators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">TERMINOLOGICAL ALIGNMENT</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="symbolic-notation-and-variable-conventions.html">Symbolic notation and variable conventions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Standardization challenges in derived metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anatomical-reference-taxonomy.html">Anatomical reference taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlled-vocabulary-and-glossary.html">Controlled vocabulary and glossary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sample-checklists-schemas/index.html">SAMPLE CHECKLISTS &amp; SCHEMAS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/terminological-alignment/standardization-challenges-in-derived-metrics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Standardization challenges in derived metrics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-skin-temperature-formulas">Mean Skin Temperature Formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-body-temperature">Mean Body Temperature</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="standardization-challenges-in-derived-metrics">
+<h1>Standardization challenges in derived metrics<a class="headerlink" href="#standardization-challenges-in-derived-metrics" title="Link to this heading">#</a></h1>
+<p>Derived and composite physiological metrics often exhibit substantial variability in weighting schemes, anatomical site selection, preprocessing steps, and reporting conventions. In many cases, studies appear to report the same variable while relying on non-equivalent underlying definitions. This reduces comparability across experiments, complicates meta-analysis, and obscures whether observed differences arise from physiology, instrumentation, or calculation method.</p>
+<section id="mean-skin-temperature-formulas">
+<span id="id1"></span><h2>Mean Skin Temperature Formulas<a class="headerlink" href="#mean-skin-temperature-formulas" title="Link to this heading">#</a></h2>
+<p>The below table aligns mean skin temperature calculations based on meta-reviews of <span id="id2">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id110" title="J. K. Choi, K. Miki, S. Sagawa, and K. Shiraki. Evaluation of mean skin temperature formulas by infrared thermography. International Journal of Biometeorology, 41(2):68–75, November 1997. URL: http://link.springer.com/10.1007/s004840050056 (visited on 2026-03-01), doi:10.1007/s004840050056.">Choi <em>et al.</em>, 1997</a>, <a class="reference internal" href="../references/index.html#id108" title="Kouhei Kuwabara, Tohru Mochida, Katsunori Nagano, and Kazumi Shimakura. Fundamental Study of Weighting Factors for Calculating Mean Skin Temperature. JHES, 9(1):35–42, 2006. URL: http://www.jstage.jst.go.jp/article/jhes/9/1/9_1_35/_article (visited on 2026-03-01), doi:10.1618/jhes.9.35.">Kuwabara <em>et al.</em>, 2006</a>, <a class="reference internal" href="../references/index.html#id107" title="Weiwei Liu, Zhiwei Lian, Qihong Deng, and Yuanmou Liu. Evaluation of calculation methods of mean skin temperature for use in thermal comfort study. Building and Environment, 46(2):478–488, February 2011. URL: https://linkinghub.elsevier.com/retrieve/pii/S0360132310002647 (visited on 2026-03-01), doi:10.1016/j.buildenv.2010.08.011.">Liu <em>et al.</em>, 2011</a>, <a class="reference internal" href="../references/index.html#id106" title="Wenjie Song, Fangliang Zhong, John Kaiser Calautit, and Jiaxiang Li. Exploring the role of skin temperature in thermal sensation and thermal comfort: A comprehensive review. Energy and Built Environment, 6(4):762–781, August 2025. URL: https://linkinghub.elsevier.com/retrieve/pii/S2666123324000369 (visited on 2026-03-01), doi:10.1016/j.enbenv.2024.03.002.">Song <em>et al.</em>, 2025</a>, <a class="reference internal" href="../references/index.html#id109" title="C. -E. A. Winslow, L. P. Herrington, and A. P. Gagge. A NEW METHOD OF PARTITIONAL CALORIMETRY. American Journal of Physiology-Legacy Content, 116(3):641–655, July 1936. URL: https://www.physiology.org/doi/10.1152/ajplegacy.1936.116.3.641 (visited on 2026-03-01), doi:10.1152/ajplegacy.1936.116.3.641.">Winslow <em>et al.</em>, 1936</a>]</span>.</p>
+<div class="pst-scrollable-table-container"><table class="mst-table wide-table table" id="tab-mst-formulas">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Measurement sites and weighting factors for mean skin temperature formulas.</span><a class="headerlink" href="#tab-mst-formulas" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Pts</strong></p></th>
+<th class="head text-center"><p><strong>Var</strong></p></th>
+<th class="head text-center"><p><strong>A</strong></p></th>
+<th class="head text-center"><p><strong>B</strong></p></th>
+<th class="head text-center"><p><strong>C</strong></p></th>
+<th class="head text-center"><p><strong>D</strong></p></th>
+<th class="head text-center"><p><strong>E</strong></p></th>
+<th class="head text-center"><p><strong>F</strong></p></th>
+<th class="head text-center"><p><strong>G</strong></p></th>
+<th class="head text-center"><p><strong>H</strong></p></th>
+<th class="head text-center"><p><strong>I</strong></p></th>
+<th class="head text-center"><p><strong>J</strong></p></th>
+<th class="head text-center"><p><strong>K</strong></p></th>
+<th class="head text-center"><p><strong>L</strong></p></th>
+<th class="head text-center"><p><strong>M</strong></p></th>
+<th class="head text-center"><p><strong>N</strong></p></th>
+<th class="head text-center"><p><strong>O</strong></p></th>
+<th class="head text-center"><p><strong>P</strong></p></th>
+<th class="head text-center"><p><strong>Q</strong></p></th>
+<th class="head text-center"><p><strong>R</strong></p></th>
+<th class="head text-center"><p><strong>S</strong></p></th>
+<th class="head text-center"><p><strong>T</strong></p></th>
+<th class="head text-center"><p><strong>U</strong></p></th>
+<th class="head text-left"><p><strong>By</strong></p></th>
+<th class="head text-center"><p><strong>Year</strong></p></th>
+<th class="head text-left"><p><strong>Reference</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>Forehead</p></td>
+<td class="text-center"><p>Cheek(l)</p></td>
+<td class="text-center"><p>Neck(l)</p></td>
+<td class="text-center"><p>Upper arm(r)</p></td>
+<td class="text-center"><p>Elbow(l)</p></td>
+<td class="text-center"><p>Forearm(l)</p></td>
+<td class="text-center"><p>Palm(l)</p></td>
+<td class="text-center"><p>Hand(r)</p></td>
+<td class="text-center"><p>Hand(l)</p></td>
+<td class="text-center"><p>Back(l)</p></td>
+<td class="text-center"><p>Chest(l)</p></td>
+<td class="text-center"><p>Lumber(l)</p></td>
+<td class="text-center"><p>Abdomen</p></td>
+<td class="text-center"><p>Buttocks(l)</p></td>
+<td class="text-center"><p>Thigh(a)</p></td>
+<td class="text-center"><p>Thigh(l)(p)</p></td>
+<td class="text-center"><p>Calf(a)(r)</p></td>
+<td class="text-center"><p>Calf(p)(l)</p></td>
+<td class="text-center"><p>Foot(l)</p></td>
+<td class="text-center"><p>Foot(r)</p></td>
+<td class="text-center"><p>Sole(l)</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>3</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.50</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.36</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Burton</p></td>
+<td class="text-center"><p>1935</p></td>
+<td class="text-left"><p><span id="id3">[<a class="reference internal" href="../references/index.html#id472" title="D. Mitchell and C. H. Wyndham. Comparison of weighting formulas for calculating mean skin temperature. Journal of Applied Physiology, 26(5):616–622, May 1969. URL: https://www.physiology.org/doi/10.1152/jappl.1969.26.5.616 (visited on 2026-03-01), doi:10.1152/jappl.1969.26.5.616.">Mitchell and Wyndham, 1969</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.50</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.36</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Olesen</p></td>
+<td class="text-center"><p>1984</p></td>
+<td class="text-left"><p><span id="id4">[<a class="reference internal" href="../references/index.html#id511" title="Bjarne W. Olesen. How many sites are necessary to estimate a mean skin temperature. Thermal physiology, pages 34–38, 1984.">Olesen, 1984</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.50</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Cho et al.</p></td>
+<td class="text-center"><p>1996</p></td>
+<td class="text-left"><p><span id="id5">[<a class="reference internal" href="../references/index.html#id473" title="Chang K. Cho, Hak Min Lee, Myung Hwan Yun, and Myun W. Lee. Development of a temperature control procedure for a room air-conditioner using the concept of just noticeable difference (JND) on thermal sensation. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 40(9):473–477, October 1996. URL: https://journals.sagepub.com/doi/10.1177/154193129604000901 (visited on 2026-03-01), doi:10.1177/154193129604000901.">Cho <em>et al.</em>, 1996</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.30</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.35</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.35</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Wu et al.</p></td>
+<td class="text-center"><p>2020</p></td>
+<td class="text-left"><p><span id="id6">[<a class="reference internal" href="../references/index.html#id474" title="Yuxin Wu, Hong Liu, Baizhan Li, Juha Jokisalo, Risto Kosonen, Yong Cheng, Weixin Zhao, and Xiaolei Yuan. Evaluation and modification of the weighting formulas for mean skin temperature of human body in winter conditions. Energy and Buildings, 229:110390, December 2020. URL: https://linkinghub.elsevier.com/retrieve/pii/S0378778820315760 (visited on 2026-03-01), doi:10.1016/j.enbuild.2020.110390.">Wu <em>et al.</em>, 2020</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>4</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.34</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.33</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Newburgh &amp; Spealman</p></td>
+<td class="text-center"><p>1943</p></td>
+<td class="text-left"><p><span id="id7">[<a class="reference internal" href="../references/index.html#id475" title="Warren H. Teichner. Assessment of mean body surface temperature. Journal of Applied Physiology, 12(2):169–176, March 1958. URL: http://www.physiology.org/doi/10.1152/jappl.1958.12.2.169 (visited on 2026-03-01), doi:10.1152/jappl.1958.12.2.169.">Teichner, 1958</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.30</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.30</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ramanathan</p></td>
+<td class="text-center"><p>1964</p></td>
+<td class="text-left"><p><span id="id8">[<a class="reference internal" href="../references/index.html#id476" title="N. L. Ramanathan. A new weighting system for mean surface temperature of the human body. Journal of Applied Physiology, 19(3):531–533, May 1964. URL: https://www.physiology.org/doi/10.1152/jappl.1964.19.3.531 (visited on 2026-03-01), doi:10.1152/jappl.1964.19.3.531.">Ramanathan, 1964</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.28</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.16</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.28</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.28</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>?+</p></td>
+<td class="text-center"><p>1992</p></td>
+<td class="text-left"><p><span id="id9">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.35</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.26</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Wu et al.</p></td>
+<td class="text-center"><p>2020</p></td>
+<td class="text-left"><p><span id="id10">[<a class="reference internal" href="../references/index.html#id474" title="Yuxin Wu, Hong Liu, Baizhan Li, Juha Jokisalo, Risto Kosonen, Yong Cheng, Weixin Zhao, and Xiaolei Yuan. Evaluation and modification of the weighting formulas for mean skin temperature of human body in winter conditions. Energy and Buildings, 229:110390, December 2020. URL: https://linkinghub.elsevier.com/retrieve/pii/S0378778820315760 (visited on 2026-03-01), doi:10.1016/j.enbuild.2020.110390.">Wu <em>et al.</em>, 2020</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>5</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.50</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id11">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19(a)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.175</p></td>
+<td class="text-center"><p>0.175</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.39</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Houdas</p></td>
+<td class="text-center"><p>1982</p></td>
+<td class="text-left"><p><span id="id12">[<a class="reference internal" href="../references/index.html#id477" title="Y. Houdas and E. F. J. Ring. Temperature Distribution. In Human Body Temperature, pages 81–103. Springer US, Boston, MA, 1982. URL: http://link.springer.com/10.1007/978-1-4899-0345-7_5 (visited on 2026-03-01), doi:10.1007/978-1-4899-0345-7_5.">Houdas and Ring, 1982</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.42</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.26</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Wu et al.</p></td>
+<td class="text-center"><p>2020</p></td>
+<td class="text-left"><p><span id="id13">[<a class="reference internal" href="../references/index.html#id474" title="Yuxin Wu, Hong Liu, Baizhan Li, Juha Jokisalo, Risto Kosonen, Yong Cheng, Weixin Zhao, and Xiaolei Yuan. Evaluation and modification of the weighting formulas for mean skin temperature of human body in winter conditions. Energy and Buildings, 229:110390, December 2020. URL: https://linkinghub.elsevier.com/retrieve/pii/S0378778820315760 (visited on 2026-03-01), doi:10.1016/j.enbuild.2020.110390.">Wu <em>et al.</em>, 2020</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.50</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Wang et al.</p></td>
+<td class="text-center"><p>2013</p></td>
+<td class="text-left"><p><span id="id14">[<a class="reference internal" href="../references/index.html#id478" title="Zhaojun Wang, Yanan He, Juan Hou, and Ling Jiang. Human skin temperature and thermal responses in asymmetrical cold radiation environments. Building and Environment, 67:217–223, September 2013. URL: https://linkinghub.elsevier.com/retrieve/pii/S0360132313001650 (visited on 2026-03-01), doi:10.1016/j.buildenv.2013.05.020.">Wang <em>et al.</em>, 2013</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>6</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.32</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id15">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.149</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.107</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.186</p></td>
+<td class="text-center"><p>0.186</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.186</p></td>
+<td class="text-center"><p>0.186</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Teichner</p></td>
+<td class="text-center"><p>1958</p></td>
+<td class="text-left"><p><span id="id16">[<a class="reference internal" href="../references/index.html#id475" title="Warren H. Teichner. Assessment of mean body surface temperature. Journal of Applied Physiology, 12(2):169–176, March 1958. URL: http://www.physiology.org/doi/10.1152/jappl.1958.12.2.169 (visited on 2026-03-01), doi:10.1152/jappl.1958.12.2.169.">Teichner, 1958</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.40</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Miura et al.</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-left"><p><span id="id17">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.28</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.21</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Mochida</p></td>
+<td class="text-center"><p>1983</p></td>
+<td class="text-left"><p><span id="id18">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>e</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.32</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Palmes &amp; Park</p></td>
+<td class="text-center"><p>1947</p></td>
+<td class="text-left"><p><span id="id19">[<a class="reference internal" href="../references/index.html#id498" title="E. D. Palmes and C. R. Park. Thermocouples for the measurement of the surface temperature of the skin. Fed Proc, 6(1 Pt 2):175, 1947.">Palmes and Park, 1947</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>7</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.35</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-left"><p>Hardy &amp; DuBois</p></td>
+<td class="text-center"><p>1938</p></td>
+<td class="text-left"><p><span id="id20">[<a class="reference internal" href="../references/index.html#id104" title="James D. Hardy, Eugene F. Du Bois, and G.F. Soderstrom. The Technic of Measuring Radiation and Convection. The Journal of Nutrition, 15(5):461–475, May 1938. URL: https://linkinghub.elsevier.com/retrieve/pii/S0022316623129634 (visited on 2026-03-01), doi:10.1093/jn/15.5.461.">Hardy <em>et al.</em>, 1938</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Park</p></td>
+<td class="text-center"><p>1988</p></td>
+<td class="text-left"><p><span id="id21">[<a class="reference internal" href="../references/index.html#id479" title="Y. H. Park, J. Iwamoto, F. Tajima, K. Miki, Y. S. Park, and K. Shiraki. Effect of pressure on thermal insulation in humans wearing wet suits. Journal of Applied Physiology, 64(5):1916–1922, May 1988. URL: https://www.physiology.org/doi/10.1152/jappl.1988.64.5.1916 (visited on 2026-03-01), doi:10.1152/jappl.1988.64.5.1916.">Park <em>et al.</em>, 1988</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.21</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.21</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.17</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Nadel</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-left"><p><span id="id22">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.098</p></td>
+<td class="text-center"><p>0.082</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.114</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.162</p></td>
+<td class="text-center"><p>0.166</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.182</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.206</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id23">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>e</p></td>
+<td class="text-center"><p>0.066</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.149</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.151</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.153</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.153</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.163</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.183</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Mochida</p></td>
+<td class="text-center"><p>1983</p></td>
+<td class="text-left"><p><span id="id24">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>f</p></td>
+<td class="text-center"><p>0.198</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.138</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.076</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.179</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.145</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.153</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.092</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Mochida</p></td>
+<td class="text-center"><p>1983</p></td>
+<td class="text-left"><p><span id="id25">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>8</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.085</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.23</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.16</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id26">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.175</p></td>
+<td class="text-center"><p>0.175</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Gagge &amp; Nishi +</p></td>
+<td class="text-center"><p>1977</p></td>
+<td class="text-left"><p><span id="id27">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id480" title="A. Pharo Gagge and Yasunobu Nishi. Heat Exchange Between Human Skin Surface and Thermal Environment. In Y. S. Prakash, editor, Comprehensive Physiology, pages 69–92. Wiley, 1 edition, December 1977. URL: https://onlinelibrary.wiley.com/doi/10.1002/cphy.cp090105 (visited on 2026-03-01), doi:10.1002/cphy.cp090105.">Gagge and Nishi, 1977</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.21</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.17</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Nadel</p></td>
+<td class="text-center"><p>1973</p></td>
+<td class="text-left"><p><span id="id28">[<a class="reference internal" href="../references/index.html#id91" title="E. R. Nadel, J. W. Mitchell, and J. A. J. Stolwijk. Differential thermal sensitivity in the human skin. Pflugers Arch., 340(1):71–76, 1973. URL: http://link.springer.com/10.1007/BF00592198 (visited on 2026-03-01), doi:10.1007/BF00592198.">Nadel <em>et al.</em>, 1973</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.16</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.16</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Nadel</p></td>
+<td class="text-center"><p>1973</p></td>
+<td class="text-left"><p><span id="id29">[<a class="reference internal" href="../references/index.html#id91" title="E. R. Nadel, J. W. Mitchell, and J. A. J. Stolwijk. Differential thermal sensitivity in the human skin. Pflugers Arch., 340(1):71–76, 1973. URL: http://link.springer.com/10.1007/BF00592198 (visited on 2026-03-01), doi:10.1007/BF00592198.">Nadel <em>et al.</em>, 1973</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>e</p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Crawshaw</p></td>
+<td class="text-center"><p>1975</p></td>
+<td class="text-left"><p><span id="id30">[<a class="reference internal" href="../references/index.html#id169" title="L. I. Crawshaw, E. R. Nadel, J. A. J. Stolwijk, and B. A. Stamford. Effect of local cooling on sweating rate and cold sensation. Pflugers Arch., 354(1):19–27, 1975. URL: http://link.springer.com/10.1007/BF00584500 (visited on 2026-03-01), doi:10.1007/BF00584500.">Crawshaw <em>et al.</em>, 1975</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>9</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id31">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.04</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.16</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.11</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Neuroth</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-left"><p><span id="id32">[<a class="reference internal" href="../references/index.html#id477" title="Y. Houdas and E. F. J. Ring. Temperature Distribution. In Human Body Temperature, pages 81–103. Springer US, Boston, MA, 1982. URL: http://link.springer.com/10.1007/978-1-4899-0345-7_5 (visited on 2026-03-01), doi:10.1007/978-1-4899-0345-7_5.">Houdas and Ring, 1982</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>10</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.125</p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.125*</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Teichner ++</p></td>
+<td class="text-center"><p>1943</p></td>
+<td class="text-left"><p><span id="id33">[<a class="reference internal" href="../references/index.html#id475" title="Warren H. Teichner. Assessment of mean body surface temperature. Journal of Applied Physiology, 12(2):169–176, March 1958. URL: http://www.physiology.org/doi/10.1152/jappl.1958.12.2.169 (visited on 2026-03-01), doi:10.1152/jappl.1958.12.2.169.">Teichner, 1958</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.095</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id34">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>c</p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Colin &amp; Houdas</p></td>
+<td class="text-center"><p>1982</p></td>
+<td class="text-left"><p><span id="id35">[<a class="reference internal" href="../references/index.html#id481" title="J Colin, J Timbal, Y Houdas, C Boutelier, and J D Guieu. Computation of mean body temperature from rectal and skin temperatures. Journal of Applied Physiology, 31(3):484–489, September 1971. URL: https://www.physiology.org/doi/10.1152/jappl.1971.31.3.484 (visited on 2026-03-01), doi:10.1152/jappl.1971.31.3.484.">Colin <em>et al.</em>, 1971</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>d</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05**</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.125(r)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.125***</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.075</p></td>
+<td class="text-center"><p>0.075</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Houdas &amp; Ring</p></td>
+<td class="text-center"><p>1982</p></td>
+<td class="text-left"><p><span id="id36">[<a class="reference internal" href="../references/index.html#id481" title="J Colin, J Timbal, Y Houdas, C Boutelier, and J D Guieu. Computation of mean body temperature from rectal and skin temperatures. Journal of Applied Physiology, 31(3):484–489, September 1971. URL: https://www.physiology.org/doi/10.1152/jappl.1971.31.3.484 (visited on 2026-03-01), doi:10.1152/jappl.1971.31.3.484.">Colin <em>et al.</em>, 1971</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>e</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.125**</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Omrec</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-left"><p><span id="id37">[<a class="reference internal" href="../references/index.html#id477" title="Y. Houdas and E. F. J. Ring. Temperature Distribution. In Human Body Temperature, pages 81–103. Springer US, Boston, MA, 1982. URL: http://link.springer.com/10.1007/978-1-4899-0345-7_5 (visited on 2026-03-01), doi:10.1007/978-1-4899-0345-7_5.">Houdas and Ring, 1982</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p></p></td>
+<td class="text-center"><p>f</p></td>
+<td class="text-center"><p>0.031</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.043</p></td>
+<td class="text-center"><p>0.082</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.17</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.081</p></td>
+<td class="text-center"><p>0.081</p></td>
+<td class="text-center"><p>0.17</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.134</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Kiurata &amp; Funazu</p></td>
+<td class="text-center"><p>?</p></td>
+<td class="text-left"><p><span id="id38">[<a class="reference internal" href="../references/index.html#id513" title="Tohru Mochida. Mean Skin Temperature Weighted by Skin Area, Heat Transfer Coefficients and Thermal Sensitivity. Bulletin of the Faculty of Engineering Hokkaido University, 1983.">Mochida, 1983</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>g</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Stolwijk &amp; Hardy</p></td>
+<td class="text-center"><p>1966</p></td>
+<td class="text-left"><p><span id="id39">[<a class="reference internal" href="../references/index.html#id482" title="A.P. Gagge, J.A.J. Stolwijk, and J.D. Hardy. Comfort and thermal sensations and associated physiological responses at various ambient temperatures. Environmental Research, 1(1):1–20, June 1967. URL: https://linkinghub.elsevier.com/retrieve/pii/0013935167900023 (visited on 2026-03-01), doi:10.1016/0013-9351(67)90002-3.">Gagge <em>et al.</em>, 1967</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>11</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p>0.09</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.13</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id40">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>12</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.14</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.095</p></td>
+<td class="text-center"><p>0.095</p></td>
+<td class="text-center"><p>0.065</p></td>
+<td class="text-center"><p>0.065</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Hardy &amp; DuBois</p></td>
+<td class="text-center"><p>1938</p></td>
+<td class="text-left"><p><span id="id41">[<a class="reference internal" href="../references/index.html#id104" title="James D. Hardy, Eugene F. Du Bois, and G.F. Soderstrom. The Technic of Measuring Radiation and Convection. The Journal of Nutrition, 15(5):461–475, May 1938. URL: https://linkinghub.elsevier.com/retrieve/pii/S0022316623129634 (visited on 2026-03-01), doi:10.1093/jn/15.5.461.">Hardy <em>et al.</em>, 1938</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>13</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.077</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Nielsen</p></td>
+<td class="text-center"><p>1984</p></td>
+<td class="text-left"><p><span id="id42">[<a class="reference internal" href="../references/index.html#id483" title="Ruth Nielsen and Bodil Nielsen. Measurement of mean skin temperature of clothed persons in cool environments. Europ. J. Appl. Physiol., 53(3):231–236, 1984. URL: http://link.springer.com/10.1007/BF00776595 (visited on 2026-03-01), doi:10.1007/BF00776595.">Nielsen and Nielsen, 1984</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>14</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071(r)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071(r)</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.071</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Olesen +</p></td>
+<td class="text-center"><p>1992</p></td>
+<td class="text-left"><p><span id="id43">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id511" title="Bjarne W. Olesen. How many sites are necessary to estimate a mean skin temperature. Thermal physiology, pages 34–38, 1984.">Olesen, 1984</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>15</strong></p></td>
+<td class="text-center"><p>a</p></td>
+<td class="text-center"><p>0.06</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.035</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.025</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.0225</p></td>
+<td class="text-center"><p>0.0225</p></td>
+<td class="text-center"><p>0.18</p></td>
+<td class="text-center"><p>0.20</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.1025</p></td>
+<td class="text-center"><p>0.1025</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.325</p></td>
+<td class="text-center"><p>0.325</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id44">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p>b</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07*</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.07</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Mitchell &amp; Wyndham</p></td>
+<td class="text-center"><p>1969</p></td>
+<td class="text-left"><p><span id="id45">[<a class="reference internal" href="../references/index.html#id472" title="D. Mitchell and C. H. Wyndham. Comparison of weighting formulas for calculating mean skin temperature. Journal of Applied Physiology, 26(5):616–622, May 1969. URL: https://www.physiology.org/doi/10.1152/jappl.1969.26.5.616 (visited on 2026-03-01), doi:10.1152/jappl.1969.26.5.616.">Mitchell and Wyndham, 1969</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>17</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.037</p></td>
+<td class="text-center"><p>0.037</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.075</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.075</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0.0250</p></td>
+<td class="text-center"><p>0.0250</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0625</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0875</p></td>
+<td class="text-center"><p>0.0305</p></td>
+<td class="text-center"><p>0.0305</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p>Ouyang</p></td>
+<td class="text-center"><p>1985</p></td>
+<td class="text-left"><p><span id="id46">[<a class="reference internal" href="../references/index.html#id512" title="H. Ouyang. Clothes hygiene. Technical Report, People’s Military Medicine Press, Beijing, 1985.">Ouyang, 1985</a>]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Legend (sites):</strong><br />
+A: Forehead, B: Left cheek, C: Left neck;<br />
+D: Right upper arm, E: Left elbow, F: Left forearm, G: Left palm, H: Right hand, I: Left hand;<br />
+J: Left back, K: Left chest, L: Left lumbar, M: Abdomen, N: Left buttocks;<br />
+O: Anterior thigh, P: Left posterior thigh, Q: Right anterior calf, R: Left posterior calf, S: Left foot, T: Right foot, U: Left sole.</p>
+<p><strong>Notes:</strong><br />
+(a) measured on the anterior<br />
+(p) measured on the posterior
+(r) measured on the right
+(l) measured on the left<br />
+* measured on anterior thigh and antero-medial thigh (same weighting factor)<br />
+** measured on two locations (anterior and posterior; same weighting factor)<br />
+*** measured on antero-medial thigh<br />
++ adopted by ISO 9886:2004<br />
+++ adopted by QREC</p>
+</section>
+<section id="mean-body-temperature">
+<span id="id47"></span><h2>Mean Body Temperature<a class="headerlink" href="#mean-body-temperature" title="Link to this heading">#</a></h2>
+<p>Several formulations of mean body temperature have been proposed, most commonly as weighted combinations of core and mean skin temperature. In addition to differences in weighting coefficients, these formulations also vary in whether “core temperature” refers to a measured anatomical site or a model-defined internal node.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-mean-body-temperature-formulas">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Mean body temperature formulations and weighting coefficients</span><a class="headerlink" href="#tab-mean-body-temperature-formulas" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Author / formulation</p></th>
+<th class="head text-center"><p>Year</p></th>
+<th class="head text-center"><p>Formula</p></th>
+<th class="head text-center"><p>Core weighting</p></th>
+<th class="head text-center"><p>Skin weighting</p></th>
+<th class="head text-left"><p>Assumed / typical core-temperature input</p></th>
+<th class="head text-left"><p>Rationale / notes</p></th>
+<th class="head text-left"><p>Typical use</p></th>
+<th class="head text-center"><p>Ref</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Burton</p></td>
+<td class="text-center"><p>1935</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_b = 0.64\,T_{core} + 0.36\,T_{sk}\)</span></p></td>
+<td class="text-center"><p>0.64</p></td>
+<td class="text-center"><p>0.36</p></td>
+<td class="text-left"><p>Core site not explicitly fixed; later applications typically use rectal temperature</p></td>
+<td class="text-left"><p>Derived empirically using whole-body calorimetry; assumes relatively homogeneous core tissues and a peripheral temperature gradient from core to skin</p></td>
+<td class="text-left"><p>Classical thermoregulation studies; early heat-balance models</p></td>
+<td class="text-center"><p><span id="id48">[<a class="reference internal" href="../references/index.html#id531" title="Alan C. Burton. Human Calorimetry. The Journal of Nutrition, 9(3):261–280, March 1935. URL: https://linkinghub.elsevier.com/retrieve/pii/S0022316623189486 (visited on 2026-03-08), doi:10.1093/jn/9.3.261.">Burton, 1935</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Hardy &amp; DuBois</p></td>
+<td class="text-center"><p>1938</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_b = 0.70\,T_{core} + 0.30\,T_{sk}\)</span></p></td>
+<td class="text-center"><p>0.70</p></td>
+<td class="text-center"><p>0.30</p></td>
+<td class="text-left"><p>Typically rectal or equivalent deep-body measurements</p></td>
+<td class="text-left"><p>Coefficient estimated for neutral environmental conditions</p></td>
+<td class="text-left"><p>Physiological heat-balance studies</p></td>
+<td class="text-center"><p><span id="id49">[<a class="reference internal" href="../references/index.html#id528" title="James D. Hardy, Eugene F. Du Bois, and G.F. Soderstrom. Basal Metabolism, Radiation, Convection and Vaporization at Temperatures of 22 to 35°C. The Journal of Nutrition, 15(5):477–497, May 1938. URL: https://linkinghub.elsevier.com/retrieve/pii/S0022316623129646 (visited on 2026-03-08), doi:10.1093/jn/15.5.477.">Hardy <em>et al.</em>, 1938</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Stolwijk &amp; Hardy</p></td>
+<td class="text-center"><p>1966</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_b = 0.70\,T_{core} + 0.30\,T_{sk}\)</span></p></td>
+<td class="text-center"><p>0.70</p></td>
+<td class="text-center"><p>0.30</p></td>
+<td class="text-left"><p>Deep-body node in model framework; commonly approximated by rectal or esophageal temperature</p></td>
+<td class="text-left"><p>Derived from partitional calorimetric studies and two-node thermoregulation modelling under hot conditions</p></td>
+<td class="text-left"><p>Thermophysiological modelling</p></td>
+<td class="text-center"><p><span id="id50">[<a class="reference internal" href="../references/index.html#id527" title="J A Stolwijk and J D Hardy. Partitional calorimetric studies of responses of man to thermal transients. Journal of Applied Physiology, 21(3):967–977, May 1966. URL: https://www.physiology.org/doi/10.1152/jappl.1966.21.3.967 (visited on 2026-03-08), doi:10.1152/jappl.1966.21.3.967.">Stolwijk and Hardy, 1966</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Snellen</p></td>
+<td class="text-center"><p>1966</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_b \approx 0.80\,T_{core} + 0.20\,T_{sk}\)</span></p></td>
+<td class="text-center"><p>~0.80</p></td>
+<td class="text-center"><p>~0.20</p></td>
+<td class="text-left"><p>Deep-body temperature during exercise (often rectal)</p></td>
+<td class="text-left"><p>Higher core weighting observed during muscular work in hot environments</p></td>
+<td class="text-left"><p>Exercise physiology; heat-strain research</p></td>
+<td class="text-center"><p><span id="id51">[<a class="reference internal" href="../references/index.html#id532" title="J. W. Snellen. Mean body temperature and the control of thermal sweating. Acta Physiologica Et Pharmacologica Neerlandica, 14(2):99–174, 1966.">Snellen, 1966</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Colin et al.</p></td>
+<td class="text-center"><p>1971</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_b = a\,T_{core} + (1-a)\,T_{sk}\)</span></p></td>
+<td class="text-center"><p>0.64–0.79</p></td>
+<td class="text-center"><p>0.36–0.21</p></td>
+<td class="text-left"><p>Rectal temperature typically used</p></td>
+<td class="text-left"><p>Confirmed Burton coefficient for neutral conditions but showed coefficient increases under extreme heat stress</p></td>
+<td class="text-left"><p>Thermoregulation experiments</p></td>
+<td class="text-center"><p><span id="id52">[<a class="reference internal" href="../references/index.html#id481" title="J Colin, J Timbal, Y Houdas, C Boutelier, and J D Guieu. Computation of mean body temperature from rectal and skin temperatures. Journal of Applied Physiology, 31(3):484–489, September 1971. URL: https://www.physiology.org/doi/10.1152/jappl.1971.31.3.484 (visited on 2026-03-01), doi:10.1152/jappl.1971.31.3.484.">Colin <em>et al.</em>, 1971</a>]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\terminological-alignment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="symbolic-notation-and-variable-conventions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Symbolic notation and variable conventions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="anatomical-reference-taxonomy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Anatomical reference taxonomy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-skin-temperature-formulas">Mean Skin Temperature Formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-body-temperature">Mean Body Temperature</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bilge Kobas et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+
+/* ========================================
+   GLOBAL TABLE STYLE
+   ======================================== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  table-layout: auto;
+}
+
+table th,
+table td {
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+  border: 1px solid #e0e0e0;
+  white-space: normal;
+}
+
+table th {
+  background-color: #f5f6f7;
+  font-weight: 600;
+  text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #f5f6f7;
+}
+
+/* ========================================
+   CAPTION STYLING
+   ======================================== */
+
+table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* ========================================
+   WIDE TABLE SUPPORT
+   ======================================== */
+
+.wide-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.wide-table table {
+  min-width: 1400px;
+  white-space: nowrap;
+}
+
+/* ========================================
+   MST MATRIX TABLE (PRE-FORMATTED)
+   ======================================== */
+
+.mst-table table {
+  min-width: 1600px;
+}
+
+.mst-table th,
+.mst-table td {
+  white-space: nowrap;
+}
+
+.mst-table table tbody tr:has(td:first-child strong) td {
+    border-top: 2px solid #666;
+}
+/* ========================================
+   GLOSSARY ENTRIES
+   ======================================== */
+
+.glossary-entry {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.glossary-entry-title {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.glossary-spec {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.glossary-spec th,
+.glossary-spec td {
+  border: none;
+  padding: 0.3rem 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.glossary-spec th {
+  width: 190px;
+  font-weight: 600;
+  color: inherit;
+  background: none;
+}
+
+.glossary-spec td {
+  line-height: 1.45;
+}
+
+.glossary-search {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.85rem;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 1rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 999;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 999px;
+  background: white;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.back-to-top:hover {
+  background: #f2f2f2;
+}
+/* ========================================
+   GLOSSARY SEARCH + NAVIGATION
+   ======================================== */
+
+.glossary-search {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.85rem;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 999;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 999px;
+  background: white;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.back-to-top:hover {
+  background: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 0.85rem;
+  }
+}

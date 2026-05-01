@@ -1,0 +1,40 @@
+format: jb-book
+root: content/index
+
+chapters:
+  - file: content/foreword/index
+
+  - file: content/introduction/index
+
+  - file: content/physiological-signals/index
+    sections:
+      - file: content/physiological-signals/core-body-temperature
+      - file: content/physiological-signals/skin-temperature
+      - file: content/physiological-signals/sweat-skin-moisture-and-skin-conductance
+      - file: content/physiological-signals/heart-rate-and-heart-rate-variability
+      - file: content/physiological-signals/blood-pressure
+      - file: content/physiological-signals/other-physiological-indicators
+
+  - file: content/terminological-alignment/index
+    sections:
+      - file: content/terminological-alignment/symbolic-notation-and-variable-conventions
+      - file: content/terminological-alignment/standardization-challenges-in-derived-metrics
+      - file: content/terminological-alignment/anatomical-reference-taxonomy
+      - file: content/terminological-alignment/controlled-vocabulary-and-glossary
+
+  - file: content/sample-checklists-schemas/index
+    sections:
+      - file: content/sample-checklists-schemas/experiment-level-metadata
+      - file: content/sample-checklists-schemas/participant-level-metadata
+      - file: content/sample-checklists-schemas/session-level-metadata
+
+  - file: content/contribution/index
+    sections:
+      - file: content/contribution/community-and-community-roles
+      - file: content/contribution/how-to-contribute
+      - file: content/contribution/list-of-contributors
+      - file: content/contribution/how-to-cite
+      - file: content/contribution/versioning-and-updates
+      - file: content/contribution/contact
+
+  - file: content/references/index
