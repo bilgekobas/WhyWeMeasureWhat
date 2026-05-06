@@ -1,0 +1,123 @@
+file,original_group,item,reason
+book/content/introduction/index.md,"ISO, 2004; Kenny, 2010; Parsons, 1993","ISO, 2004",no_bib_match
+book/content/introduction/index.md,"ISO, 2004; Kenny, 2010; Parsons, 1993","Kenny, 2010",ambiguous_author_year
+book/content/introduction/index.md,"ISO, 2004; Kenny, 2010; Parsons, 1993","Parsons, 1993",no_bib_match
+book/content/introduction/index.md,"Havenith, 2001; Parsons, 1993","Parsons, 1993",no_bib_match
+book/content/introduction/index.md,"Romanovsky, 2014; Taylor, 2014","Taylor, 2014",ambiguous_author_year
+book/content/introduction/index.md,"Havenith, 2001; Zhang et al., 2010, 2004","Zhang et al., 2010, 2004",pattern_not_matched
+book/content/introduction/index.md,"Boucsein, 2012; E. R. Nadel et al., 1971; Patterson et al., 1998; Stephenson et al., 1984","E. R. Nadel et al., 1971",pattern_not_matched
+book/content/physiological-signals/blood-pressure.md,"Pickering T et al., 2005","Pickering T et al., 2005",pattern_not_matched
+book/content/physiological-signals/blood-pressure.md,"Cameron et al., 2023; de Souza et al., 2024","de Souza et al., 2024",pattern_not_matched
+book/content/physiological-signals/blood-pressure.md,"Montalescot et al., 2013","Montalescot et al., 2013",no_bib_match
+book/content/physiological-signals/blood-pressure.md,"Rishi Vardhan et al., 2021","Rishi Vardhan et al., 2021",pattern_not_matched
+book/content/physiological-signals/core-body-temperature.md,"Taylor, 2014","Taylor, 2014",ambiguous_author_year
+book/content/physiological-signals/core-body-temperature.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/core-body-temperature.md,"Kräuchi, 2002; Kräuchi and Wirz-Justice, 1994","Kräuchi, 2002",no_bib_match
+book/content/physiological-signals/core-body-temperature.md,"Kräuchi, 2002; Kräuchi and Wirz-Justice, 1994","Kräuchi and Wirz-Justice, 1994",no_bib_match
+book/content/physiological-signals/core-body-temperature.md,"Kelly, 2006; Kräuchi, 2002; Refinetti, 1992","Kräuchi, 2002",no_bib_match
+book/content/physiological-signals/core-body-temperature.md,"Baker et al., 2020; Stachenfeld et al., 2000","Baker et al., 2020",ambiguous_author_year
+book/content/physiological-signals/core-body-temperature.md,"Baker et al., 2020; Freedman and Blacker, 2002; Gombert-Labedens et al., 2025","Baker et al., 2020",ambiguous_author_year
+book/content/physiological-signals/core-body-temperature.md,"Daanen et al., 2018; Taylor, 2014","Taylor, 2014",ambiguous_author_year
+book/content/physiological-signals/core-body-temperature.md,"Baehr et al., 2000; Kerkhof and Van Dongen, 1996","Kerkhof and Van Dongen, 1996",pattern_not_matched
+book/content/physiological-signals/core-body-temperature.md,"Dell'Osso et al., 2022","Dell'Osso et al., 2022",no_bib_match
+book/content/physiological-signals/core-body-temperature.md,"Z. Wu et al., 2020","Z. Wu et al., 2020",pattern_not_matched
+book/content/physiological-signals/core-body-temperature.md,"Byrne and Lim, 2007; Childs et al., 1999; Hunt et al., 2017; ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Berntson and Stowell, 1998; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Crandall and González‐Alonso, 2010; Rowell, 1974","Crandall and González‐Alonso, 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Crandall and Wilson, 2015; Minson et al., 1998; Rowell et al., 1969; Rowell et al., 1967","Crandall and Wilson, 2015",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Crandall and Wilson, 2015; Minson et al., 1998; Rowell et al., 1969; Rowell et al., 1967","Rowell et al., 1969",ambiguous_author_year
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Crandall and Wilson, 2015; Jose and Collison, 1970","Crandall and Wilson, 2015",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Saul, 1990; Julian F. Thayer et al., 2010","Julian F. Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Shaffer et al., 2014; Julian F. Thayer et al., 2010","Julian F. Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Crandall et al., 1999a; Cui et al., 2010, 2002; Low et al., 2011; Niimi et al., 1997","Cui et al., 2010, 2002",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Reyes del Paso et al., 2013","Reyes del Paso et al., 2013",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Task Force of the ESC/NASPE, 1996; Berntson et al., 1997","Task Force of the ESC/NASPE, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Task Force of the ESC/NASPE, 1996; Berntson et al., 1997","Berntson et al., 1997",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Pinna et al., 2007; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Shaffer and Ginsberg, 2017; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Laborde et al., 2017; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Kitney and Rompelman, 1980; Park and Park, 2022","Kitney and Rompelman, 1980",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Kitney and Rompelman, 1980; Park and Park, 2022","Park and Park, 2022",ambiguous_author_year
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Kitney and Rompelman, 1980; Lu et al., 2009","Kitney and Rompelman, 1980",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Berntson and Stowell, 1998; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Kitney and Rompelman, 1980","Kitney and Rompelman, 1980",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Park et al., 2022","Park et al., 2022",ambiguous_author_year
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Nunan et al., 2009; Radespiel-Tröger et al., 2003; Wallén et al., 2012","Radespiel-Tröger et al., 2003",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Jarczok et al., 2013; Seeman et al., 2001; Julian F. Thayer et al., 2010","Julian F. Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Huikuri et al., 1996, 1990; Ramesh et al., 2022","Huikuri et al., 1996, 1990",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Minson et al., 2000a, 2000b; Teixeira et al., 2015","Minson et al., 2000a, 2000b",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Aubert et al., 2003; Jensen-Urstad et al., 1997; Yataco et al., 1997","Jensen-Urstad et al., 1997",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"González‐Alonso et al., 2008; Rowell, 1974","González‐Alonso et al., 2008",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Julian F. Thayer et al., 2010","Julian F. Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Alvares et al., 2016; Beauchaine and Thayer, 2015; Chalmers et al., 2014; Faurholt-Jepsen et al., 2017; Henry et al., 2010; Holzman and Bridgett, 2017; Kemp et al., 2012, 2010","Kemp et al., 2012, 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Kleiger et al., 1987; Julian F Thayer et al., 2010","Julian F Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Alvares et al., 2016; Julian F. Thayer et al., 2010","Julian F. Thayer et al., 2010",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Rowell et al., 1969","Rowell et al., 1969",ambiguous_author_year
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Berntson and Stowell, 1998; Saul, 1990; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996; Voss et al., 2012","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Gronwald et al., 2024; Lu et al., 2009","Gronwald et al., 2024",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Berntson and Stowell, 1998; Catai et al., 2020; Laborde et al., 2017; Peltola, 2012; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Catai et al., 2020; Peltola, 2012; Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Jarrin et al., 2015; NUNAN et al., 2010; Radespiel-Tröger et al., 2003; Sandercock et al., 2005","Radespiel-Tröger et al., 2003",no_bib_match
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/heart-rate-and-heart-rate-variability.md,"Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996","Task Force of the European Society of Cardiology the North American Society of Pacing Electrophysiology, 1996",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Taylor, 2014","Taylor, 2014",ambiguous_author_year
+book/content/physiological-signals/skin-temperature.md,"Hasselberg et al., 2013; Smith et al., 2010; van Marken Lichtenbelt et al., 2006","van Marken Lichtenbelt et al., 2006",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Aaron J E Bach et al., 2015","Aaron J E Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Aaron J E Bach et al., 2015; James et al., 2014","Aaron J E Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Arens and Zhang, 2006; Hardy et al., 1938; E R Nadel et al., 1971","E R Nadel et al., 1971",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Choi et al., 1997; ISO, 2004; Kuwabara et al., 2006; Liu et al., 2011; Song et al., 2024; Winslow et al., 1936","ISO, 2004",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Choi et al., 1997; ISO, 2004; Kuwabara et al., 2006; Liu et al., 2011; Song et al., 2024; Winslow et al., 1936","Song et al., 2024",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Aaron J E Bach et al., 2015; Buono et al., 2007; Maley et al., 2020; Matsukawa et al., 2000","Aaron J E Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Aaron J.E. Bach et al., 2015","Aaron J.E. Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Aaron J.E. Bach et al., 2015; Boetcher et al., 2009; Buono and Ulrich, 1998; Cheung and Sweeney, 2001","Aaron J.E. Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Abe and Kodama, 2015; Kräuchi et al., 1999, 1997","Kräuchi et al., 1999, 1997",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Xu et al., 2024","Xu et al., 2024",ambiguous_author_year
+book/content/physiological-signals/skin-temperature.md,"Baker et al., 2020; Kirby et al., 2022; Wenner et al., 2011","Baker et al., 2020",ambiguous_author_year
+book/content/physiological-signals/skin-temperature.md,"Greaney et al., 2015; Holowatz and Kenney, 2010; Kenney et al., 2021, 2014","Kenney et al., 2021, 2014",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Greaney et al., 2015; Kenney and Munce, 2003; Van Someren et al., 2002","Van Someren et al., 2002",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Livingstone et al., 1987; Neves, 2017","Neves, 2017",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Dell'Osso et al., 2022; Tordjman et al., 2013; Z. Wu et al., 2020","Dell'Osso et al., 2022",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Dell'Osso et al., 2022; Tordjman et al., 2013; Z. Wu et al., 2020","Z. Wu et al., 2020",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"MacRae et al., 2018; Playà-Montmany and Tattersall, 2021; Ring and Ammer, 2012","Playà-Montmany and Tattersall, 2021",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"James et al., 2014; Taylor et al., 2014","Taylor et al., 2014",ambiguous_author_year
+book/content/physiological-signals/skin-temperature.md,"MacRae et al., 2018; Maxim Integrated Products, 2015","Maxim Integrated Products, 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Fernández-Cuevas et al., 2015; Ring and Ammer, 2012; Ul et al., 2023","Ul et al., 2023",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Ul et al., 2023","Ul et al., 2023",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Taylor et al., 2014","Taylor et al., 2014",ambiguous_author_year
+book/content/physiological-signals/skin-temperature.md,"Aaron J E Bach et al., 2015; Aaron J.E. Bach et al., 2015; Fernández-Cuevas et al., 2015; Ring and Ammer, 2012","Aaron J E Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Aaron J E Bach et al., 2015; Aaron J.E. Bach et al., 2015; Fernández-Cuevas et al., 2015; Ring and Ammer, 2012","Aaron J.E. Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"van Marken Lichtenbelt et al., 2006","van Marken Lichtenbelt et al., 2006",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Ul et al., 2023","Ul et al., 2023",no_bib_match
+book/content/physiological-signals/skin-temperature.md,"Aaron J.E. Bach et al., 2015; Smith et al., 2010","Aaron J.E. Bach et al., 2015",pattern_not_matched
+book/content/physiological-signals/skin-temperature.md,"Lan et al., 2019; Xu and Lian, 2024","Xu and Lian, 2024",ambiguous_author_year
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Havenith, 2001; E. R. Nadel et al., 1971; Stephenson et al., 1984","E. R. Nadel et al., 1971",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Havenith and van Middendorp, 1990; ISO, 2004","Havenith and van Middendorp, 1990",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Havenith and van Middendorp, 1990; ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Baker et al., 2014, 2009","Baker et al., 2014, 2009",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"O'Brien and Cadarette, 2013","O'Brien and Cadarette, 2013",no_bib_match
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Benedek and Kaernbach, 2010a, 2010b; Boucsein, 2012","Benedek and Kaernbach, 2010a, 2010b",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Gagnon et al., 2013a, 2008; Gagnon and Kenny, 2012b, 2012a","Gagnon et al., 2013a, 2008",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Gagnon et al., 2013a, 2008; Gagnon and Kenny, 2012b, 2012a","Gagnon and Kenny, 2012b, 2012a",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Inoue et al., 2016, 1999","Inoue et al., 2016, 1999",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Havenith and van Middendorp, 1990; Périard et al., 2015","Havenith and van Middendorp, 1990",pattern_not_matched
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Kenny et al., 2010; Morrissey et al., 2021","Kenny et al., 2010",ambiguous_author_year
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Akbar et al., 2023; Baker and Wolfe, 2020; Klous et al., 2020","Baker and Wolfe, 2020",ambiguous_author_year
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Baker and Wolfe, 2020; Kenefick and Cheuvront, 2016","Baker and Wolfe, 2020",ambiguous_author_year
+book/content/physiological-signals/sweat-skin-moisture-and-skin-conductance.md,"Gagnon et al., 2013b; ISO, 2004","ISO, 2004",no_bib_match
+book/content/sample-checklists-schemas/participant-level-metadata.md,"Van Someren et al., 2016","Van Someren et al., 2016",pattern_not_matched
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Y. Wu et al., 2020","Y. Wu et al., 2020",pattern_not_matched
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"ISO, 2004","ISO, 2004",no_bib_match
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Y. Wu et al., 2020","Y. Wu et al., 2020",pattern_not_matched
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Y. Wu et al., 2020","Y. Wu et al., 2020",pattern_not_matched
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Gagge and Nishi, 1977; ISO, 2004","ISO, 2004",no_bib_match
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"Mochida, 1983","Mochida, 1983",ambiguous_author_year
+book/content/terminological-alignment/standardization-challenges-in-derived-metrics.md,"ISO, 2004; Olesen, 1984","ISO, 2004",no_bib_match

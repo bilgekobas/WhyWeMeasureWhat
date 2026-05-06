@@ -1,12 +1,12 @@
 # Session-level metadata
 
-Session-level metadata captures all information that varies from one visit or experimental condition to the next for a given participant. Many of the acute modifiers discussed in Section 2---such as last night's sleep, time since waking, recent illness, caffeine or meal timing, and daily hormonal fluctuations---change from day to day and therefore must be recorded at the session rather than participant level.
+Session-level metadata captures all information that varies from one visit or experimental condition to the next for a given participant. Many of the acute modifiers discussed in Section 2---such as last night'{ref}`s <label-heat-storage>` sleep, time since waking, recent illness, caffeine or meal timing, and daily hormonal fluctuations---change from day to day and therefore must be recorded at the session rather than participant level.
 
 Each session is represented by one row in a dedicated metadata table, with one column per session field. As with the experiment- and participant-level schemas, fields are grouped by topic (e.g., Identifiers & Timing, Devices & Logistics, Protocol Adherence, Acute Health State) and assigned to informal tiers:
 
 - <u>Tier 1 -- Core:</u> Essential variables recorded for every visit (e.g., session ID, date and time, condition code, clothing, sleep duration, pre-session restrictions, acute illness indicators).
 
-- <u>Tier 2 -- Recommended:</u> Factors that meaningfully influence thermophysiological responses but may not always be collected (e.g., researchers present, acclimation period, night-shift work, time since exercise).
+- <u>Tier 2 -- Recommended:</u> Factors that meaningfully influence thermophysiological responses but may not always be collected (e.g., researchers present, {ref}`acclimation <label-acclimation>` period, night-shift work, time since exercise).
 
 - <u>Tier 3 -- Specialised:</u> Detailed or study-specific variables, such as exact bathroom break volumes, caloric intake calculations, event logs, or fine-grained environmental contextualisation.
 
@@ -27,11 +27,19 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Condition / scenario code | 1 | Text label for assigned condition (e.g. C01_01, Heat_26C, Night_Armchair) | Lab-defined |
 |  | Location / room | 1 | Room or laboratory code | — |
 |  | Researchers present | 2 | Initials or staff codes | — |
-| **Devices & protocol logistics** | Device IDs used | 1 | ID numbers for all devices applied to this participant | Internal device inventory |
-|  | Device attachment / ingestion times | 1 | Clock times per device (e.g. “CBT pill ingested 17:50”, “Sensors attached 17:55”) | — |
-|  | Device attachment type | 1 | Attachment type per device, when relevant (e.g. “Skin temperature sensor IDXXXXX: Medical tape”) | — |
-|  | Condition order / randomisation code | 1 | Randomisation sequence label (e.g. “Sequence A: warm → neutral → cool”) | Study randomisation plan |
-|  | Calibration / zeroing performed | 2 | Yes/No + short note (e.g. “BP device calibrated 2025-06-01”) | Device calibration logs |
+| **Devices & sensor application +** | Device IDs used | 1 | List of Device IDs applied this session (e.g. TMP-01, TMP-03, ECG-A) | Foreign key → Device Registry in sensor-device-metadata |
+|  | Calibration IDs active | 1 | List of Calibration IDs currently valid for each device (e.g. CAL-003, CAL-007) | Foreign key → Calibration Log in sensor-device-metadata; confirms which correction equation was applied |
+|  | Condition order / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Study randomisation plan |
+|  | Body site per device | 1 | Device ID → site (e.g. TMP-01 → left forearm anterior / TMP-02 → right anterior thigh) | Use anatomical taxonomy site labels; laterality and aspect required |
+|  | Attachment method per device | 1 | Device ID → method (e.g. TMP-01 → Transpore tape / ECG-A → elastic chest strap) | — |
+|  | Application time per device | 1 | Device ID → hh:mm (e.g. TMP-01 → 17:55 / pill → ingested 17:50) | Time sensor was placed on or ingested by participant |
+|  | Recording start time per device | 1 | Device ID → hh:mm | May differ from application time if equilibration period applies |
+|  | Recording end time per device | 1 | Device ID → hh:mm | — |
+|  | Equilibration time (min) | 2 | Device ID → numeric (e.g. TMP-01 → 10 min) | Time between application and first data point included in analysis |
+|  | Skin preparation per device | 2 | Device ID → method (e.g. EDA-03 → alcohol wipe + dry / TMP-01 → none) | — |
+|  | Shielding from airflow | 2 | Device ID → Yes/No | Particularly relevant for skin temperature contact sensors |
+|  | Signal quality per device | 2 | Device ID → 1 (poor) – 5 (excellent) | Operator assessment at session end |
+|  | Sensor deviations | 2 | Free text (e.g. "TMP-02 detached at 19:30, reattached 19:35"; "ECG-A lost signal 20:10–20:15") | Any deviation from standard placement or signal interruption |
 | **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | — |
 |  | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
 |  | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
@@ -46,13 +54,18 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | **Acute health state (today / last few days)** | Recent acute illness (last 7 days) | 1–2 | Yes/No; short description (e.g. “URI with fever”, “GI infection”) | PAR-Q+ style yes/no items; brief medical history |
 |  | Fever symptoms in last 48 h | 2 | Yes/No; peak temperature if known | — |
 |  | Antipyretic use (last 48 h) | 2 | Yes/No; drug name and approximate time (free text) | — |
+|  | Compression garments worn today | 2 | Yes/No; if Yes: type and sites covered | Compression lowers local Tsk at covered sites; flag if measurement site is affected {cite:p}`partsch_compression_2012` |
+|  | Post-viral / long COVID symptoms today | 2 | Yes/No; if Yes: temperature dysregulation / sweating abnormality / orthostatic intolerance / other | Acute-day expression of chronic dysautonomia may vary; capture alongside stable participant-level flag {cite:p}`dani_autonomic_2021` |
 |  | New medications since previous session | 2 | Yes/No; if Yes: names and doses (free text) | — |
 | **Behaviour since waking (session-day)** | Time since last meal at start | 1–2 | Numeric (hours); optional category (light / normal / heavy); Yes/No if a specific fasting time was instructed (e.g. “Did not eat in the last 12 hours”) | — |
 |  | Time since last caffeine | 1–2 | Numeric (hours); type (coffee / tea / energy drink / other); Yes/No if a specific fasting time was instructed (e.g. “Did not drink coffee in the last 12 hours”) | — |
 |  | Time since last moderate/vigorous exercise | 2 | Numeric (hours); or category (<4 h, 4–12 h, >12 h); Yes/No if a specific fasting time was instructed (e.g. “Did not exercise in the last 12 hours”) | Short structured item; can echo IPAQ intensity definitions |
 |  | Alcohol intake in last 24 h | 2 | Yes/No; rough units or category (none / 1–2 / 3–5 / >5) | AUDIT-C wording if more structure is needed; alternatively an alcohol test can be done before each session |
+|  | Antiperspirant applied to measurement sites (last 48 h) | 2 | Yes/No; if Yes: which sites | Aluminium-based antiperspirants reduce local sweat rate by 20–60 % for 24–48 h. Participants should be instructed to abstain from application to measurement sites before the session {cite:p}`quatrale_mechanism_1981,baker_physiology_2019` |
+|  | Melatonin taken (last 4 h) | 2 | Yes/No; if Yes: dose (mg) and time taken | Exogenous melatonin raises distal Tsk and DPG; acutely relevant for skin temperature and sleep protocols {cite:p}`krauchi_thermoregulatory_2006` |
+|  | NSAIDs or analgesics taken (last 12 h) | 2 | Yes/No; if Yes: drug name and approximate time | NSAIDs can transiently alter autonomic tone; document alongside other acute medications {cite:p}`thayer_relationship_2010` |
 |  | Smoking / vaping today | 2–3 | Yes/No; approximate cigarettes/vapes since waking | — |
-| **Hormonal & reproductive (per session info)** | Menstrual phase at session | 1 | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
+| **Hormonal & reproductive (per session info)** | Menstrual {ref}`phase <label-phase>` at session | 1 | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 |  | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
 | **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | End-of-session log entry |
 |  | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
@@ -63,3 +76,5 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
 :::
+
++ For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate *sensor_application.tsv* with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.

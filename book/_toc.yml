@@ -2,8 +2,6 @@ format: jb-book
 root: content/index
 
 chapters:
-  - file: content/foreword/index
-
   - file: content/introduction/index
 
   - file: content/physiological-signals/index
@@ -27,12 +25,13 @@ chapters:
       - file: content/sample-checklists-schemas/experiment-level-metadata
       - file: content/sample-checklists-schemas/participant-level-metadata
       - file: content/sample-checklists-schemas/session-level-metadata
+      - file: content/sample-checklists-schemas/sensor-device-metadata
 
   - file: content/contribution/index
     sections:
       - file: content/contribution/community-and-community-roles
       - file: content/contribution/how-to-contribute
-      - file: content/contribution/list-of-contributors
+      - file: content/contribution/contributors
       - file: content/contribution/how-to-cite
       - file: content/contribution/versioning-and-updates
       - file: content/contribution/contact

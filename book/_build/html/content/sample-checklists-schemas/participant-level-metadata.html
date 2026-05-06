@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -59,7 +59,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/sample-checklists-schemas/participant-level-metadata';</script>
-    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Session-level metadata" href="session-level-metadata.html" />
@@ -176,7 +176,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
@@ -198,12 +197,13 @@
 <li class="toctree-l2"><a class="reference internal" href="experiment-level-metadata.html">Experiment-level metadata</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Participant-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
@@ -366,7 +366,7 @@ document.write(`
 <p>Each participant is represented by one row in a dedicated metadata table, with one column per field. As in the experiment-level schema, fields are grouped by topic (e.g., Demographics &amp; Morphology, Health &amp; Diagnoses, Lifestyle, Reproductive &amp; Hormonal) and assigned to informal tiers indicating their importance:</p>
 <ul class="simple">
 <li><p><u>Tier 1 – Core:</u> Minimal information required in any thermal physiology experiment (e.g., age, sex at birth, height, weight, BMI, basic health status, habitual physical activity, key hormonal status).</p></li>
-<li><p><u>Tier 2 – Recommended:</u> Variables that strongly influence thermoregulation and improve interpretability, including body surface area, thermal history, smoking and alcohol use, typical sleep timing, menstrual cycle characteristics, hormone therapies, thermosensitivity, and selected built-environment descriptors.</p></li>
+<li><p><u>Tier 2 – Recommended:</u> Variables that strongly influence <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoregulation"><span class="std std-ref">thermoregulation</span></a> and improve interpretability, including body surface area, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-history"><span class="std std-ref">thermal history</span></a>, smoking and alcohol use, typical sleep timing, menstrual cycle characteristics, hormone therapies, thermosensitivity, and selected built-environment descriptors.</p></li>
 <li><p><u>Tier 3 – Specialised:</u> More detailed or study-specific attributes, such as body composition, occupation, education, sensory-sensitivity or psychological scales, quality-of-life instruments, or vision/colour-vision assessments. These fields are optional but useful for specialised analyses or targeted protocols.</p></li>
 </ul>
 <p>The participant metadata table can be implemented in a spreadsheet, REDCap form, or as structured CSV/TSV with accompanying JSON (e.g., a participants.tsv + participants.json pair following BIDS conventions).</p>
@@ -448,7 +448,7 @@ document.write(`
 <td><p>— (decide based on ethics and purpose)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Thermal history &amp; occupation</strong></p></td>
-<td><p>Thermal history / acclimation background</p></td>
+<td><p>Thermal history / <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acclimation"><span class="std std-ref">acclimation</span></a> background</p></td>
 <td><p>2</p></td>
 <td><p>Free text or categories (e.g. “&gt;5 y in hot climate”, “recently relocated from cold climate”)</p></td>
 <td><p>Short structured items</p></td>
@@ -489,53 +489,65 @@ document.write(`
 <td><p>MET-min/week + category (low / moderate / high)</p></td>
 <td><p>IPAQ-SF, IPAQ-LF <span id="id4">[<a class="reference internal" href="../references/index.html#id488" title="Paul H Lee, Duncan J Macfarlane, Th Lam, and Sunita M Stewart. Validity of the international physical activity questionnaire short form (IPAQ-SF): A systematic review. Int J Behav Nutr Phys Act, 8(1):115, December 2011. URL: https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-115 (visited on 2026-03-01), doi:10.1186/1479-5868-8-115.">Lee <em>et al.</em>, 2011</a>]</span>, or GPAQ (WHO) <span id="id5">[<a class="reference internal" href="../references/index.html#id489" title="Fiona C. Bull, Tahlia S. Maslin, and Timothy Armstrong. Global Physical Activity Questionnaire (GPAQ): Nine Country Reliability and Validity Study. Journal of Physical Activity and Health, 6(6):790–804, November 2009. URL: https://journals.humankinetics.com/view/journals/jpah/6/6/article-p790.xml (visited on 2026-03-01), doi:10.1123/jpah.6.6.790.">Bull <em>et al.</em>, 2009</a>]</span></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Health &amp; diagnoses</strong></p></td>
+<tr class="row-even"><td><p></p></td>
+<td><p>Habitual compression garment use</p></td>
+<td><p>3</p></td>
+<td><p>Yes/No; if Yes: type (medical stockings / sports compression / post-surgical) + typical sites covered</p></td>
+<td><p>Compression at measurement sites lowers local Tsk by 0.5–1.5 °C; relevant when lower-limb skin temperature is a study outcome <span id="id6">[<a class="reference internal" href="../references/index.html#id570" title="Hugo Partsch. Compression therapy: clinical and experimental evidence. Annals of Vascular Diseases, 5(4):416–422, 2012. doi:10.3400/avd.ra.12.00068.">Partsch, 2012</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Health &amp; diagnoses</strong></p></td>
 <td><p>Overall health status</p></td>
 <td><p>1</p></td>
 <td><p>Healthy / controlled condition(s) / other + notes</p></td>
 <td><p>Summary from screening; may combine PAR-Q+ with brief medical history</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Cardiovascular diagnoses</p></td>
 <td><p>1</p></td>
 <td><p>Yes/No per condition (hypertension, arrhythmia, CAD, HF, etc.)</p></td>
-<td><p>PAR-Q+, Charlson comorbidity list <span id="id6">[<a class="reference internal" href="../references/index.html#id491" title="Mary E. Charlson, Danilo Carrozzino, Jenny Guidi, and Chiara Patierno. Charlson Comorbidity Index: A Critical Review of Clinimetric Properties. Psychother Psychosom, 91(1):8–35, 2022. URL: https://karger.com/article/doi/10.1159/000521288 (visited on 2026-03-01), doi:10.1159/000521288.">Charlson <em>et al.</em>, 2022</a>]</span>, or tailored checklist</p></td>
+<td><p>PAR-Q+, Charlson comorbidity list <span id="id7">[<a class="reference internal" href="../references/index.html#id491" title="Mary E. Charlson, Danilo Carrozzino, Jenny Guidi, and Chiara Patierno. Charlson Comorbidity Index: A Critical Review of Clinimetric Properties. Psychother Psychosom, 91(1):8–35, 2022. URL: https://karger.com/article/doi/10.1159/000521288 (visited on 2026-03-01), doi:10.1159/000521288.">Charlson <em>et al.</em>, 2022</a>]</span>, or tailored checklist</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Endocrine / metabolic diagnoses</p></td>
 <td><p>1</p></td>
 <td><p>Yes/No per condition (diabetes, thyroid disease, obesity, CKD, etc.)</p></td>
 <td><p>PAR-Q+ or Charlson-based checklist</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Neurological / autonomic disorders</p></td>
 <td><p>1</p></td>
 <td><p>Yes/No per condition (POTS, autonomic neuropathy, Parkinson’s, SCI, etc.)</p></td>
 <td><p>Screening form referencing medical history</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>History of syncope / orthostatic intolerance</p></td>
 <td><p>2–3</p></td>
 <td><p>Yes/No + short description</p></td>
 <td><p>PAR-Q+ style yes/no items</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Diagnosed sleep disorder</p></td>
 <td><p>2–3</p></td>
 <td><p>None / OSA / insomnia / restless legs / other</p></td>
 <td><p>PSQI / ISI + STOP-Bang / Berlin / Epworth, or clinical history</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Neurodivergent diagnosis</p></td>
 <td><p>2–3</p></td>
 <td><p>None / ASD / ADHD / other / prefer not to say</p></td>
 <td><p>Self-report; may link to ASD/ADHD screening tools</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Other diagnoses relevant to thermoregulation</p></td>
 <td><p>2–3</p></td>
 <td><p>Free text + coded categories</p></td>
 <td><p>Examples: autoimmune disease, large burns/grafts, chronic infection</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Post-viral dysautonomia / long COVID</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: symptoms present (temperature dysregulation / abnormal sweating / orthostatic intolerance / POTS / other)</p></td>
+<td><p>Screen specifically; not captured by standard medical history questions. See CBT, HR/HRV and Sweat/EDA confounders sections <span id="id8">[<a class="reference internal" href="../references/index.html#id565" title="Hannah E. Davis, Lisa McCorkell, Julia Moore Vogel, and Eric J. Topol. Long COVID: major findings, mechanisms and recommendations. Nature Reviews Microbiology, 21(3):133–146, 2023. doi:10.1038/s41579-022-00846-2.">Davis <em>et al.</em>, 2023</a>, <a class="reference internal" href="../references/index.html#id566" title="Melanie Dani, Annemarie Dirksen, Pots Taraborrelli, Miriam Torocastro, Dimitrios Panagopoulos, Richard Sutton, and Phang Boon Lim. Autonomic dysfunction in `long COVID': rationale, physiology and management strategies. Clinical Medicine, 21(1):e63–e67, 2021. doi:10.7861/clinmed.2020-0896.">Dani <em>et al.</em>, 2021</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Medication</strong></p></td>
 <td><p>Chronic medications (by class)</p></td>
@@ -549,77 +561,89 @@ document.write(`
 <td><p>Free text (drug names, dose, duration)</p></td>
 <td><p>Structured notes</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Reproductive &amp; hormonal</strong></p></td>
+<tr class="row-even"><td><p></p></td>
+<td><p>Habitual melatonin supplementation</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: typical dose (mg) and timing</p></td>
+<td><p>Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Acute use captured at session level</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reproductive &amp; hormonal</strong></p></td>
 <td><p>Menstrual / reproductive status</p></td>
 <td><p>1</p></td>
 <td><p>Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating</p></td>
 <td><p>Simple categorical items</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Cycle length &amp; regularity</p></td>
 <td><p>2</p></td>
 <td><p>Numeric (days) + regular / irregular</p></td>
 <td><p>Short structured questions</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Hormonal contraception</p></td>
 <td><p>1</p></td>
 <td><p>Type (combined pill, progestin-only, IUD, implant, injection, none) + duration</p></td>
 <td><p>Structured questionnaire</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>HRT (hormone replacement therapy)</p></td>
 <td><p>1</p></td>
 <td><p>Regimen (oestrogen, oestrogen+progestin, other) + duration</p></td>
 <td><p>Medical history question</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>GAHT (gender-affirming hormone therapy)</p></td>
 <td><p>1</p></td>
 <td><p>Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration</p></td>
 <td><p>Optional and ethics-dependent</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Thermal sensitivity / preference &amp; psychological traits</strong></p></td>
+<tr class="row-even"><td><p><strong>Thermal sensitivity / preference &amp; psychological traits</strong></p></td>
 <td><p>Thermal sensitivity / preference</p></td>
 <td><p>1–2</p></td>
 <td><p>Scores + groupings (e.g. cold / neutral / warm-preferring)</p></td>
-<td><p>ETSRS <span id="id7">[<a class="reference internal" href="../references/index.html#id492" title="Eus J. W. Van Someren, Kim Dekker, Bart H. W. Te Lindert, Jeroen S. Benjamins, Sarah Moens, Filippo Migliorati, Emmeke Aarts, and Sophie Van Der Sluis. The experienced temperature sensitivity and regulation survey. Temperature, 3(1):59–76, January 2016. URL: http://www.tandfonline.com/doi/full/10.1080/23328940.2015.1130519 (visited on 2026-03-01), doi:10.1080/23328940.2015.1130519.">Van Someren <em>et al.</em>, 2016</a>]</span> or similar</p></td>
+<td><p>ETSRS <span id="id9">[<a class="reference internal" href="../references/index.html#id492" title="Eus J. W. Van Someren, Kim Dekker, Bart H. W. Te Lindert, Jeroen S. Benjamins, Sarah Moens, Filippo Migliorati, Emmeke Aarts, and Sophie Van Der Sluis. The experienced temperature sensitivity and regulation survey. Temperature, 3(1):59–76, January 2016. URL: http://www.tandfonline.com/doi/full/10.1080/23328940.2015.1130519 (visited on 2026-03-01), doi:10.1080/23328940.2015.1130519.">Van Someren <em>et al.</em>, 2016</a>]</span> or similar</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Personality traits</p></td>
 <td><p>3</p></td>
 <td><p>Scores</p></td>
-<td><p>Big Five <span id="id8">[<a class="reference internal" href="../references/index.html#id524" title="Weixi Kang, Jeggan Tiego, Peter J. Hellyer, William Trender, Jon E. Grant, Samuel R. Chamberlain, and Adam Hampshire. Validation of an abbreviated Big Five personality inventory at large population scale: Psychometric structure and associations with common psychiatric and neurological disorders. Comprehensive Psychiatry, 134:152514, October 2024. URL: https://linkinghub.elsevier.com/retrieve/pii/S0010440X24000658 (visited on 2026-03-07), doi:10.1016/j.comppsych.2024.152514.">Kang <em>et al.</em>, 2024</a>, <a class="reference internal" href="../references/index.html#id525" title="Beatrice Rammstedt and Oliver P. John. Measuring personality in one minute or less: A 10-item short version of the Big Five Inventory in English and German. Journal of Research in Personality, 41(1):203–212, February 2007. URL: https://linkinghub.elsevier.com/retrieve/pii/S0092656606000195 (visited on 2026-03-07), doi:10.1016/j.jrp.2006.02.001.">Rammstedt and John, 2007</a>]</span>, BIS/BAS, <span id="id9">[<a class="reference internal" href="../references/index.html#id526" title="Danielle J. Maack and Chad Ebesutani. A re-examination of the BIS/BAS scales: Evidence for BIS and BAS as unidimensional scales. International Journal of Methods in Psychiatric Research, 27(2):e1612, June 2018. doi:10.1002/mpr.1612.">Maack and Ebesutani, 2018</a>]</span> etc.</p></td>
+<td><p>Big Five <span id="id10">[<a class="reference internal" href="../references/index.html#id524" title="Weixi Kang, Jeggan Tiego, Peter J. Hellyer, William Trender, Jon E. Grant, Samuel R. Chamberlain, and Adam Hampshire. Validation of an abbreviated Big Five personality inventory at large population scale: Psychometric structure and associations with common psychiatric and neurological disorders. Comprehensive Psychiatry, 134:152514, October 2024. URL: https://linkinghub.elsevier.com/retrieve/pii/S0010440X24000658 (visited on 2026-03-07), doi:10.1016/j.comppsych.2024.152514.">Kang <em>et al.</em>, 2024</a>, <a class="reference internal" href="../references/index.html#id525" title="Beatrice Rammstedt and Oliver P. John. Measuring personality in one minute or less: A 10-item short version of the Big Five Inventory in English and German. Journal of Research in Personality, 41(1):203–212, February 2007. URL: https://linkinghub.elsevier.com/retrieve/pii/S0092656606000195 (visited on 2026-03-07), doi:10.1016/j.jrp.2006.02.001.">Rammstedt and John, 2007</a>]</span>, BIS/BAS, <span id="id11">[<a class="reference internal" href="../references/index.html#id526" title="Danielle J. Maack and Chad Ebesutani. A re-examination of the BIS/BAS scales: Evidence for BIS and BAS as unidimensional scales. International Journal of Methods in Psychiatric Research, 27(2):e1612, June 2018. doi:10.1002/mpr.1612.">Maack and Ebesutani, 2018</a>]</span> etc.</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>General sensory / emotional sensitivity</p></td>
 <td><p>3</p></td>
 <td><p>Score(s)</p></td>
-<td><p>Highly Sensitive Person Scale (HSPS) <span id="id10">[<a class="reference internal" href="../references/index.html#id523" title="Elaine N. Aron and Arthur Aron. Highly Sensitive Person Scale. September 2011. Institution: American Psychological Association. URL: https://doi.apa.org/doi/10.1037/t00299-000 (visited on 2026-03-07), doi:10.1037/t00299-000.">Aron and Aron, 2011</a>]</span></p></td>
+<td><p>Highly Sensitive Person Scale (HSPS) <span id="id12">[<a class="reference internal" href="../references/index.html#id523" title="Elaine N. Aron and Arthur Aron. Highly Sensitive Person Scale. September 2011. Institution: American Psychological Association. URL: https://doi.apa.org/doi/10.1037/t00299-000 (visited on 2026-03-07), doi:10.1037/t00299-000.">Aron and Aron, 2011</a>]</span></p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Psychological / psychiatric scales</p></td>
 <td><p>2–3</p></td>
 <td><p>Scores; cut-offs for depression, anxiety, etc.</p></td>
 <td><p>PHQ-9, GAD-7, DASS-21</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Sleep &amp; chronobiology</strong></p></td>
-<td><p>Chronotype</p></td>
+<tr class="row-even"><td><p><strong>Sleep &amp; chronobiology</strong></p></td>
+<td><p><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-chronotype"><span class="std std-ref">Chronotype</span></a></p></td>
 <td><p>1</p></td>
 <td><p>Continuous score + category (morning / intermediate / evening)</p></td>
-<td><p>Morningness–Eveningness Questionnaire (MEQ) <span id="id11">[<a class="reference internal" href="../references/index.html#id497" title="J. A. Horne and O. Ostberg. A self-assessment questionnaire to determine morningness-eveningness in human circadian rhythms. Int J Chronobiol, 4(2):97–110, 1976.">Horne and Ostberg, 1976</a>]</span>, Composite Scale of Morningness (CSM) <span id="id12">[<a class="reference internal" href="../references/index.html#id493" title="Carlla S. Smith, Christopher Reilly, and Karen Midkiff. Composite scale of morningness. Journal of Applied Psychology, 1989. Institution: American Psychological Association. URL: https://doi.apa.org/doi/10.1037/t07216-000 (visited on 2026-03-01), doi:10.1037/t07216-000.">Smith <em>et al.</em>, 1989</a>]</span>, and/or Munich Chronotype Questionnaire <span id="id13">[<a class="reference internal" href="../references/index.html#id494" title="Till Roenneberg, Lena K. Keller, Dorothee Fischer, Joana L. Matera, Céline Vetter, and Eva C. Winnebeck. Human Activity and Rest In Situ. In Methods in Enzymology, volume 552, pages 257–283. Elsevier, 2015. URL: https://linkinghub.elsevier.com/retrieve/pii/S0076687914000937 (visited on 2026-03-01), doi:10.1016/bs.mie.2014.11.028.">Roenneberg <em>et al.</em>, 2015</a>]</span>.</p></td>
+<td><p>Morningness–Eveningness Questionnaire (MEQ) <span id="id13">[<a class="reference internal" href="../references/index.html#id497" title="J. A. Horne and O. Ostberg. A self-assessment questionnaire to determine morningness-eveningness in human circadian rhythms. Int J Chronobiol, 4(2):97–110, 1976.">Horne and Ostberg, 1976</a>]</span>, Composite Scale of Morningness (CSM) <span id="id14">[<a class="reference internal" href="../references/index.html#id493" title="Carlla S. Smith, Christopher Reilly, and Karen Midkiff. Composite scale of morningness. Journal of Applied Psychology, 1989. Institution: American Psychological Association. URL: https://doi.apa.org/doi/10.1037/t07216-000 (visited on 2026-03-01), doi:10.1037/t07216-000.">Smith <em>et al.</em>, 1989</a>]</span>, and/or Munich Chronotype Questionnaire <span id="id15">[<a class="reference internal" href="../references/index.html#id494" title="Till Roenneberg, Lena K. Keller, Dorothee Fischer, Joana L. Matera, Céline Vetter, and Eva C. Winnebeck. Human Activity and Rest In Situ. In Methods in Enzymology, volume 552, pages 257–283. Elsevier, 2015. URL: https://linkinghub.elsevier.com/retrieve/pii/S0076687914000937 (visited on 2026-03-01), doi:10.1016/bs.mie.2014.11.028.">Roenneberg <em>et al.</em>, 2015</a>]</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Habitual bedtime</p></td>
 <td><p>1–2</p></td>
 <td><p>Typical bed and wake times (work days vs free days)</p></td>
 <td><p>Often collected with MCTQ</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>Habitual sleep quality</p></td>
 <td><p>2–3</p></td>
 <td><p>Global score; optionally “good vs poor sleeper”</p></td>
-<td><p>Pittsburgh Sleep Quality Index (PSQI) for overall sleep quality <span id="id14">[<a class="reference internal" href="../references/index.html#id495" title="Daniel J. Buysse, Charles F. Reynolds, Timothy H. Monk, Susan R. Berman, and David J. Kupfer. The Pittsburgh sleep quality index: A new instrument for psychiatric practice and research. Psychiatry Research, 28(2):193–213, May 1989. URL: https://linkinghub.elsevier.com/retrieve/pii/0165178189900474 (visited on 2026-03-01), doi:10.1016/0165-1781(89)90047-4.">Buysse <em>et al.</em>, 1989</a>]</span></p></td>
+<td><p>Pittsburgh Sleep Quality Index (PSQI) for overall sleep quality <span id="id16">[<a class="reference internal" href="../references/index.html#id495" title="Daniel J. Buysse, Charles F. Reynolds, Timothy H. Monk, Susan R. Berman, and David J. Kupfer. The Pittsburgh sleep quality index: A new instrument for psychiatric practice and research. Psychiatry Research, 28(2):193–213, May 1989. URL: https://linkinghub.elsevier.com/retrieve/pii/0165178189900474 (visited on 2026-03-01), doi:10.1016/0165-1781(89)90047-4.">Buysse <em>et al.</em>, 1989</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Habitual shift work</p></td>
+<td><p>2</p></td>
+<td><p>Never / former / current; if current: rotating / permanent nights / early starts</p></td>
+<td><p>Chronic circadian misalignment shifts CBT and HRV rhythms independently of chronotype. Document pattern and duration <span id="id17">[<a class="reference internal" href="../references/index.html#id548" title="Robert L. Sack, Dennis Auckley, R. Robert Auger, Mary A. Carskadon, Kenneth P. Jr. Wright, Michael V. Vitiello, and Irina V. Zhdanova. Circadian rhythm sleep disorders: Part I, basic principles, shift work and jet lag disorders. Sleep, 30(11):1460–1483, 2007. American Academy of Sleep Medicine review. doi:10.1093/sleep/30.11.1460.">Sack <em>et al.</em>, 2007</a>, <a class="reference internal" href="../references/index.html#id549" title="Josephine Arendt. Shift work: coping with the biological clock. Occupational Medicine, 60(1):10–20, 2010. doi:10.1093/occmed/kqp162.">Arendt, 2010</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Built-environment context (optional)</strong></p></td>
 <td><p>Main dwelling type</p></td>

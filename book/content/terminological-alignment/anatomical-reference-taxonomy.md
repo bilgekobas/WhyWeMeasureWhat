@@ -1,6 +1,6 @@
 # Anatomical reference taxonomy
 
-This section compiles the anatomical sites used for skin-temperature measurement, standardised into 26 body regions. Each site may include left/right or anterior/posterior counterparts; these are only specified when relevant.\
+This section compiles the anatomical sites used for skin-temperature measurement, standardised into 26 body regions. Each site may include left/right or anterior/{ref}`posterior <label-spatial-orientation>` counterparts; these are only specified when relevant.\
 Letters A--U from the previous chapter, 4.2 Mean skin temperature formulas are retained solely to map historical formulas to the standardised regions shown in the below Figure and Table.
 
 ```{figure} C:/Users/kobas/00_Repos/2511_WhyWeMeasureWhat_Git/book/assets/figures/skin-temp-sites.jpeg
@@ -16,7 +16,7 @@ Black points indicate specific aspects of measurement sites as per MST formulas.
 ### Surface measurement sites
 
 :::{table} General anatomical reference taxonomy for surface physiological measurements, grouped by anatomical region and aligned with legacy mean skin temperature (MST) formula codes where applicable.
-| **Body domain** | **Region code** | **Site / region** | **Laterality** | **Aspect / surface** | **Common aliases / variants** | **Typical modalities / signals** | **MST code(s)** | **Notes** |
+| **Body domain** | **Region code** | **Site / region** | **{ref}`Laterality <label-laterality>`** | **Aspect / surface** | **Common aliases / variants** | **Typical modalities / signals** | **MST code(s)** | **Notes** |
 |---|---|---|---|---|---|---|---|---|
 | **Head** | 1 | Forehead | Midline | Anterior | Brow, temple | Skin temperature, IRT, zero-heat-flux CBT | A | Common in MST and facial thermography |
 |  | 2 | Nose | Midline | Anterior | Nasal dorsum, alar region | IRT, facial temperature | — | Relevant for respiratory heat exchange |

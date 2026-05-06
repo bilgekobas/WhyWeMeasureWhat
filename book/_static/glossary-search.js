@@ -2,72 +2,152 @@ document.addEventListener("DOMContentLoaded", function () {
   const search = document.getElementById("glossary-search");
   const suggestions = document.getElementById("glossary-suggestions");
 
-  // ===== SEARCH FUNCTIONALITY =====
-  if (search && suggestions) {
-    const entries = Array.from(
-      document.querySelectorAll(
-        ".sd-dropdown, .dropdown, details, div[class*='dropdown']"
-      )
-    );
+  const entries = Array.from(
+    document.querySelectorAll(".sd-dropdown, .dropdown, details, div[class*='dropdown']")
+  );
 
-    const entryData = entries
-      .map(entry => {
-        const titleEl =
-          entry.querySelector(".sd-summary-title") ||
-          entry.querySelector(".dropdown-title") ||
-          entry.querySelector(".admonition-title") ||
-          entry.querySelector("summary") ||
-          entry.querySelector("button");
+  function getTitle(entry) {
+    const titleEl =
+      entry.querySelector(".sd-summary-title") ||
+      entry.querySelector(".dropdown-title") ||
+      entry.querySelector(".admonition-title") ||
+      entry.querySelector("summary") ||
+      entry.querySelector("button");
 
-        const title = titleEl ? titleEl.innerText.trim() : "";
-        const section = entry.closest("section");
-        const id = section ? section.id : "";
+    return titleEl ? titleEl.innerText.trim() : "";
+  }
 
-        return { entry, title, id };
-      })
-      .filter(item => item.title && item.id);
+  function findLabelForEntry(entry) {
+    let node = entry.previousElementSibling;
 
-    function updateSuggestions(query) {
-      suggestions.innerHTML = "";
+    while (node) {
+      if (node.id && node.id.startsWith("label-")) {
+        return node.id;
+      }
 
-      if (query.length < 3) return;
+      const labelled = node.querySelector && node.querySelector("[id^='label-']");
+      if (labelled) {
+        return labelled.id;
+      }
 
-      entryData
-        .filter(item =>
-          item.title.toLowerCase().includes(query.toLowerCase())
-        )
-        .forEach(item => {
-          const option = document.createElement("option");
-          option.value = item.title;
-          suggestions.appendChild(option);
-        });
+      node = node.previousElementSibling;
     }
 
-    function openAndJumpTo(title) {
-      const match = entryData.find(
-        item => item.title.toLowerCase() === title.toLowerCase()
-      );
+    return "";
+  }
 
-      if (!match) return;
+  const entryData = entries
+    .map(entry => {
+      return {
+        entry: entry,
+        title: getTitle(entry),
+        id: findLabelForEntry(entry)
+      };
+    })
+    .filter(item => item.title && item.id);
 
-      // Open dropdown if needed
-      if (match.entry.tagName.toLowerCase() === "details") {
-        match.entry.open = true;
-      }
+  function openDropdown(entry) {
+    if (!entry) return;
 
-      const button = match.entry.querySelector("button");
-      if (button && button.getAttribute("aria-expanded") !== "true") {
-        button.click();
-      }
+    if (entry.tagName.toLowerCase() === "details") {
+      entry.open = true;
+      return;
+    }
 
-      // Scroll to entry
-      window.location.hash = match.id;
+    const button =
+      entry.querySelector("button.sd-summary-title") ||
+      entry.querySelector("button.dropdown-toggle") ||
+      entry.querySelector("button");
+
+    if (button && button.getAttribute("aria-expanded") !== "true") {
+      button.click();
+    }
+  }
+
+  function updateSuggestions(query) {
+    if (!suggestions) return;
+
+    suggestions.innerHTML = "";
+    if (query.length < 3) return;
+
+    entryData
+      .filter(item => item.title.toLowerCase().includes(query.toLowerCase()))
+      .forEach(item => {
+        const option = document.createElement("option");
+        option.value = item.title;
+        suggestions.appendChild(option);
+      });
+  }
+
+  function openAndJumpToTitle(title) {
+    const match = entryData.find(
+      item => item.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (!match) return;
+
+    openDropdown(match.entry);
+
+    history.replaceState(null, "", "#" + match.id);
+
+    setTimeout(() => {
       match.entry.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
-    }
+    }, 150);
+  }
 
+  function openAndJumpToHash() {
+  const id = window.location.hash.replace("#", "");
+  if (!id) return;
+
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  let dropdown = null;
+
+  // Case 1: label is inside the dropdown
+  dropdown = target.closest(".sd-dropdown, .dropdown, details, div[class*='dropdown']");
+
+  // Case 2: label is immediately before the dropdown
+  if (!dropdown) {
+    let node = target.nextElementSibling;
+
+    while (node) {
+      if (
+        node.matches &&
+        node.matches(".sd-dropdown, .dropdown, details, div[class*='dropdown']")
+      ) {
+        dropdown = node;
+        break;
+      }
+
+      const nested = node.querySelector &&
+        node.querySelector(".sd-dropdown, .dropdown, details, div[class*='dropdown']");
+
+      if (nested) {
+        dropdown = nested;
+        break;
+      }
+
+      node = node.nextElementSibling;
+    }
+  }
+
+  if (!dropdown) return;
+
+  openDropdown(dropdown);
+
+  setTimeout(() => {
+    dropdown.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 150);
+}
+
+  if (search && suggestions) {
     search.addEventListener("input", function () {
       const query = search.value.trim();
       updateSuggestions(query);
@@ -77,24 +157,34 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       if (exact) {
-        openAndJumpTo(query);
+        openAndJumpToTitle(query);
       }
     });
 
     search.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        openAndJumpTo(search.value.trim());
+        openAndJumpToTitle(search.value.trim());
       }
     });
 
     search.addEventListener("change", function () {
-      openAndJumpTo(search.value.trim());
+      openAndJumpToTitle(search.value.trim());
     });
   }
 
   // ===== BACK TO TOP BUTTON =====
   const topButton = document.getElementById("back-to-top");
+
+  function updateTopButtonVisibility() {
+    if (!topButton) return;
+
+    if (window.scrollY > 350) {
+      topButton.classList.add("visible");
+    } else {
+      topButton.classList.remove("visible");
+    }
+  }
 
   if (topButton) {
     topButton.addEventListener("click", function () {
@@ -103,5 +193,15 @@ document.addEventListener("DOMContentLoaded", function () {
         behavior: "smooth"
       });
     });
+
+    updateTopButtonVisibility();
+
+    window.addEventListener("scroll", updateTopButtonVisibility);
   }
+
+  setTimeout(openAndJumpToHash, 300);
+
+  window.addEventListener("hashchange", function () {
+    setTimeout(openAndJumpToHash, 100);
+  });
 });

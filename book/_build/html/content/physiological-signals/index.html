@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -60,7 +60,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/physiological-signals/index';</script>
-    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Core body temperature" href="core-body-temperature.html" />
@@ -177,7 +177,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">PHYSIOLOGICAL SIGNALS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="core-body-temperature.html">Core body temperature</a></li>
@@ -199,12 +198,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
@@ -363,7 +363,7 @@ document.write(`
                   
   <section id="physiological-signals">
 <h1>PHYSIOLOGICAL SIGNALS<a class="headerlink" href="#physiological-signals" title="Link to this heading">#</a></h1>
-<p>This chapter provides reference material for the physiological variables most relevant to thermal-environment studies. Each subsection follows a consistent structure: it explains the physiological mechanism represented by the signal, summarises typical sensor technologies and body sites, identifies known modifiers and confounders, and lists standard preprocessing or feature-extraction methods. The focus is on variables that together describe the main components of thermoregulation, internal heat storage, peripheral heat exchange, cardiovascular adjustment, and evaporative control – mainly for the adult population under sedentary/light-activity conditions. The intent is not to introduce new measures but to assemble, in one place, the methodological knowledge required for transparent and physiologically grounded experimentation in the built environment.</p>
+<p>This chapter provides reference material for the physiological variables most relevant to thermal-environment studies. Each subsection follows a consistent structure: it explains the physiological mechanism represented by the signal, summarises typical sensor technologies and body sites, identifies known modifiers and confounders, and lists standard preprocessing or feature-extraction methods. The focus is on variables that together describe the main components of <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoregulation"><span class="std std-ref">thermoregulation</span></a>, internal <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-heat-storage"><span class="std std-ref">heat storage</span></a>, peripheral heat exchange, cardiovascular adjustment, and evaporative control – mainly for the adult population under sedentary/light-activity conditions. The variables documented here — core temperature, skin temperature, heart rate and heart rate variability, blood pressure, and sweating — together capture the principal components of thermoregulatory function and have been established as the primary outcome measures in indoor thermal physiology research <span id="id1">[<a class="reference internal" href="../references/index.html#id3" title="Glen Kenny, P. Human thermoregulation: separating thermal and nonthermal effects on heat loss. Front Biosci, 15(1):259, 2010. URL: https://imrpress.com/journal/FBL/15/1/10.2741/3620 (visited on 2026-03-01), doi:10.2741/3620.">Kenny, 2010</a>, <a class="reference internal" href="../references/index.html#id2" title="Ken Parsons, editor. Human thermal environments. CRC Press, 0 edition, October 1993. ISBN 978-0-429-21948-1. URL: https://www.taylorfrancis.com/books/9780203302620/chapters/10.1201/9780203302620-10 (visited on 2026-03-01), doi:10.1201/9780203302620-10.">Parsons, 1993</a>, <a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>]</span>. The intent is not to introduce new measures but to assemble, in one place, the methodological knowledge required for transparent and physiologically grounded experimentation in the built environment.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

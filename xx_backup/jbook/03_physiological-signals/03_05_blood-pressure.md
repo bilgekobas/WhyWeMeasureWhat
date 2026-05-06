@@ -1,0 +1,288 @@
+# Blood pressure
+
+
+
+
+### Why: the mechanistic reasons behind the measurement
+
+
+
+Arterial blood pressure (BP) indexes the perfusion pressure delivered to organs and the load against which the heart pumps; in shorthand it reflects the interaction of cardiac output with total peripheral resistance and arterial compliance. Under warm indoor exposures, cutaneous vasodilation redistributes blood to the skin, lowers peripheral resistance, and requires compensatory adjustments in cardiac output to maintain BP; documenting BP therefore links thermal vasomotion to central hemodynamics in sedentary protocols \[404\].
+
+
+
+Short-latency baroreflex and autonomic responses stabilise BP on the order of seconds to minutes, while vascular/renal mechanisms govern longer horizons; even small BP shifts (e.g., diastolic or MAP) during passive heating or cooling provide a hemodynamic context for concurrent changes in skin blood flow, skin temperature, and heart-rate–derived metrics \[405\].
+
+
+
+Because thermal manipulations in seated participants alter vascular tone without large metabolic changes, BP serves as the concise readout of whether perfusion pressure is preserved as skin blood flow increases, and whether autonomic buffering remains intact across time-of-day or exposure blocks \[406\].
+
+
+
+### How: sensor types for measurement 
+
+
+
+**Upper-arm cuff (oscillometric or auscultatory).** Automated oscillometric cuffs are the default for intermittent BP at rest in laboratory and field studies; the device infers systolic/diastolic values from the cuff-pressure oscillation envelope during deflation, while auscultatory methods detect Korotkoff sounds. Validation statements and technique details are consolidated by the American Heart Association \[407\]; modeling/limits of oscillometry are reviewed with open-access summaries \[408\]. Under sedentary, thermally perturbed conditions, accuracy can vary with arterial compliance and waveform shape; worth noting when vasodilation is substantial \[409\].
+
+
+
+**Ambulatory/automated repeated cuffs.** For longer indoor protocols, ambulatory or scheduled automated measurements extend intermittent monitoring without continuous inflation, retaining the oscillometric principle and standard validation constraints \[407\].
+
+
+
+**Non-invasive continuous methods (beat-to-beat).** A range of systems provide continuous or near–beat-to-beat BP estimation without arterial cannulation, typically by tracking arterial volume or wall motion at a peripheral site and then reconstructing arterial pressure from the waveform plus calibration \[410\].
+
+
+
+- <u>Volume-clamp (vascular unloading) finger cuff,</u> A pneumatic cuff around the finger adjusts pressure to maintain constant arterial volume; the servo-controlled cuff pressure approximates the intra-arterial waveform. This “Penáz method” underlies several commercial systems and has been evaluated against invasive reference measurements in perioperative and intensive-care cohorts \[411–413\].
+
+
+
+- <u>Applanation/arterial tonometry.</u> A flat sensor positioned over a superficial artery (typically radial) partially flattens the vessel and records the pressure waveform, which is then calibrated to brachial cuff values. Technical descriptions and comparative performance data are summarised in reviews of non-invasive arterial pressure monitoring \[410,414\]; see also Salvi et al. for radial tonometry and central pressure estimation \[415\].
+
+
+
+- <u>Cuffless timing methods (PTT/PAT)</u>. Pulse transit time (PTT) and pulse arrival time (PAT) approaches estimate BP changes from the delay between a proximal signal (e.g., ECG or phonocardiogram) and a distal photoplethysmogram (PPG) or similar waveform. Reviews highlight their promise and the need for individual calibration and careful validation \[405,416\]. A recent example is the cuffless real-time device by Choi et al., which uses ECG electrodes and a microphone at the wrist to derive PTT and estimate BP \[417\].
+
+
+
+- <u>Wearable cuffless devices (wrist/arm/ring).</u> Newer devices embed optical, electrical or mechanical sensors into wristbands, upper-arm bands or rings, and estimate BP using pulse-wave features and machine-learning models. Systematic and narrative reviews summarise available devices, sensing principles and validation status \[418–420\]. These systems are still typically calibrated to brachial cuff measurements and their performance under different thermal and perfusion states remains an active research area.
+
+
+
+**Invasive arterial line.** Direct intra-arterial monitoring via an arterial catheter connected to a fluid-filled transducer remains the reference standard for waveform fidelity and absolute pressure measurement, particularly in critically ill or high-risk surgical patients \[410,414,421\]. It is, however, restricted to clinical or highly controlled physiological settings and is not typical for sedentary built-environment experiments, where the non-invasive alternatives above are preferred.
+
+
+
+### Where: body sites of measurement
+
+
+
+Blood pressure in sedentary thermophysiology studies is most commonly measured at the upper arm, wrist, finger, or much less frequently the radial or a central artery. The choice of site determines which arterial segment is sampled (brachial vs radial vs digital), the hydrostatic relation to the heart, and how strongly local vasomotor changes (e.g., thermal vasodilation in the hand) influence the signal \[407\].
+
+
+
+**Upper-arm (brachial) measurements.** The standard location for non-invasive sphygmomanometry is the upper arm with the cuff encircling the brachial artery at heart level in the seated position \[407\]. This site is preferred because the brachial artery is relatively large, easily occluded, and lies at a similar hydrostatic level to the aorta when the arm is supported; brachial pressures are also the reference against which alternative sites (wrist, finger, tonometry) are usually validated \[422\]. In indoor sedentary experiments, cuffs are typically placed on the non-dominant upper arm to minimise movement and interference with tasks.
+
+
+
+**Wrist (radial/ulnar) cuff devices.** Oscillometric wrist monitors place the cuff over the radial and ulnar arteries proximal to the carpus. They are used when upper-arm placement is impractical (e.g., very large arm circumference or arm instrumentation), but wrist readings are more sensitive to arm and wrist position relative to the heart and to local vasomotor tone \[423,424\]. Comparative work and clinical guidance generally regard upper-arm (brachial) measurement as the reference and treat wrist devices as secondary options that require careful positioning and validation \[425\].
+
+
+
+**Finger (digital) measurements.** Finger cuffs used in volume-clamp systems enclose the middle phalanx and maintain constant arterial volume via a servo-controlled pressure adjustment; the cuff pressure then approximates the finger arterial pressure waveform. This site enables beat-to-beat recording and is widely used for continuous BP and derived hemodynamic variables in research \[412,426\]. Meta-analyses comparing finger-cuff arterial pressure with invasive reference show acceptable mean bias but wide limits of agreement, with accuracy reduced when peripheral vasoconstriction, low perfusion or rapid hemodynamic changes are present \[413,427\]. In thermal studies, the finger site is therefore attractive for continuous monitoring but more vulnerable to local temperature and vasomotor changes than the brachial site.
+
+
+
+**Radial artery (wrist/forearm) applanation tonometry.** Applanation tonometry at the radial artery records the local pulse waveform by gently flattening (applanating) the artery against underlying bone with a flat sensor. The waveform is subsequently calibrated to brachial cuff systolic and diastolic pressures to estimate peripheral and, via transfer functions, central pressures \[415,428\].
+
+
+
+**Central and invasive sites (reference).** Invasive catheters placed in central arteries (e.g., radial, femoral, or directly the aorta) provide reference waveforms and absolute pressures for validation studies but are almost never used in sedentary built-environment experiments. They mainly appear in perioperative or intensive-care research, where they serve as the comparison standard for finger-cuff, radial-tonometry or cuffless methods \[410,421\].
+
+
+
+### Agreeability across sensor types
+
+
+
+Brachial upper-arm oscillometric devices are generally treated as the non-invasive reference in adults at rest \[407\]. Method-comparison studies and meta-analyses report small mean differences versus invasive arterial pressure for mean arterial pressure, alongside wide individual limits of agreement \[429,430\]. These devices are therefore suitable for group-level analyses and trend tracking, but not strictly interchangeable with intra-arterial measurements at the individual level \[429\].
+
+
+
+Within non-invasive techniques, correctly sized upper-arm cuffs typically perform better than wrist cuffs \[424,431\]. Wrist devices show larger bias and scatter and require careful positioning at heart level and, ideally, device-specific validation against brachial measurements \[432\].
+
+
+
+Finger volume-clamp systems provide beat-to-beat waveforms and track brachial or intra-arterial pressures reasonably at rest \[412\]. However, individual limits of agreement on the order of ~10–20 mmHg and sensitivity to local vasoconstriction or low perfusion are commonly reported \[413\].
+
+
+
+For cuffless wearable systems, current evidence indicates modest mean bias versus cuff-based reference in seated or ambulatory users \[418\]. Between-device and between-study heterogeneity is high, and limits of agreement often exceed usual interchangeability criteria \[405,433\]. When reporting BP outcomes, it is therefore useful to specify device type, body site, calibration procedure and posture, and to treat different sensor types as related but non-equivalent measures unless equivalence has been demonstrated for the protocol in question.
+
+
+
+### Known confounders and modifiers
+
+
+
+Blood pressure is sensitive to intrinsic regulatory rhythms and to experimental conditions that affect vascular tone, volume status, or measurement technique.
+
+
+
+**Circadian influences.** Blood pressure exhibits a pronounced 24-h rhythm, with daytime values typically 10–20 % higher than nighttime pressures (“dipping”) and a characteristic morning surge after waking \[434–436\]. Abnormal dipping patterns (non-dipping, reverse dipping) are associated with increased cardiovascular risk, even when mean 24-h BP is similar \[437,438\]. Irregular sleep–wake schedules, naps, and shift work can blunt or distort these profiles \[439,440\]. Behaviour immediately before measurement (recent walking, posture changes, talking, screen use, cognitive tasks) adds short-term fluctuations on top of the circadian pattern; aligning recording windows to habitual sleep–wake timing and standardising pre-measurement behaviour reduces this variance.
+
+
+
+**Sex.** Across adulthood, women generally show lower BP than age-matched men until midlife, with convergence or reversal around menopause, reflecting sex-specific trajectories in vascular stiffness, autonomic balance, and the renin–angiotensin–aldosterone system \[441\].
+
+
+
+**Sex hormones and reproductive status.** Oestrogen tends to promote vasodilation and lower BP via endothelial nitric oxide and neurohumoral modulation, whereas progestins and androgens can favour higher vascular tone \[442\]. Combined oral contraceptive use is associated with modest but significant elevations in BP and a higher risk of developing hypertension in meta-analyses and large cohort studies \[443,444\]. Around menopause, declining oestrogen and increasing arterial stiffness contribute to steeper age-related rises in systolic and pulse pressure in women than in men \[442\]. Accurate documentation of sex, menstrual or menopausal status, and hormonal contraception type and duration is therefore essential for cross-participant comparisons.
+
+
+
+**Age.** Ageing increases large-artery stiffness, widens pulse pressure, and attenuates baroreflex sensitivity, leading to higher systolic and pulse pressures and less efficient buffering of acute BP changes \[445,446\]. Older adults exhibit greater seasonal and thermal influences on BP and are more prone to orthostatic instability compared with young adults \[447\]. Age group and vascular risk profile thus shape both baseline levels and responses to thermal or postural perturbations.
+
+
+
+**Fitness and acclimation.** Regular aerobic training modestly lowers resting BP and reduces BP reactivity to physical and mental stressors, partly through improved endothelial function and autonomic regulation \[448\]. Higher cardiorespiratory fitness is associated with more favourable heart-rate variability and baroreflex indices, indicating greater buffering capacity against acute challenges. Although specific data on heat-acclimation and resting BP in sedentary indoor conditions are limited, training status and recent exercise can shift absolute pressures and should be recorded when comparing groups.
+
+
+
+**Body composition.** Higher BMI, central adiposity and visceral fat are consistently associated with higher BP and increased hypertension risk across age groups \[449,450\]. Network meta-analyses show a graded increase in hypertension incidence with higher or rising adiposity trajectories \[451\]. Differences in fat distribution (e.g., android vs gynoid) further modulate BP, so anthropometry and, where possible, direct body-composition measures improve interpretability of between-participant differences.
+
+
+
+**Nutrition and hydration.** Hydration status influences BP by altering plasma volume and autonomic–hormonal responses. Experimental work shows that hypohydration can modify baroreflex control, vascular resistance and BP variability, sometimes lowering resting BP but increasing susceptibility to orthostatic or heat-induced instability \[452\].\
+
+Caffeine induces a small but significant transient rise in systolic and diastolic BP (~2–4 mmHg) over several hours, particularly in non-habitual consumers and in individuals with hypertension \[453–455\]. Energy drinks combining caffeine with other stimulants elicit somewhat larger short-term BP increases \[456,457\] Meal timing and composition (e.g., large carbohydrate loads) can also induce postprandial hypotension or variability, especially in older or autonomically impaired individuals. Standardising or documenting recent fluid intake, meals, and stimulant use is therefore important.
+
+
+
+**Neurophysiological and psychological factors.** Acute psychological stress, time pressure and emotional arousal typically raise BP via sympathetic activation and vasoconstriction. Laboratory studies show substantial inter-individual differences in BP reactivity to mental-stress tasks, and exaggerated reactivity predicts incident hypertension and cardiovascular events \[458,459\]. Everyday cognitive load (e.g., demanding tasks during measurement) and affective state can therefore modulate BP independently of the thermal environment.
+
+
+
+**Neurodivergent populations.** Neurodevelopmental conditions such as autism spectrum disorder (ASD) and ADHD are associated with atypical cardiovascular autonomic regulation. In ASD, autonomic-clinic cohorts report intermittent neuro-cardiovascular dysfunction affecting both heart rate and blood pressure, including postural tachycardia, vasovagal syncope and orthostatic hypotension, indicating impaired sympathetic vasoconstriction and baroreflex control \[379,460\]. In ADHD, ambulatory blood-pressure monitoring studies and stimulant-treatment trials show small but consistent increases in daytime systolic BP and heart rate, and a higher prevalence of elevated BP or hypertension compared with peers \[461,462\]. While detailed circadian BP profiles in neurodivergent adults remain limited, these findings suggest that both baseline BP and its responses to posture, stress or medication may diverge from neurotypical patterns and should be explicitly reported.
+
+
+
+**Underlying medical conditions.** Chronic kidney disease, diabetes, obstructive sleep apnoea and established hypertension all alter BP regulation, often disrupting normal dipping patterns and increasing BP variability \[438,463\] . Autonomic neuropathies and neurodegenerative disorders can produce orthostatic hypotension or labile BP through impaired baroreflex and sympathetic control \[446\]. Recording major cardiovascular and autonomic diagnoses, and keeping medication regimens stable where possible, is important for interpretation.
+
+
+
+**Measurement artefacts.** Procedural factors and device characteristics can introduce variability comparable to physiological effects. Common issues include incorrect cuff size, cuff placement over clothing, arm not supported at heart level, talking during measurement, insufficient seated rest, and recent activity \[407\]. Device-specific calibration, repeated readings after a standardised rest period, and consistent posture and arm support are essential to reduce artefactual variance. Reporting device type, measurement protocol and quality-control steps alongside BP outcomes improves reproducibility and cross-study comparison.
+
+
+
+### Data handling methods
+
+
+
+#### Sensor calibration
+
+
+
+Modern aneroid and oscillometric sphygmomanometers are calibrated against reference manometers. When correctly calibrated and maintained, an accuracy within ±3 mmHg is expected, with digital devices often calibrated against a reference manometer having a strict accuracy of ±0.1 mmHg \[464\]. At the device/clinical level, the AAMI/ESH/ISO Universal Standard (ISO 81060-2 \[465\]) specifies accuracy criteria and validation procedures for non-invasive intermittent BP devices, forming the basis for most commercial upper-arm and wrist monitors and their periodic verification against reference methods \[466\]. Continuous finger volume-clamp systems and radial applanation tonometry require calibration to brachial SBP/DBP at baseline, along with hydrostatic (height) correction between the heart and measurement site, as differences in arm position significantly alter pressures \[412,413,415\]. Cuffless and wearable devices generally depend on one or more reference measurements with a validated brachial cuff to initialize the mapping between pulse-wave features (such as pulse transit time) and absolute BP \[405\]. Because of continuous physiological changes and vascular aging, this calibration must be repeated at defined intervals for the device to accurately track BP over time \[430,467,468\].
+
+
+
+#### Data cleaning and correction
+
+
+
+For intermittent brachial measurements, BP is typically recorded as three consecutive readings, spaced 1 to 2 minutes apart, following at least 5 minutes of seated rest \[469\]. The arm must be supported at heart level, and both the patient and observer must refrain from talking. Because the first reading is often the highest, the patient's BP is usually recorded as the average of the last two readings; additional measurements are recommended if the first two readings differ by more than 10 mmH \[470\]. Readings taken with incorrect cuff size, over clothing, during posture changes, or within 30 min of caffeine or smoking should be excluded or repeated under standardised conditions \[471\].
+
+
+
+**Filtering for noise.** Because raw blood pressure and biosignals like photoplethysmograms are highly susceptible to baseline wandering, motion artefacts, and external high-frequency interference, rigorous filtering is essential. Butterworth filters are extensively used; for instance, applying a low-pass Butterworth filter (e.g., 0.5 to 30 Hz, or specifically a 10 Hz cutoff) effectively removes high-frequency noise and movement artefacts \[472,473\]. Other common filters include bandpass Equiripple FIR filters (e.g., 0.5–8 Hz) for PPG signals and Savitzky–Golay filters for arterial blood pressure (ABP) signals \[414\]. To eliminate baseline offsets, nonlinear Median filters (MF) are frequently applied, with more complex noise, advanced signal processing techniques such as Wavelet Transforms (WT) (using basis functions like Daubechies or sym8), Hilbert-Huang Transforms (HHT), and Independent Component Analysis (ICA) are utilized \[474\]. Additionally, adaptive filters (like Least Mean Squares \[LMS\] or Normalized Least Mean Squares \[NLMS\]) can dynamically subtract motion artifacts by using an accelerometer's signal norm as a reference \[473,475\].
+
+
+
+**Normalisation.** Normalisation is a crucial processing step that eliminates scale and range differences across biosignals, enabling accurate algorithm training and robust monitoring \[405\]. In optical measurements like PPG, data-driven feature extraction is performed only after normalising the pulsatile alternating current (AC) component relative to the non-pulsatile direct current (DC) component; this specific normalisation mitigates the effects of ambient lighting, temperature variations, and skin pigmentation \[405\]. In machine learning, input and output signal segments are routinely scaled using mathematical normalisations, most commonly Z-score, mean, and Min-Max normalisations \[472\].
+
+
+
+**Discarded data.** To maintain the integrity of BP measurements and algorithm training datasets, data containing severe artefacts, protocol violations, or physiological impossibilities must be systematically discarded. In digital signal processing, segments with unacceptably fast heartbeats, long discontinuities, or missing values are removed. Algorithms often use double derivation thresholding (e.g., excluding segments with high standard derivations beyond a cutoff) or deploy specific Convolutional Neural Networks (CNNs) to automatically flag and discard erroneous PPG and ABP signals. Furthermore, "peak cleaning" mechanisms use acceleration norms to identify and discard specific time windows heavily corrupted by motion artefacts \[414\]. In clinical validation and practice, readings are excluded if independent human observers disagree on a systolic or diastolic measurement by more than 4 mmHg \[465\], or if the required Korotkoff sounds (K1 or K5) cannot be clearly heard \[466\].
+
+
+
+**Typical ranges.** Typical blood pressure ranges serve dual purposes: diagnosing patient health in clinical settings and establishing strict algorithmic thresholds for data cleaning. Clinically, a healthy individual's normal BP is widely defined as having a systolic BP (SBP) \< 120 mmHg and a diastolic BP (DBP) \< 80 mmHg \[407,470,476\]. Hypertension thresholds vary slightly by clinical guidelines but are generally defined as 130/80 mmHg (ACC/AHA guidelines \[407\]) or 140/90 mmHg (ESC/ESH guidelines \[477\]) for office readings. For signal processing and deep learning applications, algorithms define erroneous or "irregular" signals based on extreme physiological limits. Datasets frequently flag and discard reading segments if the DBP falls below 50–60 mmHg or exceeds 130 mmHg, and if the SBP falls below 80 mmHg or exceeds 180–200 mmHg \[478\].
+
+
+
+#### Derived parameters
+
+
+
+Depending on study design and research aim, several key parameters are derived from the preprocessed BP signal. These metrics describe both the magnitude and temporal dynamics of cardiovascular responses.
+
+
+
+- <u>Baseline BP (mmHg).</u> Mean SBP, DBP and/or MAP over the final 3–10 min of the pre-exposure or neutral period; used as a reference for subsequent changes \[469\]<u>.</u> When devices do not provide MAP directly, it is usually estimated as:
+
+
+
+  MAP = DBP + ⅓(SBP − DBP)
+
+
+
+  Alternative weightings such as DBP + 0.4(SBP − DBP) or DBP + 0.412(SBP − DBP) have been proposed to better approximate time-averaged pressure and show slightly stronger associations with target-organ indices; comparisons of seven different formulas report systematic between-formula differences of a few mmHg \[479\]. Studies comparing measured oscillometric MAP with values recalculated from SBP and DBP similarly conclude that measured and calculated MAP cannot be used interchangeably in individual subjects \[480\]. Using a single, explicitly stated formula within a study avoids internal inconsistencies.
+
+
+
+- <u>ΔBP (change, mmHg).</u> Difference between end- and start-exposure means, or between condition means, indicating the magnitude of pressor or depressor responses to thermal, postural, or behavioural manipulations.
+
+
+
+- <u>Rate of change (mmHg·min⁻¹).</u> Slope of a linear regression fitted to SBP, DBP or MAP over a specified interval (e.g., first 20–30 min of exposure), describing the speed of adjustment or recovery.
+
+
+
+- <u>Short-term variability (SD, CV).</u> For continuous recordings, variability within a segment (e.g., 5–30 min) is summarised as the standard deviation (SD) or coefficient of variation (CV = SD/mean × 100 %) of SBP, DBP or MAP \[481\].
+
+
+
+- <u>Average real variability (ARV).</u> Mean absolute difference between consecutive values over a given period; ARV is less influenced by extreme values than SD and is increasingly used in BP-variability research \[481\].
+
+
+
+For extended or ambulatory recordings, additional descriptors are often used:
+
+
+
+- <u>Daytime and nighttime means (mmHg).</u> Mean BP during predefined wake and sleep windows, typically based on diaries or fixed clock-time bands.
+
+
+
+- Dipping percentage (%). Calculated as:
+
+
+
+- $`100\  \times \ (daytime\ mean\  - \ nighttime\ mean)\ /\ daytime\ mean`$
+
+
+
+  used to classify individuals as “dippers”, “non-dippers”, “extreme dippers”, or “risers” based on established cut-offs \[437,438\].
+
+
+
+- <u>BP load / area-under-curve (AUC).</u> Proportion of readings above guideline thresholds (e.g., ≥135/85 mmHg daytime) or time integral of BP above baseline or clinical cut-offs; these indices capture cumulative exposure to elevated pressure beyond simple means.
+
+
+
+Across repeated sessions or time blocks, visit- or period-level variability can be summarised as the SD or ARV of mean BP values, reflecting intra-individual lability over hours to weeks and showing independent associations with cardiovascular risk \[430,482\].
+
+
+
+Table 5. Summary of blood-pressure measurement techniques, typical signal characteristics, and practical considerations\
+
+Sampling rates denote typical acquisition frequencies used for physiological data logging, not device limits.
+
+
+
+| **Measure** | **Sensor / Principle** | **Sampling rate** | **Advantages** | **Limitations** | **Approx. cost (€)\*** |
+
+|----|----|----|----|----|----|
+
+| **Brachial BP** | Upper-arm oscillometric cuff | Block (2–3 readings / point) | Standard method; widely validated; simple | Intermittent; sensitive to cuff size, posture, talking, recent intake | 100–1000 |
+
+| **Ambulatory BP** | Automated upper-arm oscillometric (24 h) | Block (15–60 min intervals) | Day–night pattern; real-world environment | No beat-to-beat detail; cuff inflation may disturb sleep | 150–2000 |
+
+| **Wrist BP** | Wrist oscillometric cuff (radial/ulnar) | Block | Compact; option when arm cuffs impractical | Requires strict heart-level positioning; generally less accurate than arm | 100–800 |
+
+| **Continuous finger BP** | Volume-clamp finger cuff | 100–250 Hz (beat-to-beat) | Beat-to-beat waveform; hemodynamic indices | Needs calibration to brachial BP; sensitive to vasoconstriction, hand temperature | 5,000–25,000 |
+
+| **Radial waveform / derived BP** | Applanation tonometry at radial artery | 128–1000 Hz | Central BP estimation; waveform morphology | Operator dependent; calibration and probe placement critical | 5,000–20,000 |
+
+| **Cuffless wearable BP (wrist/arm/ring)** | Optical / impedance / pressure sensors + PTT/ML | 1–10 Hz | Low burden; potential long-term monitoring | Requires calibration; device- and state-dependent accuracy; evolving validation | 200–1500 |
+
+| **Invasive arterial BP \*\*** | Fluid-filled or solid-state arterial catheter | 100–250 Hz | Gold-standard reference; high fidelity | Invasive; clinical use only; not used in typical sedentary experiments | Per-use clinical |
+
+
+
+\* Costs represent approximate 2024 academic prices for durable equipment; disposables, maintenance and analysis software are not included.\
+
+\*\* Included as reference method; rarely used outside clinical or highly controlled physiological studies.

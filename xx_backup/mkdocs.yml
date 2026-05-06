@@ -1,0 +1,58 @@
+site_name: Why we measure what, how, and where
+exclude_docs: _full.md
+theme:
+  name: material
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - navigation.expand
+  - toc.integrate
+markdown_extensions:
+- footnotes
+- admonition
+- tables
+- toc:
+    permalink: true
+    toc_depth: 3
+extra_css:
+- assets/styles/extra.css
+extra_javascript:
+- assets/js/citations.js
+nav:
+- Home: index.md
+- 01 FOREWORD:
+  - Overview: 01_foreword/index.md
+  - Background: 01_foreword/01_01_background.md
+  - Framework: 01_foreword/01_02_framework.md
+- 02 INTRODUCTION:
+  - 02_introduction/02_01_introduction.md
+- 03 PHYSIOLOGICAL SIGNALS:
+  - Overview: 03_physiological-signals/index.md
+  - Core body temperature: 03_physiological-signals/03_01_core-body-temperature.md
+  - Skin temperature: 03_physiological-signals/03_02_skin-temperature.md
+  - Sweat, skin moisture and skin conductance: 03_physiological-signals/03_03_sweat-skin-moisture-and-skin-conductance.md
+  - Heart rate and heart rate variability: 03_physiological-signals/03_04_heart-rate-and-heart-rate-variability.md
+  - Blood pressure: 03_physiological-signals/03_05_blood-pressure.md
+  - Other physiological indicators: 03_physiological-signals/03_06_other-physiological-indicators.md
+- 04 NOMENCLATURE:
+  - 04_nomenclature/04_01_nomenclature.md
+- 05 MEAN SKIN TEMPERATURE FORMULAS:
+  - 05_mean-skin-temperature-formulas/05_01_mean-skin-temperature-formulas.md
+- 06 SKIN TEMPERATURE MEASUREMENT SITES AND ALTERNATIVE NAMING CONVENTIONS:
+  - 06_skin-temperature-measurement-sites-and-alternative-naming-conventions/06_01_skin-temperature-measurement-sites-and-alternative-naming-conventions.md
+- 07 SAMPLE CHECKLISTS & SCHEMAS:
+  - Overview: 07_sample-checklists-schemas/index.md
+  - Experiment-level metadata: 07_sample-checklists-schemas/07_01_experiment-level-metadata.md
+  - Participant-level metadata: 07_sample-checklists-schemas/07_02_participant-level-metadata.md
+  - Session-level metadata: 07_sample-checklists-schemas/07_03_session-level-metadata.md
+- '08 CONFOUNDER × SIGNAL: SYNTHESIS OF MODIFIERS':
+  - 08_confounder-x-signal-synthesis-of-modifiers/08_01_confounder-x-signal-synthesis-of-modifiers.md
+- 09 CONTRIBUTION:
+  - Overview: 09_contribution/index.md
+  - Community and community roles: 09_contribution/09_01_community-and-community-roles.md
+  - List of contributors: 09_contribution/09_02_list-of-contributors.md
+  - Governance: 09_contribution/09_03_governance.md
+  - How to cite: 09_contribution/09_04_how-to-cite.md
+  - Contact: 09_contribution/09_05_contact.md
+- 10 REFERENCES:
+  - 10_references/10_01_references.md

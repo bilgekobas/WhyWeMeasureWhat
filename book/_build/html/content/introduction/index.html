@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -59,11 +59,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/introduction/index';</script>
-    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="PHYSIOLOGICAL SIGNALS" href="../physiological-signals/index.html" />
-    <link rel="prev" title="FOREWORD" href="../foreword/index.html" />
+    <link rel="prev" title="WHY WE MEASURE WHAT, HOW, AND WHERE" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +176,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">INTRODUCTION</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
@@ -198,12 +197,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
@@ -335,7 +335,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -351,6 +353,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-resource-is">What this resource is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-resource-exists">Why this resource exists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-resource-does-not-do">What this resource does not do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-resource">How to use this resource</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-resource-is-maintained">How this resource is maintained</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-resource">About this resource</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -362,16 +377,60 @@ document.write(`
                   
   <section id="introduction">
 <h1>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Physiological measurements can be crucial to understanding how the thermal environment impacts human physiology, well-being, and, in the long term, health. In building and environmental design research, however, they are often used pragmatically; selected for convenience, familiarity, or sensor availability, rather than from a coherent physiological rationale. Meanwhile, closely related disciplines such as thermal physiology, environmental ergonomics, and chronobiology have developed precise conventions for assessing thermoregulatory function. These frameworks already describe <em>what</em> to measure, <em>why</em> it matters, and <em>how</em> to interpret it under defined experimental conditions.</p>
-<p>The present paper revisits those established foundations with the aim of translating them into the context of built-environment research. Rather than documenting how studies are currently conducted, it asks how they <em>could</em> be structured if guided by shared physiological reasoning. The intent is to provide a reference that links measurement choices to underlying mechanisms, clarifies which contextual data are required for interpretation, and supports greater methodological consistency across building-scale experiments.</p>
-<p>Across laboratory and field studies, a small set of physiological variables is consistently used to represent thermoregulatory function. These include internal temperature, surface temperature, cardiovascular activity, sudomotor responses, and, where relevant, respiration and metabolic heat production <span id="id1">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id3" title="Glen Kenny, P. Human thermoregulation: separating thermal and nonthermal effects on heat loss. Front Biosci, 15(1):259, 2010. URL: https://imrpress.com/journal/FBL/15/1/10.2741/3620 (visited on 2026-03-01), doi:10.2741/3620.">Kenny, 2010</a>, <a class="reference internal" href="../references/index.html#id2" title="Ken Parsons, editor. Human thermal environments. CRC Press, 0 edition, October 1993. ISBN 978-0-429-21948-1. URL: https://www.taylorfrancis.com/books/9780203302620/chapters/10.1201/9780203302620-10 (visited on 2026-03-01), doi:10.1201/9780203302620-10.">Parsons, 1993</a>]</span>. Together, these signals offer complementary views of heat storage, heat transfer, and heat dissipation, and they can be obtained with established sensor technologies suitable for both controlled and applied protocols <span id="id2">[<a class="reference internal" href="../references/index.html#id2" title="Ken Parsons, editor. Human thermal environments. CRC Press, 0 edition, October 1993. ISBN 978-0-429-21948-1. URL: https://www.taylorfrancis.com/books/9780203302620/chapters/10.1201/9780203302620-10 (visited on 2026-03-01), doi:10.1201/9780203302620-10.">Parsons, 1993</a>, <a class="reference internal" href="../references/index.html#id4" title="George Havenith. Individualized model of human thermoregulation for the simulation of heat stress response. Journal of Applied Physiology, 90(5):1943–1954, May 2001. URL: https://www.physiology.org/doi/10.1152/jappl.2001.90.5.1943 (visited on 2026-03-01), doi:10.1152/jappl.2001.90.5.1943.">Havenith, 2001</a>]</span>.</p>
-<p>Although thermoregulation is multi-systemic, a small set of representative indicators is widely used because it captures key processes with acceptable burden and reliability. Core body temperature reflects internal heat storage and overall thermal strain <span id="id3">[<a class="reference internal" href="../references/index.html#id5" title="A. A. Romanovsky. Skin temperature: its role in thermoregulation. Acta Physiologica, 210(3):498–507, March 2014. URL: https://onlinelibrary.wiley.com/doi/10.1111/apha.12231 (visited on 2026-03-01), doi:10.1111/apha.12231.">Romanovsky, 2014</a>, <a class="reference internal" href="../references/index.html#id6" title="Nigel A.S. Taylor. Human Heat Adaptation. Comprehensive Physiology, 4(1):325–365, January 2014. URL: https://onlinelibrary.wiley.com/doi/10.1002/j.2040-4603.2014.tb00547.x (visited on 2026-03-01), doi:10.1002/j.2040-4603.2014.tb00547.x.">Taylor, 2014</a>]</span>. Skin temperature describes peripheral heat exchange at the body–environment interface and is closely associated with thermal sensation and comfort reports <span id="id4">[<a class="reference internal" href="../references/index.html#id4" title="George Havenith. Individualized model of human thermoregulation for the simulation of heat stress response. Journal of Applied Physiology, 90(5):1943–1954, May 2001. URL: https://www.physiology.org/doi/10.1152/jappl.2001.90.5.1943 (visited on 2026-03-01), doi:10.1152/jappl.2001.90.5.1943.">Havenith, 2001</a>, <a class="reference internal" href="../references/index.html#id8" title="H. Zhang, C. Huizenga, E. Arens, and D. Wang. Thermal sensation and comfort in transient non-uniform thermal environments. Eur J Appl Physiol, 92(6):728–733, September 2004. URL: http://link.springer.com/10.1007/s00421-004-1137-y (visited on 2026-03-01), doi:10.1007/s00421-004-1137-y.">Zhang <em>et al.</em>, 2004</a>, <a class="reference internal" href="../references/index.html#id7" title="Hui Zhang, Edward Arens, Charlie Huizenga, and Taeyoung Han. Thermal sensation and comfort models for non-uniform and transient environments, part III: Whole-body sensation and comfort. Building and Environment, 45(2):399–410, February 2010. URL: https://linkinghub.elsevier.com/retrieve/pii/S0360132309001619 (visited on 2026-03-01), doi:10.1016/j.buildenv.2009.06.020.">Zhang <em>et al.</em>, 2010</a>]</span>. Heart rate and heart rate variability index autonomic cardiovascular adjustments that support thermal balance and can indicate the stability of physiological regulation under load <span id="id5">[<a class="reference internal" href="../references/index.html#id9" title="Fred Shaffer and J. P. Ginsberg. An Overview of Heart Rate Variability Metrics and Norms. Front. Public Health, 5:258, September 2017. URL: http://journal.frontiersin.org/article/10.3389/fpubh.2017.00258/full (visited on 2026-03-01), doi:10.3389/fpubh.2017.00258.">Shaffer and Ginsberg, 2017</a>]</span>. Measures of sweating, skin moisture, or electrodermal activity reflect sudomotor activation and the potential for evaporative heat loss <span id="id6">[<a class="reference internal" href="../references/index.html#id11" title="Wolfram Boucsein. Electrodermal Activity. Springer US, Boston, MA, 2012. ISBN 978-1-4614-1125-3 978-1-4614-1126-0. URL: https://link.springer.com/10.1007/978-1-4614-1126-0 (visited on 2026-03-01), doi:10.1007/978-1-4614-1126-0.">Boucsein, 2012</a>, <a class="reference internal" href="../references/index.html#id17" title="E. R. Nadel, J. W. Mitchell, B. Saltin, and J. A. Stolwijk. Peripheral modifications to the central drive for sweating. Journal of Applied Physiology, 31(6):828–833, December 1971. URL: https://www.physiology.org/doi/10.1152/jappl.1971.31.6.828 (visited on 2026-03-01), doi:10.1152/jappl.1971.31.6.828.">Nadel <em>et al.</em>, 1971</a>, <a class="reference internal" href="../references/index.html#id10" title="M.J. Patterson, J.D. Cotter, and N.A.S. Taylor. Human sudomotor responses to heating and cooling upper‐body skin surfaces: cutaneous thermal sensitivity. Acta Physiologica Scandinavica, 163(3):289–296, June 1998. URL: https://onlinelibrary.wiley.com/doi/10.1046/j.1365-201x.1998.00379.x (visited on 2026-03-01), doi:10.1046/j.1365-201x.1998.00379.x.">Patterson <em>et al.</em>, 1998</a>, <a class="reference internal" href="../references/index.html#id12" title="L. A. Stephenson, C. B. Wenger, B. H. O'Donovan, and E. R. Nadel. Circadian rhythm in sweating and cutaneous blood flow. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 246(3):R321–R324, March 1984. URL: https://www.physiology.org/doi/10.1152/ajpregu.1984.246.3.R321 (visited on 2026-03-01), doi:10.1152/ajpregu.1984.246.3.R321.">Stephenson <em>et al.</em>, 1984</a>]</span>. These variables are not redundant; each contributes a distinct but complementary perspective on the same thermoregulatory episode.</p>
-<p>This paper therefore serves three aims:
-i. to summarise the physiological meaning and standard measurement approaches of each variable;
-ii. to identify participant, environmental, and procedural factors that modify these signals and should be documented for proper interpretation; and
-iii. to outline common preprocessing and feature-extraction steps that enable comparability between studies. The purpose is not to prescribe new standards, but to re-articulate the established physiological basis of these measures within the methodological reality of building research.</p>
-<p>The scope focuses on healthy adults under sedentary or light-activity conditions typical of buildings and similar environments. Evidence from exercise, clinical, and chronobiological studies is referenced where it clarifies mechanisms that also govern resting or mild-activity thermoregulation. Each section translates these mechanisms into practical guidance for experimental design for the experiments for the built environment; emphasizing how choices in sensor type, body site, timing, and data treatment shape the resulting signal.</p>
-<p>Finally, because thermoregulation is inherently multi-systemic, many studies interpret it through several concurrent variables. A synthesis section therefore outlines how these indicators can be combined to describe the same physiological episode from complementary perspectives. The remainder of the paper is organised as follows: Section 2 presents, for each physiological signal, its mechanistic meaning (<em>why</em>), sensor options (<em>how</em>), and typical body sites (<em>where</em>), along with relevant modifiers and data-handling practices. Section 3 summarises common composite metrics and interpretive frameworks, and Section 4 discusses implications for documentation and comparability across research domains.</p>
+<p>Physiological measurements describe how the human body responds to its thermal environment. They translate the abstract language of building conditions — air temperature, radiant heat, humidity, air movement — into the biological processes that determine whether a space supports health, performance, and well-being. A century of thermophysiology research has produced precise methods for measuring these processes: what sensors to use, where on the body to place them, how to calibrate and process the signals, and how to interpret the results. That knowledge exists. The problem is that it is scattered across disciplines — thermophysiology, sports science, psychophysiology, chronobiology, clinical monitoring — and is not consistently applied in building research.</p>
+<p>This resource exists to bridge that gap.</p>
+<section id="what-this-resource-is">
+<h2>What this resource is<a class="headerlink" href="#what-this-resource-is" title="Link to this heading">#</a></h2>
+<p><strong>Why We Measure What We Measure</strong> is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.</p>
+<p>The resource documents five commonly used physiological signals:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../physiological-signals/core-body-temperature.html"><span class="doc std std-doc">Core body temperature</span></a></p></li>
+<li><p><a class="reference internal" href="../physiological-signals/skin-temperature.html"><span class="doc std std-doc">Skin temperature</span></a></p></li>
+<li><p><a class="reference internal" href="../physiological-signals/heart-rate-and-heart-rate-variability.html"><span class="doc std std-doc">Heart rate and heart rate variability</span></a></p></li>
+<li><p><a class="reference internal" href="../physiological-signals/blood-pressure.html"><span class="doc std std-doc">Blood pressure</span></a></p></li>
+<li><p><a class="reference internal" href="../physiological-signals/sweat-skin-moisture-and-skin-conductance.html"><span class="doc std std-doc">Sweat, skin moisture, and skin conductance</span></a></p></li>
+</ul>
+<p>For each signal, the same six-layer template is applied: <em>why</em> we measure it (mechanistic rationale), <em>how</em> it is measured (sensing principles and technologies), <em>where</em> on the body it is measured (anatomical site considerations), <em>how well</em> different methods agree (cross-method validation), <em>what else shapes it</em> (confounders and modifiers), and <em>how raw data become reported outcomes</em> (data handling and processing).</p>
+<p>Beyond the signal chapters, the resource provides:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../terminological-alignment/index.html"><span class="doc std std-doc">Terminological alignment</span></a> — a harmonised notation table, standardisation challenges in derived metrics, an anatomical reference taxonomy, and a controlled vocabulary and glossary</p></li>
+<li><p><a class="reference internal" href="../sample-checklists-schemas/index.html"><span class="doc std std-doc">Sample checklists and schemas</span></a> — structured metadata templates at the experiment, participant, and session level</p></li>
+</ul>
+</section>
+<section id="why-this-resource-exists">
+<h2>Why this resource exists<a class="headerlink" href="#why-this-resource-exists" title="Link to this heading">#</a></h2>
+<p>Building science and indoor environmental research have increasingly incorporated physiological measurements over the past decade. Advances in wearable sensing have made it practical to monitor core temperature, heart rate variability, skin conductance, and skin temperature in sedentary participants over long durations. But as the number of studies has grown, so has the heterogeneity of how those measurements are made, described, and reported.</p>
+<p>The same variable — mean skin temperature, say, or heart rate variability — can mean different things depending on how many body sites were used, which formula was applied, which sensor was chosen, and which preprocessing steps were taken. When these decisions are not documented, studies that appear to measure the same thing cannot reliably be compared or combined.</p>
+<p>This heterogeneity has three layers:</p>
+<p><strong>Interpretive fragmentation</strong> — physiological signals are selected and described without an explicit connection to the thermoregulatory mechanism they are supposed to represent. Heart rate goes up in a warm room: is that a marker of cardiovascular strain, autonomic adjustment, dehydration, or postural change? Without a stated mechanistic rationale, the measurement is ambiguous.</p>
+<p><strong>Measurement fragmentation</strong> — different sensing technologies target related but non-identical constructs. ECG-derived and PPG-derived heart rate variability are not interchangeable under thermal stress. Rectal and tympanic temperature track the same biological quantity but respond at different speeds. These distinctions are well understood within their source disciplines but are not always carried into building research.</p>
+<p><strong>Descriptive fragmentation</strong> — terminology, anatomical site names, and variable notation vary across publications. The same body location may be called ‘chest’, ‘sternum’, ‘thorax’, or ‘pectoral region’. HRV indices are reported in different units with different preprocessing pipelines. Mean skin temperature formulas from three-site to seventeen-site variants are used without specifying which.</p>
+<p>These three layers compound each other. A signal selected without mechanistic clarity, measured with an undocumented device, and described with inconsistent terminology is very difficult to interpret or reuse. This is not a problem of bad science — most studies are individually rigorous. It is a problem of missing connective tissue: the shared language and documentation practices that allow individual studies to accumulate into population-level evidence.</p>
+</section>
+<section id="what-this-resource-does-not-do">
+<h2>What this resource does not do<a class="headerlink" href="#what-this-resource-does-not-do" title="Link to this heading">#</a></h2>
+<p>This resource does not prescribe a single correct method for any measurement. It does not tell you which sensor to buy or which formula to use. It documents the options, their properties, their limits of agreement, and the decisions that need to be made and reported.</p>
+<p>It also does not replace the existing standards that govern individual measurements — ISO 9886, the IUPS Thermal Physiology Glossary, ISO 7726, the Task Force HRV guidelines <span id="id1">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>, <a class="reference internal" href="../references/index.html#id533" title="IUPS Thermal Commission. Glossary of terms for thermal physiology: third edition. The Japanese Journal of Physiology, 51(2):245–280, 2001.">IUPS Thermal Commission, 2001</a>, <a class="reference internal" href="../references/index.html#id536" title="ISO. Iso 7726: 1998 ergonomics of the thermal environment – instruments for measuring physical quantities. 1998.">ISO, 1998</a>, <a class="reference internal" href="../references/index.html#id247" title="Task Force Of The European Society Of Cardiology The North A Electrophysiology. Heart Rate Variability: Standards of Measurement, Physiological Interpretation, and Clinical Use. Circulation, 93(5):1043–1065, March 1996. URL: https://www.ahajournals.org/doi/10.1161/01.CIR.93.5.1043 (visited on 2026-03-01), doi:10.1161/01.CIR.93.5.1043.">Electrophysiology, 1996</a>]</span> — but complements them by assembling their methodological knowledge in one place, in the context of sedentary indoor experiments.</p>
+<p>The current scope is intentionally bounded: <strong>healthy adults, sedentary or light-activity conditions, controlled or semi-controlled indoor environments</strong>. Field studies, exercise physiology, clinical populations, and outdoor exposures involve additional considerations that will be addressed in future versions.</p>
+</section>
+<section id="how-to-use-this-resource">
+<h2>How to use this resource<a class="headerlink" href="#how-to-use-this-resource" title="Link to this heading">#</a></h2>
+<p><strong>If you are designing a new study</strong>, start with the signal chapters for the variables you plan to measure. The <em>Why</em> section will help you connect your measurement choice to your research question. The <em>Confounders and modifiers</em> section will tell you which participant characteristics to screen for and document. The <em>Data handling</em> section will tell you what preprocessing decisions to make explicit. The <a class="reference internal" href="../sample-checklists-schemas/index.html"><span class="doc std std-doc">sample schemas</span></a> give you a ready-made documentation structure.</p>
+<p><strong>If you are reporting or writing up a study</strong>, the <a class="reference internal" href="../terminological-alignment/symbolic-notation-and-variable-conventions.html"><span class="doc std std-doc">notation table</span></a> and <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html"><span class="doc std std-doc">glossary</span></a> will help you use consistent terminology. The <a class="reference internal" href="../terminological-alignment/anatomical-reference-taxonomy.html"><span class="doc std std-doc">anatomical taxonomy</span></a> provides standard site names. The <a class="reference internal" href="../terminological-alignment/standardization-challenges-in-derived-metrics.html"><span class="doc std std-doc">derived metrics chapter</span></a> documents which MST formulas and mean body temperature weightings have been used historically, so you can report yours in context.</p>
+<p><strong>If you are reviewing a paper or building a meta-analysis</strong>, the agreeability sections and the empirical metadata analysis in the accompanying paper describe what is typically documented and what is typically missing, giving you a basis for systematic quality assessment.</p>
+</section>
+<section id="how-this-resource-is-maintained">
+<h2>How this resource is maintained<a class="headerlink" href="#how-this-resource-is-maintained" title="Link to this heading">#</a></h2>
+<p>The resource is maintained as a living document: it will be updated as sensing technologies develop, as new evidence on modifier effects becomes available, and as community contributions expand its scope. Changes are tracked through the project repository so that earlier versions remain accessible. When significant revisions occur, a new version identifier is assigned.</p>
+<p>If you use this resource in published work, please cite the specific version to ensure that your methods can be linked to a stable reference. Citation guidance is available <a class="reference internal" href="../contribution/how-to-cite.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>Contributions are welcome. See <a class="reference internal" href="../contribution/how-to-contribute.html"><span class="doc std std-doc">how to contribute</span></a> for guidance on proposing additions, corrections, or new content.</p>
+</section>
+<section id="about-this-resource">
+<h2>About this resource<a class="headerlink" href="#about-this-resource" title="Link to this heading">#</a></h2>
+<p>This resource was developed at the Chair of Building Technology and Climate Responsive Design, Technical University of Munich. It accompanies a peer-reviewed methods paper that describes the framework in detail, provides empirical evidence for the fragmentation problem from a metadata analysis of 250 indoor thermal physiology studies, and positions the resource within the broader landscape of reproducibility infrastructure in environmental research.</p>
+<p>The underlying literature corpus integrates 535 publications spanning thermophysiology, psychophysiology, sports and exercise science, chronobiology, clinical monitoring, and indoor environmental research. Priority was given to meta-analyses, systematic reviews, international standards, and methodological position papers.</p>
+<p>The resource is published under an open licence. Version history and contribution records are maintained at <a class="reference external" href="https://github.com/bilgekobas/XXX">GitHub</a>. The version corresponding to the accompanying publication is archived at Zenodo (DOI: 10.xxxx/zenodo.xxxxx).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -405,12 +464,12 @@ iii. to outline common preprocessing and feature-extraction steps that enable co
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../foreword/index.html"
+       href="../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">FOREWORD</p>
+        <p class="prev-next-title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
       </div>
     </a>
     <a class="right-next"
@@ -428,6 +487,26 @@ iii. to outline common preprocessing and feature-extraction steps that enable co
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-resource-is">What this resource is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-resource-exists">Why this resource exists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-resource-does-not-do">What this resource does not do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-resource">How to use this resource</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-resource-is-maintained">How this resource is maintained</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-resource">About this resource</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

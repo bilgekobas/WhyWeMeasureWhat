@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -59,7 +59,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/terminological-alignment/symbolic-notation-and-variable-conventions';</script>
-    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Standardization challenges in derived metrics" href="standardization-challenges-in-derived-metrics.html" />
@@ -176,7 +176,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
@@ -198,12 +197,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
@@ -426,7 +426,7 @@ document.write(`
 <td><p>Temperature gradients</p></td>
 <td><p>°C, K</p></td>
 <td><p>ΔT<sub>core–skin</sub>, ΔT<sub>neck–ankle</sub>, ΔT<sub>prox–dist</sub>, DPG</p></td>
-<td><p>Distal–proximal gradient widely used in thermoregulation studies</p></td>
+<td><p><a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-distal-proximal-gradient"><span class="std std-ref">Distal–proximal gradient</span></a> widely used in <a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-thermoregulation"><span class="std std-ref">thermoregulation</span></a> studies</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Sweat / skin moisture</strong></p></td>
 <td><p>Local sweat rate</p></td>
@@ -453,13 +453,13 @@ document.write(`
 <td><p>EDA preferred umbrella term; GSR considered outdated</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p>Tonic component</p></td>
+<td><p><a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-tonic"><span class="std std-ref">Tonic</span></a> component</p></td>
 <td><p>µS, mS</p></td>
 <td><p>SCL</p></td>
-<td><p>Skin conductance level (baseline component)</p></td>
+<td><p>Skin conductance level (<a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-baseline"><span class="std std-ref">baseline</span></a> component)</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p>Phasic component</p></td>
+<td><p><a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-phasic"><span class="std std-ref">Phasic</span></a> component</p></td>
 <td><p>µS</p></td>
 <td><p>SCR</p></td>
 <td><p>Skin conductance response (transient responses)</p></td>
@@ -489,7 +489,7 @@ document.write(`
 <td><p>Clinical standard DBP</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p>Mean arterial pressure</p></td>
+<td><p>Mean <a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-arterial-pressure"><span class="std std-ref">arterial pressure</span></a></p></td>
 <td><p>mmHg</p></td>
 <td><p>MAP, P<sub>m</sub></p></td>
 <td><p>Often approximated from SBP and DBP</p></td>
@@ -501,7 +501,7 @@ document.write(`
 <td><p>—</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p>Cardiac output</p></td>
+<td><p><a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-cardiac-output"><span class="std std-ref">Cardiac output</span></a></p></td>
 <td><p>L·min<sup>−1</sup></p></td>
 <td><p>CO, Q̇</p></td>
 <td><p>CO most common in clinical literature</p></td>
@@ -567,7 +567,7 @@ document.write(`
 <td><p>RER short-term; RQ steady-state metabolic ratio</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p>Heat storage</p></td>
+<td><p><a class="reference internal" href="controlled-vocabulary-and-glossary.html#label-heat-storage"><span class="std std-ref">Heat storage</span></a></p></td>
 <td><p>kJ·kg<sup>−1</sup>, W</p></td>
 <td><p>S</p></td>
 <td><p>Represents change in body heat content</p></td>

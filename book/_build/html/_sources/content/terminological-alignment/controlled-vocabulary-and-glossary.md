@@ -1,6 +1,10 @@
 # Controlled vocabulary and glossary
 
-This glossary focuses on physiological measurements and related methodological terminology used in thermal-environment research. It does not attempt to reproduce established built-environment terminology for environmental variables such as air temperature, operative temperature, or relative humidity, which are already well standardized elsewhere. Instead, it concentrates on terms that are used inconsistently across thermal physiology, environmental ergonomics, and measurement practice, especially where site, method, or derivation substantially affect interpretation.
+This glossary focuses on physiological measurements and related methodological terminology used in thermal-environment research. It does not attempt to reproduce established built-environment terminology for environmental variables such as air temperature, operative temperature, or relative humidity, which are already well standardized elsewhere (e.g., ISO 7726 for physical environmental measurements, ISO 7730 for thermal comfort, and ISO 8996 for metabolic rate determination) {cite}`ISO7726, ISO7730, ISO8996`. Instead, it concentrates on terms that are used inconsistently across thermal physiology, environmental ergonomics, and measurement practice, especially where site, method, or derivation substantially affect interpretation.
+
+A number of established glossaries, standards, and terminological frameworks already provide comprehensive definitions across related domains. In thermal physiology, the *IUPS Glossary of Terms for Thermal Physiology* remains the primary reference for core concepts, symbols, and the heat-balance framework, with the explicit aim of improving precision and uniformity in terminology {cite}`IUPSThermalCommission2001, BlighJohnson1973`. In biometeorology and human–environment interaction, the *International Society of Biometeorology (ISB) glossary* offers an interdisciplinary vocabulary linking physiological, meteorological, and epidemiological concepts, and directs readers to standards such as ISO 9886 for physiological measurements of thermal strain {cite}`ISBGlossary, noauthor_iso_2004`. For meteorological variables and atmospheric terminology, the *American Meteorological Society (AMS) Glossary of Meteorology* provides authoritative definitions, while epidemiological terms are covered in sources such as *A Dictionary of Epidemiology* and classification systems such as the *International Classification of Diseases (ICD)* {cite}`AMSGlossary, Porta2026, ICD`. More general scientific and psychological constructs (e.g., perception, stress, adaptation) are defined in domain-specific dictionaries such as the *APA Dictionary of Psychology* {cite}`APADictionary`. In addition, formal ontologies and unit systems (e.g., QUDT) provide machine-readable representations of quantities, units, and dimensions for data standardization {cite}`QUDT`.
+
+The present glossary does not aim to replicate or systematically extend these existing resources. Rather, it selectively introduces and clarifies terms as they are used within this document, with the primary goal of supporting readability and interpretability. The emphasis is therefore on terms whose meaning depends on measurement protocol, anatomical site, instrumentation, data processing, or reporting conventions, particularly in experimental and field studies of human thermal physiology. Where established definitions exist, these are followed in principle and readers are directed to the original sources for full definitions and formal standardization. The glossary thus functions as a context-specific, measurement-oriented vocabulary that complements, rather than replaces, existing standards and glossaries.
 
 This glossary is organized alphabetically. Use the search field below to filter entries.
 
@@ -16,7 +20,7 @@ This glossary is organized alphabetically. Use the search field below to filter 
 <datalist id="glossary-suggestions"></datalist>
 
 <button id="back-to-top" class="back-to-top" title="Back to top">
-  ↑ Top
+  ↑
 </button>
 ```
 ---
@@ -85,7 +89,7 @@ Interpretation should specify how acrophase is estimated and over what observati
 :::{dropdown} Adaptation
 
 **Definition**  
-Changes that reduce the physiological strain produced by environmental stressors; these changes may be phenotypic or genotypic.
+Changes that reduce the physiological strain produced by environmental stressors; these changes may be phenotypic (occuring within the lifetime of the organism) or genotypic (by genetic selection).
 
 **Why it matters**  
 The term is broader than most experimental studies intend, and unqualified use can obscure whether changes are short-term or long-term.
@@ -1762,7 +1766,7 @@ Thermogenesis contributes to maintaining core temperature and overall thermal ba
 Thermogenesis can be classified into shivering thermogenesis (involuntary muscle activity) and non-shivering thermogenesis (primarily mediated by brown adipose tissue and hormonal pathways). It is influenced by factors such as ambient temperature, nutrition, circadian timing, and hormonal state.
 
 **Related concepts**  
-{ref}`thermoregulation`; {ref}`metabolic-rate`; {ref}`brown-adipose-tissue`; {ref}`shivering`; {ref}`hormonal-modulation`
+{ref}`Thermoregulation <label-thermoregulation>`; metabolic rate; brown adipose tissue; shivering; {ref}`Hormonal modulation <label-hormonal-modulation>`
 
 :::
 
@@ -1939,7 +1943,7 @@ Distal extremities are especially sensitive to vasoconstrictor control, which ma
 :::
 
 (label-vasodilation)=
-:::{dropdown} Vasodilation (active and passive)
+:::{dropdown} Vasodilation
 
 **Definition**  
 An increase in vessel diameter that increases local blood flow; in thermal physiology, this may arise from active neural mechanisms or passive vascular responses.
@@ -1996,5 +2000,3 @@ Reporting should state condition order, washout or recovery provisions, and how 
 {ref}`Cross-over design <label-cross-over-design>`; {ref}`Parallel design <label-parallel-design>`
 
 :::
-
----

@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=8bf623af" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -59,7 +59,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/sample-checklists-schemas/experiment-level-metadata';</script>
-    <script src="../../_static/glossary-search.js?v=bc0302f9"></script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Participant-level metadata" href="participant-level-metadata.html" />
@@ -176,7 +176,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foreword/index.html">FOREWORD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
@@ -198,12 +197,13 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Experiment-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="participant-level-metadata.html">Participant-level metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribution/list-of-contributors.html">List of contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
@@ -366,10 +366,10 @@ document.write(`
 <p>To make the schema easier to reuse across different laboratories and study types, fields are grouped by topic and are assigned to three informal tiers:</p>
 <ul class="simple">
 <li><p><u>Tier 1 – Core experiment descriptors:</u> Essential information needed to interpret or reuse a study, including experiment identifiers, institutional affiliation, ethics approval, study design and environment, recruitment window, and the main exposure/intervention categories.</p></li>
-<li><p><u>Tier 2 – Recommended descriptors:</u> Information that improves reproducibility and interpretability but may not always be available, such as randomisation method, blinding, standardised behavioural instructions, number and naming of conditions, and detailed environmental or HVAC descriptions.</p></li>
+<li><p><u>Tier 2 – Recommended descriptors:</u> Information that improves reproducibility and interpretability but may not always be available, such as randomisation method, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-blinding"><span class="std std-ref">blinding</span></a>, standardised behavioural instructions, number and naming of conditions, and detailed environmental or HVAC descriptions.</p></li>
 <li><p><u>Tier 3 – Specialised descriptors:</u> More specific contextual information that is useful for certain study types or advanced meta-analyses, including room geometry, calibration summaries, or detailed equipment notes. These fields are optional but help achieve FAIR-level documentation when available.</p></li>
 </ul>
-<p>To aid cross-study comparison, we also include a concise PICOT summary for each experiment. PICOT provides a high-level, non-redundant synopsis of the Population, Intervention, Comparison, Outcomes, and Time frame, complementing (but not duplicating) the detailed metadata fields.</p>
+<p>To aid cross-study comparison, we also include a concise <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-picot"><span class="std std-ref">PICOT</span></a> summary for each experiment. PICOT provides a high-level, non-redundant synopsis of the Population, Intervention, Comparison, Outcomes, and Time frame, complementing (but not duplicating) the detailed metadata fields.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-experiment-metadata">
 <caption><span class="caption-number">Table 12 </span><span class="caption-text">Experiment-level metadata schema, organised by group and tier.</span><a class="headerlink" href="#tab-experiment-metadata" title="Link to this table">#</a></caption>
 <thead>
@@ -532,7 +532,7 @@ document.write(`
 <td><p>—</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Study population</strong></p></td>
-<td><p>Target sample size</p></td>
+<td><p>Target <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-sample-size"><span class="std std-ref">sample size</span></a></p></td>
 <td><p>1</p></td>
 <td><p>Integer</p></td>
 <td><p>—</p></td>
@@ -640,7 +640,7 @@ document.write(`
 <td><p>—</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p>Baseline environmental control</p></td>
+<td><p><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-baseline"><span class="std std-ref">Baseline</span></a> environmental control</p></td>
 <td><p>1</p></td>
 <td><p>Air temperature, radiant temperature, humidity, lighting ranges</p></td>
 <td><p>Multiple allowed</p></td>
@@ -648,14 +648,14 @@ document.write(`
 <tr class="row-even"><td><p></p></td>
 <td><p>Primary instruments used</p></td>
 <td><p>1</p></td>
-<td><p>Names + IDs</p></td>
-<td><p>Linked to external Sensors table if available</p></td>
+<td><p>List of Device IDs (e.g. TMP-01, TMP-02, ECG-A)</p></td>
+<td><p>Foreign keys to devices.tsv (Device Registry); full specifications recorded there</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p>Instrument calibration notes</p></td>
-<td><p>3</p></td>
-<td><p>Summary + links to logs</p></td>
-<td><p>Linked to external Sensors table if available</p></td>
+<td><p>Calibration reference</p></td>
+<td><p>2</p></td>
+<td><p>Link to calibration log entries for this study</p></td>
+<td><p>Foreign key to calibrations.tsv; replaces free-text calibration notes</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>PICOT summary</strong></p></td>
 <td><p>P – Population</p></td>
@@ -667,7 +667,7 @@ document.write(`
 <td><p>I – Intervention / exposure</p></td>
 <td><p>1</p></td>
 <td><p>Summary of main exposure(s) or experimental condition(s)</p></td>
-<td><p>“14-day heat acclimation: AC at 26 °C vs free-running apartment (summer conditions)”</p></td>
+<td><p>“14-day heat <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acclimation"><span class="std std-ref">acclimation</span></a>: AC at 26 °C vs free-running apartment (summer conditions)”</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
 <td><p>C – Comparison / control conditions</p></td>
@@ -683,15 +683,39 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p></p></td>
 <td><p>O – Secondary outcomes</p></td>
-<td><p>2</p></td>
+<td><p>1</p></td>
 <td><p>Additional exploratory endpoints</p></td>
-<td><p>“Sleep onset latency, actigraphy-based sleep efficiency, melatonin AUC”</p></td>
+<td><p>“Sleep <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-onset"><span class="std std-ref">onset</span></a> latency, actigraphy-based sleep efficiency, melatonin AUC”</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
 <td><p>T – Time frame</p></td>
 <td><p>1</p></td>
 <td><p>Time horizon for effect and measurement</p></td>
 <td><p>“Pre–post mild heat-stress test before and after 14-day exposure; tests between 09:00–16:00”</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Data availability</strong></p></td>
+<td><p>Data repository</p></td>
+<td><p>1</p></td>
+<td><p>OSF / Zenodo / Figshare / institutional repository / none</p></td>
+<td><p>Where the dataset will be or is deposited</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Dataset DOI / link</p></td>
+<td><p>1</p></td>
+<td><p>URL or DOI; “in preparation” if not yet available</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Data access conditions</p></td>
+<td><p>1</p></td>
+<td><p>Open / Restricted / Embargoed (with date) / Available on request</p></td>
+<td><p>“Available on request” alone is insufficient for reproducibility; prefer open or restricted with documented process</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Metadata availability</p></td>
+<td><p>1</p></td>
+<td><p>Whether structured metadata (this schema) is shared independently of raw data</p></td>
+<td><p>Metadata can often be shared even when raw data cannot</p></td>
 </tr>
 </tbody>
 </table>

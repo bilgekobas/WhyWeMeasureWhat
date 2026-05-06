@@ -1,0 +1,458 @@
+# Heart rate and heart rate variability
+
+
+
+
+### Why: the mechanistic reasons behind the measurement
+
+
+
+Heart rate (HR) is a primary indicator of the cardiovascular workload required to support metabolic demands and heat exchange. In resting humans, HR reflects the balance of sympathetic and parasympathetic outflow to the sinoatrial node, with vagal influences predominating under sedentary conditions \[273,274\]. When the body is exposed to heat, this balance shifts markedly. Cutaneous vasodilation, required to transfer heat from the core to the skin, reduces total peripheral resistance, compelling the cardiovascular system to increase cardiac output to maintain arterial pressure \[275,276\]. In healthy adults under passive heat stress, this increase in cardiac output is achieved primarily by raising HR rather than through substantial changes in stroke volume \[277–280\]. Classic invasive studies demonstrate an approximately linear relationship between internal temperature and HR, typically showing increases of ~7 beats·min⁻¹ per 1 °C rise in core temperature \[280,281\], making HR a direct marker of combined thermal and circulatory strain.
+
+
+
+Even in thermoneutral indoor environments, modest shifts in air temperature, mean radiant temperature, posture, or arousal elicit measurable autonomic adjustments that alter HR \[282,283\]. Thus, HR functions as a continuous index of the chronotropic effort required to stabilise blood pressure while simultaneously supporting thermoregulation. When paired with core and skin temperatures, HR helps distinguish equivalent thermal states that are reached through different cardiovascular costs across individuals, times of day, or exposure histories.
+
+
+
+Heart rate variability (HRV) quantifies the pattern and magnitude of beat-to-beat fluctuations around this mean rate. These fluctuations arise from baroreflex activity, respiratory sinus arrhythmia, vasomotor oscillations, and higher-order central autonomic regulation \[9,282,284\]. High resting HRV is associated with adaptive autonomic flexibility and strong vagal influence, whereas chronically reduced HRV reflects diminished baroreflex gain, reduced autonomic complexity, and elevated allostatic load \[283,285\].
+
+
+
+HRV analysis is useful in thermal-environment studies because thermoregulation imposes rapid shifts in both sympathetic and parasympathetic outflow. Heat exposure usually induces withdrawal of vagal (parasympathetic) influence, leading to reductions in vagally mediated HRV indices, particularly in the high-frequency (HF) range linked to respiratory sinus arrhythmia: mean HR rises, HF-HRV decreases, and LF and LF/HF frequently increase \[286–289\]. At the same time, moderate to pronounced heat stress is a strong sympathoexcitatory stimulus, increasing indices such as muscle sympathetic nerve activity \[286,290–293\]. Together, these shifts alter time-domain and spectral HRV measures and can reveal how much autonomic effort is required to sustain thermal homeostasis.
+
+
+
+Some frequency components of HRV have particular relevance for thermoregulation. Very-low-frequency (VLF) oscillations (~0.003–0.04 Hz) have been linked to slow thermoregulatory and vasomotor processes, including modulation of peripheral arterial tone \[284,294–297\]. This band likely reflects a mixture of mechanisms, but changes in VLF power during or after thermal perturbations can be informative about longer-timescale adjustments in vascular and thermal control. The HF band (~0.15–0.4 Hz) predominantly indexes short-latency vagal modulation and is sensitive to both respiratory pattern and heat-induced vagal withdrawal. The LF band (~0.04–0.15 Hz) reflects combined baroreflex and autonomic influences; although its interpretation as a direct marker of “sympathetic activity” is debated \[298\], LF and LF/HF often change systematically with thermal load and can still serve as descriptive markers if interpreted cautiously \[299\].
+
+
+
+In the context of indoor-environment research, HR and HRV provide complementary views of how the cardiovascular and autonomic systems maintain thermal balance. HR quantifies the overall cardiovascular effort required under a given environmental load; HRV describes the organisation, flexibility, and *cost* of that effort. When combined with core and skin temperatures, blood pressure, and sweating responses, these signals enable researchers to characterise not only the thermal state itself but the physiological work required to achieve and sustain it.
+
+
+
+How: sensor types for measurement HR and HRV require a time series in which individual cardiac cycles can be identified with sufficient temporal precision to derive interbeat intervals. In practice, this is achieved via signals that capture either the electrical depolarisation of the heart (electrocardiography, ECG) or the peripheral pulse wave (photoplethysmography, PPG), as well as devices that embed these sensors in wearable formats.
+
+
+
+**Laboratory electrocardiography (ECG).** The reference method for HR and HRV is multi- or single-lead ECG, which records cardiac depolarisation directly from the thorax (Task Force of the ESC/NASPE, 1996; Berntson et al., 1997). Short-term HRV is typically derived from 3–12 leads sampled at ≥250–500 Hz to resolve R peaks with millisecond precision and avoid aliasing in the HF band \[273,300\]. For building-scale experiments, a single modified lead II or a 3-lead configuration is usually sufficient, provided that R-waves are clearly distinguishable from noise. Higher sampling (500–1000 Hz) improves timing accuracy for nonlinear indices and ectopic-beat editing \[274,301\]. Research-grade ECG systems provide full waveforms, enabling visual inspection, manual or semi-automated artefact correction, and standardised time- and frequency-domain analysis \[9,273\]. The trade-offs are higher setup burden, the need for skin preparation and electrodes, and potential discomfort during long protocols.
+
+
+
+**Holter monitors and ECG garments.** Holter recorders and ECG-integrated garments embed 1–3 leads in adhesive patches or textile electrodes and record continuously at 128–250 Hz over many hours \[302\]. These systems are well suited to field or day-long laboratory protocols where HR/HRV must be tracked across changing indoor environments. When electrode contact is stable and R-wave amplitude is adequate, standard HRV indices from Holter recordings closely match those from conventional ECG in resting or light-activity conditions \[303–305\]. Limitations include proprietary filtering pipelines, sometimes restricted access to raw ECG, and greater susceptibility to motion artefacts during free movement.
+
+
+
+**Chest-strap heart rate monitors (single-lead ECG).** Chest straps use two or more dry electrodes on an elastic band to record a single-lead ECG from the lower thorax. Validated models show near-identical R–R intervals and HRV indices compared with reference ECG at rest and during low-to-moderate exercise \[306,307\]. Under these conditions, chest straps can serve as practical substitutes for wired ECG in seated or recumbent indoor studies, provided they export true beat-to-beat intervals rather than smoothed HR traces \[273,301\]. Their main limitations are dependence on correct strap tension and positioning, occasional contact loss from sweat or very dry skin, and device-to-device variation in internal preprocessing \[306–309\].
+
+
+
+**Photoplethysmography (PPG).** PPG estimates HR from pulsatile changes in blood volume detected optically at the skin surface, typically at the finger pad or ear lobe \[284,310\]. Pulse-to-pulse intervals derived from these signals yield pulse-rate variability (PRV), which can approximate ECG-HRV at rest in healthy adults: studies report strong correlations and small mean differences for mean HR, SDNN, RMSSD and HF power under warm, well-perfused conditions \[310\]. However, PRV is more sensitive than ECG to local vasoconstriction, temperature-induced changes in perfusion, contact pressure, and movement \[311,312\]. Cooling the extremities, changing arm position, or applying pressure to the sensing site can distort pulse morphology or obscure beats, causing spurious variability or data loss \[310,312\]. In thermal-environment studies, these characteristics are particularly important: cooling of the extremities can reduce signal amplitude and distort interval estimates, while heating can change vascular tone and pulse transit time even if HRV at the heart remains unchanged. PRV should therefore be interpreted as a related but distinct signal, and its use for detailed frequency-domain HRV analyses, especially in protocols with large changes in local skin temperature, should be justified and ideally validated against ECG in a subset of participants.
+
+
+
+**Wrist- and finger-worn wearables.** Commercial wearables (watches, wristbands, smart rings) use reflectance PPG to estimate HR and, in some cases, HRV. Systematic reviews show that many devices estimate mean HR accurately at rest but display highly variable and often poor agreement for HRV metrics, especially LF, HF and LF/HF \[313,314\]. Finger-worn devices tend to outperform wrist wearables for nocturnal HR and HRV because of stronger pulsatile signals and reduced movement during sleep \[314–316\]. Nonetheless, most wearables: (i) do not provide raw interbeat intervals; (ii) use dynamic, sometimes sparse sampling schemes; and (iii) apply proprietary filtering and artefact rejection that are undocumented and can change with firmware updates \[313\]. As a result, wearable-derived indices are best treated as device-specific proxies of relative autonomic state (e.g. night-to-night changes in vagal tone) rather than as interchangeable replacements for ECG-based HRV in mechanistic thermal-physiology studies.
+
+
+
+**<span class="mark">Implications for experimental design.</span>** For mechanistic indoor-environment protocols where HRV is a primary outcome, research-grade ECG or validated chest-strap systems that output raw R–R intervals remain the preferred methods. PPG at finger or ear sites can be appropriate when electrical sensors are impractical, but its thermal sensitivity and site-specific artefacts must be considered in both design and analysis. Wrist and ring wearables can complement laboratory measurements for longer-term or field monitoring, but –unless device-specific validation is available– HRV metrics derived from them should be used cautiously and primarily for descriptive or exploratory purposes rather than as a basis for quantitative autonomic modelling.
+
+
+
+### Where: body sites of measurement
+
+
+
+The anatomical site chosen to measure HR and HRV determines the quality of the physiological signal, the stability of beat detection, and the extent to which thermal manipulations influence the underlying waveform. Because HRV depends on millisecond-level precision, the placement of electrodes or optical sensors must minimise motion artefact, preserve waveform morphology, and avoid regions where thermoregulatory vasoconstriction or vasodilation can distort interbeat intervals.
+
+
+
+**Thorax.** The anterior thorax is the most reliable site for capturing cardiac electrical activity, with consistently large and sharply defined R waves across individuals. Standard laboratory ECG positions electrodes along modified limb-lead vectors across the chest wall because this configuration maximises R-wave amplitude and minimises electromyographic interference \[273,274\]. Thoracic placements also allow full waveform inspection for artefact detection and ectopic beat correction \[282\]. Importantly for thermal studies, the thorax remains relatively stable in perfusion and skin temperature compared with peripheral sites, making it the preferred location for mechanistic HRV analysis.
+
+
+
+**Lower thorax.** Chest-strap ECG sensors position electrodes circumferentially around the lower thorax, below the pectoral muscles. This site provides a stable electrical vector with high R-wave amplitude, yielding R–R intervals that closely match those from wired ECG during rest and mild activity \[306,307\]. The lower thorax is less affected by distal vasomotor changes induced by heating or cooling, making this location robust during indoor thermal exposures. Signal quality, however, depends on consistent strap tension and uninterrupted skin contact.
+
+
+
+**Upper arm, flank, and rib cage.** Some adhesive ECG patches and ECG-integrated garments place electrodes along the upper arm, lateral thorax, or lower rib cage. These placements can produce interpretable cardiac vectors for estimating mean HR \[304\], but R-wave amplitudes are typically smaller and more susceptible to movement than anterior chest sites. Thermal fluctuations that alter skin adhesion, such as sweating, localised heating, drafts, also degrade electrode stability. As a result, limb-adjacent electrode placements are generally unsuitable for high-precision HRV, particularly for frequency-domain or nonlinear analyses requiring stable, artefact-free R–R intervals \[302\].
+
+
+
+**Fingertip.** Peripheral optical sensing introduces strong dependencies on local perfusion. Fingertip PPG is attractive because of its large pulsatile signal arising from the dense arteriolar network of the distal phalanx \[284,310\]. Under warm, well-perfused conditions, fingertip pulse-wave intervals correlate closely with ECG-derived R–R intervals. However, the fingertip is one of the first sites to undergo thermoregulatory vasoconstriction during cooling, substantially reducing pulse amplitude and distorting beat detection \[312\]. Even modest thermal asymmetry across the hands, for example from radiant panels or drafts, can produce differences in waveform clarity. Fingertip PPG therefore requires strict control of hand position and local exposure in thermal-environment studies.
+
+
+
+**Fingers.** Ring-based PPG sensors, positioned circumferentially at the base of the finger, offer more stable contact pressure and reduced motion relative to fingertip clips. These factors contribute to excellent nocturnal accuracy for both HR and HRV, with time-domain indices often approaching ECG agreement \[314,315\]. Yet, the ring site remains physiologically peripheral: acral vasoconstriction during cooling, or asymmetrical hand exposure to airflow or radiant sources, can markedly affect beat detectability. Thus, although finger rings outperform wrist devices for HRV, the site is still susceptible to thermal confounding and requires careful monitoring of local conditions.
+
+
+
+**Ear lobe.** The ear lobe provides a relatively well-perfused peripheral site with less thermal variability than the hands during mild cooling. PPG at the ear commonly retains adequate pulsatile amplitude even when finger signals deteriorate \[284\]. Because head movement is limited during seated exposures, ear-lobe PPG experiences fewer motion artefacts than wrist sensors. However, clip pressure can distort the waveform, and local heating or cooling of the head, such as radiant warmers or ventilation jets, may influence perfusion \[317\].
+
+
+
+**Wrist.** Wrist-mounted PPG sensors sit over the radial and ulnar artery beds, where pulsatile signals are smaller, more variable, and more sensitive to motion than at the finger or ear. Numerous validation studies report accurate mean HR at rest but substantial variability in HRV metrics across wrist devices, driven by a combination of low peripheral perfusion, strap-pressure differences, and device-specific preprocessing \[313,314\]. Wrist perfusion is also strongly influenced by thermoregulatory vasoconstriction, making HRV estimates particularly unreliable during cooling or asymmetric exposure \[310\]. Wrist placement is therefore suitable for broad HR monitoring in field studies, but not for precise HRV interpretation in controlled thermal experiments.
+
+
+
+### Agreeability across sensor types
+
+
+
+Agreement between HR and HRV estimates varies substantially across sensor modalities. Multi-lead ECG is the reference standard for beat detection and all HRV metrics, and most validation studies interpret device performance relative to short artefact-free ECG segments.
+
+
+
+Modern chest-strap monitors record a single ECG lead across the lower thorax and can reproduce RR intervals with very high fidelity. In controlled rest and orthostatic conditions, the Polar H10 or V800 shows extremely small bias and narrow limits of agreement, with ICC values above 0.99 for all standard HRV indices \[307\]. Similar accuracy has been reported for earlier Polar models such as the S810, S810i, RS800, and RS800CX, provided that identical software is used to derive HRV metrics \[306,308,309,318–322\]. These findings indicate that chest-strap ECG is largely interchangeable with laboratory ECG for HRV at rest, although electrode–skin contact and strap tension remain critical sources of noise.
+
+
+
+Peripheral PPG can approximate RR intervals when perfusion is stable. Several comparative studies show that fingertip or ear-lobe PPG produces HRV indices that correlate strongly with ECG under warm, motion-free conditions \[310,323,324\]. However, the PPG signal is strongly influenced by vasomotor tone: cold exposure, local vasoconstriction, or asymmetric radiant conditions degrade pulse amplitude and introduce jitter in beat-to-beat timing. As a result, mean HR remains accurate, but metrics sensitive to high-frequency variation, such as RMSSD, or HF power may deviate systematically from ECG estimates.
+
+
+
+Smartwatch PPG signals, recorded at the wrist, show good accuracy for mean HR at rest but highly variable HRV agreement across devices. Systematic evaluations report wide limits of agreement, with many devices showing large errors in RMSSD, LF, and HF during even mild movement or thermal perturbation \[313\]. Field validation studies consistently demonstrate that wrist PPG performance deteriorates under movement, mental workload, or low peripheral perfusion \[318,325–329\]. Because wrist perfusion is highly responsive to thermoregulatory vasoconstriction, HRV from these devices is not considered reliable in thermal-physiology contexts.
+
+
+
+Finger-ring PPG sensors offer more stable contact pressure and stronger pulsatile amplitude than wrist devices. Comparative wearable studies show that ring-based devices outperform wrist PPG for nocturnal HRV and approach chest-strap ECG accuracy for RMSSD and SDNN \[314–316,330\]. However, the finger remains a thermally labile site, and perfusion changes during cooling or airflow can still degrade PRV accuracy relative to ECG.
+
+
+
+A major source of disagreement across studies is not hardware but software. Several validation papers demonstrate that HRV values differ markedly across software packages, even when the <u>underlying RR intervals are identical</u>, due to differences in artifact detection, ectopic correction, detrending, windowing, and spectral estimation \[319,320,331\]. HRV metrics are therefore not interchangeable across software ecosystems, and agreement must be assessed using identical analysis pipelines (see more in [3.4.5](#data-handling-methods-3) [Data handling methods](#data-handling-methods-3)).
+
+
+
+Across all devices, a practical hierarchy emerges: Best agreement is between multi-lead ECG and chest-strap ECG, followed by fingertip and ear-lobe PPG under thermoneutral, stable conditions. Wrist-based PPG devices show variable to poor agreement, particularly for frequency-domain HRV. For thermal-physiology protocols, where peripheral perfusion can shift rapidly with temperature, radiant asymmetry, or airflow, ECG-based methods remain the preferred option for accurate HRV.
+
+
+
+### Known confounders and modifiers
+
+
+
+Heart rate and heart-rate variability are influenced by numerous physiological, behavioural, and environmental factors that act on overlapping time scales. Because HRV reflects the dynamic interplay of vagal and sympathetic outflow, and HR indexes net chronotropic demand, any factor that changes autonomic tone, baroreflex engagement, or peripheral perfusion can modulate these signals independently of thermal load. These modifiers must therefore be documented or controlled when HR/HRV are used to interpret thermoregulatory responses.
+
+
+
+**Circadian and behavioural influences.** Cardiac autonomic activity shows a robust 24-h rhythm: vagal modulation (HF power, RMSSD) is highest during nocturnal sleep, while daytime wakefulness is characterised by relatively greater sympathetic predominance and reduced overall variability \[284,332–335\]. Age-stratified population studies demonstrate that both HR and HRV exhibit clear diurnal patterns, with lowest resting HR and highest time-domain HRV parameters during the biological night, and progressive vagal withdrawal across the day \[303,336\]. Behavioural state strongly shapes these rhythms. Posture changes, spontaneous activity, cognitive load, and light exposure all shift sympathovagal balance: even low-level mental tasks or screen use can increase HR and reduce HF-HRV compared with quiet rest \[337,338\]. Sleep restriction, social/occupational stress, and circadian misalignment (e.g. late chronotype in early schedules) reduce night-time vagal dominance and dampen the amplitude of day–night HRV variation \[283,339,340\]. Thermal protocols that compare “morning” and “afternoon” sessions or involve prolonged daytime exposure should therefore consider circadian phase, prior sleep, and behavioural context as important covariates.
+
+
+
+**Sex.** Sex differences in HRV are well documented but depend strongly on age and hormonal status. Under resting, sedentary conditions, healthy women and men exhibit distinct heart rate variability (HRV) profiles; notably, women generally present with lower overall heart rate variability, as evidenced by a lower standard deviation of RR intervals (SD). However, the underlying autonomic balance differs between the sexes: women show a relative predominance of parasympathetic (vagal) modulation, while men display greater sympathetic dominance. This dynamic is clearly reflected in frequency-domain HRV measures, population studies show that women typically demonstrate lower low-frequency (LF) power, resulting in a lower LF/HF ratio than men, while absolute high-frequency (HF) power remains similar between the sexes \[303,341–343\]. These sex-related differences in autonomic HRV balance are heavily influenced by aging and reproductive state, with distinct variations in autonomic modulation observed as women transition through menopause \[344–346\].
+
+
+
+**Sex hormones and reproductive status.** Within women, menstrual-cycle–related variations in ovarian hormones modulate autonomic control. Experimental studies report enhanced vagal indices (HF, RMSSD) and lower LF/HF in oestrogen-dominant phases and greater sympathetic activity in the luteal phase, although effect sizes are small and not always consistent across metrics or protocols \[347–349\]. Detailed mapping of endogenous oestradiol, progesterone, FSH and LH across the cycle suggests that peak oestradiol is positively associated with absolute HRV power, supporting a cardioprotective, vagotonic effect of oestrogen \[346,350\].
+
+
+
+Interventional data reinforce this pattern: oestrogen replacement increases HRV and baroreflex sensitivity, whereas progesterone or combined oestrogen–progestin regimens can blunt vagal indices and shift LF/HF upward \[351,352\]. Oral contraceptives tend to flatten cyclical variation and modestly elevate resting HR, with subtle reductions in HF-HRV \[353–355\].
+
+
+
+**Age.** Ageing has a pronounced and measure-dependent impact on HR and HRV. Cross-sectional and cohort studies from healthy populations show a progressive decline in SDNN, RMSSD, pNN50, HF and LF power from early adulthood onward, with the steepest reductions occurring between the third and seventh decades of life \[303,333,336\]. These age-related changes reflect declining vagal tone, impaired baroreflex sensitivity, and structural changes in both the sinus node and vasculature \[356,357\]. Notably, older adults can exhibit HRV values that fall within the “high-risk” range for mortality even in the absence of overt disease \[303,358\]. Thermal studies therefore need to treat age as more than a descriptive characteristic: even in healthy cohorts, older groups will show reduced baseline HRV and potentially smaller autonomic responses to thermal perturbations, confounding comparisons if not accounted for.
+
+
+
+**Fitness.** Aerobic fitness is strongly associated with higher resting HRV and lower resting HR. Systematic reviews and training studies consistently demonstrate that moderate-to-vigorous endurance training increases vagally mediated indices (RMSSD, HF) and total power, while lowering resting HR in previously sedentary adults \[350,359–361\]. In older populations, long-term training and competitive endurance participation partly offset the age-related decline in HRV, yielding higher HF and LF power compared with sedentary peers \[360,362,363\].
+
+
+
+**Acclimation.** Heat acclimation interacts with fitness by expanding plasma volume, improving cutaneous vasodilatory capacity, and reducing the HR increase required to sustain cardiac output at a given thermal load \[275,364\]. Acclimated individuals thus display lower HR at a given core temperature and more stable HRV under heat stress compared to unacclimated controls. Without explicit information on training status and recent acclimation (e.g. season, occupational exposure, climate), HR/HRV responses to thermal stimuli are difficult to attribute solely to environmental conditions.
+
+
+
+**Body composition**. Body composition modifies autonomic regulation via altered metabolic load, inflammatory signalling, and haemodynamic demands. Increased body mass index and central adiposity are associated with elevated resting HR, reduced HF-HRV, and increased LF/HF ratio in otherwise healthy individuals, suggesting a shift toward sympathetic dominance \[365–367\]. Obesity often co-occurs with reduced physical activity and subclinical cardiometabolic disease, further depressing HRV and blunting autonomic responsiveness. When comparing HR and HRV during thermal exposures, differences in BMI and fat distribution (e.g. android vs gynoid) should be treated as potential confounders, particularly in small samples.
+
+
+
+**Hydration.** Hydration state critically influences cardiovascular control during heat stress. Classic physiological studies show that hypohydration of ~2 % body mass reduces stroke volume, elevates HR, and increases internal temperature thresholds for cutaneous vasodilation \[368\]. This combination increases cardiac strain and requires stronger sympathetic activation, reducing HRV even when environmental conditions are identical.
+
+
+
+**Food intake and stimulants.** Food intake and macro-nutrient composition also modulate autonomic outflow. Postprandial thermogenesis and splanchnic vasodilation elevate HR and transiently reduce HF-HRV. Caffeine and nicotine acutely increase sympathetic tone and HR, lowering RMSSD and HF \[283\]; alcohol has more complex, biphasic effects but is generally associated with lower short-term HRV in dependence and heavy use \[369\]. For resting thermal protocols, overnight fasting or standardised light meals and restrictions on caffeine, nicotine, and alcohol intake are therefore recommended.
+
+
+
+**Psychological load and psychopathology.** Psychological stress is one of the most powerful non-thermal modifiers of HRV. Acute mental stress, anxiety, and negative affect produce rapid vagal withdrawal, increases in HR, and reductions in HF and RMSSD, while often increasing LF/HF. Meta-analyses show robust associations between reduced resting HRV and a range of psychiatric conditions including anxiety disorders, depression, alcohol dependence, bipolar disorder, and schizophrenia \[370–377\]. These effects are amplified by psychotropic medications, particularly tricyclic antidepressants, some SSRIs/SNRIs, and antipsychotics, which further reduce HRV \[374\]. Because low HRV can signal chronic stress or psychopathology rather than thermal strain per se, thermal experiments should at minimum screen for major psychiatric diagnoses, heavy alcohol use, and ongoing psychotropic treatment, or interpret HRV data with these factors explicitly in mind.
+
+
+
+**Neurodivergent populations.** Neurodevelopmental conditions such as autism spectrum disorder (ASD) and attention-deficit/hyperactivity disorder (ADHD) are characterised by altered autonomic regulation, including atypical vagal tone, heightened sympathetic reactivity, and disrupted circadian patterns of HR and HRV \[375,378\]. Individuals with ASD often show reduced HF-HRV at rest and diminished autonomic flexibility during social and cognitive challenges \[379,380\], while ADHD is associated with delayed HR/HRV rhythms and greater day-to-day variability. These baseline differences may shape both the magnitude and interpretation of HRV responses under thermal load and warrant documentation in inclusive or neurodivergent samples.
+
+
+
+**Underlying medical conditions and medications**. Cardiometabolic and neurological diseases can profoundly depress HRV. Diabetes mellitus with cardiovascular autonomic neuropathy is associated with marked reductions in total power, HF, and time-domain indices, even after adjusting for age and disease duration \[381,382\]. Hypertension, coronary artery disease, and heart failure similarly reduce HRV and increase arrhythmic risk \[358,383\].
+
+
+
+Beyond disease, medications exert large and often directionally specific influences: β-blockers increase HF-HRV and reduce HR; anticholinergics blunt vagal modulation; some antidepressants and antipsychotics decrease HRV; and stimulants used for ADHD substantially elevate HR and LF/HF \[283,374\]. In many resting thermal protocols, the HRV effects of disease and medication exceed those of mild environmental heat or cold; careful screening and reporting are therefore essential.
+
+
+
+**Respiration.** Because HF-HRV largely reflects respiratory sinus arrhythmia, any factor that alters respiratory frequency or tidal volume will affect HRV estimates \[384,385\]. Speaking, sighing, mask-wearing, slumped posture, and emotional arousal can all change breathing patterns; controlled metronome breathing, while standardising frequency, can itself act as a mild stressor and shift autonomic balance \[302,386–388\]. Heat stress can modestly increase breathing rate, reducing HF power even without changes in autonomic drive \[389\]. Whenever HRV is used mechanistically, concurrent measurement or at least explicit consideration of respiration is recommended \[301\].
+
+
+
+**Measurement artefacts.** Finally, technical and preprocessing choices can generate “pseudo-variability” comparable in magnitude to physiological changes. Poor R-peak detection, motion artefacts, ectopic beats, missing data, and nonstationarity all distort time- and frequency-domain indices \[273,274,282,336\]. PPG-derived HRV is particularly sensitive to local vasoconstriction during cooling or airflow, which can degrade waveform quality and bias interval estimates \[313,314\].
+
+
+
+### Data handling methods
+
+
+
+The interpretability of HR and HRV in thermal-physiology experiments depends critically on rigorous data handling. Even small errors in beat detection or inconsistent preprocessing can obscure the relatively subtle autonomic changes typical of sedentary thermal exposures. Standard workflows therefore include (i) verifying sensor performance, (ii) cleaning RR intervals, and (iii) deriving a consistent set of indices using transparent and reproducible methods. As a well-established field outside thermophysiology, HRV research benefits from several methodological guidelines and reporting checklists \[9,390,391\].
+
+
+
+#### Sensor calibration
+
+
+
+PPG-based/optical sensors rely on local perfusion and cannot be “calibrated” against a physical standard; instead, suitability is established via brief local validation against ECG under identical conditions \[310,392\].
+
+
+
+#### Data cleaning and correction
+
+
+
+Data cleaning is a vital stage in HRV analysis, as raw signals frequently contain technical noise, motion artifacts, and physiological anomalies (such as ectopic beats or arrhythmias) that can cause significant over- or under-estimation of HRV parameters \[273,274,301,302,393\].
+
+
+
+**Visual inspection and artefact detection.** Raw ECG or PPG waveforms and the RR tachogram should be inspected for:
+
+
+
+- missed beats (single long RR ~2× local mean),
+
+
+
+- double detections (two short RR),
+
+
+
+- ectopic beats,
+
+
+
+- saturated/flat segments (PPG contact loss),
+
+
+
+- abrupt transients from movement.
+
+
+
+Although automatic filters exist, visual inspection of flagged segments remains necessary in research settings. Following the GRAPH guidelines for transparent HRV reporting \[391\], all preprocessing steps should be explicitly stated, including:
+
+
+
+- the algorithm used for R-peak detection,
+
+
+
+- criteria for identifying ectopic or artefactual beats,
+
+
+
+- whether manual inspection was performed,
+
+
+
+- beat-editing method (e.g., linear or cubic-spline interpolation),
+
+
+
+- the percentage of corrected or removed beats per segment and per participant.
+
+
+
+These elements are crucial because differences in artefact handling can generate variability comparable to physiological effects in short-term HRV.
+
+
+
+**Correction strategies.** Common correction rules include:
+
+
+
+- <u>Missed beat:</u> divide a long RR into two interpolated intervals \[394\].
+
+
+
+- <u>Double detection:</u> merge short intervals to approximate neighbouring RR.
+
+
+
+- <u>Isolated ectopic beats:</u> remove and replace with spline or linear interpolation \[273,302,393\]. Simply deleting intervals is highly discouraged (especially for spectral analysis) because it shortens the waveform, introduces step-like discontinuities, and creates false frequency components \[393,395\].
+
+
+
+Methods papers recommend reporting the percentage of corrected beats, and excluding segments where \>3–5% of intervals were corrected \[331,396–398\].
+
+
+
+**Segment selection and stationarity.** Short-term HRV is conventionally derived from 5-min stationary segments, particularly for LF and HF spectral indices \[273\]. Three-minute windows are sometimes used, especially for RMSSD or HF, but should be reported explicitly. For thermal protocols:
+
+
+
+- segment lengths must be identical across conditions,
+
+
+
+- transitions or posture changes are avoided,
+
+
+
+- segments represent thermally stable phases (e.g., final 5 min of baseline, mid-exposure).
+
+
+
+Time–frequency methods for nonstationary data exist (e.g., wavelets, adaptive Kalman smoother–based spectral estimation) \[341,399\], though these are generally unnecessary in stable, seated thermal exposures. Short-term HRV analysis should not be performed during the first minute following posture changes or sensor adjustment, and a period of acclimatization should precede the extraction of analysis windows to ensure signal stationarity \[273\].
+
+
+
+**Detrending, resampling, and preprocessing.** Before spectral analysis, non-equidistant RR series are detrended, artefact-corrected, and resampled (typically at 2–4 Hz) using cubic spline interpolation to create an equidistant time series. Simple polynomial detrending may be insufficient; the smoothness-priors detrending method acts as an advanced time-varying high-pass filter that effectively reduces slow drift and improves LF/HF estimates in short windows by removing VLF distortions reduces slow drift and improves LF/HF estimates in short windows \[394,400,401\].
+
+
+
+- Reporting should include:
+
+
+
+- detrending method,
+
+
+
+- interpolation method and resampling frequency,
+
+
+
+- spectral method (FFT vs autoregressive),
+
+
+
+- LF/HF normalisation (absolute vs normalised vs log-transformed),
+
+
+
+- software and version.
+
+
+
+The pipeline dependence of spectral HRV indices is well documented \[391,401,402\]. Explicit reporting of software and parameter settings is essential for reproducibility, because different toolchains and analytical choices can produce systematically different outputs for the exact same raw data.
+
+
+
+**Typical ranges.** Normative physiological ranges exhibit massive inter-individual variation and are heavily dependent on factors such as age, sex, and recording duration. In large-scale studies of healthy adults, common time-domain HRV indices show the following typical profiles:
+
+
+
+- <u>SDNN (Standard Deviation of NN intervals)</u> Depending on the specific age cohort, normal physiological limits for 24-hour recordings generally span from roughly 63 to 219 ms \[303\]. Other population samples report mean daytime SDNN values clustering broadly between 50 and 150 ms \[365\].
+
+
+
+- <u>RMSSD.</u> Mean values for resting healthy adults in short-term studies are frequently observed between 35 and 41 ms \[396\], while other cohorts report average night-time RMSSD values clustering between 20 and 60 ms \[365\].
+
+
+
+#### Derived parameters
+
+
+
+From the cleaned NN series, several HR and HRV parameters are derived. Their interpretation in thermoregulation depends on how autonomic outflow adapts to changes in skin blood flow, venous return, baroreflex engagement, and metabolic load.
+
+
+
+Time-domain indices:
+
+
+
+- <u>Mean HR / Mean NN</u>**.** Indicates total cardiovascular effort. HR rises in heat (cutaneous vasodilation reduces vascular resistance) and may decrease slightly in mild cooling.
+
+
+
+- <u>SDNN.</u> Reflects total variability, incorporating slow vasomotor and baroreflex rhythms. Often decreases under heat, may increase modestly in non-shivering cold.
+
+
+
+- <u>RMSSD *(primary vagal marker).*</u> Robust index of parasympathetic modulation. Decreases reliably in heat via vagal withdrawal; stable or slightly increased in mild cold. Most reliable HRV feature in wearable validation studies \[307,319\].
+
+
+
+- <u>pNN50.</u> Similar to RMSSD but noisier; less commonly interpreted.
+
+
+
+Frequency-domain indices:
+
+
+
+- <u>VLF (0.003–0.04 Hz).</u> Associated with slow thermoregulatory and vasomotor oscillations. Difficult to estimate reliably in 5-min recordings but often suppressed under heat and increased in mild peripheral cooling.
+
+
+
+- <u>LF (0.04–0.15 Hz).</u> Reflects baroreflex-mediated blood-pressure modulation. Often decreases in heat (reduced baroreflex gain), increases in cooling with stronger sympathetic vasoconstrictor oscillations.
+
+
+
+- <u>HF (0.15–0.4 Hz).</u> Respiratory sinus arrhythmia; vagally mediated. Decreases in heat, stable in mild cooling. Strongly dependent on breathing rate → breathing should be recorded or controlled.
+
+
+
+- <u>LF/HF ratio.</u> Sensitive to breathing, baroreflex gain, and total power; not a reliable index of “sympathovagal balance,” especially in thermal studies where baroreflex modulation and respiratory patterns change simultaneously \[298,403\].
+
+
+
+Non-linear indices:
+
+
+
+- <u>SD1, SD2 (Poincaré plot).</u> SD1 tracks vagal modulation (RMSSD-like), SD2 reflects long-term variability including baroreflex activity. Both tend to decrease during passive heat; SD2 may increase slightly in cold.
+
+
+
+- <u>Entropy (ApEn, SampEn).</u> Captures pattern irregularity. Can decrease in heat (reduced autonomic flexibility), remain stable or increase in cold. Sensitive to artefacts and requires carefully selected stationary windows.
+
+
+
+- <u>DFA α1 (fractal scaling).</u> Represents a fractal-like structure of HR dynamics. Sometimes decreases toward randomness (α1 → 0.5) during strong heat load, indicating constrained regulatory adaptability. Intermediate cold exposures sometimes preserve fractal structure.
+
+
+
+For building-scale thermal studies, a recommended practical minimal reporting subset includes: mean HR, RMSSD, HF power (with breathing rate), and SD1/SD2 when longer stationary windows are available. Reporting window length, breathing conditions, and % of corrected beats is essential for comparability. GRAPH further recommends reporting absolute (ms²) LF and HF power in addition to any log-transformed or normalised units, as absolute values convey the true magnitude of autonomic fluctuations and facilitate cross-study comparability.
+
+
+
+| **Measure** | **Sensor** | **Sampling** | **Advantages** | **Limitations** | **Approx. Cost (€)** |
+
+|----|----|----|----|----|----|
+
+| **HR + HRV (reference method)** | Multi-lead ECG (3–12 leads) | 250–1000 Hz | Gold standard for HRV; full waveforms; best R-peak precision; robust to peripheral vasomotor changes | Requires electrodes & prep; reduced comfort for long protocols; higher setup burden | 3000–10,000 |
+
+| **HR + HRV** | Single-lead chest-strap ECG (e.g., Polar H10/V800) | 130–1000 Hz | Very high agreement with ECG (ICC \>0.99 at rest); low burden; stable thoracic vector; suitable for long indoor protocols | Dependent on strap tension & moisture; raw IBI export varies by model | 80–150 |
+
+| **HR + PRV (ECG-approximation)** | Finger or ear-lobe PPG | 25–200 Hz | Strong pulsatile signal; good agreement with ECG under warm, motion-free conditions; compatible with seated indoor protocols | Highly sensitive to perfusion changes, local cooling, and contact pressure; limited reliability for LF/HF | 200–800 |
+
+| **HR + PRV (limited HRV accuracy)** | Wrist-worn PPG (smartwatches) | Dynamic (typically 25–100 Hz equivalent) | Convenient, low burden; good continuous HR; useful for field monitoring | Poor LF/HF accuracy; no raw IBIs on many devices; strong dependence on motion and vasoconstriction | 150–500 |
+
+| **HR + PRV \*\* (improved over wrist)** | Finger-ring PPG (smart rings) | Dynamic (~20–250 Hz equivalent) | Stable contact, strong pulsatile amplitude; excellent nocturnal HRV; better than wrist devices | Still peripheral –susceptible to cooling and airflow; proprietary preprocessing | 250–600 |
+
+| **HR (limited HRV)** | Upper-arm / rib-cage ECG patches | 128–256 Hz | Wearable over many hours; simple setup | Smaller R-waves; motion artefacts; thermal effects on adhesion; limited spectral HRV | 200–500 |
+
+| **HR only** | Commercial activity trackers (accelerometer + PPG fusion) | Device-specific | Very low burden; contextual behaviour data | Not suitable for HRV; heavy proprietary filtering | 50–300 |
+
+
+
+Table 4. Summary of HR and HRV measurement techniques, typical signal characteristics, and practical considerations.\
+
+Sampling rates denote common acquisition frequencies used for physiological data logging, not device limits.
+
+
+
+\* Cost estimates reflect approximate 2024 academic/research purchasing ranges.\
+
+\*\* PRV = pulse-rate variability, derived from PPG. Approximates ECG-HRV only when perfusion and contact are stable.
