@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Core body temperature &#8212; WHY WE MEASURE WHAT, HOW, AND WHERE</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/physiological-signals/core-body-temperature';</script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Skin temperature" href="skin-temperature.html" />
+    <link rel="prev" title="PHYSIOLOGICAL SIGNALS" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    WHY WE MEASURE WHAT, HOW, AND WHERE
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">PHYSIOLOGICAL SIGNALS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Core body temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skin-temperature.html">Skin temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sweat-skin-moisture-and-skin-conductance.html">Sweat, skin moisture and skin conductance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heart-rate-and-heart-rate-variability.html">Heart rate and heart rate variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blood-pressure.html">Blood pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other-physiological-indicators.html">Other physiological indicators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../terminological-alignment/index.html">TERMINOLOGICAL ALIGNMENT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/symbolic-notation-and-variable-conventions.html">Symbolic notation and variable conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/standardization-challenges-in-derived-metrics.html">Standardization challenges in derived metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/anatomical-reference-taxonomy.html">Anatomical reference taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html">Controlled vocabulary and glossary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sample-checklists-schemas/index.html">SAMPLE CHECKLISTS &amp; SCHEMAS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/experiment-level-metadata.html">Experiment-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/participant-level-metadata.html">Participant-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample-checklists-schemas/sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/physiological-signals/core-body-temperature.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Core body temperature</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-mechanistic-reasons-behind-the-measurement">Why: the mechanistic reasons behind the measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-sensor-types-for-measurement">How: sensor types for measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-body-sites-of-measurement">Where: body sites of measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agreeability-across-sensor-types">Agreeability across sensor types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-confounders-and-modifiers">Known confounders and modifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-handling-methods">Data handling methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-calibration">Sensor calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-correction">Data cleaning and correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-parameters">Derived parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-table">Summary table</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="core-body-temperature">
+<h1>Core body temperature<a class="headerlink" href="#core-body-temperature" title="Link to this heading">#</a></h1>
+<section id="why-the-mechanistic-reasons-behind-the-measurement">
+<h2>Why: the mechanistic reasons behind the measurement<a class="headerlink" href="#why-the-mechanistic-reasons-behind-the-measurement" title="Link to this heading">#</a></h2>
+<p>Core body temperature (CBT) represents the most direct indicator of whole-body <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-heat-storage"><span class="std std-ref">heat storage</span></a> and internal <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-strain"><span class="std std-ref">thermal strain</span></a>. It integrates metabolic <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermogenesis"><span class="std std-ref">heat production</span></a> with convective, radiative, evaporative, and conductive losses, reflecting the net balance of the body’s thermal budget <span id="id1">[<a class="reference internal" href="../references/index.html#id13" title="Jürgen Werner. System properties, feedback control and effector coordination of human temperature regulation. Eur J Appl Physiol, 109(1):13–25, May 2010. URL: http://link.springer.com/10.1007/s00421-009-1216-1 (visited on 2026-03-01), doi:10.1007/s00421-009-1216-1.">Werner, 2010</a>]</span>. Even small CBT deviations can alter cardiovascular efficiency, neural conductivity, and endocrine signalling <span id="id2">[<a class="reference internal" href="../references/index.html#id6" title="Nigel A.S. Taylor. Human Heat Adaptation. Comprehensive Physiology, 4(1):325–365, January 2014. URL: https://onlinelibrary.wiley.com/doi/10.1002/j.2040-4603.2014.tb00547.x (visited on 2026-03-01), doi:10.1002/j.2040-4603.2014.tb00547.x.">Taylor, 2014</a>]</span>.</p>
+<p>Unlike skin temperature, which tracks environmental exchanges, CBT is actively defended near 36.5–37.5 °C in healthy adults through <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-hypothalamic-thermoregulatory-circuits"><span class="std std-ref">hypothalamic thermoregulatory circuits</span></a> combining <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-feedback-and-feed-forward-control"><span class="std std-ref">feedback and feed-forward control</span></a> of <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-vasomotor-control"><span class="std std-ref">vasomotion</span></a>, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-sweating"><span class="std std-ref">sweating</span></a>, and metabolic heat production <span id="id3">[<a class="reference internal" href="../references/index.html#id14" title="Andrej A. Romanovsky. Thermoregulation: some concepts have changed. Functional architecture of the thermoregulatory system. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 292(1):R37–R46, January 2007. URL: https://www.physiology.org/doi/10.1152/ajpregu.00668.2006 (visited on 2026-03-01), doi:10.1152/ajpregu.00668.2006.">Romanovsky, 2007</a>, <a class="reference internal" href="../references/index.html#id18" title="Chan Lek Tan and Zachary A. Knight. Regulation of Body Temperature by the Nervous System. Neuron, 98(1):31–48, April 2018. URL: https://linkinghub.elsevier.com/retrieve/pii/S0896627318301430 (visited on 2026-03-01), doi:10.1016/j.neuron.2018.02.022.">Tan and Knight, 2018</a>]</span>. During passive heat exposure, CBT increases linearly with cumulative <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-heat-storage"><span class="std std-ref">heat storage</span></a> and blood redistribution, serving as the primary input for <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-effector-activation-thresholds"><span class="std std-ref">effector activation thresholds</span></a>.</p>
+<p>Because subjective thermal comfort or sensation can diverge from physiological strain, continuous CBT monitoring provides a quantitative index of <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-load"><span class="std std-ref">thermal load</span></a>, safety limits, and <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-adaptation"><span class="std std-ref">adaptation</span></a> potential. Sustained CBT elevations ≥ 38.0–38.5 °C denote excessive physiological strain in occupational and environmental contexts <span id="id4">[<a class="reference internal" href="../references/index.html#id500" title="ISO. ISO 9886:2004 Ergonomics — Evaluation of thermal strain by physiological measurements. 2004.">ISO, 2004</a>]</span>, whereas levels ≥ 40.0–40.5 °C accompanied by central nervous system dysfunction define exertional heat stroke <span id="id5">[<a class="reference internal" href="../references/index.html#id15" title="Lawrence E. Armstrong, Douglas J. Casa, Mindy Millard-Stafford, Daniel S. Moran, Scott W. Pyne, and William O. Roberts. Exertional Heat Illness during Training and Competition. Medicine &amp; Science in Sports &amp; Exercise, 39(3):556–572, March 2007. URL: https://journals.lww.com/00005768-200703000-00020 (visited on 2026-03-01), doi:10.1249/MSS.0b013e31802fa199.">Armstrong <em>et al.</em>, 2007</a>]</span>.</p>
+</section>
+<section id="how-sensor-types-for-measurement">
+<h2>How: sensor types for measurement<a class="headerlink" href="#how-sensor-types-for-measurement" title="Link to this heading">#</a></h2>
+<p>A variety of sensors and techniques are used to estimate CBT, differing in anatomical site, thermal <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-response-time"><span class="std std-ref">response time</span></a>, invasiveness, and susceptibility to environmental error. Sensor types include thermal probes and thermocouples (measuring conductive heat transfer), infrared thermometers (radiative detection), thermistors with telemetry capability, and heat-flux capacitors (inferring deep temperature from surface gradients).</p>
+</section>
+<section id="where-body-sites-of-measurement">
+<h2>Where: body sites of measurement<a class="headerlink" href="#where-body-sites-of-measurement" title="Link to this heading">#</a></h2>
+<p><strong>Rectal thermometry.</strong> Flexible thermistor probes inserted approximately 10–15 cm beyond the anal sphincter remain a laboratory reference. Insertion to near 15 cm minimises local gradient error and improves reproducibility <span id="id6">[<a class="reference internal" href="../references/index.html#id16" title="Kevin C. Miller, Lexie E. Hughes, Blaine C. Long, William M. Adams, and Douglas J. Casa. Validity of Core Temperature Measurements at 3 Rectal Depths During Rest, Exercise, Cold-Water Immersion, and Recovery. Journal of Athletic Training, 52(4):332–338, April 2017. URL: https://nata.kglmeridian.com/view/journals/attr/52/4/article-p332.xml (visited on 2026-03-01), doi:10.4085/1062-6050-52.2.10.">Miller <em>et al.</em>, 2017</a>]</span>. Rectal probes typically respond within 10–30 s and exhibit an accuracy of ±0.1 °C under quasi-steady conditions <span id="id7">[<a class="reference internal" href="../references/index.html#id19" title="Hubert Hymczak, Aleksandra Gołąb, Konrad Mendrala, Dariusz Plicner, Tomasz Darocha, Paweł Podsiadło, Damian Hudziak, Radosław Gocoł, and Sylweriusz Kosiński. Core Temperature Measurement—Principles of Correct Measurement, Problems, and Complications. IJERPH, 18(20):10606, October 2021. URL: https://www.mdpi.com/1660-4601/18/20/10606 (visited on 2026-03-01), doi:10.3390/ijerph182010606.">Hymczak <em>et al.</em>, 2021</a>]</span>. Because of the surrounding tissue’s <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-inertia"><span class="std std-ref">thermal inertia</span></a>, rectal temperature lags rapid internal shifts by 5–15 min, providing a time-integrated estimate of core heat content <span id="id8">[<a class="reference internal" href="../references/index.html#id20" title="David S. Greenes and Gary R. Fleisher. When body temperature changes, does rectal temperature lag? The Journal of Pediatrics, 144(6):824–826, June 2004. URL: https://linkinghub.elsevier.com/retrieve/pii/S0022347604001672 (visited on 2026-03-01), doi:10.1016/j.jpeds.2004.02.037.">Greenes and Fleisher, 2004</a>]</span>.</p>
+<p><strong>Oesophageal thermometry.</strong> A lubricated thermistor or thermocouple is advanced ~35–45 cm through the nostril into the lower oesophagus, aligning with central blood temperature <span id="id9">[<a class="reference internal" href="../references/index.html#id21" title="I. B. Mekjavic and M. E. Rempel. Determination of esophageal probe insertion length based on standing and sitting height. Journal of Applied Physiology, 69(1):376–379, July 1990. URL: https://www.physiology.org/doi/10.1152/jappl.1990.69.1.376 (visited on 2026-03-01), doi:10.1152/jappl.1990.69.1.376.">Mekjavic and Rempel, 1990</a>]</span>. Because of its proximity to large vessels, the oesophageal probe captures rapid changes in core blood temperature within ~10 s <span id="id10">[<a class="reference internal" href="../references/index.html#id501" title="S. M. Lee, W. J. Williams, and S. M. Fortney Schneider. Core temperature measurement during supine exercise: esophageal, rectal, and intestinal temperatures. Aviat Space Environ Med, 71(9):939–945, September 2000.">Lee <em>et al.</em>, 2000</a>]</span>, and leads rectal measurements during both heating and cooling phases. Tolerance issues, probe displacement, and discomfort limit its use to short-term laboratory protocols.</p>
+<p><strong>Gastrointestinal telemetry pills.</strong> Ingestible capsules containing a precision thermistor and radio transmitter provide wireless measurements at 1–4 Hz sampling. Under controlled conditions, accuracy is ±0.1 °C <span id="id11">[<a class="reference internal" href="../references/index.html#id22" title="Catherine O'Brien, Reed W. Hoyt, Mark J. Buller, John W. Castellani, and Andrew J. Young. Telemetry pill measurement of core temperature in humans during active heating and cooling:. Medicine &amp;amp Science in Sports &amp;amp Exercise, 30(3):468–472, March 1998. URL: http://journals.lww.com/00005768-199803000-00020 (visited on 2026-03-01), doi:10.1097/00005768-199803000-00020.">O'Brien <em>et al.</em>, 1998</a>]</span>. Transit time through the stomach and small intestine varies between 12 and 72 h, and measurements become invalid once the capsule enters the colon, typically marked by an abrupt temperature drop <span id="id12">[<a class="reference internal" href="../references/index.html#id23" title="L P J Teunissen, A De Haan, J J De Koning, and H A M Daanen. Telemetry pill versus rectal and esophageal temperature during extreme rates of exercise-induced core temperature change. Physiol. Meas., 33(6):915–924, June 2012. URL: https://iopscience.iop.org/article/10.1088/0967-3334/33/6/915 (visited on 2026-03-01), doi:10.1088/0967-3334/33/6/915.">Teunissen <em>et al.</em>, 2012</a>]</span>. Telemetry pills display intermediate dynamics, slower than oesophageal but faster than rectal responses <span id="id13">[<a class="reference internal" href="../references/index.html#id22" title="Catherine O'Brien, Reed W. Hoyt, Mark J. Buller, John W. Castellani, and Andrew J. Young. Telemetry pill measurement of core temperature in humans during active heating and cooling:. Medicine &amp;amp Science in Sports &amp;amp Exercise, 30(3):468–472, March 1998. URL: http://journals.lww.com/00005768-199803000-00020 (visited on 2026-03-01), doi:10.1097/00005768-199803000-00020.">O'Brien <em>et al.</em>, 1998</a>]</span>.</p>
+<p><strong>Tympanic thermometry.</strong> Infrared tympanic devices estimate CBT from radiation emitted by the tympanic membrane, assuming equilibrium with carotid arterial blood. Accuracy depends strongly on probe orientation, ear-canal anatomy, and the absence of airflow or obstruction <span id="id14">[<a class="reference internal" href="../references/index.html#id24" title="C. Childs, R. Harrison, and C. Hodkinson. Tympanic membrane temperature as a measure of core temperature. Archives of Disease in Childhood, 80(3):262–266, March 1999. URL: https://adc.bmj.com/lookup/doi/10.1136/adc.80.3.262 (visited on 2026-03-01), doi:10.1136/adc.80.3.262.">Childs <em>et al.</em>, 1999</a>]</span>. Tympanic canal temperatures can diverge from oesophageal and rectal readings during exercise and <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-recovery"><span class="std std-ref">recovery</span></a>, particularly under convective airflow or incomplete sealing <span id="id15">[<a class="reference internal" href="../references/index.html#id25" title="Daniel Gagnon, Bruno B. Lemire, Ollie Jay, and Glen P. Kenny. Aural Canal, Esophageal, and Rectal Temperatures During Exertional Heat Stress and the Subsequent Recovery Period. Journal of Athletic Training, 45(2):157–163, March 2010. URL: https://nata.kglmeridian.com/view/journals/attr/45/2/article-p157.xml (visited on 2026-03-01), doi:10.4085/1062-6050-45.2.157.">Gagnon <em>et al.</em>, 2010</a>]</span>.</p>
+<p><strong>Temporal-artery infrared and dual- or zero-heat-flux sensors.</strong> Non-invasive infrared thermometers measure surface emission along the temporal artery, whereas dual-heat-flux (DHF) and zero-heat-flux (ZHF) sensors infer deep tissue temperature by combining paired heat-flux paths of different thermal resistances <span id="id16">[<a class="reference internal" href="../references/index.html#id26" title="Kei-Ichiro Kitamura, Xin Zhu, Wenxi Chen, and Tetsu Nemoto. Development of a new method for the noninvasive measurement of deep body temperature without a heater. Med. Eng. Phys., 32(1):1–6, January 2010. URL: https://iopscience.iop.org/article/10.1016/j.medengphy.2009.09.004 (visited on 2026-03-01), doi:10.1016/j.medengphy.2009.09.004.">Kitamura <em>et al.</em>, 2010</a>]</span>. These techniques are useful for ambulatory or field monitoring but require stable ambient conditions and careful calibration; drift can occur with sweating or variable skin perfusion <span id="id17">[<a class="reference internal" href="../references/index.html#id27" title="Anselm Bräuer, Albulena Fazliu, Thorsten Perl, Daniel Heise, Konrad Meissner, and Ivo Florian Brandes. Accuracy of zero-heat-flux thermometry and bladder temperature measurement in critically ill patients. Sci Rep, 10(1):21746, December 2020. URL: https://www.nature.com/articles/s41598-020-78753-w (visited on 2026-03-01), doi:10.1038/s41598-020-78753-w.">Bräuer <em>et al.</em>, 2020</a>]</span>.</p>
+<p><strong>Pulmonary artery and bladder catheters.</strong> Invasive thermistors located in the pulmonary artery directly measure mixed venous blood and remain the clinical <em>gold standard</em>. Bladder thermistors, integrated into urinary catheters, are less invasive and show small mean differences (≤ 0.2 °C) relative to pulmonary-artery temperature under stable hemodynamic conditions <span id="id18">[<a class="reference internal" href="../references/index.html#id28" title="J.-Y. Lefrant, L. Muller, J. Emmanuel De La Coussaye, M. Benbabaali, C. Lebris, N. Zeitoun, C. Mari, G. Saïssi, J. Ripart, and J.-J. Eledjam. Temperature measurement in intensive care patients: comparison of urinary bladder, oesophageal, rectal, axillary, and inguinal methods versus pulmonary artery core method. Intensive Care Med, 29(3):414–418, March 2003. URL: http://link.springer.com/10.1007/s00134-002-1619-5 (visited on 2026-03-01), doi:10.1007/s00134-002-1619-5.">Lefrant <em>et al.</em>, 2003</a>]</span>. Their use is restricted to medical or highly controlled research applications.</p>
+</section>
+<section id="agreeability-across-sensor-types">
+<h2>Agreeability across sensor types<a class="headerlink" href="#agreeability-across-sensor-types" title="Link to this heading">#</a></h2>
+<p>Inter-site comparisons show consistent but physiologically interpretable biases that depend on tissue depth, perfusion, and the rate of thermal change. Under steady conditions, rectal, intestinal, and oesophageal temperatures differ by less than 0.3 °C, but diverge during dynamic heating or cooling. Oesophageal readings track central blood temperature most closely, typically within ±0.2 °C of pulmonary-artery measurements and with the fastest response (≤10 s) <span id="id19">[<a class="reference internal" href="../references/index.html#id28" title="J.-Y. Lefrant, L. Muller, J. Emmanuel De La Coussaye, M. Benbabaali, C. Lebris, N. Zeitoun, C. Mari, G. Saïssi, J. Ripart, and J.-J. Eledjam. Temperature measurement in intensive care patients: comparison of urinary bladder, oesophageal, rectal, axillary, and inguinal methods versus pulmonary artery core method. Intensive Care Med, 29(3):414–418, March 2003. URL: http://link.springer.com/10.1007/s00134-002-1619-5 (visited on 2026-03-01), doi:10.1007/s00134-002-1619-5.">Lefrant <em>et al.</em>, 2003</a>, <a class="reference internal" href="../references/index.html#id29" title="Joan Robinson, Jeff Charlton, Robert Seal, Donald Spady, and Michel R. Joffres. Oesophageal, rectal, axillary, tympanic and pulmonary artery temperatures during cardiac surgery. Can J Anaesth, 45(4):317–323, April 1998. URL: http://link.springer.com/10.1007/BF03012021 (visited on 2026-03-01), doi:10.1007/BF03012021.">Robinson <em>et al.</em>, 1998</a>]</span>. Rectal temperature lags oesophageal by 10–25 min and averages 0.3–0.6 °C lower during heating phases <span id="id20">[<a class="reference internal" href="../references/index.html#id501" title="S. M. Lee, W. J. Williams, and S. M. Fortney Schneider. Core temperature measurement during supine exercise: esophageal, rectal, and intestinal temperatures. Aviat Space Environ Med, 71(9):939–945, September 2000.">Lee <em>et al.</em>, 2000</a>]</span>. Intestinal or telemetry-pill temperatures are intermediate, initially 0.4–0.9 °C lower than rectal when the capsule remains in the stomach, but converging to ≤ 0.2 °C once it passes into the small intestine <span id="id21">[<a class="reference internal" href="../references/index.html#id23" title="L P J Teunissen, A De Haan, J J De Koning, and H A M Daanen. Telemetry pill versus rectal and esophageal temperature during extreme rates of exercise-induced core temperature change. Physiol. Meas., 33(6):915–924, June 2012. URL: https://iopscience.iop.org/article/10.1088/0967-3334/33/6/915 (visited on 2026-03-01), doi:10.1088/0967-3334/33/6/915.">Teunissen <em>et al.</em>, 2012</a>, <a class="reference internal" href="../references/index.html#id30" title="Sean R. Notley, Robert D. Meade, and Glen P. Kenny. Time following ingestion does not influence the validity of telemetry pill measurements of core temperature during exercise-heat stress: The journal Temperature toolbox. Temperature, 8(1):12–20, January 2021. URL: https://www.tandfonline.com/doi/full/10.1080/23328940.2020.1801119 (visited on 2026-03-01), doi:10.1080/23328940.2020.1801119.">Notley <em>et al.</em>, 2021</a>, <a class="reference internal" href="../references/index.html#id502" title="P. B. Sparling, T. K. Snow, and M. L. Millard-Stafford. Monitoring core temperature during exercise: ingestible sensor vs. rectal thermistor. Aviat Space Environ Med, 64(8):760–763, August 1993.">Sparling <em>et al.</em>, 1993</a>]</span>.</p>
+<p>Bladder thermistors agree well with pulmonary-artery temperature (bias ≤ 0.2 °C) under stable perfusion, but deviate during low urine flow or bypass <span id="id22">[<a class="reference internal" href="../references/index.html#id28" title="J.-Y. Lefrant, L. Muller, J. Emmanuel De La Coussaye, M. Benbabaali, C. Lebris, N. Zeitoun, C. Mari, G. Saïssi, J. Ripart, and J.-J. Eledjam. Temperature measurement in intensive care patients: comparison of urinary bladder, oesophageal, rectal, axillary, and inguinal methods versus pulmonary artery core method. Intensive Care Med, 29(3):414–418, March 2003. URL: http://link.springer.com/10.1007/s00134-002-1619-5 (visited on 2026-03-01), doi:10.1007/s00134-002-1619-5.">Lefrant <em>et al.</em>, 2003</a>]</span>. Rectal and oesophageal values remain within 0.4 °C of pulmonary-artery readings at rest, confirming their reliability as integrated estimates of body heat content <span id="id23">[<a class="reference internal" href="../references/index.html#id29" title="Joan Robinson, Jeff Charlton, Robert Seal, Donald Spady, and Michel R. Joffres. Oesophageal, rectal, axillary, tympanic and pulmonary artery temperatures during cardiac surgery. Can J Anaesth, 45(4):317–323, April 1998. URL: http://link.springer.com/10.1007/BF03012021 (visited on 2026-03-01), doi:10.1007/BF03012021.">Robinson <em>et al.</em>, 1998</a>]</span>.</p>
+<p>Non-invasive ear and forehead methods exhibit larger scatter. Infrared tympanic thermometers underestimate deep-core temperature by 0.3 °C at rest and by ~1 °C during exercise, with errors increasing to &gt;1.5 °C when rectal temperature exceeds 39 °C <span id="id24">[<a class="reference internal" href="../references/index.html#id32" title="Jean V Craig, Gillian A Lancaster, Stephen Taylor, Paula R Williamson, and Rosalind L Smyth. Infrared ear thermometry compared with rectal thermometry in children: a systematic review. The Lancet, 360(9333):603–609, August 2002. URL: https://linkinghub.elsevier.com/retrieve/pii/S0140673602097830 (visited on 2026-03-01), doi:10.1016/S0140-6736(02)09783-0.">Craig <em>et al.</em>, 2002</a>, <a class="reference internal" href="../references/index.html#id31" title="Robert Huggins, Neal Glaviano, Naoki Negishi, Douglas J. Casa, and Jay Hertel. Comparison of Rectal and Aural Core Body Temperature Thermometry in Hyperthermic, Exercising Individuals: A Meta-Analysis. Journal of Athletic Training, 47(3):329–338, May 2012. URL: https://nata.kglmeridian.com/view/journals/attr/47/3/article-p329.xml (visited on 2026-03-01), doi:10.4085/1062-6050-47.3.09.">Huggins <em>et al.</em>, 2012</a>]</span>. Even meta-analytic evidence across &gt;30 studies indicates wide limits of agreement (± 1.3 °C), making tympanic readings unreliable for precise monitoring <span id="id25">[<a class="reference internal" href="../references/index.html#id32" title="Jean V Craig, Gillian A Lancaster, Stephen Taylor, Paula R Williamson, and Rosalind L Smyth. Infrared ear thermometry compared with rectal thermometry in children: a systematic review. The Lancet, 360(9333):603–609, August 2002. URL: https://linkinghub.elsevier.com/retrieve/pii/S0140673602097830 (visited on 2026-03-01), doi:10.1016/S0140-6736(02)09783-0.">Craig <em>et al.</em>, 2002</a>]</span>. Temporal-artery infrared and axillary measures show similar variability <span id="id26">[<a class="reference internal" href="../references/index.html#id29" title="Joan Robinson, Jeff Charlton, Robert Seal, Donald Spady, and Michel R. Joffres. Oesophageal, rectal, axillary, tympanic and pulmonary artery temperatures during cardiac surgery. Can J Anaesth, 45(4):317–323, April 1998. URL: http://link.springer.com/10.1007/BF03012021 (visited on 2026-03-01), doi:10.1007/BF03012021.">Robinson <em>et al.</em>, 1998</a>]</span>.</p>
+<p>Zero-heat-flux (ZHF) thermometers show markedly improved accuracy, differing from pulmonary-artery temperature by only –0.06 °C (mean) with limits of agreement ± 0.89 °C <span id="id27">[<a class="reference internal" href="../references/index.html#id33" title="Christophe Verheyden, Arne Neyrinck, Annouschka Laenen, Steffen Rex, and Elke Van Gerven. Clinical evaluation of a cutaneous zero-heat-flux thermometer during cardiac surgery. J Clin Monit Comput, 36(5):1279–1287, October 2022. URL: https://link.springer.com/10.1007/s10877-021-00758-1 (visited on 2026-03-01), doi:10.1007/s10877-021-00758-1.">Verheyden <em>et al.</em>, 2022</a>]</span>. These perform comparably to oesophageal and bladder probes under anaesthesia when the forehead site remains perfused. Emerging dual-heat-flux and heart-rate-derived algorithms can estimate core temperature non-invasively with mean biases around 0.2–0.3 °C, but limits of agreement ± 0.6–0.7 °C <span id="id28">[<a class="reference internal" href="../references/index.html#id34" title="Philip J. Agostinelli, Braxton A. Linder, Katherine A. Frick, Nicholas C. Bordonie, Frances K. Neal, and JoEllen M. Sefton. Validity of heart rate derived core temperature estimation during simulated firefighting tasks. Sci Rep, 13(1):22503, December 2023. URL: https://www.nature.com/articles/s41598-023-49929-x (visited on 2026-03-01), doi:10.1038/s41598-023-49929-x.">Agostinelli <em>et al.</em>, 2023</a>, <a class="reference internal" href="../references/index.html#id47" title="Nina Verdel, Tim Podlogar, Urša Ciuha, Hans-Christer Holmberg, Tadej Debevec, and Matej Supej. Reliability and Validity of the CORE Sensor to Assess Core Body Temperature during Cycling Exercise. Sensors, 21(17):5932, September 2021. URL: https://www.mdpi.com/1424-8220/21/17/5932 (visited on 2026-03-01), doi:10.3390/s21175932.">Verdel <em>et al.</em>, 2021</a>]</span>. They remain sensitive to local perfusion and ambient conditions but hold promise for field and occupational studies.</p>
+<p>Overall, oesophageal and pulmonary-artery sites provide the most responsive and accurate dynamic indicators of CBT, while rectal, intestinal, and bladder sensors yield stable integrated measures of stored heat. Infrared and heat-flux methods enable practical non-invasive alternatives when calibration and contextual metadata are explicitly documented.</p>
+</section>
+<section id="known-confounders-and-modifiers">
+<h2>Known confounders and modifiers<a class="headerlink" href="#known-confounders-and-modifiers" title="Link to this heading">#</a></h2>
+<p>Core body temperature is shaped by multiple intrinsic and extrinsic influences that must be measured, controlled, or statistically adjusted in experimental protocols. These factors act through metabolic, hormonal, neural, and environmental pathways that shift the <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoregulatory-set-point"><span class="std std-ref">thermoregulatory set-point</span></a> or modify heat-exchange efficiency.</p>
+<p><strong>Circadian influences.</strong> CBT exhibits a robust endogenous oscillation of approximately 0.8–1.0 °C under normal <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-entrainment"><span class="std std-ref">entrainment</span></a>, generated by the suprachiasmatic nucleus and peripheral clock gene networks <span id="id29">[<a class="reference internal" href="../references/index.html#id35" title="Kurt Kräuchi. How is the circadian rhythm of core body temperature regulated? Clinical Autonomic Research, 12(3):147–149, June 2002. URL: http://link.springer.com/10.1007/s10286-002-0043-9 (visited on 2026-03-01), doi:10.1007/s10286-002-0043-9.">Kräuchi, 2002</a>, <a class="reference internal" href="../references/index.html#id36" title="K. Kräuchi and A. Wirz-Justice. Circadian rhythm of heat production, heart rate, and skin and core temperature under unmasking conditions in men. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 267(3):R819–R829, September 1994. URL: https://www.physiology.org/doi/10.1152/ajpregu.1994.267.3.R819 (visited on 2026-03-01), doi:10.1152/ajpregu.1994.267.3.R819.">Kräuchi and Wirz-Justice, 1994</a>]</span>. The <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-nadir"><span class="std std-ref">nadir</span></a> occurs near 04:00–05:00 h, coinciding with peak melatonin and lowest alertness, while the <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acrophase"><span class="std std-ref">acrophase</span></a> appears around 16:00–18:00 h. This rhythm persists under constant posture and ambient conditions, confirming endogenous control, though masking by sleep, posture, and activity can shift observed CBT by ±0.3 °C <span id="id30">[<a class="reference internal" href="../references/index.html#id35" title="Kurt Kräuchi. How is the circadian rhythm of core body temperature regulated? Clinical Autonomic Research, 12(3):147–149, June 2002. URL: http://link.springer.com/10.1007/s10286-002-0043-9 (visited on 2026-03-01), doi:10.1007/s10286-002-0043-9.">Kräuchi, 2002</a>, <a class="reference internal" href="../references/index.html#id503" title="Greg Kelly. Body temperature variability (Part 1): a review of the history of body temperature and its variability due to site selection, biological rhythms, fitness, and aging. Altern Med Rev, 11(4):278–293, December 2006.">Kelly, 2006</a>, <a class="reference internal" href="../references/index.html#id37" title="Roberto Refinetti. Analysis of the circadian rhythm of body temperature. Behavior Research Methods, Instruments, &amp; Computers, 24(1):28–36, March 1992. URL: http://link.springer.com/10.3758/BF03203466 (visited on 2026-03-01), doi:10.3758/BF03203466.">Refinetti, 1992</a>]</span>. Ambient light exposure <span id="id31">[<a class="reference internal" href="../references/index.html#id38" title="Derk-Jan Dijk, Christian Cajochen, and Alexander A. Borbély. Effect of a single 3-hour exposure to bright light on core body temperature and sleep in humans. Neuroscience Letters, 121(1-2):59–62, January 1991. URL: https://linkinghub.elsevier.com/retrieve/pii/030439409190649E (visited on 2026-03-01), doi:10.1016/0304-3940(91)90649-E.">Dijk <em>et al.</em>, 1991</a>, <a class="reference internal" href="../references/index.html#id39" title="Abdelkader Elkounni, Marika Vellei, Jérôme Le Dréau, Marcel Schweiker, and Christian Inard. Acute effect of light and time of day on thermal physiology, perception, and behavior. Sci Rep, 15(1):38640, November 2025. URL: https://www.nature.com/articles/s41598-025-22542-w (visited on 2026-03-01), doi:10.1038/s41598-025-22542-w.">Elkounni <em>et al.</em>, 2025</a>]</span> and recent travel may also alter <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-phase"><span class="std std-ref">phase</span></a> and amplitude. Session timing, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-chronotype"><span class="std std-ref">chronotype</span></a> alignment, and relative phase (hours from habitual wake time or <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-dim-light-melatonin-onset"><span class="std std-ref">dim-light melatonin onset</span></a>) should therefore be logged and, where possible, standardised across participants.</p>
+<p><strong>Sex.</strong> Generally, females exhibit higher core temperatures than males <span id="id32">[<a class="reference internal" href="../references/index.html#id55" title="Adele Diamond, Carolyn T. Lye, Deepali Prasad, and David Abbott. One size does not fit all: Assuming the same normal body temperature for everyone is not justified. PLoS ONE, 16(2):e0245257, February 2021. URL: https://dx.plos.org/10.1371/journal.pone.0245257 (visited on 2026-03-01), doi:10.1371/journal.pone.0245257.">Diamond <em>et al.</em>, 2021</a>, <a class="reference internal" href="../references/index.html#id52" title="J. Waalen and J. N. Buxbaum. Is Older Colder or Colder Older? The Association of Age With Body Temperature in 18,630 Individuals. The Journals of Gerontology Series A: Biological Sciences and Medical Sciences, 66A(5):487–492, May 2011. URL: https://academic.oup.com/biomedgerontology/article-lookup/doi/10.1093/gerona/glr001 (visited on 2026-03-01), doi:10.1093/gerona/glr001.">Waalen and Buxbaum, 2011</a>]</span>. During exercise under heat stress, early observational studies suggested women experienced greater and more rapid increases in core temperature than men; however, these differences are largely explained by confounding factors such as a lower body mass, lower aerobic capacity, and a higher relative metabolic heat production in females <span id="id33">[<a class="reference internal" href="../references/index.html#id40" title="Amélie Debray, Soha Sardar, Thomas A. Deshayes, Adèle Mornas, Katia Oubouchou, Yousra Ouazaa, and Daniel Gagnon. Sex-related differences in temperature regulation during heat stress from childhood to older age. Autonomic Neuroscience, 260:103294, August 2025. URL: https://linkinghub.elsevier.com/retrieve/pii/S1566070225000566 (visited on 2026-03-01), doi:10.1016/j.autneu.2025.103294.">Debray <em>et al.</em>, 2025</a>, <a class="reference internal" href="../references/index.html#id42" title="Sheila Dervis, Geoff B. Coombs, Georgia K. Chaseling, Davide Filingeri, Jovana Smoljanic, and Ollie Jay. A comparison of thermoregulatory responses to exercise between mass-matched groups with large differences in body fat. Journal of Applied Physiology, 120(6):615–623, March 2016. URL: https://www.physiology.org/doi/10.1152/japplphysiol.00906.2015 (visited on 2026-03-01), doi:10.1152/japplphysiol.00906.2015.">Dervis <em>et al.</em>, 2016</a>, <a class="reference internal" href="../references/index.html#id196" title="Daniel Gagnon and Glen P. Kenny. Does sex have an independent effect on thermoeffector responses during exercise in the heat? The Journal of Physiology, 590(23):5963–5973, December 2012. URL: https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.2012.240739 (visited on 2026-03-01), doi:10.1113/jphysiol.2012.240739.">Gagnon and Kenny, 2012</a>]</span>. When males and females are appropriately matched for physical characteristics and the biophysical requirement for heat loss, core temperature responses are generally similar, though women may experience slightly greater increases (0.2°C to 0.4°C) only during severe, uncompensable heat stress <span id="id34">[<a class="reference internal" href="../references/index.html#id43" title="Tze‐Huan Lei, Stephen R. Stannard, Blake G. Perry, Zachary J. Schlader, James D. Cotter, and Toby Mündel. Influence of menstrual phase and arid \textit vs . humid heat stress on autonomic and behavioural thermoregulation during exercise in trained but unacclimated women. The Journal of Physiology, 595(9):2823–2837, May 2017. URL: https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP273176 (visited on 2026-03-01), doi:10.1113/JP273176.">Lei <em>et al.</em>, 2017</a>]</span>. This difference may be clinically insignificant <span id="id35">[<a class="reference internal" href="../references/index.html#id44" title="Gabrielle E. W. Giersch and Nisha Charkoudian. Regulation of body temperature and blood pressure in women: Mechanisms and implications for heat illness risk. Experimental Physiology, 110(2):196–199, February 2025. URL: https://physoc.onlinelibrary.wiley.com/doi/10.1113/EP091455 (visited on 2026-03-01), doi:10.1113/EP091455.">Giersch and Charkoudian, 2025</a>]</span>.</p>
+<p><strong>Sex hormones and reproductive status.</strong> Progesterone elevates the hypothalamic <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoregulatory-set-point"><span class="std std-ref">thermoregulatory set-point</span></a>, increasing resting core body temperature by approximately 0.3–0.5 °C during the luteal phase. In contrast, oestrogen facilitates peripheral heat dissipation through cutaneous <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-vasodilation"><span class="std std-ref">vasodilation</span></a> and enhanced skin perfusion <span id="id36">[<a class="reference internal" href="../references/index.html#id45" title="Nisha Charkoudian and Nina Stachenfeld. Sex hormone effects on autonomic mechanisms of thermoregulation in humans. Autonomic Neuroscience, 196:75–80, April 2016. URL: https://linkinghub.elsevier.com/retrieve/pii/S1566070215300321 (visited on 2026-03-01), doi:10.1016/j.autneu.2015.11.004.">Charkoudian and Stachenfeld, 2016</a>]</span>. Women using combined oral contraceptives exhibit a constant, mid-luteal-like CBT profile, typically 0.3–0.4 °C higher than naturally cycling follicular-phase values, with reduced circadian amplitude and phase stabilisation <span id="id37">[<a class="reference internal" href="../references/index.html#id48" title="Fiona Baker, Duncan Mitchell, and Helen Driver. Oral contraceptives alter sleep and raise body temperature in young women. Pflügers Archiv European Journal of Physiology, 442(5):729–737, August 2001. URL: http://link.springer.com/10.1007/s004240100582 (visited on 2026-03-01), doi:10.1007/s004240100582.">Baker <em>et al.</em>, 2001</a>, <a class="reference internal" href="../references/index.html#id49" title="Fiona C. Baker and Helen S. Driver. Circadian rhythms, sleep, and the menstrual cycle. Sleep Medicine, 8(6):613–622, September 2007. URL: https://linkinghub.elsevier.com/retrieve/pii/S1389945706006216 (visited on 2026-03-01), doi:10.1016/j.sleep.2006.09.011.">Baker and Driver, 2007</a>, <a class="reference internal" href="../references/index.html#id46" title="Lou A. Stephenson and Margaret A. Kolka. Thermoregulation in Women:. Exercise and Sport Sciences Reviews, 21(1):231???262, January 1993. URL: http://journals.lww.com/00003677-199301000-00008 (visited on 2026-03-01), doi:10.1249/00003677-199301000-00008.">Stephenson and Kolka, 1993</a>]</span>. Accurate determination of menstrual or contraceptive phase is therefore essential in mixed-sex studies.</p>
+<p>During perimenopause, fluctuating oestrogen levels destabilise hypothalamic feedback and narrow the <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoneutral-zone"><span class="std std-ref">thermoneutral zone</span></a>, producing transient hyperthermic flushes <span id="id38">[<a class="reference internal" href="../references/index.html#id517" title="Robert R. Freedman. Menopausal hot flashes: Mechanisms, endocrinology, treatment. The Journal of Steroid Biochemistry and Molecular Biology, 142:115–120, July 2014. URL: https://linkinghub.elsevier.com/retrieve/pii/S0960076013001532 (visited on 2026-03-01), doi:10.1016/j.jsbmb.2013.08.010.">Freedman, 2014</a>]</span>. Oestrogen therapy alone lowers the vasodilation and sweating thresholds, effectively narrowing the <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-interthreshold-zone"><span class="std std-ref">interthreshold zone</span></a> <span id="id39">[<a class="reference internal" href="../references/index.html#id51" title="Robert R. Freedman and Willane Krell. Reduced thermoregulatory null zone in postmenopausal women with hot flashes. American Journal of Obstetrics and Gynecology, 181(1):66–70, July 1999. URL: https://linkinghub.elsevier.com/retrieve/pii/S0002937899704370 (visited on 2026-03-01), doi:10.1016/S0002-9378(99)70437-0.">Freedman and Krell, 1999</a>, <a class="reference internal" href="../references/index.html#id50" title="N Gupta, S.M Frank, N Ghoneim, H.K El-Rahmany, M.A Talamini, H.A Zacur, and S.N Raja. Thermoregulation and hormone replacement in postmenopausal women. Journal of Thermal Biology, 25(1-2):165–169, February 2000. URL: https://linkinghub.elsevier.com/retrieve/pii/S0306456599000534 (visited on 2026-03-01), doi:10.1016/S0306-4565(99)00053-4.">Gupta <em>et al.</em>, 2000</a>]</span>, whereas the addition of progestin raises the defended temperature and CBT by ~ 0.3 °C, mirroring premenopausal luteal physiology <span id="id40">[<a class="reference internal" href="../references/index.html#id54" title="Fiona C. Baker, Felicia Siboza, and Andrea Fuller. Temperature regulation in women: Effects of the menstrual cycle. Temperature, 7(3):226–262, July 2020. URL: https://www.tandfonline.com/doi/full/10.1080/23328940.2020.1735927 (visited on 2026-03-01), doi:10.1080/23328940.2020.1735927.">Baker <em>et al.</em>, 2020</a>, <a class="reference internal" href="../references/index.html#id53" title="Nina S. Stachenfeld, Celso Silva, and David L. Keefe. Estrogen modifies the temperature effects of progesterone. Journal of Applied Physiology, 88(5):1643–1649, May 2000. URL: https://www.physiology.org/doi/10.1152/jappl.2000.88.5.1643 (visited on 2026-03-01), doi:10.1152/jappl.2000.88.5.1643.">Stachenfeld <em>et al.</em>, 2000</a>]</span>. Exogenous sex hormones used in contraception, menopausal hormone therapy, or gender-affirming treatment likewise alter thermoregulatory set-point and amplitude: oestradiol-dominant regimens generally lower or stabilise CBT via enhanced vasodilation, while progestin-dominant or androgenic formulations elevate CBT and attenuate peripheral heat loss <span id="id41">[<a class="reference internal" href="../references/index.html#id54" title="Fiona C. Baker, Felicia Siboza, and Andrea Fuller. Temperature regulation in women: Effects of the menstrual cycle. Temperature, 7(3):226–262, July 2020. URL: https://www.tandfonline.com/doi/full/10.1080/23328940.2020.1735927 (visited on 2026-03-01), doi:10.1080/23328940.2020.1735927.">Baker <em>et al.</em>, 2020</a>, <a class="reference internal" href="../references/index.html#id56" title="Robert R Freedman and Charla M Blacker. Estrogen raises the sweating threshold in postmenopausal women with hot flashes. Fertility and Sterility, 77(3):487–490, March 2002. URL: https://linkinghub.elsevier.com/retrieve/pii/S0015028201030096 (visited on 2026-03-01), doi:10.1016/S0015-0282(01)03009-6.">Freedman and Blacker, 2002</a>, <a class="reference internal" href="../references/index.html#id57" title="Marie Gombert-Labedens, Kristine Vesterdorf, Andrea Fuller, Shane K. Maloney, and Fiona C. Baker. Effects of menopause on temperature regulation. Temperature, 12(2):92–132, April 2025. URL: https://www.tandfonline.com/doi/full/10.1080/23328940.2025.2484499 (visited on 2026-03-01), doi:10.1080/23328940.2025.2484499.">Gombert-Labedens <em>et al.</em>, 2025</a>]</span>. Precise documentation of hormonal formulation, dosage, and treatment duration is essential for accurate cross-participant comparison.</p>
+<p><strong>Pregnancy.</strong> Pregnancy raises resting CBT by approximately 0.3–0.5 °C above pre-pregnancy values, driven by progesterone-mediated elevation of the thermoregulatory set-point, increased metabolic rate, and expanded blood volume <span id="id42">[<a class="reference internal" href="../references/index.html#id544" title="Priya Soma-Pillay, Catherine Nelson-Piercy, Heli Tolppanen, and Alexandre Mebazaa. Physiological changes in pregnancy. Cardiovascular Journal of Africa, 27(2):89–94, 2016. doi:10.5830/CVJA-2016-021.">Soma-Pillay <em>et al.</em>, 2016</a>]</span>. Cardiac output rises by 30–50 % and resting HR by 10–20 beats·min⁻¹, substantially altering the cardiovascular thermoregulatory response <span id="id43">[<a class="reference internal" href="../references/index.html#id545" title="Stephen C. Robson, Stuart Hunter, Richard J. Boys, and William Dunlop. Serial study of factors influencing changes in cardiac output during human pregnancy. American Journal of Physiology, 256(4):H1060–H1065, 1989. Part 2: Heart and Circulatory Physiology. doi:10.1152/ajpheart.1989.256.4.H1060.">Robson <em>et al.</em>, 1989</a>]</span>. The thermoneutral zone narrows, and the core temperature threshold for sweating decreases in the third trimester as oestrogen-to-progesterone ratios shift <span id="id44">[<a class="reference internal" href="../references/index.html#id544" title="Priya Soma-Pillay, Catherine Nelson-Piercy, Heli Tolppanen, and Alexandre Mebazaa. Physiological changes in pregnancy. Cardiovascular Journal of Africa, 27(2):89–94, 2016. doi:10.5830/CVJA-2016-021.">Soma-Pillay <em>et al.</em>, 2016</a>]</span>. Because pregnancy produces a persistent, hormonally driven shift in all thermoregulatory effector thresholds and baselines, pregnant participants require separate analysis; pooling with non-pregnant groups without stratification will confound any CBT-based outcome variable.</p>
+<p><strong>Age.</strong> Advancing age reduces sweat-gland output and <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-vasodilation"><span class="std std-ref">cutaneous vasodilation</span></a>, slowing heat loss and increasing peak CBT during heat stress <span id="id45">[<a class="reference internal" href="../references/index.html#id58" title="W. Larry Kenney and Thayne A. Munce. Invited Review: Aging and human temperature regulation. Journal of Applied Physiology, 95(6):2598–2603, December 2003. URL: https://www.physiology.org/doi/10.1152/japplphysiol.00202.2003 (visited on 2026-03-01), doi:10.1152/japplphysiol.00202.2003.">Kenney and Munce, 2003</a>]</span>. Under thermoneutral conditions, core temperature differences by age were found to be ~ 0.15 °C based on data from over 18.000 people <span id="id46">[<a class="reference internal" href="../references/index.html#id52" title="J. Waalen and J. N. Buxbaum. Is Older Colder or Colder Older? The Association of Age With Body Temperature in 18,630 Individuals. The Journals of Gerontology Series A: Biological Sciences and Medical Sciences, 66A(5):487–492, May 2011. URL: https://academic.oup.com/biomedgerontology/article-lookup/doi/10.1093/gerona/glr001 (visited on 2026-03-01), doi:10.1093/gerona/glr001.">Waalen and Buxbaum, 2011</a>]</span>.</p>
+<p><strong>Fitness.</strong> Aerobically trained individuals show slightly lower resting CBT (~0.2 °C) and reduced heat-storage rates for a given metabolic load, owing to expanded plasma volume, earlier sweat onset, and efficient <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-peripheral-circulation"><span class="std std-ref">peripheral perfusion</span></a> <span id="id47">[<a class="reference internal" href="../references/index.html#id59" title="Julien D. Périard, Thijs M. H. Eijsvogels, and Hein A. M. Daanen. Exercise under heat stress: thermoregulation, hydration, performance implications, and mitigation strategies. Physiological Reviews, 101(4):1873–1979, October 2021. URL: https://journals.physiology.org/doi/10.1152/physrev.00038.2020 (visited on 2026-03-01), doi:10.1152/physrev.00038.2020.">Périard <em>et al.</em>, 2021</a>]</span>.</p>
+<p><strong>Heat <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acclimation"><span class="std std-ref">acclimation</span></a>.</strong> Repeated daily exposures, for even as few as 5 days, lower resting CBT by ~0.2–0.4 °C <span id="id48">[<a class="reference internal" href="../references/index.html#id6" title="Nigel A.S. Taylor. Human Heat Adaptation. Comprehensive Physiology, 4(1):325–365, January 2014. URL: https://onlinelibrary.wiley.com/doi/10.1002/j.2040-4603.2014.tb00547.x (visited on 2026-03-01), doi:10.1002/j.2040-4603.2014.tb00547.x.">Taylor, 2014</a>, <a class="reference internal" href="../references/index.html#id60" title="Hein A. M. Daanen, Sebastien Racinais, and Julien D. Périard. Heat Acclimation Decay and Re-Induction: A Systematic Review and Meta-Analysis. Sports Med, 48(2):409–430, February 2018. URL: http://link.springer.com/10.1007/s40279-017-0808-x (visited on 2026-03-01), doi:10.1007/s40279-017-0808-x.">Daanen <em>et al.</em>, 2018</a>]</span>. Acclimated individuals maintain smaller CBT excursions and faster recovery under equivalent heat loads <span id="id49">[<a class="reference internal" href="../references/index.html#id61" title="Andrew T. Garrett, Niels G. Goosens, Nancy G. Rehrer, Mark J. Patterson, and James D. Cotter. Induction and decay of short-term heat acclimation. Eur J Appl Physiol, 107(6):659–670, December 2009. URL: http://link.springer.com/10.1007/s00421-009-1182-7 (visited on 2026-03-01), doi:10.1007/s00421-009-1182-7.">Garrett <em>et al.</em>, 2009</a>]</span>. Acclimation adaptations partially reverse within 2–3 weeks of heat withdrawal; however, re-acclimation occurs quicker than initial acclimation <span id="id50">[<a class="reference internal" href="../references/index.html#id60" title="Hein A. M. Daanen, Sebastien Racinais, and Julien D. Périard. Heat Acclimation Decay and Re-Induction: A Systematic Review and Meta-Analysis. Sports Med, 48(2):409–430, February 2018. URL: http://link.springer.com/10.1007/s40279-017-0808-x (visited on 2026-03-01), doi:10.1007/s40279-017-0808-x.">Daanen <em>et al.</em>, 2018</a>]</span>.</p>
+<p><strong>Cold acclimation.</strong> Repeated exposures to cool or cold environments produce different adaptations depending on exposure pattern. Insulative cold acclimation (intermittent whole-body cooling) enhances peripheral vasoconstriction, reducing heat loss and stabilising CBT at a lower metabolic cost <span id="id51">[<a class="reference internal" href="../references/index.html#id546" title="John W. Castellani and Andrew J. Young. Human physiological responses to cold exposure: Acute responses and acclimatization to prolonged exposure. Autonomic Neuroscience, 196:63–74, 2016. doi:10.1016/j.autneu.2016.02.009.">Castellani and Young, 2016</a>]</span>. Metabolic cold acclimation (prolonged mild cold) increases non-shivering thermogenesis, primarily through sympathetic activation of brown adipose tissue, raising resting metabolic rate and slightly elevating CBT <span id="id52">[<a class="reference internal" href="../references/index.html#id546" title="John W. Castellani and Andrew J. Young. Human physiological responses to cold exposure: Acute responses and acclimatization to prolonged exposure. Autonomic Neuroscience, 196:63–74, 2016. doi:10.1016/j.autneu.2016.02.009.">Castellani and Young, 2016</a>, <a class="reference internal" href="../references/index.html#id547" title="Jodie M. Stocks, Nigel A. S. Taylor, Michael J. Tipton, and John E. Greenleaf. Human physiological responses to cold exposure. Aviation, Space, and Environmental Medicine, 75(5):444–457, 2004. [VERIFY] — Companion reference for cold acclimation types (insulative vs. metabolic); use alongside castellani_human_2016.">Stocks <em>et al.</em>, 2004</a>]</span>. Researchers conducting protocols that include cold exposure, or who recruit participants recently arrived from cold climates, should document recent thermal exposure history and not assume that acclimation effects are limited to heat.</p>
+<p><strong>Hydration and nutrition.</strong> Dehydration ≥ 2 % body mass elevates CBT by 0.2–0.5 °C for a given workload due to plasma-volume reduction, impaired <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-cutaneous-blood-flow"><span class="std std-ref">skin blood flow</span></a>, and reduced sweat rate <span id="id53">[<a class="reference internal" href="../references/index.html#id62" title="Michael N. Sawka, Scott J. Montain, and William A. Latzka. Hydration effects on thermoregulation and performance in the heat. Comparative Biochemistry and Physiology Part A: Molecular &amp; Integrative Physiology, 128(4):679–690, April 2001. URL: https://linkinghub.elsevier.com/retrieve/pii/S1095643301002744 (visited on 2026-03-01), doi:10.1016/S1095-6433(01)00274-4.">Sawka <em>et al.</em>, 2001</a>]</span>. Diet-induced <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermogenesis"><span class="std std-ref">thermogenesis</span></a> (DIT) transiently raises CBT by ~0.2–0.4 °C, peaking 1–3 h after eating, depending on macronutrient content <span id="id54">[<a class="reference internal" href="../references/index.html#id63" title="Klaas R Westerterp. Diet induced thermogenesis. Nutr Metab (Lond), 1(1):5, August 2004. URL: https://nutritionandmetabolism.biomedcentral.com/articles/10.1186/1743-7075-1-5 (visited on 2026-03-01), doi:10.1186/1743-7075-1-5.">Westerterp, 2004</a>]</span>, while the presence of diabetes mellitus, insulin resistance, obesity or thyroid disease alters the impacts <span id="id55">[<a class="reference internal" href="../references/index.html#id64" title="Evangelia Tzeravini, Anastasios Tentolouris, Alexander Kokkinos, Nikolaos Tentolouris, and Nikolaos Katsilambros. Diet induced thermogenesis, older and newer data with emphasis on obesity and diabetes mellitus - A narrative review. Metabolism Open, 22:100291, June 2024. URL: https://linkinghub.elsevier.com/retrieve/pii/S2589936824000239 (visited on 2026-03-01), doi:10.1016/j.metop.2024.100291.">Tzeravini <em>et al.</em>, 2024</a>]</span>. Caffeine and capsaicin stimulate metabolic heat production, whereas alcohol depresses <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-vasoconstriction"><span class="std std-ref">vasoconstriction</span></a>, lowering CBT in cool conditions <span id="id56">[<a class="reference internal" href="../references/index.html#id14" title="Andrej A. Romanovsky. Thermoregulation: some concepts have changed. Functional architecture of the thermoregulatory system. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 292(1):R37–R46, January 2007. URL: https://www.physiology.org/doi/10.1152/ajpregu.00668.2006 (visited on 2026-03-01), doi:10.1152/ajpregu.00668.2006.">Romanovsky, 2007</a>, <a class="reference internal" href="../references/index.html#id65" title="Stéphanie Michlig, Jenny Meylan Merlini, Maurice Beaumont, Mirko Ledda, Aude Tavenard, Rajat Mukherjee, Susana Camacho, and Johannes Le Coutre. Effects of TRP channel agonist ingestion on metabolism and autonomic nervous system in a randomized clinical trial of healthy subjects. Sci Rep, 6(1):20795, February 2016. URL: https://www.nature.com/articles/srep20795 (visited on 2026-03-01), doi:10.1038/srep20795.">Michlig <em>et al.</em>, 2016</a>]</span>.</p>
+<p><strong>Body composition.</strong> Greater subcutaneous adiposity increases insulation and <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-inertia"><span class="std std-ref">thermal inertia</span></a>, lengthening CBT time constants by 20–30 % compared with lean individuals <span id="id57">[<a class="reference internal" href="../references/index.html#id4" title="George Havenith. Individualized model of human thermoregulation for the simulation of heat stress response. Journal of Applied Physiology, 90(5):1943–1954, May 2001. URL: https://www.physiology.org/doi/10.1152/jappl.2001.90.5.1943 (visited on 2026-03-01), doi:10.1152/jappl.2001.90.5.1943.">Havenith, 2001</a>]</span>. Conversely, higher muscle mass and surface-to-mass ratio facilitate faster heat dissipation.</p>
+<p><strong>Posture.</strong> Posture changes (supine to upright) can transiently alter CBT by ~0.1–0.4 °C through redistribution of blood volume and convective exchange <span id="id58">[<a class="reference internal" href="../references/index.html#id66" title="G. C. Donaldson, M. Scarborough, K. Mridha, L. Whelan, M. Caunce, and W. R. Keatinge. Effect of posture on body temperature of young men in cold air. Europ. J. Appl. Physiol., 73(3-4):326–331, May 1996. URL: http://link.springer.com/10.1007/BF02425494 (visited on 2026-03-01), doi:10.1007/BF02425494.">Donaldson <em>et al.</em>, 1996</a>, <a class="reference internal" href="../references/index.html#id67" title="Peter Tikuisis and Michel B. Ducharme. The effect of postural changes on body temperatures and heat balance. Eur J Appl Physiol, 72-72(5-6):451–459, March 1996. URL: http://link.springer.com/10.1007/BF00242275 (visited on 2026-03-01), doi:10.1007/BF00242275.">Tikuisis and Ducharme, 1996</a>]</span>.</p>
+<p><strong>Chronotype and sleep timing.</strong> Interindividual differences in circadian phase shift CBT acrophase and amplitude <span id="id59">[<a class="reference internal" href="../references/index.html#id68" title="Jacques Taillard, Pierre Philip, Olivier Coste, Patricia Sagaspe, and Bernard Bioulac. The circadian and homeostatic modulation of sleep pressure during wakefulness differs between morning and evening chronotypes. Journal of Sleep Research, 12(4):275–282, December 2003. URL: https://onlinelibrary.wiley.com/doi/10.1046/j.0962-1105.2003.00369.x (visited on 2026-03-01), doi:10.1046/j.0962-1105.2003.00369.x.">Taillard <em>et al.</em>, 2003</a>]</span>. Evening types (<em>owls</em>) exhibit delayed peaks and elevated nocturnal troughs, while morning types (<em>larks</em>) peak earlier by around 2 hours <span id="id60">[<a class="reference internal" href="../references/index.html#id69" title="Erin K. Baehr, William Revelle, and Charmane I. Eastman. Individual differences in the phase and amplitude of the human circadian temperature rhythm: with an emphasis on morningness–eveningness. Journal of Sleep Research, 9(2):117–127, June 2000. URL: https://onlinelibrary.wiley.com/doi/10.1046/j.1365-2869.2000.00196.x (visited on 2026-03-01), doi:10.1046/j.1365-2869.2000.00196.x.">Baehr <em>et al.</em>, 2000</a>, <a class="reference internal" href="../references/index.html#id70" title="Gerard A. Kerkhof and Hans P.A. Van Dongen. Morning-type and evening-type individuals differ in the phase position of their endogenous circadian oscillator. Neuroscience Letters, 218(3):153–156, November 1996. URL: https://linkinghub.elsevier.com/retrieve/pii/S0304394096131402 (visited on 2026-03-01), doi:10.1016/S0304-3940(96)13140-2.">Kerkhof and Van Dongen, 1996</a>]</span>. Sleep deprivation may blunt CBT amplitude, delay phase onset and lower overall CBT the following day during wake hours <span id="id61">[<a class="reference internal" href="../references/index.html#id71" title="Masanobu Hibi, Chie Kubota, Tomohito Mizuno, Sayaka Aritake, Yuki Mitsui, Mitsuhiro Katashima, and Sunao Uchida. Effect of shortened sleep on energy expenditure, core body temperature, and appetite: a human randomised crossover trial. Sci Rep, 7(1):39640, January 2017. URL: https://www.nature.com/articles/srep39640 (visited on 2026-03-01), doi:10.1038/srep39640.">Hibi <em>et al.</em>, 2017</a>]</span>.</p>
+<p><strong>Shift work and circadian disruption.</strong> Chronic circadian misalignment — as experienced by rotating-shift and night workers — disrupts the normal 24-h CBT rhythm beyond the transient effects of individual poor-sleep nights. Night-shift workers show flattened CBT amplitudes (&lt; 0.5 °C peak-to-nadir) and displaced acrophases that do not fully re-entrain to a daytime schedule even after rest days <span id="id62">[<a class="reference internal" href="../references/index.html#id548" title="Robert L. Sack, Dennis Auckley, R. Robert Auger, Mary A. Carskadon, Kenneth P. Jr. Wright, Michael V. Vitiello, and Irina V. Zhdanova. Circadian rhythm sleep disorders: Part I, basic principles, shift work and jet lag disorders. Sleep, 30(11):1460–1483, 2007. American Academy of Sleep Medicine review. doi:10.1093/sleep/30.11.1460.">Sack <em>et al.</em>, 2007</a>, <a class="reference internal" href="../references/index.html#id549" title="Josephine Arendt. Shift work: coping with the biological clock. Occupational Medicine, 60(1):10–20, 2010. doi:10.1093/occmed/kqp162.">Arendt, 2010</a>]</span>. This persistent phase disruption is physiologically distinct from chronotype variation: it reflects desynchrony between the central pacemaker and peripheral clocks driven by conflicting zeitgebers (light, food timing, social cues). When shift workers participate in indoor thermal protocols, their CBT baseline and circadian phase may not align with clock time, making time-of-day matching across participants unreliable without concurrent melatonin or actigraphy-based phase assessment <span id="id63">[<a class="reference internal" href="../references/index.html#id548" title="Robert L. Sack, Dennis Auckley, R. Robert Auger, Mary A. Carskadon, Kenneth P. Jr. Wright, Michael V. Vitiello, and Irina V. Zhdanova. Circadian rhythm sleep disorders: Part I, basic principles, shift work and jet lag disorders. Sleep, 30(11):1460–1483, 2007. American Academy of Sleep Medicine review. doi:10.1093/sleep/30.11.1460.">Sack <em>et al.</em>, 2007</a>]</span>.</p>
+<p><strong>Neurodivergent</strong> <strong>populations.</strong> Evidence from autism spectrum disorder (ASD), ADHD, and related neurodevelopmental conditions indicates altered autonomic balance and circadian regulation. Individuals with ASD frequently display attenuated CBT amplitude and increased day-to-day variability, suggesting weaker circadian entrainment <span id="id64">[<a class="reference internal" href="../references/index.html#id72" title="Liliana Dell’Osso, Leonardo Massoni, Simone Battaglini, Ivan Mirko Cremone, Claudia Carmassi, and Barbara Carpita. Biological correlates of altered circadian rhythms, autonomic functions and sleep problems in autism spectrum disorder. Ann Gen Psychiatry, 21(1):13, December 2022. URL: https://annals-general-psychiatry.biomedcentral.com/articles/10.1186/s12991-022-00390-6 (visited on 2026-03-01), doi:10.1186/s12991-022-00390-6.">Dell’Osso <em>et al.</em>, 2022</a>]</span>. Melatonin secretion profiles in ASD are often delayed or reduced <span id="id65">[<a class="reference internal" href="../references/index.html#id73" title="Zhou-yue Wu, Shu-dai Huang, Jin-jun Zou, Qin-xin Wang, Muhammad Naveed, Hai-nan Bao, Wei Wang, Kohji Fukunaga, and Feng Han. Autism spectrum disorder (ASD): Disturbance of the melatonin system and its implications. Biomedicine &amp; Pharmacotherapy, 130:110496, October 2020. URL: https://linkinghub.elsevier.com/retrieve/pii/S0753332220306892 (visited on 2026-03-01), doi:10.1016/j.biopha.2020.110496.">Wu <em>et al.</em>, 2020</a>]</span>, producing phase lags of 1–4 h relative to typically developing controls, with corresponding CBT delays of similar magnitude <span id="id66">[<a class="reference internal" href="../references/index.html#id74" title="Daniel A Rossignol and Richard E Frye. Melatonin in autism spectrum disorders: a systematic review and meta‐analysis. Develop Med Child Neuro, 53(9):783–792, September 2011. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1469-8749.2011.03980.x (visited on 2026-03-01), doi:10.1111/j.1469-8749.2011.03980.x.">Rossignol and Frye, 2011</a>]</span>. ADHD is associated with delayed sleep onset, longer sleep latency, and a consistent eveningness preference <span id="id67">[<a class="reference internal" href="../references/index.html#id75" title="Mark A. Snitselaar, Marcel G. Smits, Kristiaan B. Van Der Heijden, and Jan Spijker. Sleep and Circadian Rhythmicity in Adult ADHD and the Effect of Stimulants: A Review of the Current Literature. J Atten Disord, 21(1):14–26, January 2017. URL: https://journals.sagepub.com/doi/10.1177/1087054713479663 (visited on 2026-03-01), doi:10.1177/1087054713479663.">Snitselaar <em>et al.</em>, 2017</a>]</span>, all of which shift CBT acrophase later into the evening <span id="id68">[<a class="reference internal" href="../references/index.html#id76" title="Denise Bijlenga, Eus J. W. Van Someren, Reut Gruber, Tannetje I. Bron, I. Femke Kruithof, Elise C. A. Spanbroek, and J. J. Sandra Kooij. Body temperature, activity and melatonin profiles in adults with attention‐deficit/hyperactivity disorder and delayed sleep: a case–control study. Journal of Sleep Research, 22(6):607–616, December 2013. URL: https://onlinelibrary.wiley.com/doi/10.1111/jsr.12075 (visited on 2026-03-01), doi:10.1111/jsr.12075.">Bijlenga <em>et al.</em>, 2013</a>]</span>.</p>
+<p><strong>Post-viral dysautonomia and long COVID.</strong> Post-acute sequelae of COVID-19 (PASC) can produce persistent hypothalamic and autonomic dysfunction, including temperature dysregulation, abnormal sweating, and intolerance of both heat and cold <span id="id69">[<a class="reference internal" href="../references/index.html#id565" title="Hannah E. Davis, Lisa McCorkell, Julia Moore Vogel, and Eric J. Topol. Long COVID: major findings, mechanisms and recommendations. Nature Reviews Microbiology, 21(3):133–146, 2023. doi:10.1038/s41579-022-00846-2.">Davis <em>et al.</em>, 2023</a>]</span>. At the physiological level, disrupted sympathetic effector control shifts CBT baseline and thermoregulatory thresholds in ways that are not captured by standard medical history screens <span id="id70">[<a class="reference internal" href="../references/index.html#id566" title="Melanie Dani, Annemarie Dirksen, Pots Taraborrelli, Miriam Torocastro, Dimitrios Panagopoulos, Richard Sutton, and Phang Boon Lim. Autonomic dysfunction in `long COVID': rationale, physiology and management strategies. Clinical Medicine, 21(1):e63–e67, 2021. doi:10.7861/clinmed.2020-0896.">Dani <em>et al.</em>, 2021</a>]</span>. Participants with a history of COVID-19 infection should be asked specifically about ongoing thermoregulatory symptoms; if present, these should be recorded as a participant-level variable and treated as a stratification factor.</p>
+<p><strong>Underlying medical conditions and medications.</strong> Fever and systemic inflammation raise the hypothalamic set-point via cytokine-mediated prostaglandin synthesis <span id="id71">[<a class="reference internal" href="../references/index.html#id14" title="Andrej A. Romanovsky. Thermoregulation: some concepts have changed. Functional architecture of the thermoregulatory system. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 292(1):R37–R46, January 2007. URL: https://www.physiology.org/doi/10.1152/ajpregu.00668.2006 (visited on 2026-03-01), doi:10.1152/ajpregu.00668.2006.">Romanovsky, 2007</a>]</span>. Thyroid dysfunctions, particularly hyperthyroidism, elevate basal metabolic rate and CBT, whereas hypothyroidism lowers it by a similar margin <span id="id72">[<a class="reference internal" href="../references/index.html#id77" title="K Alexander Iwen, Rebecca Oelkrug, and Georg Brabant. Effects of thyroid hormones on thermogenesis and energy partitioning. Journal of Molecular Endocrinology, 60(3):R157–R170, April 2018. URL: https://jme.bioscientifica.com/view/journals/jme/60/3/JME-17-0319.xml (visited on 2026-03-01), doi:10.1530/JME-17-0319.">Iwen <em>et al.</em>, 2018</a>]</span>. Autonomic neuropathy impairs <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoeffector"><span class="std std-ref">thermoeffector</span></a> control of skin blood flow and sweating, increasing vulnerability to heat and cold stress <span id="id73">[<a class="reference internal" href="../references/index.html#id78" title="William P. Cheshire. Thermoregulatory disorders and illness related to heat and cold stress. Autonomic Neuroscience, 196:91–104, April 2016. URL: https://linkinghub.elsevier.com/retrieve/pii/S1566070216300017 (visited on 2026-03-01), doi:10.1016/j.autneu.2016.01.001.">Cheshire, 2016</a>]</span>. Diabetes mellitus, through autonomic and microvascular dysfunction, reduces heat-dissipation capacity and alters core temperature responses <span id="id74">[<a class="reference internal" href="../references/index.html#id79" title="Glen P. Kenny, Ronald J. Sigal, and Ryan McGinn. Body temperature regulation in diabetes. Temperature, 3(1):119–145, January 2016. URL: http://www.tandfonline.com/doi/full/10.1080/23328940.2015.1131506 (visited on 2026-03-01), doi:10.1080/23328940.2015.1131506.">Kenny <em>et al.</em>, 2016</a>, <a class="reference internal" href="../references/index.html#id80" title="Seward B. Rutkove, Aristidis Veves, Theophano Mitsa, Rui Nie, Patricia M. Fogerson, Lindsay P. Garmirian, and Rachel A. Nardin. Impaired Distal Thermoregulation in Diabetes and Diabetic Polyneuropathy. Diabetes Care, 32(4):671–676, April 2009. URL: https://diabetesjournals.org/care/article/32/4/671/28748/Impaired-Distal-Thermoregulation-in-Diabetes-and (visited on 2026-03-01), doi:10.2337/dc08-1844.">Rutkove <em>et al.</em>, 2009</a>]</span>. Parkinson’s patients have lower nighttime CBT following the severity of RSB symptoms <span id="id75">[<a class="reference internal" href="../references/index.html#id81" title="George Zhong, Samuel Bolitho, Ronald Grunstein, Sharon Linda Naismith, and Simon John Geoffrey Lewis. The Relationship between Thermoregulation and REM Sleep Behaviour Disorder in Parkinson’s Disease. PLoS ONE, 8(8):e72661, August 2013. URL: https://dx.plos.org/10.1371/journal.pone.0072661 (visited on 2026-03-01), doi:10.1371/journal.pone.0072661.">Zhong <em>et al.</em>, 2013</a>]</span>. Spinal cord injury, especially lesions at or above T6, interrupts <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-sympathetic-and-parasympathetic-outflow"><span class="std std-ref">sympathetic outflow</span></a> and sweating/<a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-vasomotor-control"><span class="std std-ref">vasomotor control</span></a>, leading to impaired <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermoregulation"><span class="std std-ref">thermoregulation</span></a> <span id="id76">[<a class="reference internal" href="../references/index.html#id83" title="John P. Handrakis, Michelle Trbovich, Ellen Merete Hagen, and Michael Price. Thermodysregulation in persons with spinal cord injury: case series on use of the autonomic standards. Spinal Cord Ser Cases, 3(1):17086, December 2017. URL: https://www.nature.com/articles/s41394-017-0026-7 (visited on 2026-03-01), doi:10.1038/s41394-017-0026-7.">Handrakis <em>et al.</em>, 2017</a>, <a class="reference internal" href="../references/index.html#id82" title="Ann-Katrin Karlsson. Overview: Autonomic dysfunction in spinal cord injury: clinical presentation of symptoms and signs. In Progress in Brain Research, volume 152, pages 1–8. Elsevier, 2006. URL: https://linkinghub.elsevier.com/retrieve/pii/S007961230552034X (visited on 2026-03-01), doi:10.1016/S0079-6123(05)52034-X.">Karlsson, 2006</a>]</span>. β-blockers, anticholinergics, sedatives, and SSRIs further modulate thermoregulatory control and should be screened <span id="id77">[<a class="reference internal" href="../references/index.html#id14" title="Andrej A. Romanovsky. Thermoregulation: some concepts have changed. Functional architecture of the thermoregulatory system. American Journal of Physiology-Regulatory, Integrative and Comparative Physiology, 292(1):R37–R46, January 2007. URL: https://www.physiology.org/doi/10.1152/ajpregu.00668.2006 (visited on 2026-03-01), doi:10.1152/ajpregu.00668.2006.">Romanovsky, 2007</a>]</span>.</p>
+<p><strong>Measurement <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-artefact"><span class="std std-ref">artefacts</span></a></strong>. Shallow rectal insertion, oral breathing/cold or hot fluids, or cerumen/misalignment in tympanic readings bias results; for ingestible pills, ingestion/timing, GI motility and device bias matter <span id="id78">[<a class="reference internal" href="../references/index.html#id24" title="C. Childs, R. Harrison, and C. Hodkinson. Tympanic membrane temperature as a measure of core temperature. Archives of Disease in Childhood, 80(3):262–266, March 1999. URL: https://adc.bmj.com/lookup/doi/10.1136/adc.80.3.262 (visited on 2026-03-01), doi:10.1136/adc.80.3.262.">Childs <em>et al.</em>, 1999</a>, <a class="reference internal" href="../references/index.html#id84" title="Christopher Byrne and Chin Leong Lim. The ingestible telemetric body core temperature sensor: a review of validity and exercise applications. Br J Sports Med, 41(3):126–133, March 2007. URL: https://bjsm.bmj.com/lookup/doi/10.1136/bjsm.2006.026344 (visited on 2026-03-01), doi:10.1136/bjsm.2006.026344.">Byrne and Lim, 2007</a>, <a class="reference internal" href="../references/index.html#id85" title="Andrew P. Hunt, Aaron J. E. Bach, David N. Borg, Joseph T. Costello, and Ian B. Stewart. The Systematic Bias of Ingestible Core Temperature Sensors Requires a Correction by Linear Regression. Front. Physiol., 8:260, April 2017. URL: http://journal.frontiersin.org/article/10.3389/fphys.2017.00260/full (visited on 2026-03-01), doi:10.3389/fphys.2017.00260.">Hunt <em>et al.</em>, 2017</a>]</span>.</p>
+</section>
+<section id="data-handling-methods">
+<h2>Data handling methods<a class="headerlink" href="#data-handling-methods" title="Link to this heading">#</a></h2>
+<section id="sensor-calibration">
+<h3>Sensor calibration<a class="headerlink" href="#sensor-calibration" title="Link to this heading">#</a></h3>
+<p>Sensor calibration is a critical step prior to data collection, particularly for ingestible telemetry pills and thermistors, to ensure measurement accuracy and correct for systematic bias. The standard approach involves evaluating each sensor individually against a certified, traceable reference thermometer in a circulated, heated water bath <span id="id79">[<a class="reference internal" href="../references/index.html#id84" title="Christopher Byrne and Chin Leong Lim. The ingestible telemetric body core temperature sensor: a review of validity and exercise applications. Br J Sports Med, 41(3):126–133, March 2007. URL: https://bjsm.bmj.com/lookup/doi/10.1136/bjsm.2006.026344 (visited on 2026-03-01), doi:10.1136/bjsm.2006.026344.">Byrne and Lim, 2007</a>]</span>. Calibration should be performed across a physiologically valid range of temperatures (typically three to five discrete points, such as 30 °C, 34 °C, 38 °C, and 42 °C). After allowing sufficient time for the sensor and water temperature to stabilise (e.g., &gt;4 minutes), simultaneous readings are recorded to establish a relationship <span id="id80">[<a class="reference internal" href="../references/index.html#id501" title="S. M. Lee, W. J. Williams, and S. M. Fortney Schneider. Core temperature measurement during supine exercise: esophageal, rectal, and intestinal temperatures. Aviat Space Environ Med, 71(9):939–945, September 2000.">Lee <em>et al.</em>, 2000</a>, <a class="reference internal" href="../references/index.html#id22" title="Catherine O'Brien, Reed W. Hoyt, Mark J. Buller, John W. Castellani, and Andrew J. Young. Telemetry pill measurement of core temperature in humans during active heating and cooling:. Medicine &amp;amp Science in Sports &amp;amp Exercise, 30(3):468–472, March 1998. URL: http://journals.lww.com/00005768-199803000-00020 (visited on 2026-03-01), doi:10.1097/00005768-199803000-00020.">O'Brien <em>et al.</em>, 1998</a>, <a class="reference internal" href="../references/index.html#id85" title="Andrew P. Hunt, Aaron J. E. Bach, David N. Borg, Joseph T. Costello, and Ian B. Stewart. The Systematic Bias of Ingestible Core Temperature Sensors Requires a Correction by Linear Regression. Front. Physiol., 8:260, April 2017. URL: http://journal.frontiersin.org/article/10.3389/fphys.2017.00260/full (visited on 2026-03-01), doi:10.3389/fphys.2017.00260.">Hunt <em>et al.</em>, 2017</a>, <a class="reference internal" href="../references/index.html#id86" title="R. Simpson, G. Machin, H. McEvoy, and R. Rusby. Traceability and calibration in temperature measurement: a clinical necessity. Journal of Medical Engineering &amp; Technology, 30(4):212–217, January 2006. URL: http://www.tandfonline.com/doi/full/10.1080/03091900600711530 (visited on 2026-03-01), doi:10.1080/03091900600711530.">Simpson <em>et al.</em>, 2006</a>]</span>.</p>
+<p>Because individual sensors can exhibit systematic biases or offsets from the manufacturer’s stated accuracy, the water bath data is used to generate an individualised linear regression equation for each sensor. This individual equation is then applied to correct the raw data collected during the actual experiment. Alternatively, a generalised linear correction equation can be applied to the raw data, provided that a single-point preliminary check confirms the sensor falls within an acceptable initial error margin (e.g., ±0.5 °C of the reference thermometer) <span id="id81">[<a class="reference internal" href="../references/index.html#id85" title="Andrew P. Hunt, Aaron J. E. Bach, David N. Borg, Joseph T. Costello, and Ian B. Stewart. The Systematic Bias of Ingestible Core Temperature Sensors Requires a Correction by Linear Regression. Front. Physiol., 8:260, April 2017. URL: http://journal.frontiersin.org/article/10.3389/fphys.2017.00260/full (visited on 2026-03-01), doi:10.3389/fphys.2017.00260.">Hunt <em>et al.</em>, 2017</a>]</span>.</p>
+</section>
+<section id="data-cleaning-and-correction">
+<h3>Data cleaning and correction<a class="headerlink" href="#data-cleaning-and-correction" title="Link to this heading">#</a></h3>
+<p><strong><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-filtering"><span class="std std-ref">Filtering</span></a> for <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-noise"><span class="std std-ref">noise</span></a>.</strong> Practical approaches include low-pass or moving-average <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-smoothing"><span class="std std-ref">smoothing</span></a> (e.g., 30–60 s windows) to suppress motion/respiratory artefacts while retaining thermoregulatory trends <span id="id82">[<a class="reference internal" href="../references/index.html#id84" title="Christopher Byrne and Chin Leong Lim. The ingestible telemetric body core temperature sensor: a review of validity and exercise applications. Br J Sports Med, 41(3):126–133, March 2007. URL: https://bjsm.bmj.com/lookup/doi/10.1136/bjsm.2006.026344 (visited on 2026-03-01), doi:10.1136/bjsm.2006.026344.">Byrne and Lim, 2007</a>, <a class="reference internal" href="../references/index.html#id87" title="Coen C.W.G. Bongers, Maria T.E. Hopman, and Thijs M.H. Eijsvogels. Using an Ingestible Telemetric Temperature Pill to Assess Gastrointestinal Temperature During Exercise. JoVE, pages 53258, October 2015. URL: https://app.jove.com/t/53258 (visited on 2026-03-01), doi:10.3791/53258.">Bongers <em>et al.</em>, 2015</a>]</span>. For ingestible capsules, brief telemetry gaps (&lt; ~2 min) can be linearly interpolated; longer gaps (often caused by the sensor going temporarily out of range of the receiver) are excluded or spline-interpolated with caution <span id="id83">[<a class="reference internal" href="../references/index.html#id87" title="Coen C.W.G. Bongers, Maria T.E. Hopman, and Thijs M.H. Eijsvogels. Using an Ingestible Telemetric Temperature Pill to Assess Gastrointestinal Temperature During Exercise. JoVE, pages 53258, October 2015. URL: https://app.jove.com/t/53258 (visited on 2026-03-01), doi:10.3791/53258.">Bongers <em>et al.</em>, 2015</a>]</span>.</p>
+<p><strong>Discarded data.</strong> <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-artefact"><span class="std std-ref">Artefact</span></a> removal should target non-physiological discontinuities. Specific instances requiring data exclusion include:
+- Data points recorded before a sensor is properly affixed or ingested, or during known periods of temporary removal (e.g., bathing).
+- Sudden, transient depressions in gastrointestinal or oesophageal temperature are clearly associated with the ingestion of cold fluids or food, as these reflect local cooling rather than true core body temperature changes. To avoid these data blocks, several protocols provide food/drinks at around 36.5–37 °C <span id="id84">[<a class="reference internal" href="../references/index.html#id84" title="Christopher Byrne and Chin Leong Lim. The ingestible telemetric body core temperature sensor: a review of validity and exercise applications. Br J Sports Med, 41(3):126–133, March 2007. URL: https://bjsm.bmj.com/lookup/doi/10.1136/bjsm.2006.026344 (visited on 2026-03-01), doi:10.1136/bjsm.2006.026344.">Byrne and Lim, 2007</a>]</span>.
+- Data from the early phase of ingestible capsule transit; some protocols systematically erase data from the first several hours (e.g., 6 hours <span id="id85">[<a class="reference internal" href="../references/index.html#id501" title="S. M. Lee, W. J. Williams, and S. M. Fortney Schneider. Core temperature measurement during supine exercise: esophageal, rectal, and intestinal temperatures. Aviat Space Environ Med, 71(9):939–945, September 2000.">Lee <em>et al.</em>, 2000</a>]</span>) post-ingestion to avoid the instability and systematic errors associated with stomach transit.</p>
+<p><strong>Typical ranges.</strong> Normal resting core body temperature is tightly maintained between 36.0 – 37.5 °C <span id="id86">[<a class="reference internal" href="../references/index.html#id55" title="Adele Diamond, Carolyn T. Lye, Deepali Prasad, and David Abbott. One size does not fit all: Assuming the same normal body temperature for everyone is not justified. PLoS ONE, 16(2):e0245257, February 2021. URL: https://dx.plos.org/10.1371/journal.pone.0245257 (visited on 2026-03-01), doi:10.1371/journal.pone.0245257.">Diamond <em>et al.</em>, 2021</a>, <a class="reference internal" href="../references/index.html#id88" title="Philip A. Mackowiak. A Critical Appraisal of 98.6°F, the Upper Limit of the Normal Body Temperature, and Other Legacies of Carl Reinhold August Wunderlich. JAMA, 268(12):1578, September 1992. URL: http://jama.jamanetwork.com/article.aspx?doi=10.1001/jama.1992.03490120092034 (visited on 2026-03-01), doi:10.1001/jama.1992.03490120092034.">Mackowiak, 1992</a>]</span>. Valid physiological data during severe thermal stress typically stays within the limits of clinical hypothermia (&lt; 35.0 °C) and severe hyperthermia or heat stroke (&gt; 40.0–40.5 °C). Readings falling significantly outside of these physiological extremes (such as sensor drops below 30 °C in ambulatory humans) are generally indicative of technical problems, equipment failure, cold food/drink ingestion, or the sensor expelled from the body.</p>
+</section>
+<section id="derived-parameters">
+<h3>Derived parameters<a class="headerlink" href="#derived-parameters" title="Link to this heading">#</a></h3>
+<p>From the filtered signal, several derived parameters may be computed:</p>
+<ul class="simple">
+<li><p><u><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-baseline"><span class="std std-ref">Baseline</span></a> CBT (°C).</u> Mean temperature during the final 10–15 min before exposure.</p></li>
+<li><p><u>ΔCBT (°C).</u> Difference between end- and start-exposure means; reflects net heat storage or dissipation.</p></li>
+<li><p><u>Rate of rise (°C·h⁻¹).</u> Linear slope of CBT during exposure; indicates the rate of uncompensated heat storage <span id="id87">[<a class="reference internal" href="../references/index.html#id59" title="Julien D. Périard, Thijs M. H. Eijsvogels, and Hein A. M. Daanen. Exercise under heat stress: thermoregulation, hydration, performance implications, and mitigation strategies. Physiological Reviews, 101(4):1873–1979, October 2021. URL: https://journals.physiology.org/doi/10.1152/physrev.00038.2020 (visited on 2026-03-01), doi:10.1152/physrev.00038.2020.">Périard <em>et al.</em>, 2021</a>]</span>.</p></li>
+<li><p><u>Peak CBT (°C).</u> Maximum observed temperature during the protocol.</p></li>
+<li><p><u>Area under the curve (AUC, °C·min).</u> Integral of CBT above baseline across the session, often <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-normalization"><span class="std std-ref">normalised</span></a> by duration (°C·min) to quantify total <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-thermal-load"><span class="std std-ref">thermal load</span></a> <span id="id88">[<a class="reference internal" href="../references/index.html#id89" title="Niloy R. Datta, Dietmar Marder, Sneha Datta, Andreas Meister, Emsad Puric, Emanuel Stutz, Susanne Rogers, Brigitte Eberle, Olaf Timm, Michal Staruch, Oliver Riesterer, and Stephan Bodis. Quantification of thermal dose in moderate clinical hyperthermia with radiotherapy: a relook using temperature–time area under the curve (AUC). International Journal of Hyperthermia, 38(1):296–307, January 2021. URL: https://www.tandfonline.com/doi/full/10.1080/02656736.2021.1875060 (visited on 2026-03-01), doi:10.1080/02656736.2021.1875060.">Datta <em>et al.</em>, 2021</a>]</span>.</p></li>
+<li><p><u>Recovery slope (°C·h⁻¹).</u> Rate of CBT decline post-exposure, used to assess heat-dissipation efficiency and vascular recovery kinetics.</p></li>
+</ul>
+</section>
+</section>
+<section id="summary-table">
+<h2>Summary table<a class="headerlink" href="#summary-table" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-core-temp-methods">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Summary of core-temperature measurement techniques, signal properties, and practical considerations.</span><a class="headerlink" href="#tab-core-temp-methods" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Measure / Site</strong></p></th>
+<th class="head"><p><strong>Sensor / Principle</strong></p></th>
+<th class="head"><p><strong>Response time</strong></p></th>
+<th class="head"><p><strong>Accuracy</strong></p></th>
+<th class="head"><p><strong>Advantages</strong></p></th>
+<th class="head"><p><strong>Limitations</strong></p></th>
+<th class="head"><p><strong>Approx. cost (€)*</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Rectal</strong></p></td>
+<td><p>Flexible thermistor probe (insertion ~10–15 cm)</p></td>
+<td><p>10–30 s</p></td>
+<td><p>±0.1 °C</p></td>
+<td><p>Established reference; low noise; good for sustained exposures</p></td>
+<td><p>Invasive; 5–15 min lag behind rapid core changes; participant burden</p></td>
+<td><p>100–300</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Oesophageal</strong></p></td>
+<td><p>Thermistor or thermocouple (nasal insertion 35–45 cm)</p></td>
+<td><p>5–10 s</p></td>
+<td><p>±0.05 °C</p></td>
+<td><p>Fastest valid CBT proxy; tracks central blood temperature</p></td>
+<td><p>Discomfort; requires supervised insertion; limited to short lab protocols</p></td>
+<td><p>150–400</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gastrointestinal (telemetry pill)</strong></p></td>
+<td><p>Ingestible capsule with thermistor + radio transmitter</p></td>
+<td><p>5–15 s (intestinal)</p></td>
+<td><p>±0.1 °C</p></td>
+<td><p>Ambulatory; wireless; well-tolerated in field protocols</p></td>
+<td><p>Transit-time variability; invalid once in colon; per-use cost; receiver needed</p></td>
+<td><p>50–100 per capsule + receiver (1,000–2,000)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tympanic</strong></p></td>
+<td><p>Infrared thermopile (ear canal)</p></td>
+<td><p>&lt; 3 s</p></td>
+<td><p>±0.2–0.5 °C</p></td>
+<td><p>Non-invasive; rapid spot measurement</p></td>
+<td><p>Position-dependent; airflow and cerumen errors; LoA ±1.3 °C vs rectal</p></td>
+<td><p>50–500</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zero-heat-flux (ZHF)</strong></p></td>
+<td><p>Paired heat-flux sensors at forehead</p></td>
+<td><p>10–30 s</p></td>
+<td><p>±0.1–0.2 °C (mean bias −0.06 °C vs PA)</p></td>
+<td><p>Continuous; non-invasive; wearable; no insertion required</p></td>
+<td><p>Requires perfused skin; drift with sweating; LoA ±0.89 °C</p></td>
+<td><p>500–2,000</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dual-heat-flux (DHF) / HR-derived</strong></p></td>
+<td><p>Surface + heat-flux gradient or pulse-wave algorithm</p></td>
+<td><p>20–60 s</p></td>
+<td><p>±0.2–0.3 °C (mean bias)</p></td>
+<td><p>Ambulatory; fully non-invasive; suitable for field and occupational studies</p></td>
+<td><p>LoA ±0.6–0.7 °C; sensitive to local perfusion and ambient conditions</p></td>
+<td><p>300–1,500</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Temporal-artery infrared</strong></p></td>
+<td><p>Infrared thermometer (forehead scan)</p></td>
+<td><p>&lt; 3 s</p></td>
+<td><p>±0.3–1.0 °C</p></td>
+<td><p>Rapid; no contact required; low burden</p></td>
+<td><p>Wide limits of agreement; underestimates during exercise; poor for monitoring</p></td>
+<td><p>50–300</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Oral / sublingual</strong></p></td>
+<td><p>Thermistor or electronic probe (sublingual placement)</p></td>
+<td><p>30–90 s</p></td>
+<td><p>±0.2–0.3 °C</p></td>
+<td><p>Non-invasive; familiar clinical method</p></td>
+<td><p>Affected by recent food/drink, mouth breathing; not suitable for continuous recording</p></td>
+<td><p>20–100</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bladder (vesical)</strong></p></td>
+<td><p>Thermistor catheter (urinary catheter)</p></td>
+<td><p>1–2 s</p></td>
+<td><p>±0.2 °C vs PA</p></td>
+<td><p>Continuous; well-tolerated in catheterised patients</p></td>
+<td><p>Catheter required; clinical use only; inaccurate at low urine flow</p></td>
+<td><p>&gt; 500 per-use (clinical)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pulmonary artery</strong></p></td>
+<td><p>Fluid-filled or solid-state catheter (PA)</p></td>
+<td><p>&lt; 1 s</p></td>
+<td><p>±0.05 °C</p></td>
+<td><p>Clinical gold standard; highest fidelity</p></td>
+<td><p>Highly invasive; ICU/surgical use only; not used in building research</p></td>
+<td><p>&gt; 1,000 per-use (clinical)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>* Costs represent approximate 2024–2025 academic pricing for durable equipment. Consumables (electrodes, capsules, lubricants), receiver hardware where applicable, and analysis software are not included. Clinical per-use costs reflect typical hospital procurement.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\physiological-signals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PHYSIOLOGICAL SIGNALS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="skin-temperature.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Skin temperature</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-mechanistic-reasons-behind-the-measurement">Why: the mechanistic reasons behind the measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-sensor-types-for-measurement">How: sensor types for measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-body-sites-of-measurement">Where: body sites of measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agreeability-across-sensor-types">Agreeability across sensor types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-confounders-and-modifiers">Known confounders and modifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-handling-methods">Data handling methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensor-calibration">Sensor calibration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-correction">Data cleaning and correction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-parameters">Derived parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-table">Summary table</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bilge Kobas et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Session-level metadata &#8212; WHY WE MEASURE WHAT, HOW, AND WHERE</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/sample-checklists-schemas/session-level-metadata';</script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sensor &amp; device metadata" href="sensor-device-metadata.html" />
+    <link rel="prev" title="Participant-level metadata" href="participant-level-metadata.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    WHY WE MEASURE WHAT, HOW, AND WHERE
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/skin-temperature.html">Skin temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/sweat-skin-moisture-and-skin-conductance.html">Sweat, skin moisture and skin conductance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/heart-rate-and-heart-rate-variability.html">Heart rate and heart rate variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/blood-pressure.html">Blood pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/other-physiological-indicators.html">Other physiological indicators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../terminological-alignment/index.html">TERMINOLOGICAL ALIGNMENT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/symbolic-notation-and-variable-conventions.html">Symbolic notation and variable conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/standardization-challenges-in-derived-metrics.html">Standardization challenges in derived metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/anatomical-reference-taxonomy.html">Anatomical reference taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html">Controlled vocabulary and glossary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">SAMPLE CHECKLISTS &amp; SCHEMAS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="experiment-level-metadata.html">Experiment-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participant-level-metadata.html">Participant-level metadata</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/sample-checklists-schemas/session-level-metadata.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Session-level metadata</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="session-level-metadata">
+<h1>Session-level metadata<a class="headerlink" href="#session-level-metadata" title="Link to this heading">#</a></h1>
+<p>Session-level metadata captures all information that varies from one visit or experimental condition to the next for a given participant. Many of the acute modifiers discussed in Section 2—such as last night’<a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-heat-storage"><span class="std std-ref">s</span></a> sleep, time since waking, recent illness, caffeine or meal timing, and daily hormonal fluctuations—change from day to day and therefore must be recorded at the session rather than participant level.</p>
+<p>Each session is represented by one row in a dedicated metadata table, with one column per session field. As with the experiment- and participant-level schemas, fields are grouped by topic (e.g., Identifiers &amp; Timing, Devices &amp; Logistics, Protocol Adherence, Acute Health State) and assigned to informal tiers:</p>
+<ul class="simple">
+<li><p><u>Tier 1 – Core:</u> Essential variables recorded for every visit (e.g., session ID, date and time, condition code, clothing, sleep duration, pre-session restrictions, acute illness indicators).</p></li>
+<li><p><u>Tier 2 – Recommended:</u> Factors that meaningfully influence thermophysiological responses but may not always be collected (e.g., researchers present, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acclimation"><span class="std std-ref">acclimation</span></a> period, night-shift work, time since exercise).</p></li>
+<li><p><u>Tier 3 – Specialised:</u> Detailed or study-specific variables, such as exact bathroom break volumes, caloric intake calculations, event logs, or fine-grained environmental contextualisation.</p></li>
+</ul>
+<p>Individual studies may extend this table with experiment-specific columns, such as time points for discrete measurements, cognitive task blocks, stepwise heating/cooling adjustments, water-intake increments, or protocol deviations. The core fields remain comparable across studies, facilitating harmonisation and meta-analysis.</p>
+<p>Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digital forms directly linked to the underlying session table.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-session-metadata">
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">Example session-level metadata schema, organised by group, tier, and typical data formats, with optional references to instruments or logging tools.</span><a class="headerlink" href="#tab-session-metadata" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Group</strong></p></th>
+<th class="head"><p><strong>Field name</strong></p></th>
+<th class="head"><p><strong>Tier</strong></p></th>
+<th class="head"><p><strong>Typical answers / coding</strong></p></th>
+<th class="head"><p><strong>Example instruments / tools</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Identifiers &amp; timing</strong></p></td>
+<td><p>Session ID</p></td>
+<td><p>1</p></td>
+<td><p>Unique ID per visit/condition (e.g. P01_S1, P03_C01_Armchair)</p></td>
+<td><p>Lab-defined</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Participant ID</p></td>
+<td><p>1</p></td>
+<td><p>Unique participant code linked to master table (P01, SL23_001, etc.)</p></td>
+<td><p>Lab-defined</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Date</p></td>
+<td><p>1</p></td>
+<td><p>Calendar date</p></td>
+<td><p>YYYY-MM-DD or format noted</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Session start time</p></td>
+<td><p>1</p></td>
+<td><p>24-h clock time or UNIX timestamp</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Session end time</p></td>
+<td><p>1</p></td>
+<td><p>24-h clock time or UNIX timestamp</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Condition / scenario code</p></td>
+<td><p>1</p></td>
+<td><p>Text label for assigned condition (e.g. C01_01, Heat_26C, Night_Armchair)</p></td>
+<td><p>Lab-defined</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Location / room</p></td>
+<td><p>1</p></td>
+<td><p>Room or laboratory code</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Researchers present</p></td>
+<td><p>2</p></td>
+<td><p>Initials or staff codes</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Devices &amp; sensor application +</strong></p></td>
+<td><p>Device IDs used</p></td>
+<td><p>1</p></td>
+<td><p>List of Device IDs applied this session (e.g. TMP-01, TMP-03, ECG-A)</p></td>
+<td><p>Foreign key → Device Registry in sensor-device-metadata</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Calibration IDs active</p></td>
+<td><p>1</p></td>
+<td><p>List of Calibration IDs currently valid for each device (e.g. CAL-003, CAL-007)</p></td>
+<td><p>Foreign key → Calibration Log in sensor-device-metadata; confirms which correction equation was applied</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Condition order / randomisation code</p></td>
+<td><p>1</p></td>
+<td><p>Randomisation sequence label (e.g. “Sequence A: warm → neutral → cool”)</p></td>
+<td><p>Study randomisation plan</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Body site per device</p></td>
+<td><p>1</p></td>
+<td><p>Device ID → site (e.g. TMP-01 → left forearm anterior / TMP-02 → right anterior thigh)</p></td>
+<td><p>Use anatomical taxonomy site labels; laterality and aspect required</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Attachment method per device</p></td>
+<td><p>1</p></td>
+<td><p>Device ID → method (e.g. TMP-01 → Transpore tape / ECG-A → elastic chest strap)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Application time per device</p></td>
+<td><p>1</p></td>
+<td><p>Device ID → hh:mm (e.g. TMP-01 → 17:55 / pill → ingested 17:50)</p></td>
+<td><p>Time sensor was placed on or ingested by participant</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Recording start time per device</p></td>
+<td><p>1</p></td>
+<td><p>Device ID → hh:mm</p></td>
+<td><p>May differ from application time if equilibration period applies</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Recording end time per device</p></td>
+<td><p>1</p></td>
+<td><p>Device ID → hh:mm</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Equilibration time (min)</p></td>
+<td><p>2</p></td>
+<td><p>Device ID → numeric (e.g. TMP-01 → 10 min)</p></td>
+<td><p>Time between application and first data point included in analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Skin preparation per device</p></td>
+<td><p>2</p></td>
+<td><p>Device ID → method (e.g. EDA-03 → alcohol wipe + dry / TMP-01 → none)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Shielding from airflow</p></td>
+<td><p>2</p></td>
+<td><p>Device ID → Yes/No</p></td>
+<td><p>Particularly relevant for skin temperature contact sensors</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Signal quality per device</p></td>
+<td><p>2</p></td>
+<td><p>Device ID → 1 (poor) – 5 (excellent)</p></td>
+<td><p>Operator assessment at session end</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Sensor deviations</p></td>
+<td><p>2</p></td>
+<td><p>Free text (e.g. “TMP-02 detached at 19:30, reattached 19:35”; “ECG-A lost signal 20:10–20:15”)</p></td>
+<td><p>Any deviation from standard placement or signal interruption</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Environment &amp; exposure (session context)</strong></p></td>
+<td><p>Clothing description</p></td>
+<td><p>1</p></td>
+<td><p>Free text description (e.g. “T-shirt, jeans, socks”)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Clothing insulation (clo)</p></td>
+<td><p>1</p></td>
+<td><p>Numeric clo value (approx. 0.5–1.5 etc.)</p></td>
+<td><p>Estimation based on ISO 9920 tables <span id="id1">[<a class="reference internal" href="../references/index.html#id522" title="ISO. ISO 9920: Ergonomics of the thermal environment — Estimation of thermal insulation and water vapour resistance of a clothing ensemble. 2007.">ISO, 2007</a>]</span>; or lab-specific lookup</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Outdoor weather context</p></td>
+<td><p>2–3</p></td>
+<td><p>Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series</p></td>
+<td><p>Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Use of additional personal conditioning</p></td>
+<td><p>2–3</p></td>
+<td><p>Yes/No; type (fan, blanket, personal heater, etc.)</p></td>
+<td><p>Observed + logged when allowed by protocol</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Protocol adherence</strong></p></td>
+<td><p>Pre-session restriction compliance</p></td>
+<td><p>1–2</p></td>
+<td><p>Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”)</p></td>
+<td><p>Checklist based on study instructions (no alcohol, no caffeine, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Arrival time to lab</p></td>
+<td><p>2</p></td>
+<td><p>Clock time</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Waiting / acclimation period</p></td>
+<td><p>2</p></td>
+<td><p>Minutes from arrival to session start (numeric)</p></td>
+<td><p>Derived from times; duration should be standardised</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scheduling &amp; circadian context</strong></p></td>
+<td><p>Sleep-wake times</p></td>
+<td><p>1–2</p></td>
+<td><p>Clock time, 24 h</p></td>
+<td><p>Sleep log / app</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Sleep duration last night</p></td>
+<td><p>1</p></td>
+<td><p>Numeric (hours slept; e.g. 6.8)</p></td>
+<td><p>Derived from log</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Sleep quality last night</p></td>
+<td><p>1–2</p></td>
+<td><p>0–10 scale or 1–5 Likert</p></td>
+<td><p>Subjective rating</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Recent night-shift work</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; description (e.g. “3 consecutive night shifts in last week”)</p></td>
+<td><p>Sleep log / app</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Acute health state (today / last few days)</strong></p></td>
+<td><p>Recent acute illness (last 7 days)</p></td>
+<td><p>1–2</p></td>
+<td><p>Yes/No; short description (e.g. “URI with fever”, “GI infection”)</p></td>
+<td><p>PAR-Q+ style yes/no items; brief medical history</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Fever symptoms in last 48 h</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; peak temperature if known</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Antipyretic use (last 48 h)</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; drug name and approximate time (free text)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Compression garments worn today</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: type and sites covered</p></td>
+<td><p>Compression lowers local Tsk at covered sites; flag if measurement site is affected <span id="id2">[<a class="reference internal" href="../references/index.html#id570" title="Hugo Partsch. Compression therapy: clinical and experimental evidence. Annals of Vascular Diseases, 5(4):416–422, 2012. doi:10.3400/avd.ra.12.00068.">Partsch, 2012</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Post-viral / long COVID symptoms today</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: temperature dysregulation / sweating abnormality / orthostatic intolerance / other</p></td>
+<td><p>Acute-day expression of chronic dysautonomia may vary; capture alongside stable participant-level flag <span id="id3">[<a class="reference internal" href="../references/index.html#id566" title="Melanie Dani, Annemarie Dirksen, Pots Taraborrelli, Miriam Torocastro, Dimitrios Panagopoulos, Richard Sutton, and Phang Boon Lim. Autonomic dysfunction in `long COVID': rationale, physiology and management strategies. Clinical Medicine, 21(1):e63–e67, 2021. doi:10.7861/clinmed.2020-0896.">Dani <em>et al.</em>, 2021</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>New medications since previous session</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: names and doses (free text)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Behaviour since waking (session-day)</strong></p></td>
+<td><p>Time since last meal at start</p></td>
+<td><p>1–2</p></td>
+<td><p>Numeric (hours); optional category (light / normal / heavy); Yes/No if a specific fasting time was instructed (e.g. “Did not eat in the last 12 hours”)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Time since last caffeine</p></td>
+<td><p>1–2</p></td>
+<td><p>Numeric (hours); type (coffee / tea / energy drink / other); Yes/No if a specific fasting time was instructed (e.g. “Did not drink coffee in the last 12 hours”)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Time since last moderate/vigorous exercise</p></td>
+<td><p>2</p></td>
+<td><p>Numeric (hours); or category (&lt;4 h, 4–12 h, &gt;12 h); Yes/No if a specific fasting time was instructed (e.g. “Did not exercise in the last 12 hours”)</p></td>
+<td><p>Short structured item; can echo IPAQ intensity definitions</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Alcohol intake in last 24 h</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; rough units or category (none / 1–2 / 3–5 / &gt;5)</p></td>
+<td><p>AUDIT-C wording if more structure is needed; alternatively an alcohol test can be done before each session</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Antiperspirant applied to measurement sites (last 48 h)</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: which sites</p></td>
+<td><p>Aluminium-based antiperspirants reduce local sweat rate by 20–60 % for 24–48 h. Participants should be instructed to abstain from application to measurement sites before the session <span id="id4">[<a class="reference internal" href="../references/index.html#id176" title="Lindsay B. Baker. Physiology of sweat gland function: The roles of sweating and sweat composition in human health. Temperature, 6(3):211–259, July 2019. URL: https://www.tandfonline.com/doi/full/10.1080/23328940.2019.1632145 (visited on 2026-03-01), doi:10.1080/23328940.2019.1632145.">Baker, 2019</a>, <a class="reference internal" href="../references/index.html#id561" title="Richard P. Quatrale, D. W. Coble, K. L. Stoner, and C. B. Felger. The mechanism of antiperspirant action by aluminum salts. Journal of the Society of Cosmetic Chemists, 32:107–136, 1981.">Quatrale <em>et al.</em>, 1981</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Melatonin taken (last 4 h)</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: dose (mg) and time taken</p></td>
+<td><p>Exogenous melatonin raises distal Tsk and DPG; acutely relevant for skin temperature and sleep protocols <span id="id5">[<a class="reference internal" href="../references/index.html#id569" title="Kurt Kräuchi, Christian Cajochen, Mathias Pache, Josef Flammer, and Anna Wirz-Justice. Thermoregulatory effects of melatonin in relation to sleepiness. Chronobiology International, 23(1–2):475–484, 2006. doi:10.1080/07420520500545854.">Kräuchi <em>et al.</em>, 2006</a>]</span></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>NSAIDs or analgesics taken (last 12 h)</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: drug name and approximate time</p></td>
+<td><p>NSAIDs can transiently alter autonomic tone; document alongside other acute medications <span id="id6">[<a class="reference internal" href="../references/index.html#id257" title="Julian F. Thayer, Shelby S. Yamamoto, and Jos F. Brosschot. The relationship of autonomic imbalance, heart rate variability and cardiovascular disease risk factors. International Journal of Cardiology, 141(2):122–131, May 2010. URL: https://linkinghub.elsevier.com/retrieve/pii/S0167527309014879 (visited on 2026-03-01), doi:10.1016/j.ijcard.2009.09.543.">Thayer <em>et al.</em>, 2010</a>]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Smoking / vaping today</p></td>
+<td><p>2–3</p></td>
+<td><p>Yes/No; approximate cigarettes/vapes since waking</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hormonal &amp; reproductive (per session info)</strong></p></td>
+<td><p>Menstrual <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-phase"><span class="std std-ref">phase</span></a> at session</p></td>
+<td><p>1</p></td>
+<td><p>Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown)</p></td>
+<td><p>Derived from self-reported menstrual dates; optionally hormone assays</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Pregnancy / breastfeeding status</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; if Yes: notes</p></td>
+<td><p>Pregnancy tests can be done before each experiment/session when needed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Events &amp; deviations</strong></p></td>
+<td><p>Acute events during session</p></td>
+<td><p>1–2</p></td>
+<td><p>Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”)</p></td>
+<td><p>End-of-session log entry</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Bathroom visits</p></td>
+<td><p>2–3</p></td>
+<td><p>Times or time ranges; optional volume where measured</p></td>
+<td><p>Manually logged; useful for future detection of outside-lab/uncontrolled exposure times</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Food / drink provided</p></td>
+<td><p>2–3</p></td>
+<td><p>Type and energy content (kcal) if standardised</p></td>
+<td><p>Study-specific (e.g. Huel Liquid Drink)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Required calories</p></td>
+<td><p>2–3</p></td>
+<td><p>Calculated kcal requirement via BMR equations</p></td>
+<td><p>St. Jeor-Mifflin <span id="id7">[<a class="reference internal" href="../references/index.html#id496" title="MD Mifflin, ST St Jeor, LA Hill, BJ Scott, SA Daugherty, and YO Koh. A new predictive equation for resting energy expenditure in healthy individuals. The American Journal of Clinical Nutrition, 51(2):241–247, February 1990. URL: https://linkinghub.elsevier.com/retrieve/pii/S0002916523166986 (visited on 2026-03-01), doi:10.1093/ajcn/51.2.241.">Mifflin <em>et al.</em>, 1990</a>]</span> or similar</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Food / drink consumed</p></td>
+<td><p>2–3</p></td>
+<td><p>Estimated intake (kcal or %) + timing</p></td>
+<td><p>Participant-specific</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Major protocol deviations</p></td>
+<td><p>1–2</p></td>
+<td><p>Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”)</p></td>
+<td><p>Protocol deviation form</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Free-text notes</p></td>
+<td><p>2</p></td>
+<td><p>Any other remarks that help interpret data</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate <em>sensor_application.tsv</em> with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\sample-checklists-schemas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="participant-level-metadata.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Participant-level metadata</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sensor-device-metadata.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sensor &amp; device metadata</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bilge Kobas et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

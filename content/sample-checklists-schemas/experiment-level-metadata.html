@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Experiment-level metadata &#8212; WHY WE MEASURE WHAT, HOW, AND WHERE</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7f88e5e1" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/sample-checklists-schemas/experiment-level-metadata';</script>
+    <script src="../../_static/glossary-search.js?v=20d08fd9"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Participant-level metadata" href="participant-level-metadata.html" />
+    <link rel="prev" title="SAMPLE CHECKLISTS &amp; SCHEMAS" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WHY WE MEASURE WHAT, HOW, AND WHERE</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    WHY WE MEASURE WHAT, HOW, AND WHERE
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">INTRODUCTION</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physiological-signals/index.html">PHYSIOLOGICAL SIGNALS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/core-body-temperature.html">Core body temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/skin-temperature.html">Skin temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/sweat-skin-moisture-and-skin-conductance.html">Sweat, skin moisture and skin conductance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/heart-rate-and-heart-rate-variability.html">Heart rate and heart rate variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/blood-pressure.html">Blood pressure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../physiological-signals/other-physiological-indicators.html">Other physiological indicators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../terminological-alignment/index.html">TERMINOLOGICAL ALIGNMENT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/symbolic-notation-and-variable-conventions.html">Symbolic notation and variable conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/standardization-challenges-in-derived-metrics.html">Standardization challenges in derived metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/anatomical-reference-taxonomy.html">Anatomical reference taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html">Controlled vocabulary and glossary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">SAMPLE CHECKLISTS &amp; SCHEMAS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Experiment-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="participant-level-metadata.html">Participant-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session-level-metadata.html">Session-level metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensor-device-metadata.html">Sensor &amp; device metadata</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribution/index.html">CONTRIBUTION</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/community-and-community-roles.html">Community and community roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-contribute.html">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contributors.html">Credits and contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/how-to-cite.html">How to cite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/versioning-and-updates.html">Versioning and updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution/contact.html">Contact</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/sample-checklists-schemas/experiment-level-metadata.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Experiment-level metadata</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="experiment-level-metadata">
+<h1>Experiment-level metadata<a class="headerlink" href="#experiment-level-metadata" title="Link to this heading">#</a></h1>
+<p>Experiment-level metadata capture the high-level characteristics of a study: where and when it was conducted, by whom, under which ethical approvals, and what its overall design and planned exposures were. These fields describe the protocol as a whole, independently of any particular participant or session, and form the top level of the metadata hierarchy.</p>
+<p>To make the schema easier to reuse across different laboratories and study types, fields are grouped by topic and are assigned to three informal tiers:</p>
+<ul class="simple">
+<li><p><u>Tier 1 – Core experiment descriptors:</u> Essential information needed to interpret or reuse a study, including experiment identifiers, institutional affiliation, ethics approval, study design and environment, recruitment window, and the main exposure/intervention categories.</p></li>
+<li><p><u>Tier 2 – Recommended descriptors:</u> Information that improves reproducibility and interpretability but may not always be available, such as randomisation method, <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-blinding"><span class="std std-ref">blinding</span></a>, standardised behavioural instructions, number and naming of conditions, and detailed environmental or HVAC descriptions.</p></li>
+<li><p><u>Tier 3 – Specialised descriptors:</u> More specific contextual information that is useful for certain study types or advanced meta-analyses, including room geometry, calibration summaries, or detailed equipment notes. These fields are optional but help achieve FAIR-level documentation when available.</p></li>
+</ul>
+<p>To aid cross-study comparison, we also include a concise <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-picot"><span class="std std-ref">PICOT</span></a> summary for each experiment. PICOT provides a high-level, non-redundant synopsis of the Population, Intervention, Comparison, Outcomes, and Time frame, complementing (but not duplicating) the detailed metadata fields.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-experiment-metadata">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">Experiment-level metadata schema, organised by group and tier.</span><a class="headerlink" href="#tab-experiment-metadata" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Group</strong></p></th>
+<th class="head"><p><strong>Field name</strong></p></th>
+<th class="head"><p><strong>Tier</strong></p></th>
+<th class="head"><p><strong>Typical answers / coding</strong></p></th>
+<th class="head"><p><strong>Notes / considerations</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Core IDs</strong></p></td>
+<td><p>Experiment ID</p></td>
+<td><p>1</p></td>
+<td><p>Unique alphanumeric code</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Experiment name</p></td>
+<td><p>1</p></td>
+<td><p>Descriptive title</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Principal investigator(s)</p></td>
+<td><p>1</p></td>
+<td><p>Name(s) or initials</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Researcher(s)</p></td>
+<td><p>1</p></td>
+<td><p>Name(s) or initials</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Contact person</p></td>
+<td><p>1</p></td>
+<td><p>Single designated contact</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Contact information</p></td>
+<td><p>1</p></td>
+<td><p>Email</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Lab(s)</p></td>
+<td><p>1</p></td>
+<td><p>Lab or unit name</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Institute(s)</p></td>
+<td><p>1</p></td>
+<td><p>Organisational affiliation</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Location(s)</p></td>
+<td><p>1</p></td>
+<td><p>City, country; optionally coordinates or street address</p></td>
+<td><p>High-resolution location information enables automated climate data and time-zone alignment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ethics &amp; governance</strong></p></td>
+<td><p>Ethics committee</p></td>
+<td><p>1</p></td>
+<td><p>Full name</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Ethics approval ID / Code</p></td>
+<td><p>1</p></td>
+<td><p>Approval number</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Approval date</p></td>
+<td><p>2</p></td>
+<td><p>YYYY-MM-DD</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Amendments / versions</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; brief notes</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Data protection compliance</p></td>
+<td><p>1</p></td>
+<td><p>GDPR, HIPAA, other</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Preregistration ID</p></td>
+<td><p>2–3</p></td>
+<td><p>OSF / <a class="reference external" href="http://clinicaltrials.gov">clinicaltrials.gov</a> link</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Study type</strong></p></td>
+<td><p>Study environment</p></td>
+<td><p>1</p></td>
+<td><p>Laboratory / Field / Hybrid</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Study design</p></td>
+<td><p>1</p></td>
+<td><p>Controlled / Observational / Interventional</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Experimental structure</p></td>
+<td><p>2</p></td>
+<td><p>Between-subjects, Within-subjects, Repeated measures, Crossover, Pre–Post</p></td>
+<td><p>Multiple can apply</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Randomisation</p></td>
+<td><p>2</p></td>
+<td><p>Yes/No; method (simple, block, Latin square)</p></td>
+<td><p>Link to randomisation table if available</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Blinding</p></td>
+<td><p>1</p></td>
+<td><p>None / Single-blind / Double-blind</p></td>
+<td><p>If none, a brief explanation recommended</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Timing &amp; schedule</strong></p></td>
+<td><p>Start date of experiment</p></td>
+<td><p>1</p></td>
+<td><p>YYYY-MM-DD</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>End date of experiment</p></td>
+<td><p>1</p></td>
+<td><p>YYYY-MM-DD</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Typical session duration</p></td>
+<td><p>1</p></td>
+<td><p>Minutes or hours</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Standard session start time</p></td>
+<td><p>1</p></td>
+<td><p>hh:mm (24-h format)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Standard session end time</p></td>
+<td><p>1</p></td>
+<td><p>hh:mm (24-h format)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Study population</strong></p></td>
+<td><p>Target <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-sample-size"><span class="std std-ref">sample size</span></a></p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Achieved sample size</p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Male participants</p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Female participants</p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Transitioning participants: f2m</p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Transitioning participants: m2f</p></td>
+<td><p>1</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Age range</p></td>
+<td><p>1</p></td>
+<td><p>Minimum–maximum</p></td>
+<td><p>e.g. “21–35 years”</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Population description</p></td>
+<td><p>1</p></td>
+<td><p>Free text</p></td>
+<td><p>e.g. “Healthy university students”, “Sedentary adults aged 20–40”</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Inclusion criteria</p></td>
+<td><p>1</p></td>
+<td><p>Free text or list</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Exclusion criteria</p></td>
+<td><p>1</p></td>
+<td><p>Free text or list</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Intervention</strong></p></td>
+<td><p>Study domain(s)</p></td>
+<td><p>1</p></td>
+<td><p>Thermal / Humidity / Air movement / Light / IAQ / Acoustics</p></td>
+<td><p>Multiple allowed</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Intervention description</p></td>
+<td><p>1</p></td>
+<td><p>Free text</p></td>
+<td><p>Describe manipulated variables</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Number of conditions</p></td>
+<td><p>2</p></td>
+<td><p>Integer</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Condition labels</p></td>
+<td><p>2</p></td>
+<td><p>Text labels</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Standardised behaviour rules</p></td>
+<td><p>1</p></td>
+<td><p>Resting, sitting, acclimatisation / normalisation, movement, eating, drinking protocols</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Environment &amp; equipment (experiment-level)</strong></p></td>
+<td><p>Spatial typology</p></td>
+<td><p>1</p></td>
+<td><p>Office / Residential / Educational / Public / etc.</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>HVAC system description</p></td>
+<td><p>2</p></td>
+<td><p>AC model, radiant panel specifications, air-velocity sources</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Room dimensions</p></td>
+<td><p>3</p></td>
+<td><p>m² or m³</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-baseline"><span class="std std-ref">Baseline</span></a> environmental control</p></td>
+<td><p>1</p></td>
+<td><p>Air temperature, radiant temperature, humidity, lighting ranges</p></td>
+<td><p>Multiple allowed</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Primary instruments used</p></td>
+<td><p>1</p></td>
+<td><p>List of Device IDs (e.g. TMP-01, TMP-02, ECG-A)</p></td>
+<td><p>Foreign keys to devices.tsv (Device Registry); full specifications recorded there</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Calibration reference</p></td>
+<td><p>2</p></td>
+<td><p>Link to calibration log entries for this study</p></td>
+<td><p>Foreign key to calibrations.tsv; replaces free-text calibration notes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PICOT summary</strong></p></td>
+<td><p>P – Population</p></td>
+<td><p>1</p></td>
+<td><p>Short description of target group and key eligibility criteria</p></td>
+<td><p>“Healthy adults 18–35, BMI 18–25, non-smokers; no cardiovascular/metabolic disease; regular sleep schedule”</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>I – Intervention / exposure</p></td>
+<td><p>1</p></td>
+<td><p>Summary of main exposure(s) or experimental condition(s)</p></td>
+<td><p>“14-day heat <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-acclimation"><span class="std std-ref">acclimation</span></a>: AC at 26 °C vs free-running apartment (summer conditions)”</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>C – Comparison / control conditions</p></td>
+<td><p>1</p></td>
+<td><p>Description of comparator condition(s)</p></td>
+<td><p>“Free-running cooling vs constant AC; within-subject crossover”</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>O – Primary outcomes</p></td>
+<td><p>1</p></td>
+<td><p>Main endpoints and quantification</p></td>
+<td><p>“Core body temperature, neck/ankle skin temperature, HR, BP, HRV (RMSSD), thermal sensation”</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>O – Secondary outcomes</p></td>
+<td><p>1</p></td>
+<td><p>Additional exploratory endpoints</p></td>
+<td><p>“Sleep <a class="reference internal" href="../terminological-alignment/controlled-vocabulary-and-glossary.html#label-onset"><span class="std std-ref">onset</span></a> latency, actigraphy-based sleep efficiency, melatonin AUC”</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>T – Time frame</p></td>
+<td><p>1</p></td>
+<td><p>Time horizon for effect and measurement</p></td>
+<td><p>“Pre–post mild heat-stress test before and after 14-day exposure; tests between 09:00–16:00”</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Data availability</strong></p></td>
+<td><p>Data repository</p></td>
+<td><p>1</p></td>
+<td><p>OSF / Zenodo / Figshare / institutional repository / none</p></td>
+<td><p>Where the dataset will be or is deposited</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Dataset DOI / link</p></td>
+<td><p>1</p></td>
+<td><p>URL or DOI; “in preparation” if not yet available</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Data access conditions</p></td>
+<td><p>1</p></td>
+<td><p>Open / Restricted / Embargoed (with date) / Available on request</p></td>
+<td><p>“Available on request” alone is insufficient for reproducibility; prefer open or restricted with documented process</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Metadata availability</p></td>
+<td><p>1</p></td>
+<td><p>Whether structured metadata (this schema) is shared independently of raw data</p></td>
+<td><p>Metadata can often be shared even when raw data cannot</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\sample-checklists-schemas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SAMPLE CHECKLISTS &amp; SCHEMAS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="participant-level-metadata.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Participant-level metadata</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bilge Kobas et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
