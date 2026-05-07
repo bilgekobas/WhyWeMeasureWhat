@@ -29,7 +29,13 @@ This repository is a living scholarly resource under continuous development.
 
 ## Citation
 
-Zenodo DOI will be added upon first public release.
+If you use this resource, please cite:
+
+Kobas, B. (2026). *Why We Measure What, How and Where: Methods for Human Thermal Physiology Research in the Built Environment* (Version 0.1.0). Zenodo. https://doi.org/10.5281/zenodo.20073568
+
+<a href="https://doi.org/10.5281/zenodo.20073568">
+<img src="https://zenodo.org/badge/1230978732.svg" alt="DOI">
+</a>
 
 ## License
 

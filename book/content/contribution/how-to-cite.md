@@ -23,7 +23,7 @@ If this resource contributes to academic work, please cite the archived Zenodo v
 
 Recommended citation format:
 
-> Kobas, B. (2026). *Why We Measure What, How and Where: A living methodological framework for thermal physiology measurements in built-environment research* (Version X.X) [Online resource]. Zenodo. https://doi.org/XXXXX
+> Kobas, B. (2026). *Why We Measure What, How and Where: Methods for Human Thermal Physiology Research in the Built Environment* (Version 0.1.0). Zenodo. https://doi.org/10.5281/zenodo.20073568
 
 Because the resource is periodically updated, including either the version number or the access date is strongly recommended.
 
