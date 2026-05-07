@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "WHY WE MEASURE WHAT, HOW, AND WHERE"
+message: "If you use this resource, please cite it using the metadata below."
+type: book
+authors:
+  - family-names: Kobas
+    given-names: Bilge
+repository-code: "https://github.com/bilgekobas/WhyWeMeasureWhat"
+license: "CC-BY-4.0"
