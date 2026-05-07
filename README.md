@@ -1,6 +1,5 @@
 # WHY WE MEASURE WHAT, HOW, AND WHERE
-
-A living methodological framework and reference wiki for physiological measurements in indoor thermal physiology research.
+Methods for Human Thermal Physiology Research in the Built Environment
 
 Bilge Kobas  
 Chair of Building Technology and Climate Responsive Design
