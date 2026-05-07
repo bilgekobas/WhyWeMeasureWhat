@@ -3,7 +3,7 @@
 A living methodological framework and reference wiki for physiological measurements in indoor thermal physiology research.
 
 Bilge Kobas  
-Chair of Building Technology and Climate Responsive Design  
+Chair of Building Technology and Climate Responsive Design
 Technical University of Munich (TUM)
 
 ## Overview
