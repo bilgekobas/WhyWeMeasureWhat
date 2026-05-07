@@ -36,10 +36,23 @@ jobs:
         run: |
           jupyter-book build book
 
+      - name: Prepare site folder
+        run: |
+          mkdir site
+          if [ -d "book/_build/html" ]; then
+            cp -r book/_build/html/* site/
+          elif [ -d "_build/html" ]; then
+            cp -r _build/html/* site/
+          else
+            echo "Could not find built HTML output."
+            find . -maxdepth 4 -type d
+            exit 1
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book/_build/html
+          path: site
 
   deploy:
     environment:
