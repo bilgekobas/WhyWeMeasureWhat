@@ -37,10 +37,18 @@ jobs:
           cd book
           jupyter-book build .
 
+      - name: Locate built HTML
+        run: |
+          echo "Searching for built index.html..."
+          find . -path "*/_build/html/index.html" -print
+          SITE_DIR=$(dirname "$(find . -path "*/_build/html/index.html" | head -n 1)")
+          echo "SITE_DIR=$SITE_DIR" >> $GITHUB_ENV
+          echo "Detected site directory: $SITE_DIR"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ github.workspace }}/book/_build/html
+          path: ${{ env.SITE_DIR }}
 
   deploy:
     environment:
