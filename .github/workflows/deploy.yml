@@ -33,14 +33,14 @@ jobs:
           pip install jupyter-book sphinx sphinxcontrib-bibtex
 
       - name: Build Jupyter Book
-        working-directory: book
         run: |
+          cd book
           jupyter-book build .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: ${{ github.workspace }}/book/_build/html
 
   deploy:
     environment:
