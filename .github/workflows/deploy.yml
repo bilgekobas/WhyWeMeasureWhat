@@ -29,13 +29,22 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -U pip
-          pip install jupyter-book sphinx sphinxcontrib-bibtex
+          python -m pip install -U pip
+          python -m pip install "jupyter-book==1.0.4.post1" "sphinx==7.4.7" sphinxcontrib-bibtex
+
+      - name: Confirm Jupyter Book version
+        run: |
+          jupyter-book --version
 
       - name: Build Jupyter Book
+        working-directory: book
         run: |
-          cd book
           jupyter-book build .
+
+      - name: Check build output
+        run: |
+          ls -la book/_build/html
+          test -f book/_build/html/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
