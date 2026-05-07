@@ -5,4 +5,4 @@ __pycache__/
 Thumbs.db 
 ~$*.docx
 _build_audit/
-_build_intermediate/
+_build_intermediate/book/_build/ 
