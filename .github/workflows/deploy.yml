@@ -29,26 +29,23 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -U pip
-          pip install jupyter-book sphinx sphinxcontrib-bibtex
+          python -m pip install -U pip
+          python -m pip install jupyter-book sphinx sphinxcontrib-bibtex
 
       - name: Build Jupyter Book
         run: |
           cd book
-          jupyter-book build .
+          python -m jupyter_book build .
 
-      - name: Locate built HTML
+      - name: Check build output
         run: |
-          echo "Searching for built index.html..."
-          find . -path "*/_build/html/index.html" -print
-          SITE_DIR=$(dirname "$(find . -path "*/_build/html/index.html" | head -n 1)")
-          echo "SITE_DIR=$SITE_DIR" >> $GITHUB_ENV
-          echo "Detected site directory: $SITE_DIR"
+          ls -la book/_build/html
+          test -f book/_build/html/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.SITE_DIR }}
+          path: book/_build/html
 
   deploy:
     environment:
