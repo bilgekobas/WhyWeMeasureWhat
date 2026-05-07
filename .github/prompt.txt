@@ -1,0 +1,9 @@
+cd /d "C:\Users\kobas\00_Repos\2511_WhyWeMeasureWhat_Git"
+
+conda activate wwmw_wiki
+
+git add .
+
+git commit -m "Describe your update here"
+
+git push origin main

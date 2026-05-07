@@ -4,28 +4,7 @@ This section provides structured documentation templates for human thermal physi
 
 ## Structure
 
-The documentation is organised across two parallel axes. The diagram below shows how the five tables relate to each other: solid arrows indicate hierarchy (one record contains or generates the next), and dashed arrows indicate foreign key references (a field in one table points to a record in another).
-
-:::{mermaid}
-flowchart TD
-    subgraph CTX["Experimental context"]
-        E["Experiment\none record per study\ndesign, ethics, PICOT\ninstruments, data availability"]
-        P["Participant\none record per person\ndemographics, health\nhormonal status, lifestyle"]
-        S["Session\none record per visit\nacute state, clothing\nsensor application"]
-        E --> P
-        E --> S
-        P --> S
-    end
-    subgraph DEV["Sensor and device documentation"]
-        DR["Device Registry\none record per device\nbrand, model, serial number\nsensor principle, specs"]
-        CL["Calibration Log\none record per calibration\nmethod, correction equation\nreference instrument, pass/fail"]
-        DR --> CL
-    end
-    E -. "Primary instruments used" .-> DR
-    E -. "Calibration reference" .-> CL
-    S -. "Device IDs used / Calibration IDs active" .-> DR
-    S -. "Calibration IDs active" .-> CL
-:::
+The documentation is organised across two parallel axes:
 
 **Experimental context** follows a three-level hierarchy. Each level corresponds to a separate metadata table:
 

@@ -1,12 +1,17 @@
-# Community and community roles
+# Community and governance roles
 
-This document is maintained as a collaborative, community-driven resource. It brings together researchers from thermal physiology, environmental ergonomics, building science, and related disciplines who share an interest in improving the clarity, consistency, and reproducibility of physiological measurements in the thermal environment.
+This resource is maintained as an open methodological reference intended to support methodological consistency, transparency, and interpretability across physiological measurements in thermal-environment research.
 
-Different roles support the development and maintenance of the document:
+The project brings together perspectives from thermal physiology, environmental ergonomics, building science, experimental physiology, and related disciplines.
 
-- Editors oversee the overall structure and scope of the resource, coordinate updates, and ensure that contributions align with the document'{ref}`s <label-heat-storage>` aims.
-- Contributors propose additions, revisions, and examples based on new research findings, methodological developments, or emerging standards.
-- Reviewers provide subject-matter expertise and help evaluate proposed changes for accuracy, clarity, and consistency.
-- Project coordinators manage the operational aspects of the project, including repository maintenance, contribution workflows, versioning, and communication between editors, contributors, and reviewers.
+The resource does not aim to prescribe a single universal methodology or reporting standard. Instead, it seeks to improve comparability and interpretability across heterogeneous experimental practices.
 
-This distributed structure allows the document to evolve alongside the field while maintaining scientific reliability.
+Different roles support the development and maintenance of the resource:
+
+- **Editors** oversee the scientific scope, structure, and long-term direction of the resource and coordinate major revisions and updates.
+- **Contributors** propose additions, clarifications, corrections, methodological examples, terminology updates, and reporting practices informed by research or experimental experience.
+- **Reviewers** provide subject-matter expertise and help evaluate proposed changes for scientific accuracy, clarity, and internal consistency.
+- **Technical maintainers** support repository infrastructure, versioning, website functionality, data organisation, and long-term accessibility.
+- **Project coordinators** manage operational aspects of the project, including communication, release management, contribution workflows, and integration across contributors and reviewers.
+
+This distributed structure allows the resource to evolve alongside the field while maintaining scientific reliability and traceability.

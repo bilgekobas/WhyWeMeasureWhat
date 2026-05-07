@@ -79,7 +79,7 @@ O: Anterior thigh, P: Left {ref}`posterior <label-spatial-orientation>` thigh, Q
 
 (mean-skin-temperature-calculator)=
 ## Mean Skin Temperature Calculator
-The interactive calculator shows Mean Skin Temperature results using different formulas. The default values are computer generated and do not rely on any real data. The values for each body site can be manually changed, if the selected formula includes those sites.  
+The interactive calculator demonstrates how Mean Skin Temperature values differ across published formulas. The default temperatures shown for each anatomical site are computer-generated example values and are not derived from real participant data. Site temperatures can be manually adjusted for all anatomical locations included in the selected formula.
 
 ```{raw} html
 <link rel="stylesheet" href="../../mst-widget/mst-widget.css?v=final">
@@ -127,12 +127,13 @@ Several formulations of mean body temperature have been proposed, most commonly 
 :::{table} Mean body temperature formulations and weighting coefficients
 :name: tab-mean-body-temperature-formulas
 
-| Author / formulation | Year | Formula | Core weighting | Skin weighting | Assumed / typical core-temperature input | Rationale / notes | Typical use | Ref |
-|:---|:---:|:---:|:---:|:---:|:---|:---|:---|:---:|
-| Burton | 1935 | {math}`T_b = 0.64\,T_{core} + 0.36\,T_{sk}` | 0.64 | 0.36 | Core site not explicitly fixed; later applications typically use rectal temperature | Derived empirically using whole-body {ref}`calorimetry <label-calorimetry>`; assumes relatively homogeneous core tissues and a peripheral temperature gradient from core to skin | Classical {ref}`thermoregulation <label-thermoregulation>` studies; early heat-balance models | {cite:p}`burton_human_1935` |
-| Hardy & DuBois | 1938 | {math}`T_b = 0.70\,T_{core} + 0.30\,T_{sk}` | 0.70 | 0.30 | Typically rectal or equivalent deep-body measurements | Coefficient estimated for neutral environmental conditions | Physiological heat-balance studies | {cite:p}`hardy_basal_1938` |
-| Stolwijk & Hardy | 1966 | {math}`T_b = 0.70\,T_{core} + 0.30\,T_{sk}` | 0.70 | 0.30 | Deep-body node in model framework; commonly approximated by rectal or esophageal temperature | Derived from partitional calorimetric studies and two-node thermoregulation modelling under hot conditions | Thermophysiological modelling | {cite:p}`stolwijk_partitional_1966` |
-| Snellen | 1966 | {math}`T_b \approx 0.80\,T_{core} + 0.20\,T_{sk}` | ~0.80 | ~0.20 | Deep-body temperature during exercise (often rectal) | Higher core weighting observed during muscular work in hot environments | Exercise physiology; heat-strain research | {cite:p}`snellen_mean_1966` |
-| Colin et al. | 1971 | {math}`T_b = a\,T_{core} + (1-a)\,T_{sk}` | 0.64–0.79 | 0.36–0.21 | Rectal temperature typically used | Confirmed Burton coefficient for neutral conditions but showed coefficient increases under extreme heat stress | Thermoregulation experiments | {cite:p}`colin_computation_1971` |
+| Author / formulation | Year | Core weighting | Skin weighting | Assumed / typical core-temperature input | Rationale / notes | Typical use | Ref |
+|:---|:---:|:---:|:---:|:---|:---|:---|:---:|
+| Burton | 1935 | 0.64 | 0.36 | Core site not explicitly fixed; later applications typically use rectal temperature | Derived empirically using whole-body {ref}`calorimetry <label-calorimetry>`; assumes relatively homogeneous core tissues and a peripheral temperature gradient from core to skin | Classical {ref}`thermoregulation <label-thermoregulation>` studies; early heat-balance models | {cite:p}`burton_human_1935` |
+| Hardy & DuBois | 1938 | 0.70 | 0.30 | Typically rectal or equivalent deep-body measurements | Coefficient estimated for neutral environmental conditions | Physiological heat-balance studies | {cite:p}`hardy_basal_1938` |
+| Stolwijk & Hardy | 1966 | 0.70 | 0.30 | Deep-body node in model framework; commonly approximated by rectal or esophageal temperature | Derived from partitional calorimetric studies and two-node thermoregulation modelling under hot conditions | Thermophysiological modelling | {cite:p}`stolwijk_partitional_1966` |
+| Snellen | 1966 | 0.80 | 0.20 | Deep-body temperature during exercise (often rectal) | Higher core weighting observed during muscular work in hot environments | Exercise physiology; heat-strain research | {cite:p}`snellen_mean_1966` |
+| Colin et al. | 1971 (neutral conditions) | 0.64 | 0.36 | Rectal temperature typically used | Confirmed Burton-type weighting under neutral conditions | Thermoregulation experiments | {cite:p}`colin_computation_1971` |
+| Colin et al. | 1971 (extreme heat stress) | 0.79 | 0.21 | Rectal temperature typically used | Demonstrated increased core weighting during severe heat stress conditions | Heat-stress physiology; thermoregulation experiments | {cite:p}`colin_computation_1971` |
 
 :::

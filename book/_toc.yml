@@ -33,7 +33,7 @@ chapters:
       - file: content/contribution/how-to-contribute
       - file: content/contribution/contributors
       - file: content/contribution/how-to-cite
-      - file: content/contribution/versioning-and-updates
       - file: content/contribution/contact
+      - file: content/contribution/license
 
   - file: content/references/index

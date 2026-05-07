@@ -1,8 +1,10 @@
 # Credits and contributors
 
-This document is currently developed and maintained by a single author (which is not ideal). It is intended as a growing collaborative resource, and future contributors will be acknowledged here as the project develops.
+This resource is currently developed and maintained by a single editor and contributor, with the long-term aim of supporting broader community participation and review.
 
-Contributions may include writing, review, methodological feedback, terminology suggestions, technical development, or examples of reporting practice.
+Future contributions may include writing, review, methodological feedback, terminology development, technical infrastructure, metadata schema design, or examples of reporting practice.
+
+Contributors and reviewers will be acknowledged here with their permission as the project develops.
 
 <style>
 .contributors-grid{
@@ -109,4 +111,4 @@ Bilge Kobas is a researcher working on human thermal physiology in the built env
 <br>
 </br>
 
-Future contributors will be listed here with their permission. Roles may include author, reviewer, methodological contributor, or technical contributor, depending on the nature of the contribution.
+Future contributors may be acknowledged in different roles depending on the nature of their contribution, including editor, reviewer, methodological contributor, technical contributor, or advisor.

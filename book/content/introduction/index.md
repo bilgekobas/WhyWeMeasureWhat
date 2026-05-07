@@ -6,7 +6,7 @@ This resource exists to bridge that gap.
 
 ## What this resource is
 
-**Why We Measure What We Measure** is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.
+*Why We Measure What, How and Where* is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.
 
 The resource documents five commonly used physiological signals:
 
@@ -67,6 +67,6 @@ Contributions are welcome. See [how to contribute](../contribution/how-to-contri
 
 This resource was developed at the Chair of Building Technology and Climate Responsive Design, Technical University of Munich. It accompanies a peer-reviewed methods paper that describes the framework in detail, provides empirical evidence for the fragmentation problem from a metadata analysis of 250 indoor thermal physiology studies, and positions the resource within the broader landscape of reproducibility infrastructure in environmental research.
 
-The underlying literature corpus integrates 535 publications spanning thermophysiology, psychophysiology, sports and exercise science, chronobiology, clinical monitoring, and indoor environmental research. Priority was given to meta-analyses, systematic reviews, international standards, and methodological position papers.
+The underlying literature corpus integrates publications spanning thermophysiology, psychophysiology, sports and exercise science, chronobiology, clinical monitoring, and indoor environmental research. Priority was given to meta-analyses, systematic reviews, international standards, and methodological position papers.
 
-The resource is published under an open licence. Version history and contribution records are maintained at [GitHub](https://github.com/bilgekobas/XXX). The version corresponding to the accompanying publication is archived at Zenodo (DOI: 10.xxxx/zenodo.xxxxx).
+The resource is published under an open licence. Version history and contribution records are maintained at [GitHub](https://github.com/bilgekobas/WhyWeMeasureWhat).

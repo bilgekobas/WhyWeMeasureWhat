@@ -1,5 +1,6 @@
-title: WHY WE MEASURE WHAT, HOW, AND WHERE
+title: "Why <br>we <br>measure <br>what,<br>how, <br>and <br>where"
 author: Bilge Kobas et al.
+copyright: "2026, Bilge Kobas et al. Why We Measure What, How and Where. · CC BY 4.0"
 only_build_toc_files: true
 
 parse:
@@ -10,6 +11,11 @@ parse:
 html:
   extra_css:
     - _static/custom.css
+
+  extra_head: |
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 sphinx:
   extra_extensions:

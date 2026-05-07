@@ -1,22 +1,21 @@
 import subprocess
 
 author = "Bilge Kobas et al."
-project = "WHY WE MEASURE WHAT, HOW, AND WHERE"
+project = "Why We Measure What, How, and Where"
 
 def get_git_year():
     try:
-        year = subprocess.check_output(
+        return subprocess.check_output(
             ["git", "log", "-1", "--format=%cd", "--date=format:%Y"],
             stderr=subprocess.DEVNULL
         ).decode("utf-8").strip()
-        return year
     except Exception:
-        return "2026"  # fallback
+        return "2026"
 
-START_YEAR = "2023"
+START_YEAR = "2026"
 year = get_git_year()
 
 if year == START_YEAR:
-    copyright = f"{year}, {author}"
+    copyright = f"{year}, {author} · CC BY 4.0"
 else:
-    copyright = f"{START_YEAR}–{year}, {author}"
+    copyright = f"{START_YEAR}–{year}, {author} · CC BY 4.0"

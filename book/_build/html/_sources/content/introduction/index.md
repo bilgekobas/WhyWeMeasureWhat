@@ -6,7 +6,7 @@ This resource exists to bridge that gap.
 
 ## What this resource is
 
-**Why We Measure What We Measure** is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.
+*Why We Measure What, How and Where* is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.
 
 The resource documents five commonly used physiological signals:
 
