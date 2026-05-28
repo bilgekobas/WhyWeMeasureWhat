@@ -24,7 +24,7 @@ At the whole-body level, mean skin temperature is a determinant of thermal comfo
 
 Skin temperature exhibits large regional variation; typically smaller under thermoneutral and warm conditions, and potentially exceeding 10 °C across the body under cold exposure {cite:p}`arens_skins_2006,hardy_technic_1938,nadel_importance_1971`. These differences arise from the heterogeneous distribution of skin blood flow, subcutaneous fat, and local exposure to environmental heat exchange. The choice of *where* to measure Tsk depends fundamentally on whether the aim is to obtain a representative whole-body mean or to probe regional mechanisms of {ref}`thermoregulation <label-thermoregulation>`.
 
-```{figure} C:/Users/kobas/00_Repos/2511_WhyWeMeasureWhat_Git/book/assets/figures/skin-temp-sites.jpeg
+```{figure} ../../assets/figures/skin-temp-sites.jpeg
 :name: fig-skin-temp-sites
 :width: 6in
 :alt: Body sites for skin temperature measurement
