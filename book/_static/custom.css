@@ -33,92 +33,6 @@
 :root {
     --wwmw-blue: #0033cc;
     --wwmw-red: #e2003b;
-
-    --wwmw-font-heading: "Barlow Semi Condensed", "Helvetica Neue", Arial, sans-serif;
-    --wwmw-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-
-    /* Re-point the theme's own font variables so every themed element
-       (sidebar, TOC, search, prev/next, tables, admonitions, etc.)
-       picks up the new typefaces automatically. */
-    --pst-font-family-base: var(--wwmw-font-body);
-    --pst-font-family-heading: var(--wwmw-font-heading);
-    --pst-font-weight-heading: 600;
-    --pst-font-size-h1: 3rem;
-    --pst-font-size-h2: 2.25rem;
-}
-
-/* ========================================
-   TYPOGRAPHY SYSTEM
-   ======================================== */
-
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "tnum" 1; /* tabular numerals, helps numeric columns line up */
-}
-
-/* ---- Heading hierarchy ----
-   Barlow Semi Condensed across h1-h6. Chapter-opener titles are typed
-   in caps in the markdown itself, so a touch of positive tracking is
-   added throughout rather than a forced text-transform, which keeps
-   mixed-case page titles (e.g. "Core body temperature") looking natural
-   while still reading cleanly where the source text is uppercase. */
-
-.bd-article-container h1,
-.bd-article-container .h1 {
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: 0.01em;
-}
-
-.bd-article-container h2,
-.bd-article-container .h2 {
-    font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: 0.015em;
-}
-
-.bd-article-container h3,
-.bd-article-container h4,
-.bd-article-container .h3,
-.bd-article-container .h4 {
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-.bd-article-container h5,
-.bd-article-container h6 {
-    font-weight: 600;
-    letter-spacing: 0.03em;
-}
-
-/* ---- Sidebar / table-of-contents navigation ----
-   Condensed heading font for all wayfinding chrome gives the nav a
-   distinct, editorial feel set apart from the body copy. */
-
-.bd-sidebar-primary nav.bd-links,
-.page-toc {
-    font-family: var(--wwmw-font-heading);
-}
-
-nav.bd-links p.caption,
-nav.bd-links p.bd-links__title {
-    letter-spacing: 0.05em;
-    font-weight: 700;
-}
-
-nav.bd-links li > a {
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
-nav.bd-links .current > a {
-    font-weight: 700;
-}
-
-.page-toc .onthispage {
-    letter-spacing: 0.05em;
-    font-weight: 700;
 }
 
 /* ========================================
@@ -131,7 +45,6 @@ table {
   margin: 1rem 0;
   font-size: 0.92rem;
   table-layout: auto;
-  font-family: var(--wwmw-font-body);
 }
 
 table th,
@@ -144,11 +57,7 @@ table td {
 
 table th {
   background-color: #f5f6f7;
-  font-family: var(--wwmw-font-heading);
   font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
   text-align: left;
 }
 
@@ -228,9 +137,7 @@ a[href^="http"] {
 table caption {
   caption-side: top;
   text-align: left;
-  font-family: var(--wwmw-font-heading);
   font-weight: 600;
-  letter-spacing: 0.015em;
   margin-bottom: 0.4rem;
 }
 
@@ -247,11 +154,9 @@ table caption {
 
 .glossary-entry-title {
   margin: 0 0 0.8rem 0;
-  font-family: var(--wwmw-font-heading);
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .glossary-spec {
@@ -270,17 +175,12 @@ table caption {
 
 .glossary-spec th {
   width: 190px;
-  font-family: var(--wwmw-font-heading);
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  color: var(--pst-color-text-muted);
+  color: inherit;
   background: none;
 }
 
 .glossary-spec td {
-  font-family: var(--wwmw-font-body);
   line-height: 1.45;
 }
 
