@@ -1,0 +1,32 @@
+name: Build typography preview
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'book/**'
+      - '.github/workflows/preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          python -m pip install "jupyter-book==1.0.4.post1" "sphinx==7.4.7" sphinxcontrib-bibtex sphinxcontrib-mermaid
+      - name: Build Jupyter Book
+        working-directory: book
+        run: jupyter-book build .
+      - name: Verify preview
+        run: test -f book/_build/html/index.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wiki-typography-preview
+          path: book/_build/html/
+          retention-days: 14
