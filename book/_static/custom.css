@@ -13,18 +13,18 @@
   --wwmw-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --wwmw-paper: #ffffff;
-  --wwmw-ink: #000000;
+  --wwmw-ink: #0f0f11;
   --wwmw-body: #111111;
   --wwmw-muted: #555555;
   --wwmw-faint: #8a8a8a;
   --wwmw-line: #e3e3e3;
-  --wwmw-line-strong: #000000;
+  --wwmw-line-strong: #0f0f11;
   --wwmw-wash: #f3f3f3;
   --wwmw-link: #1f35ff;        /* International Klein Blue: clickable things only */
   --wwmw-accent: #1f35ff;
   --wwmw-accent-soft: rgba(31, 53, 255, .3);
   --wwmw-dotted: #1f35ff;
-  --wwmw-sidebar: #111111;
+  --wwmw-sidebar: #0f0f11;
   --wwmw-on-sidebar: #ffffff;
 
   --wwmw-measure: 40rem;       /* ≈ 68–72 characters of body text */
@@ -116,7 +116,7 @@ body {
 
 /* ---------- Body text ---------- */
 .bd-article {
-  font-size: 1.1875rem;               /* 19px */
+  font-size: 1.0625rem;               /* 17px */
   font-optical-sizing: auto;
   font-variation-settings: "opsz" 16;
   hyphens: auto;
@@ -149,7 +149,7 @@ body {
   text-wrap: balance;
 }
 .bd-article h1 {
-  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-size: clamp(2rem, 3.2vw, 2.625rem);
   font-weight: 400;
   font-variation-settings: "opsz" 72;
   letter-spacing: -.022em;
@@ -158,7 +158,7 @@ body {
   max-width: var(--wwmw-measure);
 }
 .bd-article h2 {
-  font-size: 1.72rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-variation-settings: "opsz" 48;
   letter-spacing: -.014em;
@@ -169,7 +169,7 @@ body {
   max-width: var(--wwmw-measure);
 }
 .bd-article h3 {
-  font-size: 1.32rem;
+  font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
   font-variation-settings: "opsz" 28;
@@ -718,8 +718,8 @@ table caption .caption-number { color: var(--wwmw-ink); }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 768px) {
-  .bd-article { font-size: 1.08rem; }
-  .bd-article h1 { font-size: 2.2rem; margin-bottom: 1.8rem; }
+  .bd-article { font-size: 1rem; }
+  .bd-article h1 { font-size: 1.9rem; margin-bottom: 1.8rem; }
   .bd-article h2 { font-size: 1.45rem; margin-top: 2.6rem; }
   .glossary-spec th { width: 110px; }
 }
@@ -732,3 +732,47 @@ table caption .caption-number { color: var(--wwmw-ink); }
   .bd-article { font-size: 10.5pt; }
   .bd-article a, .bd-article a[href^="http"] { color: inherit; text-decoration: none; }
 }
+
+/* Keep page columns identical when a chapter has no local contents list. */
+html { scrollbar-gutter: stable; }
+@media (min-width: 992px) {
+  .bd-container__inner.bd-page-width { width: 100%; }
+  .bd-sidebar-primary { flex: 0 0 17rem; width: 17rem; }
+  .bd-main { min-width: 0; }
+}
+@media (min-width: 1200px) {
+  .bd-main .bd-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    align-items: start;
+  }
+  .bd-main .bd-content .bd-article-container {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+  .bd-content > .bd-sidebar-secondary {
+    grid-column: 2;
+    width: 15rem;
+  }
+}
+/* Move the original header as a group; overflow wrappers retain x scrolling. */
+.bd-article table.wwmw-sticky-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.bd-article table.wwmw-sticky-table > thead {
+  position: relative;
+  z-index: 5;
+  background: var(--wwmw-paper);
+}
+.bd-article table.wwmw-sticky-table > thead > tr > th {
+  position: static;
+  background: var(--wwmw-paper) !important;
+}
+@media print {
+  .bd-article table.wwmw-sticky-table > thead { transform: none !important; }
+}
+
+.bd-footer-content .footer-item:has(.component-author) { display: none; }

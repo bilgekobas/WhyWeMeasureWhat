@@ -20,12 +20,15 @@ sphinx:
     - sphinxcontrib.bibtex
     - sphinxcontrib.mermaid
   config:
+    html_show_copyright: true
+    html_show_sphinx: false
     html_static_path:
       - _static
     html_extra_path:
       - assets
     html_js_files:
       - glossary-search.js
+      - sticky-tables.js
     bibtex_bibfiles:
       - WhyWeMeasure_v04.bib
     bibtex_reference_style: author_year
