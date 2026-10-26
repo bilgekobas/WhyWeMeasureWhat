@@ -784,12 +784,12 @@ html { scrollbar-gutter: stable; }
 @media (min-width: 992px) {
   .bd-header-article .primary-toggle { display: none !important; }
 }
-.bd-header-article .header-article-items-end .btn {
+.bd-header-article .header-article-items__end .btn {
   font-size: .75rem;
   padding: .35rem .45rem;
 }
-.bd-header-article .header-article-items-end .btn i,
-.bd-header-article .header-article-items-end .btn .svg-inline--fa {
+.bd-header-article .header-article-items__end .btn i,
+.bd-header-article .header-article-items__end .btn .svg-inline--fa {
   font-size: .75rem !important;
   width: .75rem;
   height: .75rem;
