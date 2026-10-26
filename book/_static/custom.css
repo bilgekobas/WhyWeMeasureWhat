@@ -776,3 +776,45 @@ html { scrollbar-gutter: stable; }
 }
 
 .bd-footer-content .footer-item:has(.component-author) { display: none; }
+
+/* Contents: retain the active-section marker without a continuous guide. */
+.bd-sidebar-secondary nav.page-toc { border-left: 0; }
+
+/* Compact article toolbar; keep the navigation drawer accessible on mobile. */
+@media (min-width: 992px) {
+  .bd-header-article .primary-toggle { display: none !important; }
+}
+.bd-header-article .header-article-items-end .btn {
+  font-size: .75rem;
+  padding: .35rem .45rem;
+}
+.bd-header-article .header-article-items-end .btn i,
+.bd-header-article .header-article-items-end .btn .svg-inline--fa {
+  font-size: .75rem !important;
+  width: .75rem;
+  height: .75rem;
+}
+
+/* Fixed bibliography label column: floated labels must not accumulate. */
+.bd-article div.citation {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: .75rem;
+  align-items: baseline;
+  margin: 0 0 .65em;
+}
+.bd-article div.citation > .label {
+  float: none;
+  grid-column: 1;
+  grid-row: 1;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.bd-article div.citation > p {
+  grid-column: 2;
+  margin: 0;
+  max-width: none;
+  overflow-wrap: anywhere;
+}
+.bd-article div.citation > p + p { margin-top: .4em; }
