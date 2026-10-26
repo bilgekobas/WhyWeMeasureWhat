@@ -818,3 +818,100 @@ html { scrollbar-gutter: stable; }
   overflow-wrap: anywhere;
 }
 .bd-article div.citation > p + p { margin-top: .4em; }
+
+/* Landing cover: quiet editorial typography, without chapter apparatus. */
+body:has(.wwmw-cover) .bd-content { display: block; }
+body:has(.wwmw-cover) .bd-sidebar-secondary,
+body:has(.wwmw-cover) .prev-next-area { display: none !important; }
+body:has(.wwmw-cover) .bd-main .bd-content .bd-article-container {
+  width: 100%;
+  max-width: 54rem;
+  min-height: auto;
+}
+body:has(.wwmw-cover) .bd-article {
+  padding-top: clamp(2.5rem, 7vh, 5rem);
+  padding-bottom: 3rem;
+}
+body:has(.wwmw-cover) .bd-article h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  margin: 0 0 2rem;
+  text-wrap: initial;
+}
+body:has(.wwmw-cover) .bd-article h1::before {
+  content: "A LIVING METHODOLOGICAL FRAMEWORK";
+  display: block;
+  font-family: var(--wwmw-sans);
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .13em;
+  line-height: 1.5;
+  color: var(--wwmw-muted);
+  margin-bottom: 2rem;
+}
+body:has(.wwmw-cover) .bd-article h1::after,
+body:has(.wwmw-cover) .bd-article h1 .headerlink { display: none; }
+.wwmw-cover { max-width: 35rem; }
+.wwmw-cover .wwmw-cover-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin-bottom: .85rem;
+}
+.wwmw-cover .wwmw-cover-description {
+  font-family: var(--wwmw-sans);
+  font-size: .875rem;
+  line-height: 1.65;
+  color: var(--wwmw-muted);
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+.bd-article .wwmw-cover a.wwmw-cover-enter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--wwmw-sans);
+  font-size: .875rem;
+  color: var(--wwmw-link);
+  text-decoration: none;
+  padding: .35rem 0;
+}
+.bd-article .wwmw-cover a.wwmw-cover-enter:hover {
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+.wwmw-cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1.5rem;
+  margin-top: clamp(3rem, 9vh, 6rem);
+  font-family: var(--wwmw-sans);
+  font-size: .7rem;
+  line-height: 1.6;
+  color: var(--wwmw-muted);
+}
+.bd-article .wwmw-cover-meta a[href^="http"] {
+  color: var(--wwmw-muted);
+  text-decoration: none;
+}
+.bd-article .wwmw-cover-meta a:hover {
+  color: var(--wwmw-link);
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+.wwmw-cover-doi-label {
+  font-size: .62rem;
+  letter-spacing: .07em;
+  margin-right: .3rem;
+}
+body:has(.wwmw-cover) .bd-footer-content { border-top: 0; }
+body:has(.wwmw-cover) .bd-header-article .header-article-items__end { display: none; }
+@media (min-width: 992px) {
+  body:has(.wwmw-cover) .bd-header-article { display: none; }
+}
+@media (max-width: 767px) {
+  body:has(.wwmw-cover) .bd-article { padding-top: 2rem; }
+  body:has(.wwmw-cover) .bd-article h1 { font-size: 2.5rem; }
+  .wwmw-cover-meta { flex-direction: column; gap: .35rem; }
+}
