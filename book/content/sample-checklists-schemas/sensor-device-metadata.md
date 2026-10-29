@@ -62,3 +62,9 @@ Notes. One row per physical device unit. If a lab owns three iButton loggers, ea
 | Oscillometric BP | Manometer verification against traceable reference | Bias at rest; acceptance threshold (typically ±3 mmHg) |
 
 Notes. One row per calibration event per device. A device may appear multiple times as it is recalibrated across studies or time periods.
+
+## Reconciled identity and calibration architecture
+
+The supplement's cross-study inventory is one row per **device model × direct signal**; this wiki's device registry is one row per **physical device unit**. Both are retained, with the model–signal catalogue and actual session applications in [linked measurement definitions](linked-measurement-definitions).
+
+Supported sampling rates belong to model capabilities, configured rates to experiment-level measurement definitions, and actual overrides to session applications. Preserve both the calibration/verification summary and the detailed per-unit calibration-event log. A device model is not a physical unit, and a signal is not interchangeable with a device.
