@@ -34,7 +34,7 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Study design | 1 | Controlled / Observational / Interventional | — |
 |  | Experimental structure | 2 | Between-subjects, Within-subjects, Repeated measures, Crossover, Pre–Post | Multiple can apply |
 |  | Randomisation | 2 | Yes/No; method (simple, block, Latin square) | Link to randomisation table if available |
-|  | Blinding | 1 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
+|  | Blinding | 2 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
 | **Timing & schedule** | Start date of experiment | 1 | YYYY-MM-DD | — |
 |  | End date of experiment | 1 | YYYY-MM-DD | — |
 |  | Typical session duration | 1 | Minutes or hours | — |
@@ -52,7 +52,7 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Exclusion criteria | 1 | Free text or list | — |
 | **Intervention** | Study domain(s) | 1 | Thermal / Humidity / Air movement / Light / IAQ / Acoustics | Multiple allowed |
 |  | Intervention description | 1 | Free text | Describe manipulated variables |
-|  | Number of conditions | 2 | Integer | — |
+|  | Number of conditions | 1 | Integer | — |
 |  | Condition labels | 2 | Text labels | — |
 |  | Standardised behaviour rules | 1 | Resting, sitting, acclimatisation / normalisation, movement, eating, drinking protocols | — |
 | **Environment & equipment (experiment-level)** | Spatial typology | 1 | Office / Residential / Educational / Public / etc. | — |
@@ -65,7 +65,7 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | I – Intervention / exposure | 1 | Summary of main exposure(s) or experimental condition(s) | “14-day heat {ref}`acclimation <label-acclimation>`: AC at 26 °C vs free-running apartment (summer conditions)” |
 |  | C – Comparison / control conditions | 1 | Description of comparator condition(s) | “Free-running cooling vs constant AC; within-subject crossover” |
 |  | O – Primary outcomes | 1 | Main endpoints and quantification | “Core body temperature, neck/ankle skin temperature, HR, BP, HRV (RMSSD), thermal sensation” |
-|  | O – Secondary outcomes | 1 | Additional exploratory endpoints | “Sleep {ref}`onset <label-onset>` latency, actigraphy-based sleep efficiency, melatonin AUC” |
+|  | O – Secondary outcomes | 2 | Additional exploratory endpoints | “Sleep {ref}`onset <label-onset>` latency, actigraphy-based sleep efficiency, melatonin AUC” |
 |  | T – Time frame | 1 | Time horizon for effect and measurement | “Pre–post mild heat-stress test before and after 14-day exposure; tests between 09:00–16:00” |
 | **Data availability** | Data repository | 1 | OSF / Zenodo / Figshare / institutional repository / none | Where the dataset will be or is deposited |
 |  | Dataset DOI / link | 1 | URL or DOI; "in preparation" if not yet available | — |
@@ -73,3 +73,32 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Metadata availability | 1 | Whether structured metadata (this schema) is shared independently of raw data | Metadata can often be shared even when raw data cannot |
 
 :::
+
+## Reconciled additions from published supplementary schema
+
+These fields are part of the merged schema and supplement the existing table. Tier 1 is Core when applicable.
+
+| Group | Field name | Tier | Definition / coding |
+|---|---|---|---|
+| Provenance | Related paper(s) and DOI(s) | 1 | Linked citations and DOIs |
+| Governance | Ethics status | 1 | approved / pending / exempt / not_reported |
+| Governance | Registration timing | 2 | prospective / retrospective / not_applicable |
+| Exposure | Temperature-series type and target temperatures | 2 / 1 | Preserve minimum, maximum and targets separately |
+| Allocation | Randomisation used | 1 | yes / no / not_applicable |
+| Allocation | Allocation concealment | 2 | yes / no / not_reported |
+| Allocation | Investigator blinding | 2 | separate from participant blinding |
+| Timing | Typical normalisation (min) | 1 | Planned duration |
+| Timing | Planned sessions and intersession rule | 1 / 2 | Separate fields |
+| Sample | Sample-size method | 1 | a priori / feasibility / pilot |
+| Sample | Screened / enrolled / randomised / completed N | 2 | Separate denominators |
+| Sample | Primary-analysis N | 1 | Primary analytical denominator |
+| Scientific rationale | Primary research question | 1 | Explicit question |
+| Scientific rationale | Target physiological process | 1 | Mechanistic construct |
+| Scientific rationale | Primary outcome definition | 1 | Operational definition |
+| Analysis | Primary analysis approach | 1 | Model / method |
+| Environment | Planned environmental variables and instrument heights | 1 | Separate measurement descriptors |
+| Data | Raw-data access / processed-data access / code access | 1 | Separate fields |
+| Data | Licence | 2 | Data and code where applicable |
+| Sample | Optional demographic summary counts | 2 | Derive from participant records |
+
+Randomisation status is Tier 1, while the existing Randomisation field now represents the Tier 2 method. Participant and investigator blinding are separately Tier 2; the existing Blinding row refers to participant blinding. Secondary outcomes are Tier 2. Linked questionnaire and signal measurement definitions are documented separately.
