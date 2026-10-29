@@ -37,12 +37,9 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Body site per device | 1 | Device ID → site (e.g. TMP-01 → left forearm anterior / TMP-02 → right anterior thigh) | Use anatomical taxonomy site labels; laterality and aspect required |
 | | Attachment method per device | 1 | Device ID → method (e.g. TMP-01 → Transpore tape / ECG-A → elastic chest strap) | — |
 | | Application time per device | 1 | Device ID → hh:mm (e.g. TMP-01 → 17:55 / pill → ingested 17:50) | Time sensor was placed on or ingested by participant |
-| | Recording start time per device | 1 | Device ID → hh:mm | May differ from application time if equilibration period applies |
+| | Recording start time per device | 1 | Device ID → hh:mm | May differ from application time if recording begins after application |
 | | Recording end time per device | 1 | Device ID → hh:mm | — |
-| | Equilibration time (min) | 2 | Device ID → numeric (e.g. TMP-01 → 10 min) | Time between application and first data point included in analysis |
 | | Skin preparation per device | 2 | Device ID → method (e.g. EDA-03 → alcohol wipe + dry / TMP-01 → none) | — |
-| | Shielding from airflow | 2 | Device ID → Yes/No | Particularly relevant for skin temperature contact sensors |
-| | Signal quality per device | 2 | Device ID → 1 (poor) – 5 (excellent) | Operator assessment at session end |
 | | Sensor deviations | 2 | Free text (e.g. "TMP-02 detached at 19:30, reattached 19:35"; "ECG-A lost signal 20:10–20:15") | Any deviation from standard placement or signal interruption |
 | **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | — |
 | | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
@@ -51,16 +48,15 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Activity deviation | 2 | Text / none | Actual activity versus plan |
 | | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
 | | Use of additional personal conditioning | 2–3 | Yes/No; type (fan, blanket, personal heater, etc.) | Observed + logged when allowed by protocol |
-| **Protocol adherence** | Overall protocol compliance | 1 | Yes / No / Partial / not_reported | Separate from pre-session restrictions |
-| | Pre-session restriction compliance | 2 | Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”) | Checklist based on study instructions (no alcohol, no caffeine, etc.) |
-| | Fixed clothing compliance | 1 (conditional) | Yes / No / not_applicable | If clothing was standardised |
-| | Controlled movement compliance | 1 (conditional) | Yes / No / not_applicable | If movement was controlled |
-| | Arrival time to lab | 2 | Clock time | — |
-| | Waiting time before normalisation | 2 | Minutes from arrival to session start (numeric) | Derived from times; duration should be standardised |
-| **Scheduling & circadian context** | Sleep-wake times | 1–2 | Clock time, 24 h | Sleep log / app |
-| | Sleep duration last night | 1 | Numeric (hours slept; e.g. 6.8) | Derived from log |
-| | Sleep quality last night | 1–2 | 0–10 scale or 1–5 Likert | Subjective rating |
-| | Recent night-shift work | 2 | Yes/No; description (e.g. “3 consecutive night shifts in last week”) | Sleep log / app |
+| **Protocol adherence** | Overall compliance | 1 | Yes / No / Partial; describe deviation | Summary of adherence to the session protocol |
+|  | Pre-session compliance | 2 | Yes / No / Partial / not_applicable | Compliance with pre-session restrictions |
+|  | Clothing compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to prescribed clothing |
+|  | Described activity compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to protocol-defined activity |
+|  | Timing compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to scheduled exposure and measurement timing |
+| **Scheduling & circadian context** | Sleep-wake times | 2 | Clock time, 24 h | Sleep log / app |
+| | Sleep duration last night | 2 | Numeric (hours slept; e.g. 6.8) | Derived from log |
+| | Sleep quality last night | 2 | 0–10 scale or 1–5 Likert | Subjective rating |
+| | Recent night-shift work | 3 | Yes/No; description (e.g. “3 consecutive night shifts in last week”) | Sleep log / app |
 | **Acute health state (today / last few days)** | Recent acute illness (last 7 days) | 1–2 | Yes/No; short description (e.g. “URI with fever”, “GI infection”) | PAR-Q+ style yes/no items; brief medical history |
 | | Fever symptoms in last 48 h | 2 | Yes/No; peak temperature if known | — |
 | | Antipyretic use (last 48 h) | 2 | Yes/No; drug name and approximate time (free text) | — |
@@ -76,15 +72,10 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | **Hormonal & reproductive (per session info)** | Menstrual cycle day | 1 (conditional) | Cycle day / unknown / not_applicable | Where scientifically and ethically applicable |
 | | Menstrual {ref}`phase <label-phase>` at session | 1 (conditional) | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 | | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
+| **Food & drink intake (realised)** | Food / drink consumed during session | 2 (conditional) | Item, quantity and time; optional kcal | Record actual intake or link to a separate time-stamped intake/event log; planned provision belongs to experiment level |
 | **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | End-of-session log entry |
 | | Major protocol deviations | 1–2 | Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”) | Protocol deviation form |
-| | Session log / resource | 2 | URI / filename | Session provenance |
-| | Physiology-data reference | 1 | URI / filename | Participant/session/time linkage |
-| | Environmental-data reference | 1 | URI / filename | Exposure data linkage |
 | | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
-| | Food / drink provided | 2–3 | Type and energy content (kcal) if standardised | Study-specific (e.g. Huel Liquid Drink) |
-| | Required calories | 2–3 | Calculated kcal requirement via BMR equations | St. Jeor-Mifflin {cite:p}`mifflin_new_1990` or similar |
-| | Food / drink consumed | 2–3 | Estimated intake (kcal or %) + timing | Participant-specific |
 | | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
 :::
