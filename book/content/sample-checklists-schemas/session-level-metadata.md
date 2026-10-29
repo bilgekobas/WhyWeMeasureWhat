@@ -30,8 +30,8 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Previous-session interval (days) | 2 | Numeric / not_applicable | Actual elapsed time |
 | | Location / room | 1 | Room or laboratory code | — |
 | | Researchers present | 2 | Initials or staff codes | — |
-| | Sensor application record reference | 1 | Linked sensor-application record ID(s) or URI | Authoritative per-session link to actual unit, calibration, placement, configuration and recording times; inherit defaults |
-| | Sequence position / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Actual sequence/condition position, not the planned randomisation method |
+| **Identifiers & timing** | Sequence position / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Actual sequence/condition position, not the planned randomisation method |
+| **Devices & sensor application** | Sensor application record reference | 1 | Linked sensor-application record ID(s) or URI | Authoritative per-session link to actual unit, calibration, placement, configuration and recording times; inherit defaults |
 | **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | Realised ensemble; can inherit planned experiment-level specification if unchanged |
 | | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Realised or estimated clo; inherit planned value when unchanged; ISO 9920 {cite:p}`noauthor_iso_2007` |
 | | Actual/estimated MET (session) | 2 | Numeric MET / not_applicable; method and timing | Record realised or estimated activity intensity; inherit planned activity/MET from experiment when unchanged |
@@ -45,16 +45,13 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Sleep duration last night | 2 | Numeric (hours slept; e.g. 6.8) | Derived from log |
 | | Sleep quality last night | 2 | 0–10 scale or 1–5 Likert | Subjective rating |
 | | Recent night-shift work | 3 | Yes/No; description (e.g. “3 consecutive night shifts in last week”) | Sleep log / app |
-| **Acute health state (today / last few days)** | Recent acute illness (last 7 days) | 1–2 | Yes/No; short description (e.g. “URI with fever”, “GI infection”) | PAR-Q+ style yes/no items; brief medical history |
-| | Fever symptoms in last 48 h | 2 | Yes/No; peak temperature if known | — |
-| | Antipyretic use (last 48 h) | 2 | Yes/No; drug name and approximate time (free text) | — |
+| **Acute health state (today / last few days)** | Acute health status (recent) | 1–2 | None / present / unknown; illness, fever or other acute symptoms, onset and severity | Include acute illness and fever together; relevant medication and supplements recorded separately |
 | | Recent medication/supplement use | 2 | Free text: medication/supplement, dose and timing; none / unknown | Include new medication, melatonin, NSAIDs or analgesics when relevant; do not duplicate participant-level habitual medications |
 | **Behaviour since waking (session-day)** | Time since last meal at start | 1–2 | Numeric (hours); optional category (light / normal / heavy); Yes/No if a specific fasting time was instructed (e.g. “Did not eat in the last 12 hours”) | — |
 | | Time since last caffeine | 1–2 | Numeric (hours); type (coffee / tea / energy drink / other); Yes/No if a specific fasting time was instructed (e.g. “Did not drink coffee in the last 12 hours”) | — |
 | | Time since last moderate/vigorous exercise | 2 | Numeric (hours); or category (<4 h, 4–12 h, >12 h); Yes/No if a specific fasting time was instructed (e.g. “Did not exercise in the last 12 hours”) | Short structured item; can echo IPAQ intensity definitions |
 | | Alcohol intake in last 24 h | 2 | Yes/No; rough units or category (none / 1–2 / 3–5 / >5) | AUDIT-C wording if more structure is needed; alternatively an alcohol test can be done before each session |
 | | Smoking / vaping today | 2–3 | Yes/No; approximate cigarettes/vapes since waking | — |
-|  | Recent medication and supplement context | 2 | Use the single Recent medication/supplement use field | No duplicate entries; see acute health section |
 | **Hormonal & reproductive (per session info)** | Menstrual cycle day | 1 (conditional) | Cycle day / unknown / not_applicable | Where scientifically and ethically applicable |
 | | Menstrual {ref}`phase <label-phase>` at session | 1 (conditional) | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 | | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
