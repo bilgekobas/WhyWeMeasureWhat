@@ -74,6 +74,7 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 | | Tested temperature targets (°C) | 1 | List / not_applicable | All planned targets |
 | | Condition notes | 2 | Text | Describe exposure schedule |
 | | Standardised behaviour rules | 1 | Resting, sitting, acclimatisation / normalisation, movement, eating, drinking protocols | — |
+|  | Planned food / drink provision | 2 (conditional) | Types, quantities, timing, nutritional standardisation | Protocol-level provisions; actual consumption recorded at session level |
 | **Environment & equipment (experiment-level)** | Spatial typology | 1 | Office / Residential / Educational / Public / etc. | — |
 | | HVAC system description | 2 | AC model, radiant panel specifications, air-velocity sources | — |
 | | Room dimensions | 3 | m² or m³ | — |
