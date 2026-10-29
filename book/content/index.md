@@ -6,7 +6,7 @@
   <a class="wwmw-cover-enter" href="introduction/index.html">Explore the framework <span aria-hidden="true">↗</span></a>
   <div class="wwmw-cover-meta">
     <span>v0.1.0 · 7 May 2026</span>
-    <a href="https://doi.org/10.1016/j.buildenv.2026.115269">Building and Environment paper</a>
+    <a href="https://doi.org/10.1016/j.buildenv.2026.115269">Read the paper</a>
     <a href="https://doi.org/10.5281/zenodo.20073568"><span class="wwmw-cover-doi-label">DOI</span> 10.5281/zenodo.20073568</a>
   </div>
 </div>
