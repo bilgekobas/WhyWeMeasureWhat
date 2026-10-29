@@ -86,7 +86,7 @@ A PICOT synopsis may be generated from the authoritative population, interventio
 | | Direct measurement definitions reference | 1 | URI / table identifier | Signal, device, default placement, configured rate, derived metrics |
 | | {ref}`Baseline <label-baseline>` environmental control | 1 | Air temperature, radiant temperature, humidity, lighting ranges | Multiple allowed |
 | | Calibration reference | 2 | Link to calibration log entries for this study | Foreign key to calibrations.tsv; replaces free-text calibration notes |
-| **PICOT summary** | Primary research question | 1 | Text | Distinct from PICOT synopsis |
+| **Scientific rationale & analysis** | Primary research question | 1 | Text | Authoritative study question; optional PICOT synopsis can be generated |
 | | Target physiological process / construct | 1 | Text | Mechanistic rationale |
 | | Primary outcome definition | 1 | Operational definition | Authoritative operational definition including signal, metric and analysis window; optional PICOT summary derived from these fields |
 | | Primary analysis approach | 1 | Method / statistical model | Link plan or code |
