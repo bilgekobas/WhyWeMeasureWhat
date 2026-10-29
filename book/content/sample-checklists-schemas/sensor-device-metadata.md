@@ -16,6 +16,7 @@ A third table, *Sensor Application*, captures per-session placement and configur
 |---|---|---|---|---|
 | **Core IDs** | Device ID | 1 | Unique alphanumeric code (e.g. `TMP-01`, `ECG-A`) | Unique physical device unit ID, not a model or signal ID; primary key used by session applications and calibration logs |
 | | Sensor principle | 1 | NTC thermistor / Ag/AgCl electrode / optical PPG / oscillometric cuff / ventilated capsule | Signal-specific where necessary; identify modality in experiment-level measurement definitions |
+|  | Supported signal / modality | 1 | Controlled list of direct signals (e.g. Tsk, ECG, EDA, acceleration) | Physical-unit registry summary; signal-specific accuracy, resolution and sampling require separate measurement definitions |
 | **Device identity** | Brand | 1 | Maxim Integrated / Biopac / Polar / Finapres | Manufacturer name |
 | | Model | 1 | DS1922L / MP160 / H10 / Nova 2 | Commercial model name |
 | | Device model ID | 1 | Stable manufacturer/model identifier | Shared across units of the same model; distinct from physical Device ID |
