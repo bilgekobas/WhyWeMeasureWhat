@@ -2,6 +2,12 @@
 
 This section provides structured documentation templates for human thermal physiology studies. The goal is not to prescribe a field-wide standard, but to make one coherent implementation transparent and to provide concrete examples that other groups can adapt and share. By circulating comparable schemas, the field can gradually converge on common reporting practices and enable more reproducible, interoperable datasets.
 
+## Why these schemas are needed
+
+Physiological variables with the same name are not necessarily comparable across studies. Their interpretation depends on the physiological process of interest, sensing method, anatomical location, timing, participant state, and the processing used to derive reported outcomes. These schemas are intended to document those dependencies, rather than require identical instruments or experimental protocols. They complement established standards for environmental measurement; they do not replace them.
+
+The distinction is between *nominal completeness* (a signal or outcome is named) and *interpretive completeness* (the information needed to understand how it was obtained and whether it can be compared is available). The tables provide a practical starting point for documenting the latter.
+
 ## Structure
 
 The documentation is organised across two parallel axes:
@@ -29,6 +35,14 @@ All fields are assigned to one of three informal tiers:
 The specific fields and tiering logic presented here should be treated as provisional. Determining which descriptors are essential, recommended, or specialised ultimately requires community agreement. This schema is a structured starting point for iterative refinement.
 
 
+## Applying the schemas
+
+**Define measurements and questionnaires once.** At experiment level, describe each directly measured signal with its sensing method, default anatomical or environmental location, configured acquisition settings, and any derived metrics or formulas. Define questionnaire and task constructs, exact wording, response coding, verbal anchors, language, and planned administration timing. Session records inherit these definitions and document actual differences rather than repeating the complete protocol. Detailed processing and artefact handling may be maintained in linked methods or code documentation.
+
+**Document the limits of comparability.** A common field name or shared schema does not establish equivalence of devices, physiological compartments, preprocessing, or derived outcomes. The purpose is to make these differences visible so that researchers can judge whether datasets can be compared, adjusted, stratified, or should remain analytically distinct.
+
+**Scope and refinement.** The present templates are primarily oriented toward indoor human studies with sedentary or light activity and relatively short-term exposures. Longitudinal, occupational, outdoor, and specialised clinical applications may require extensions. The field definitions are provisional and intended for iterative refinement through use and community feedback, not a field-endorsed reporting standard.
+
 ## Shared rules for identifiers, timing and provenance
 
 **Identifiers and relationships.** An Experiment ID uniquely identifies a study/protocol. A Participant ID identifies a person within a study and links to Experiment ID; if reused across studies, its scope must be explicitly documented. A Session ID uniquely identifies a participant visit/condition and links to Participant ID and Experiment ID. A Device model ID identifies a manufacturer/model (and is shared by multiple physical units); a Device ID identifies one physical device unit, typically distinguished by serial number. A Calibration ID identifies one calibration or verification event for a physical Device ID. A session sensor-application record links Session ID, Device ID and the relevant measurement definition; it carries actual placement, times, configuration and applicable Calibration ID. For multimodal instruments, measurement characteristics are signal-specific even when one physical unit is reused. No identifier should be inferred from a display name.
@@ -47,4 +61,3 @@ The specific fields and tiering logic presented here should be treated as provis
 
 These codes are not interchangeable with numeric zero, a negative response or an empty string. For retrospective datasets, retain the source document and coding basis where available. The published supplement's `protocol-derived` label corresponds to `protocol_derived` here; the mapping should be explicit in exported datasets.
 
-**Tier readability.** The wiki retains human-readable tier labels such as `1–2` and `1 (conditional)`. In machine-readable CSV/TSV implementations, tier priority and applicability should be represented as separate fields. Core is not a blanket requirement to collect sensitive information without appropriate scientific and ethical justification.
