@@ -32,6 +32,7 @@ A third table, *Sensor Application*, captures per-session placement and configur
 |  | Measurement range | 2 | Numeric range and units | Manufacturer specification |
 |  | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
 |  | Verification summary | 2 | Status, method, reference, date | Detailed calibration events remain in calibration log |
+
 :::
 Notes. One row per physical device unit. If a lab owns three iButton loggers, each has its own row and its own ID — they may have different calibration curves.
 
