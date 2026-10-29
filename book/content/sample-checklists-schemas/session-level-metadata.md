@@ -75,27 +75,22 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Major protocol deviations | 1–2 | Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”) | Protocol deviation form |
 |  | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
+| **Linkage** | Experiment ID | 1 | Foreign key to experiment | Supplementary field; conditional where applicable |
+| **Timing** | Actual normalisation duration (min) | 1 | Separate from waiting time | Supplementary field; conditional where applicable |
+| **Timing** | Previous-session interval (days) | 2 | Actual elapsed interval | Supplementary field; conditional where applicable |
+| **Hormonal context** | Menstrual cycle day | 1 conditional | When applicable | Supplementary field; conditional where applicable |
+| **Activity** | Planned activity | 1 | Protocol-defined activity | Supplementary field; conditional where applicable |
+| **Activity** | Estimated MET | 2 | Numeric and estimation method | Supplementary field; conditional where applicable |
+| **Activity** | Activity deviation | 2 | Realised versus planned | Supplementary field; conditional where applicable |
+| **Adherence** | Overall protocol compliance | 1 | Separate from restrictions | Supplementary field; conditional where applicable |
+| **Adherence** | Fixed clothing / controlled movement compliance | 1 conditional | When relevant | Supplementary field; conditional where applicable |
+| **Resources** | Session log/resource | 2 | Identifier or URI | Supplementary field; conditional where applicable |
+| **Resources** | Physiology-data reference | 1 | Linked time series | Supplementary field; conditional where applicable |
+| **Resources** | Environmental-data reference | 1 | Linked exposure | Supplementary field; conditional where applicable |
 :::
 
 + For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate *sensor_application.tsv* with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.
 
-## Reconciled additions from published supplementary schema
 
-These fields are part of the merged schema and supplement the existing table. Tier 1 is Core when applicable.
 
-| Group | Field name | Tier | Definition / coding |
-|---|---|---|---|
-| Linkage | Experiment ID | 1 | Foreign key to experiment |
-| Timing | Actual normalisation duration (min) | 1 | Separate from waiting time |
-| Timing | Previous-session interval (days) | 2 | Actual elapsed interval |
-| Hormonal context | Menstrual cycle day | 1 conditional | When applicable |
-| Activity | Planned activity | 1 | Protocol-defined activity |
-| Activity | Estimated MET | 2 | Numeric and estimation method |
-| Activity | Activity deviation | 2 | Realised versus planned |
-| Adherence | Overall protocol compliance | 1 | Separate from restrictions |
-| Adherence | Fixed clothing / controlled movement compliance | 1 conditional | When relevant |
-| Resources | Session log/resource | 2 | Identifier or URI |
-| Resources | Physiology-data reference | 1 | Linked time series |
-| Resources | Environmental-data reference | 1 | Linked exposure |
-
-Experiment-level measurement definitions are inherited. The separate sensor-application table captures actual physical device unit, application and recording times, and overrides. Menstrual cycle day and phase are conditionally Core. Waiting/acclimation remains separate from actual normalisation duration.
+Experiment-level definitions are inherited; actual device applications, recording times, and deviations belong in the [linked sensor-application table](linked-measurement-definitions). Menstrual cycle day and phase are conditionally Core.
