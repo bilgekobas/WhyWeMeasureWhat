@@ -21,13 +21,12 @@ A third table, *Sensor Application*, captures per-session placement and configur
 | | Model | 1 | DS1922L / MP160 / H10 / Nova 2 | Commercial model name |
 | | Serial number | 1 | Alphanumeric from device label | — |
 | | Firmware / software version | 2 | v3.2.1 / HOBOware 3.7 | Record at time of study; can change between experiments |
+| **Model–signal relationship** | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
 | **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | From manufacturer specification sheet |
 | | Supported sampling rate(s) | 2 | Supported range or selectable rates (Hz) | Model capability only; configured sampling belongs to experiment measurement definitions |
 | | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | From specification sheet |
 | **History** | Date first used | 3 | YYYY-MM-DD | Useful for tracking drift over device lifetime |
 | | Notes | 3 | Free text | Hardware faults, repairs, firmware updates, modifications |
-
-| **Model–signal relationship** | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
 |  | Supported direct signal / modality | 1 | One record per model–signal combination | Multimodal devices can have multiple signals |
 |  | Measurement range | 2 | Numeric range and units | Manufacturer specification |
 |  | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
