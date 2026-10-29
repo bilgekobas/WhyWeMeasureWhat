@@ -21,8 +21,8 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Core IDs** | Participant ID | 1 | Text ID (e.g. P01, SL23_001) | — (lab-defined) |
 |  | Study / cohort | 1 | Text (e.g. PMV05 – Red, ACvsFR – AC) | — (lab-defined) |
 | **Demographics & morphology** | Age | 1 | Numeric (years at first session) | Direct (derived from DOB if stored). If ethics committees do not allow, then age group according to a medically agreed on standard {cite:p}`diaz_call_2021` |
-|  | Sex-related variable | 1 | Coding defined by study purpose | Record operational definition; transgender status is not a sex category |
-|  | Gender identity (optional) | 2 | Categorical or free text | — (lab-defined wording) |
+|  | Sex-related variable | 1 | Operationally defined sex-related category or measurement | Define biological construct and coding; transgender identity is not a sex category |
+|  | Gender identity (separately coded; optional) | 2 | Categorical or free text | — (lab-defined wording) |
 |  | Height | 1 | Numeric (cm), self-reported or measured (flag which) | Stadiometer; self-report |
 |  | Weight | 1 | Numeric (kg), self-reported or measured | Scale or self-report. If measured, note method (e.g. nude, underwear, fasting morning, etc.) |
 |  | BMI | 1 | Numeric (kg·m⁻²), derived | Calculation from height and weight |
@@ -38,9 +38,9 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Physical activity / fitness level (habitual) | 2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
 |  | Habitual compression garment use | 3 | Yes/No; if Yes: type (medical stockings / sports compression / post-surgical) + typical sites covered | Compression at measurement sites lowers local Tsk by 0.5–1.5 °C; relevant when lower-limb skin temperature is a study outcome {cite:p}`partsch_compression_2012` |
 | **Health & diagnoses** | Overall health status | 1 | Healthy / controlled condition(s) / other + notes | Summary from screening; may combine PAR-Q+ with brief medical history |
-|  | Cardiovascular diagnoses | 1 | Yes/No per condition (hypertension, arrhythmia, CAD, HF, etc.) | PAR-Q+, Charlson comorbidity list {cite:p}`charlson_charlson_2022`, or tailored checklist |
-|  | Endocrine / metabolic diagnoses | 1 | Yes/No per condition (diabetes, thyroid disease, obesity, CKD, etc.) | PAR-Q+ or Charlson-based checklist |
-|  | Neurological / autonomic disorders | 1 | Yes/No per condition (POTS, autonomic neuropathy, Parkinson’s, SCI, etc.) | Screening form referencing medical history |
+|  | Cardiovascular diagnoses | 2 (conditional) | Yes/No per condition (hypertension, arrhythmia, CAD, HF, etc.) | PAR-Q+, Charlson comorbidity list {cite:p}`charlson_charlson_2022`, or tailored checklist |
+|  | Endocrine / metabolic diagnoses | 2 (conditional) | Yes/No per condition (diabetes, thyroid disease, obesity, CKD, etc.) | PAR-Q+ or Charlson-based checklist |
+|  | Neurological / autonomic disorders | 2 (conditional) | Yes/No per condition (POTS, autonomic neuropathy, Parkinson’s, SCI, etc.) | Screening form referencing medical history |
 |  | History of syncope / orthostatic intolerance | 2–3 | Yes/No + short description | PAR-Q+ style yes/no items |
 |  | Diagnosed sleep disorder | 2–3 | None / OSA / insomnia / restless legs / other | PSQI / ISI + STOP-Bang / Berlin / Epworth, or clinical history |
 |  | Neurodivergent diagnosis | 2–3 | None / ASD / ADHD / other / prefer not to say | Self-report; may link to ASD/ADHD screening tools |
@@ -52,8 +52,8 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Reproductive & hormonal** | Menstrual / reproductive status | 1 | Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating | Simple categorical items |
 |  | Cycle length & regularity | 2 | Numeric (days) + regular / irregular | Short structured questions |
 |  | Hormonal contraception | 1 | Type (combined pill, progestin-only, IUD, implant, injection, none) + duration | Structured questionnaire |
-|  | HRT (hormone replacement therapy) | 2 | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
-|  | GAHT (gender-affirming hormone therapy) | 2 | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
+|  | HRT (hormone replacement therapy) | 2 (conditional) | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
+|  | GAHT (gender-affirming hormone therapy) | 2 (conditional) | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
 | **Thermal sensitivity / preference & psychological traits** | Thermal sensitivity / preference | 1 | Scores + groupings (e.g. cold / neutral / warm-preferring) | ETSRS {cite:p}`van_someren_experienced_2016` or similar |
 |  | Personality traits | 3 | Scores | Big Five {cite:p}`kang_validation_2024,rammstedt_measuring_2007`, BIS/BAS, {cite:p}`maack_re-examination_2018` etc. |
 |  | General sensory / emotional sensitivity | 3 | Score(s) | Highly Sensitive Person Scale (HSPS) {cite:p}`aron_highly_2011` |
@@ -68,17 +68,17 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 |  | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
 
-| **Linkage** | Experiment ID | 1 | Foreign key to experiment | Supplementary field; conditional where applicable |
-| **Linkage** | Arm/group | 1 | Participant allocation / not_applicable | Supplementary field; conditional where applicable |
-| **Morphology** | Muscle (%) | 2 | Specify measurement method | Supplementary field; conditional where applicable |
-| **Morphology** | BMR/RMR (kcal/day) | 2 | Specify measured versus estimated | Supplementary field; conditional where applicable |
-| **Morphology** | Body-composition method | 2 | BIA / DXA / equation / other | Supplementary field; conditional where applicable |
-| **Hormonal context** | Pregnancy status | 1 conditional | Applicable, relevant and ethically appropriate | Supplementary field; conditional where applicable |
-| **Provenance** | Assessment/data reference | 2 | Instrument or data-source identifier | Supplementary field; conditional where applicable |
+| **Core IDs** | Experiment ID | 1 | Experiment identifier | Foreign key |
+| **Core IDs** | Arm / group | 1 | Group code / not_applicable | Assignment when applicable |
+| **Demographics & morphology** | Muscle (%) | 2 | Percentage | Record assessment method |
+| **Demographics & morphology** | BMR/RMR (kcal/day) | 2 | Numeric | Indicate measured or estimated |
+| **Demographics & morphology** | Body-composition method | 2 | BIA / DXA / predictive equation / other | Distinguish measurement from estimate |
+| **Health & diagnoses** | Relevant diagnosis (general) | 1 | yes / no / unknown; category | Specific diagnoses conditional |
+| **Medication** | Relevant medication (general) | 1 | yes / no / unknown; class | Specific drug details conditional |
+| **Reproductive & hormonal** | Pregnancy status | 1 (conditional) | yes / no / unknown / not_applicable | Scientific and ethical applicability |
+| **Provenance** | Assessment / data reference | 2 | Record or file identifier | Distinguish protocol-derived from participant measured |
 :::
 
 Note. Some questions may be redundant when already used as an exclusion criterion, e.g., if having any CV history is an exclusion reason, then no need to repeat it in participant metadata.
 
-
-
-Sex-related and gender-related variables must be coded separately with explicit operational definitions. Specific diagnoses and hormonal therapies are conditional and require scientific and ethical justification.
+**Conditional Core:** Sex-related variables and gender identity must be operationally defined and coded separately. General diagnosis and medication context are Core; detailed diagnoses and hormonal therapies are conditional on scientific relevance, ethics and consent. Tier 1 denotes Core when applicable, not compulsory disclosure.
