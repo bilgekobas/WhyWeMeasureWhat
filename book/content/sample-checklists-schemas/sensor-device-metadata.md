@@ -38,20 +38,20 @@ Notes. One row per physical device unit. If a lab owns three iButton loggers, ea
 | **Core IDs** | Calibration ID | 1 | Unique code (e.g. `CAL-001`) | Primary key |
 | | Device ID | 1 | Foreign key → Device Registry | Unique physical device unit ID, not a model or signal ID; primary key used by session applications and calibration logs |
 | | Calibration date | 1 | YYYY-MM-DD | |
-| **Method** | Calibration method | 1 | Water bath 5-point / manometer check / electronic bridge check / flow-meter verification | Matches methods described in signal chapter Data handling sections |
-| | Reference instrument | 1 | Brand + model (e.g. Fluke 1502A / Heidolph reference manometer) | |
+| **Method** | Calibration method | 1 (conditional) | Water bath 5-point / manometer check / electronic bridge check / flow-meter verification | Distinguish calibration from functional verification and software/signal-processing validation |
+| | Reference instrument | 1 (conditional) | Brand + model (e.g. Fluke 1502A / Heidolph reference manometer) | |
 | | Reference accuracy | 2 | ±0.01 °C / ±0.1 mmHg | Traceability of the reference |
 | **Results** | Calibration points tested | 2 | List of values (e.g. 30, 34, 37, 40 °C) | |
-| | Raw offset per point | 2 | Measured − reference at each point | e.g. +0.12 °C at 34 °C, −0.03 °C at 37 °C |
-| | Correction equation | 1 | y = 0.998x + 0.14 | Applied to raw signal during processing; store per device |
-| | Pass / fail | 1 | Pass / Fail / Conditional | Based on protocol acceptance threshold |
-| **Administration** | Operator | 2 | Initials or name | |
-| | Next calibration due | 2 | YYYY-MM-DD or "before experiment X" | |
+| | Raw offset per point | 2 (conditional) | Measured − reference at each point | e.g. +0.12 °C at 34 °C, −0.03 °C at 37 °C |
+| | Correction equation | 1 (conditional) | y = 0.998x + 0.14 | Only when calibration yields a correction; not applicable to verification-only procedures |
+| | Pass / fail | 1 (conditional) | Pass / Fail / Conditional | When defined acceptance criteria exist; include criterion and outcome |
+| **Administration** | Operator | 3 | Initials or name | |
+| | Next calibration due | 3 | YYYY-MM-DD or "before experiment X" | |
 | | Notes | 3 | Free text | Drift patterns, anomalies, unusual readings |
 
 :::
 
-**Signal-specific calibration notes:**
+**Signal-specific calibration and verification notes:**
 | Signal | Method | Key output |
 |---|---|---|
 | Skin temperature / CBT (contact sensors) | Stirred water bath, 3–5 temperature points | Individual linear correction equation per sensor unit |
