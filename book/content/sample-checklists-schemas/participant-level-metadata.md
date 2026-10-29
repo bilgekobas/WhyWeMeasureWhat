@@ -22,7 +22,6 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | | Experiment ID | 1 | Stable experiment code | Foreign key |
 | | Study / cohort | 1 | Text (e.g. PMV05 – Red, ACvsFR – AC) | — (lab-defined) |
 | | Arm / group | 1 | Allocation label / not_applicable | If assigned |
-| | Assessment / data reference | 2 | Record, instrument or filename | Distinguish directly assessed from protocol-derived |
 | **Demographics & morphology** | Age | 1 | Numeric (years at first session) | Direct (derived from DOB if stored). If ethics committees do not allow, then age group according to a medically agreed on standard {cite:p}`diaz_call_2021` |
 | | Sex-related variable | 1 | Study-defined sex-related measure/category | Define construct and coding; transgender identity is not a sex category |
 | | Gender identity (optional; separately coded) | 2 | Categorical or free text | — (lab-defined wording) |
@@ -42,17 +41,8 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | | Alcohol use (habitual) | 2 | Units per week or categories (none / occasional / regular) | AUDIT-C {cite:p}`lawford_alcohol_2012` or simple frequency |
 | | Regular caffeine intake | 2 | Cups per day or categories (low / moderate / high) | Simple frequency question |
 | | Physical activity / fitness level (habitual) | 2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
-| | Habitual compression garment use | 3 | Yes/No; if Yes: type (medical stockings / sports compression / post-surgical) + typical sites covered | Compression at measurement sites lowers local Tsk by 0.5–1.5 °C; relevant when lower-limb skin temperature is a study outcome {cite:p}`partsch_compression_2012` |
-| **Health & diagnoses** | Overall health status | 1 | Healthy / controlled condition(s) / other + notes | Summary from screening; may combine PAR-Q+ with brief medical history |
-| | Relevant diagnosis (general) | 1 | Yes / No / Unknown; category | Specific diagnoses conditionally collected |
-| | Cardiovascular diagnoses | 2 (conditional) | Yes/No per condition (hypertension, arrhythmia, CAD, HF, etc.) | PAR-Q+, Charlson comorbidity list {cite:p}`charlson_charlson_2022`, or tailored checklist |
-| | Endocrine / metabolic diagnoses | 2 (conditional) | Yes/No per condition (diabetes, thyroid disease, obesity, CKD, etc.) | PAR-Q+ or Charlson-based checklist |
-| | Neurological / autonomic disorders | 2 (conditional) | Yes/No per condition (POTS, autonomic neuropathy, Parkinson’s, SCI, etc.) | Screening form referencing medical history |
-| | History of syncope / orthostatic intolerance | 2–3 | Yes/No + short description | PAR-Q+ style yes/no items |
-| | Diagnosed sleep disorder | 2–3 | None / OSA / insomnia / restless legs / other | PSQI / ISI + STOP-Bang / Berlin / Epworth, or clinical history |
-| | Neurodivergent diagnosis | 2–3 | None / ASD / ADHD / other / prefer not to say | Self-report; may link to ASD/ADHD screening tools |
-| | Other diagnoses relevant to thermoregulation | 2–3 | Free text + coded categories | Examples: autoimmune disease, large burns/grafts, chronic infection |
-| | Post-viral dysautonomia / long COVID | 2 | Yes/No; if Yes: symptoms present (temperature dysregulation / abnormal sweating / orthostatic intolerance / POTS / other) | Screen specifically; not captured by standard medical history questions. See CBT, HR/HRV and Sweat/EDA confounders sections {cite:p}`dani_autonomic_2021,davis_long_2023` |
+| **Health & diagnoses** | Overall health status | 1 | Healthy / Relevant health condition / Unknown | Specify screening or assessment basis; eligibility criteria alone do not establish absence of diagnoses |
+|  | Relevant medical conditions | 1 (conditional) | None / Present / Unknown; specify condition(s) where relevant | Broad medical context, including cardiovascular, metabolic, neurological, sleep-related or post-viral conditions where applicable; avoid mandatory diagnosis-specific checklists |
 | **Medication** | Relevant medication (general) | 1 | Yes / No / Unknown; class | Specific drug details conditionally collected |
 | | Chronic medications (by class) | 1 | Yes/No per class (β-blockers, antihypertensives, anticholinergics, SSRIs, stimulants, etc.) | Simple class checklist; optionally ATC codes |
 | | Thermally relevant medication notes | 2 | Free text (drug names, dose, duration) | Structured notes |
@@ -73,7 +63,6 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | | Habitual shift work | 2 | Never / former / current; if current: rotating / permanent nights / early starts | Chronic circadian misalignment shifts CBT and HRV rhythms independently of chronotype. Document pattern and duration {cite:p}`sack_circadian_2007,arendt_shift_2010` |
 | **Built-environment context (optional)** | Main dwelling type | 3 | Detached house / apartment / dormitory / informal | Simple categorical question |
 | | Home and/or office heating/cooling systems | 2 | Multi-select: central heating, floor heating, AC, fans, none, etc. | Simple checklist |
-| | Typical bedroom temperature | 3 | °C or cool/neutral/warm category | Self-estimate question |
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 | | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
 
@@ -81,4 +70,4 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 
 Note. Some questions may be redundant when already used as an exclusion criterion, e.g., if having any CV history is an exclusion reason, then no need to repeat it in participant metadata.
 
-Core means essential where applicable, not a requirement to disclose sensitive information without scientific and ethical justification. Sex-related variables and gender identity are separately defined and coded; specific diagnoses and hormonal therapies are conditional.
+Core means essential where applicable, not a requirement to disclose sensitive information without scientific and ethical justification. Sex-related variables and gender identity are separately defined and coded; relevant medical conditions are conditionally Core; detailed clinical descriptors may be added for specialised protocols. Hormonal therapies remain conditional.

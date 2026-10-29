@@ -64,8 +64,6 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | **Acute health state (today / last few days)** | Recent acute illness (last 7 days) | 1–2 | Yes/No; short description (e.g. “URI with fever”, “GI infection”) | PAR-Q+ style yes/no items; brief medical history |
 | | Fever symptoms in last 48 h | 2 | Yes/No; peak temperature if known | — |
 | | Antipyretic use (last 48 h) | 2 | Yes/No; drug name and approximate time (free text) | — |
-| | Compression garments worn today | 2 | Yes/No; if Yes: type and sites covered | Compression lowers local Tsk at covered sites; flag if measurement site is affected {cite:p}`partsch_compression_2012` |
-| | Post-viral / long COVID symptoms today | 2 | Yes/No; if Yes: temperature dysregulation / sweating abnormality / orthostatic intolerance / other | Acute-day expression of chronic dysautonomia may vary; capture alongside stable participant-level flag {cite:p}`dani_autonomic_2021` |
 | | New medications since previous session | 2 | Yes/No; if Yes: names and doses (free text) | — |
 | **Behaviour since waking (session-day)** | Time since last meal at start | 1–2 | Numeric (hours); optional category (light / normal / heavy); Yes/No if a specific fasting time was instructed (e.g. “Did not eat in the last 12 hours”) | — |
 | | Time since last caffeine | 1–2 | Numeric (hours); type (coffee / tea / energy drink / other); Yes/No if a specific fasting time was instructed (e.g. “Did not drink coffee in the last 12 hours”) | — |
