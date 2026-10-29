@@ -22,8 +22,15 @@ The schema follows the logic of established data standards for human studies. Th
 
 All fields are assigned to one of three informal tiers:
 
-- **Tier 1 — Core:** Essential for basic interpretability and reuse. Should be completed for every study.
+- **Tier 1 — Core:** Essential for basic interpretability and reuse. Required for interpretation when applicable; not a blanket requirement to collect sensitive data.
 - **Tier 2 — Recommended:** Meaningfully improves reproducibility and comparability. Complete where feasible.
 - **Tier 3 — Specialised:** Useful for specific study types, meta-analyses, or FAIR-level documentation. Optional.
 
 The specific fields and tiering logic presented here should be treated as provisional. Determining which descriptors are essential, recommended, or specialised ultimately requires community agreement. This schema is a structured starting point for iterative refinement.
+
+
+## Linked tables and published correspondence
+
+The merged implementation also includes [questionnaire/task definitions, experiment-level direct measurements, model–signal capabilities and per-session sensor applications](linked-measurement-definitions). These retain the four-level conceptual hierarchy while distinguishing reusable definitions from realised records.
+
+The [schema reconciliation and field crosswalk](schema-reconciliation) documents how the published supplementary schemas and the earlier wiki were merged, including the approved tier decisions and provenance coding.
