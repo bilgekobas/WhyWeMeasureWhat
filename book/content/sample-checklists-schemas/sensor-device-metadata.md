@@ -19,18 +19,18 @@ A third table, *Sensor Application*, captures per-session placement and configur
 | | Sensor principle | 1 | NTC thermistor / Ag/AgCl electrode / optical PPG / oscillometric cuff / ventilated capsule | Physical transduction method |
 | **Device identity** | Brand | 1 | Maxim Integrated / Biopac / Polar / Finapres | Manufacturer name |
 | | Model | 1 | DS1922L / MP160 / H10 / Nova 2 | Commercial model name |
+| | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
+| | Supported direct signal / modality | 1 | One record per model–signal combination | Multimodal devices can have multiple signals |
 | | Serial number | 1 | Alphanumeric from device label | — |
 | | Firmware / software version | 2 | v3.2.1 / HOBOware 3.7 | Record at time of study; can change between experiments |
-| **Model–signal relationship** | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
 | **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | From manufacturer specification sheet |
-| | Supported sampling rate(s) | 2 | Supported range or selectable rates (Hz) | Model capability only; configured sampling belongs to experiment measurement definitions |
 | | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | From specification sheet |
+| | Measurement range | 2 | Numeric range and units | Manufacturer specification |
+| | Supported sampling rate(s) | 2 | Supported range or selectable rates (Hz) | Model capability only; configured sampling belongs to experiment measurement definitions |
+| | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
+| | Verification summary | 2 | Status, method, reference, date | Detailed calibration events remain in calibration log |
 | **History** | Date first used | 3 | YYYY-MM-DD | Useful for tracking drift over device lifetime |
 | | Notes | 3 | Free text | Hardware faults, repairs, firmware updates, modifications |
-|  | Supported direct signal / modality | 1 | One record per model–signal combination | Multimodal devices can have multiple signals |
-|  | Measurement range | 2 | Numeric range and units | Manufacturer specification |
-|  | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
-|  | Verification summary | 2 | Status, method, reference, date | Detailed calibration events remain in calibration log |
 
 :::
 Notes. One row per physical device unit. If a lab owns three iButton loggers, each has its own row and its own ID — they may have different calibration curves.
