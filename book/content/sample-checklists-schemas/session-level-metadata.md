@@ -29,7 +29,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Researchers present | 2 | Initials or staff codes | — |
 | **Devices & sensor application +** | Device IDs used | 1 | List of Device IDs applied this session (e.g. TMP-01, TMP-03, ECG-A) | Foreign key → Device Registry in sensor-device-metadata |
 |  | Calibration IDs active | 1 | List of Calibration IDs currently valid for each device (e.g. CAL-003, CAL-007) | Foreign key → Calibration Log in sensor-device-metadata; confirms which correction equation was applied |
-|  | Sequence position / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Study randomisation plan |
+|  | Condition order / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Study randomisation plan |
 |  | Body site per device | 1 | Device ID → site (e.g. TMP-01 → left forearm anterior / TMP-02 → right anterior thigh) | Use anatomical taxonomy site labels; laterality and aspect required |
 |  | Attachment method per device | 1 | Device ID → method (e.g. TMP-01 → Transpore tape / ECG-A → elastic chest strap) | — |
 |  | Application time per device | 1 | Device ID → hh:mm (e.g. TMP-01 → 17:55 / pill → ingested 17:50) | Time sensor was placed on or ingested by participant |
@@ -44,9 +44,9 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
 |  | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
 |  | Use of additional personal conditioning | 2–3 | Yes/No; type (fan, blanket, personal heater, etc.) | Observed + logged when allowed by protocol |
-| **Protocol adherence** | Pre-session restriction compliance | 2 | Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”) | Checklist based on study instructions (no alcohol, no caffeine, etc.) |
+| **Protocol adherence** | Pre-session restriction compliance | 1–2 | Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”) | Checklist based on study instructions (no alcohol, no caffeine, etc.) |
 |  | Arrival time to lab | 2 | Clock time | — |
-|  | Waiting time before normalisation | 2 | Minutes from arrival to session start (numeric) | Derived from times; duration should be standardised |
+|  | Waiting / acclimation period | 2 | Minutes from arrival to session start (numeric) | Derived from times; duration should be standardised |
 | **Scheduling & circadian context** | Sleep-wake times | 1–2 | Clock time, 24 h | Sleep log / app |
 |  | Sleep duration last night | 1 | Numeric (hours slept; e.g. 6.8) | Derived from log |
 |  | Sleep quality last night | 1–2 | 0–10 scale or 1–5 Likert | Subjective rating |
@@ -65,7 +65,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Melatonin taken (last 4 h) | 2 | Yes/No; if Yes: dose (mg) and time taken | Exogenous melatonin raises distal Tsk and DPG; acutely relevant for skin temperature and sleep protocols {cite:p}`krauchi_thermoregulatory_2006` |
 |  | NSAIDs or analgesics taken (last 12 h) | 2 | Yes/No; if Yes: drug name and approximate time | NSAIDs can transiently alter autonomic tone; document alongside other acute medications {cite:p}`thayer_relationship_2010` |
 |  | Smoking / vaping today | 2–3 | Yes/No; approximate cigarettes/vapes since waking | — |
-| **Hormonal & reproductive (per session info)** | Menstrual {ref}`phase <label-phase>` at session | 1 (conditional) | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
+| **Hormonal & reproductive (per session info)** | Menstrual {ref}`phase <label-phase>` at session | 1 | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 |  | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
 | **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | End-of-session log entry |
 |  | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
@@ -75,22 +75,6 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Major protocol deviations | 1–2 | Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”) | Protocol deviation form |
 |  | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
-| **Identifiers & timing** | Experiment ID | 1 | Experiment identifier | Foreign key |
-| **Identifiers & timing** | Actual normalisation duration (min) | 1 | Minutes | Separate from waiting time and planned duration |
-| **Identifiers & timing** | Previous-session interval (days) | 2 | Numeric / not_applicable | Actual interval |
-| **Hormonal & reproductive (per session info)** | Menstrual cycle day | 1 (conditional) | Day / unknown / not_applicable | Conditionally Core alongside phase |
-| **Activity** | Planned activity | 1 | Protocol activity | Activity intended during session |
-| **Activity** | Estimated MET | 2 | Numeric | Document estimation method |
-| **Activity** | Activity deviation | 2 | Text / none | Realised versus planned activity |
-| **Protocol adherence** | Overall protocol compliance | 1 | yes / no / partial / not_reported | Separate from pre-session restrictions |
-| **Protocol adherence** | Fixed clothing compliance | 1 (conditional) | yes / no / not_applicable | When fixed clothing prescribed |
-| **Protocol adherence** | Controlled movement compliance | 1 (conditional) | yes / no / not_applicable | When movement controlled |
-| **Resources** | Session log / resource | 2 | URI / file identifier | Provenance |
-| **Resources** | Physiology-data reference | 1 | URI / file identifier | Time-series linkage |
-| **Resources** | Environmental-data reference | 1 | URI / file identifier | Exposure linkage |
-| **Devices & sensor application** | Sensor application record reference | 1 | Linked table / file | Actual device-unit ID, times, and overrides; inherit defaults |
 :::
 
 + For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate *sensor_application.tsv* with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.
-
-Session records inherit experiment-level default measurement definitions. Per-device application records should be held in a linked table with one row per physical unit and session; store actual application and recording times and deviations without duplicating default configurations.
