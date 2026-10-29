@@ -103,4 +103,5 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Processed-data access | 1 | Open / restricted / request / unavailable | Separate from raw data |
 |  | Code access | 1 | Repository URL or access status | Analysis and processing scripts |
 |  | Licence | 2 | Licence identifier | For data/code as applicable |
+
 :::
