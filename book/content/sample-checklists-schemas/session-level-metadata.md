@@ -83,7 +83,8 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | **Activity** | Estimated MET | 2 | Numeric and estimation method | Supplementary field; conditional where applicable |
 | **Activity** | Activity deviation | 2 | Realised versus planned | Supplementary field; conditional where applicable |
 | **Adherence** | Overall protocol compliance | 1 | Separate from restrictions | Supplementary field; conditional where applicable |
-| **Adherence** | Fixed clothing / controlled movement compliance | 1 conditional | When relevant | Supplementary field; conditional where applicable |
+|  **Adherence**  | Fixed clothing compliance | 1 (conditional) | yes / no / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Adherence**  | Controlled movement compliance | 1 (conditional) | yes / no / not_applicable |  Supplementary field; conditional where applicable  |
 | **Resources** | Session log/resource | 2 | Identifier or URI | Supplementary field; conditional where applicable |
 | **Resources** | Physiology-data reference | 1 | Linked time series | Supplementary field; conditional where applicable |
 | **Resources** | Environmental-data reference | 1 | Linked exposure | Supplementary field; conditional where applicable |
