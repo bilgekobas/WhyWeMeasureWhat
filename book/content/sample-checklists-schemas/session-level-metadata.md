@@ -30,21 +30,11 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Previous-session interval (days) | 2 | Numeric / not_applicable | Actual elapsed time |
 | | Location / room | 1 | Room or laboratory code | — |
 | | Researchers present | 2 | Initials or staff codes | — |
-| **Devices & sensor application +** | Device IDs used | 1 | List of Device IDs applied this session (e.g. TMP-01, TMP-03, ECG-A) | Foreign key → Device Registry in sensor-device-metadata |
-| | Calibration IDs active | 1 | List of Calibration IDs currently valid for each device (e.g. CAL-003, CAL-007) | Foreign key → Calibration Log in sensor-device-metadata; confirms which correction equation was applied |
-| | Sensor application record reference | 1 | URI / table ID | One row per physical unit per session; inherit defaults |
-| | Sequence position / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Study randomisation plan |
-| | Body site per device | 1 | Device ID → site (e.g. TMP-01 → left forearm anterior / TMP-02 → right anterior thigh) | Use anatomical taxonomy site labels; laterality and aspect required |
-| | Attachment method per device | 1 | Device ID → method (e.g. TMP-01 → Transpore tape / ECG-A → elastic chest strap) | — |
-| | Application time per device | 1 | Device ID → hh:mm (e.g. TMP-01 → 17:55 / pill → ingested 17:50) | Time sensor was placed on or ingested by participant |
-| | Recording start time per device | 1 | Device ID → hh:mm | May differ from application time if recording begins after application |
-| | Recording end time per device | 1 | Device ID → hh:mm | — |
-| | Skin preparation per device | 2 | Device ID → method (e.g. EDA-03 → alcohol wipe + dry / TMP-01 → none) | — |
-| **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | — |
-| | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
-| | Planned activity | 1 | Protocol-defined activity | Separate from deviations |
-| | Estimated MET | 2 | Numeric | Include estimation method |
-| | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
+| **Identifiers & timing** | Sequence position / randomisation code | 1 | Randomisation sequence label (e.g. "Sequence A: warm → neutral → cool") | Actual sequence/condition position, not the planned randomisation method |
+| **Devices & sensor application** | Sensor application record reference | 1 | Linked sensor-application record ID(s) or URI | Authoritative per-session link to actual unit, calibration, placement, configuration and recording times; inherit defaults |
+| **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | Realised ensemble; can inherit planned experiment-level specification if unchanged |
+| | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Realised or estimated clo; inherit planned value when unchanged; ISO 9920 {cite:p}`noauthor_iso_2007` |
+| | Actual/estimated MET (session) | 2 | Numeric MET / not_applicable; method and timing | Record realised or estimated activity intensity; inherit planned activity/MET from experiment when unchanged |
 | | Use of additional personal conditioning | 2–3 | Yes/No; type (fan, blanket, personal heater, etc.) | Observed + logged when allowed by protocol |
 | **Protocol adherence** | Overall compliance | 1 | Yes / No / Partial; describe deviation | Summary adherence assessment; specific incidents are documented in Session events and deviations |
 |  | Pre-session compliance | 2 | Yes / No / Partial / not_applicable | Compliance with pre-session restrictions |
@@ -55,24 +45,18 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Sleep duration last night | 2 | Numeric (hours slept; e.g. 6.8) | Derived from log |
 | | Sleep quality last night | 2 | 0–10 scale or 1–5 Likert | Subjective rating |
 | | Recent night-shift work | 3 | Yes/No; description (e.g. “3 consecutive night shifts in last week”) | Sleep log / app |
-| **Acute health state (today / last few days)** | Recent acute illness (last 7 days) | 1–2 | Yes/No; short description (e.g. “URI with fever”, “GI infection”) | PAR-Q+ style yes/no items; brief medical history |
-| | Fever symptoms in last 48 h | 2 | Yes/No; peak temperature if known | — |
-| | Antipyretic use (last 48 h) | 2 | Yes/No; drug name and approximate time (free text) | — |
-| | New medications since previous session | 2 | Yes/No; if Yes: names and doses (free text) | — |
+| **Acute health state (today / last few days)** | Acute health status (recent) | 1–2 | None / present / unknown; illness, fever or other acute symptoms, onset and severity | Include acute illness and fever together; relevant medication and supplements recorded separately |
+| | Recent medication/supplement use | 2 | Free text: medication/supplement, dose and timing; none / unknown | Include new medication, melatonin, NSAIDs or analgesics when relevant; do not duplicate participant-level habitual medications |
 | **Behaviour since waking (session-day)** | Time since last meal at start | 1–2 | Numeric (hours); optional category (light / normal / heavy); Yes/No if a specific fasting time was instructed (e.g. “Did not eat in the last 12 hours”) | — |
 | | Time since last caffeine | 1–2 | Numeric (hours); type (coffee / tea / energy drink / other); Yes/No if a specific fasting time was instructed (e.g. “Did not drink coffee in the last 12 hours”) | — |
 | | Time since last moderate/vigorous exercise | 2 | Numeric (hours); or category (<4 h, 4–12 h, >12 h); Yes/No if a specific fasting time was instructed (e.g. “Did not exercise in the last 12 hours”) | Short structured item; can echo IPAQ intensity definitions |
 | | Alcohol intake in last 24 h | 2 | Yes/No; rough units or category (none / 1–2 / 3–5 / >5) | AUDIT-C wording if more structure is needed; alternatively an alcohol test can be done before each session |
-| | Antiperspirant applied to measurement sites (last 48 h) | 2 | Yes/No; if Yes: which sites | Aluminium-based antiperspirants reduce local sweat rate by 20–60 % for 24–48 h. Participants should be instructed to abstain from application to measurement sites before the session {cite:p}`quatrale_mechanism_1981,baker_physiology_2019` |
-| | Melatonin taken (last 4 h) | 2 | Yes/No; if Yes: dose (mg) and time taken | Exogenous melatonin raises distal Tsk and DPG; acutely relevant for skin temperature and sleep protocols {cite:p}`krauchi_thermoregulatory_2006` |
-| | NSAIDs or analgesics taken (last 12 h) | 2 | Yes/No; if Yes: drug name and approximate time | NSAIDs can transiently alter autonomic tone; document alongside other acute medications {cite:p}`thayer_relationship_2010` |
 | | Smoking / vaping today | 2–3 | Yes/No; approximate cigarettes/vapes since waking | — |
 | **Hormonal & reproductive (per session info)** | Menstrual cycle day | 1 (conditional) | Cycle day / unknown / not_applicable | Where scientifically and ethically applicable |
 | | Menstrual {ref}`phase <label-phase>` at session | 1 (conditional) | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 | | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
 | **Food & drink intake (realised)** | Food / drink consumed during session | 2 (conditional) | Item, quantity and time; optional kcal | Record actual intake or link to a separate time-stamped intake/event log; planned provision belongs to experiment level |
 | **Events & deviations** | Session events and deviations | 1 (conditional) | Event type (physiological / behavioural / protocol / sensor-related); timestamp, duration, description and consequence; none if absent | One record per event, optionally in a linked time-stamped event log; includes interruptions, sensor problems and departures from protocol without duplicate fields |
-| | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
 | | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
 :::

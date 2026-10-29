@@ -8,7 +8,7 @@ Each participant is represented by one row in a dedicated metadata table, with o
 
 - <u>Tier 2 -- Recommended:</u> Variables that strongly influence {ref}`thermoregulation <label-thermoregulation>` and improve interpretability, including body surface area, {ref}`thermal history <label-thermal-history>`, smoking and alcohol use, typical sleep timing, menstrual cycle characteristics, hormone therapies, thermosensitivity, and selected built-environment descriptors.
 
-- <u>Tier 3 -- Specialised:</u> More detailed or study-specific attributes, such as body composition, occupation, education, sensory-sensitivity or psychological scales, quality-of-life instruments, or vision/colour-vision assessments. These fields are optional but useful for specialised analyses or targeted protocols.
+- <u>Tier 3 -- Specialised:</u> More detailed or study-specific attributes, such as body composition, occupation,  quality-of-life instruments, or vision/colour-vision assessments. These fields are optional but useful for specialised analyses or targeted protocols.
 
 The participant metadata table can be implemented in a spreadsheet, REDCap form, or as structured CSV/TSV with accompanying JSON (e.g., a participants.tsv + participants.json pair following BIDS conventions).
 
@@ -34,36 +34,29 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | | BMR/RMR (kcal/day) | 2 | Numeric | Specify measured or estimated |
 |  | Estimated energy requirement (kcal/day) | 3 (conditional) | Numeric; specify formula, inputs and activity factor | Participant-level estimate; not equivalent to BMR/RMR and only relevant for nutritional control |
 | | Body-composition method | 2 | BIA / DXA / predictive equation / other | Record provenance |
-| | Ethnic background / nationality | 3 | Categorical or free text; optional | — (decide based on ethics and purpose) |
+| | Ethnic background / nationality | 3 | Categorical or free text; optional | Optional only with a specific scientific/ethical rationale; nationality is not a physiological proxy |
 | **Thermal history & occupation** | Thermal history / {ref}`acclimation <label-acclimation>` background | 1 | Free text or categories (e.g. “>5 y in hot climate”, “recently relocated from cold climate”) | Short structured items |
 | | Occupation / profession | 3 | Categorical or free text (e.g. student, office worker, outdoor labour) | — (decide based on ethics and purpose) |
-| | Education level | 3 | Categorical (e.g. secondary / bachelor / master / PhD) | — (decide based on ethics and purpose) |
 | **Lifestyle & exposure** | Smoking status | 2 | Never / former / current; pack-years if known | PAR-Q+ {cite:p}`warburton_validation_2011` or simple screening form |
 | | Alcohol use (habitual) | 2 | Units per week or categories (none / occasional / regular) | AUDIT-C {cite:p}`lawford_alcohol_2012` or simple frequency |
 | | Regular caffeine intake | 2 | Cups per day or categories (low / moderate / high) | Simple frequency question |
-| | Physical activity / fitness level (habitual) | 2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
+| | Physical activity / fitness level (habitual) | 1–2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
 | **Health & diagnoses** | Overall health status | 1 | Healthy / Relevant health condition / Unknown | Specify screening or assessment basis; eligibility criteria alone do not establish absence of diagnoses |
 |  | Relevant medical conditions | 1 (conditional) | None / Present / Unknown; specify condition(s) where relevant | Broad medical context, including cardiovascular, metabolic, neurological, sleep-related or post-viral conditions where applicable; avoid mandatory diagnosis-specific checklists |
-| **Medication** | Relevant medication (general) | 1 | Yes / No / Unknown; class | Specific drug details conditionally collected |
-| | Chronic medications (by class) | 1 | Yes/No per class (β-blockers, antihypertensives, anticholinergics, SSRIs, stimulants, etc.) | Simple class checklist; optionally ATC codes |
+| | Relevant medications (by class) | 1 | None / Present / Unknown; classes or medications relevant to physiology | Single medication screening field; record classes, and use notes for dose/timing where justified |
 | | Thermally relevant medication notes | 2 | Free text (drug names, dose, duration) | Structured notes |
-| | Habitual melatonin supplementation | 2 | Yes/No; if Yes: typical dose (mg) and timing | Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Acute use captured at session level |
+| | Habitual melatonin supplementation | 2 | Yes/No; if Yes: typical dose (mg) and timing | Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Recent use can be recorded in the session-level medication/supplement field |
 | **Reproductive & hormonal** | Menstrual / reproductive status | 1 | Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating | Simple categorical items |
 | | Pregnancy status | 1 (conditional) | Yes / No / Unknown / not_applicable | Only when justified and ethically appropriate |
 | | Cycle length & regularity | 2 | Numeric (days) + regular / irregular | Short structured questions |
 | | Hormonal contraception | 1 | Type (combined pill, progestin-only, IUD, implant, injection, none) + duration | Structured questionnaire |
-| | HRT (hormone replacement therapy) | 2 (conditional) | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
-| | GAHT (gender-affirming hormone therapy) | 2 (conditional) | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
+| | Hormonal therapy (HRT/GAHT or other) | 2 (conditional) | None / Present / Unknown; regimen and duration when relevant | Mechanism and regimen rather than indication alone; collect with ethical justification |
 | **Thermal sensitivity / preference & psychological traits** | Thermal sensitivity / preference | 1 | Scores + groupings (e.g. cold / neutral / warm-preferring) | ETSRS {cite:p}`van_someren_experienced_2016` or similar |
-| | Personality traits | 3 | Scores | Big Five {cite:p}`kang_validation_2024,rammstedt_measuring_2007`, BIS/BAS, {cite:p}`maack_re-examination_2018` etc. |
-| | General sensory / emotional sensitivity | 3 | Score(s) | Highly Sensitive Person Scale (HSPS) {cite:p}`aron_highly_2011` |
-| | Psychological / psychiatric scales | 2–3 | Scores; cut-offs for depression, anxiety, etc. | PHQ-9, GAD-7, DASS-21 |
-| **Sleep & chronobiology** | {ref}`Chronotype <label-chronotype>` | 1 | Continuous score + category (morning / intermediate / evening) | Morningness--Eveningness Questionnaire (MEQ) {cite:p}`horne_self-assessment_1976`, Composite Scale of Morningness (CSM) {cite:p}`smith_composite_1989`, and/or Munich Chronotype Questionnaire {cite:p}`roenneberg_human_2015`. |
+| **Sleep & chronobiology** | {ref}`Chronotype <label-chronotype>` | 1–2 | Continuous score + category (morning / intermediate / evening) | Morningness--Eveningness Questionnaire (MEQ) {cite:p}`horne_self-assessment_1976`, Composite Scale of Morningness (CSM) {cite:p}`smith_composite_1989`, and/or Munich Chronotype Questionnaire {cite:p}`roenneberg_human_2015`. |
 | | Habitual bedtime | 1–2 | Typical bed and wake times (work days vs free days) | Often collected with MCTQ |
 | | Habitual sleep quality | 2–3 | Global score; optionally “good vs poor sleeper” | Pittsburgh Sleep Quality Index (PSQI) for overall sleep quality {cite:p}`buysse_pittsburgh_1989` |
 | | Habitual shift work | 2 | Never / former / current; if current: rotating / permanent nights / early starts | Chronic circadian misalignment shifts CBT and HRV rhythms independently of chronotype. Document pattern and duration {cite:p}`sack_circadian_2007,arendt_shift_2010` |
-| **Built-environment context (optional)** | Main dwelling type | 3 | Detached house / apartment / dormitory / informal | Simple categorical question |
-| | Home and/or office heating/cooling systems | 2 | Multi-select: central heating, floor heating, AC, fans, none, etc. | Simple checklist |
+| | Home and/or office heating/cooling systems | 2 (conditional) | Multi-select: central heating, floor heating, AC, fans, none, etc. | Simple checklist |
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 | | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
 

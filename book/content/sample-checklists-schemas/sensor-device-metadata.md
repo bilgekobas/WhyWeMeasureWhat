@@ -14,22 +14,18 @@ A third table, *Sensor Application*, captures per-session placement and configur
 
 | **Group** | **Field name** | **Tier** | **Typical answers / coding** | **Notes** |
 |---|---|---|---|---|
-| **Core IDs** | Device ID | 1 | Unique alphanumeric code (e.g. `TMP-01`, `ECG-A`) | Primary key; used as foreign key in all linked tables |
-| | Signal / modality | 1 | Skin temperature / HR+HRV / EDA / CBT / BP / Sweat | Maps to signal chapter |
-| | Sensor principle | 1 | NTC thermistor / Ag/AgCl electrode / optical PPG / oscillometric cuff / ventilated capsule | Physical transduction method |
+| **Core IDs** | Device ID | 1 | Unique alphanumeric code (e.g. `TMP-01`, `ECG-A`) | Unique physical device unit ID, not a model or signal ID; primary key used by session applications and calibration logs |
+| | Sensor principle | 1 | NTC thermistor / Ag/AgCl electrode / optical PPG / oscillometric cuff / ventilated capsule | Signal-specific where necessary; identify modality in experiment-level measurement definitions |
+|  | Supported signal / modality | 1 | Controlled list of direct signals (e.g. Tsk, ECG, EDA, acceleration) | Physical-unit registry summary; signal-specific accuracy, resolution and sampling require separate measurement definitions |
 | **Device identity** | Brand | 1 | Maxim Integrated / Biopac / Polar / Finapres | Manufacturer name |
 | | Model | 1 | DS1922L / MP160 / H10 / Nova 2 | Commercial model name |
-| | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
-| | Supported direct signal / modality | 1 | One record per model–signal combination | Multimodal devices can have multiple signals |
+| | Device model ID | 1 | Stable manufacturer/model identifier | Shared across units of the same model; distinct from physical Device ID |
 | | Serial number | 1 | Alphanumeric from device label | — |
 | | Firmware / software version | 2 | v3.2.1 / HOBOware 3.7 | Record at time of study; can change between experiments |
-| **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | From manufacturer specification sheet |
-| | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | From specification sheet |
-| | Measurement range | 2 | Numeric range and units | Manufacturer specification |
-| | Supported sampling rate(s) | 2 | Supported range or selectable rates (Hz) | Model capability only; configured sampling belongs to experiment measurement definitions |
-| | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
-| | Verification summary | 2 | Status, method, reference, date | Detailed calibration events remain in calibration log |
-| **History** | Date first used | 3 | YYYY-MM-DD | Useful for tracking drift over device lifetime |
+| **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | Manufacturer specification; specify signal/modality if device is multimodal |
+| | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | Manufacturer specification; specify signal/modality if device is multimodal |
+| | Measurement range | 2 | Numeric range and units | Specify signal and units if device is multimodal |
+| | Supported sampling configuration | 2 | Supported rate(s)/range in Hz or spot measurement; per signal if needed | Capability, not actual configured rate; experiment default and session overrides stored separately |
 | | Notes | 3 | Free text | Hardware faults, repairs, firmware updates, modifications |
 
 :::
@@ -41,22 +37,22 @@ Notes. One row per physical device unit. If a lab owns three iButton loggers, ea
 | **Group** | **Field name** | **Tier** | **Typical answers / coding** | **Notes** |
 |---|---|---|---|---|
 | **Core IDs** | Calibration ID | 1 | Unique code (e.g. `CAL-001`) | Primary key |
-| | Device ID | 1 | Foreign key → Device Registry | |
+| | Device ID | 1 | Foreign key → Device Registry | Unique physical device unit ID, not a model or signal ID; primary key used by session applications and calibration logs |
 | | Calibration date | 1 | YYYY-MM-DD | |
-| **Method** | Calibration method | 1 | Water bath 5-point / manometer check / electronic bridge check / flow-meter verification | Matches methods described in signal chapter Data handling sections |
-| | Reference instrument | 1 | Brand + model (e.g. Fluke 1502A / Heidolph reference manometer) | |
+| **Method** | Calibration method | 1 (conditional) | Water bath 5-point / manometer check / electronic bridge check / flow-meter verification | Distinguish calibration from functional verification and software/signal-processing validation |
+| | Reference instrument | 1 (conditional) | Brand + model (e.g. Fluke 1502A / Heidolph reference manometer) | |
 | | Reference accuracy | 2 | ±0.01 °C / ±0.1 mmHg | Traceability of the reference |
 | **Results** | Calibration points tested | 2 | List of values (e.g. 30, 34, 37, 40 °C) | |
-| | Raw offset per point | 2 | Measured − reference at each point | e.g. +0.12 °C at 34 °C, −0.03 °C at 37 °C |
-| | Correction equation | 1 | y = 0.998x + 0.14 | Applied to raw signal during processing; store per device |
-| | Pass / fail | 1 | Pass / Fail / Conditional | Based on protocol acceptance threshold |
-| **Administration** | Operator | 2 | Initials or name | |
-| | Next calibration due | 2 | YYYY-MM-DD or "before experiment X" | |
+| | Raw offset per point | 2 (conditional) | Measured − reference at each point | e.g. +0.12 °C at 34 °C, −0.03 °C at 37 °C |
+| | Correction equation | 1 (conditional) | y = 0.998x + 0.14 | Only when calibration yields a correction; not applicable to verification-only procedures |
+| | Pass / fail | 1 (conditional) | Pass / Fail / Conditional | When defined acceptance criteria exist; include criterion and outcome |
+| **Administration** | Operator | 3 | Initials or name | |
+| | Next calibration due | 3 | YYYY-MM-DD or "before experiment X" | |
 | | Notes | 3 | Free text | Drift patterns, anomalies, unusual readings |
 
 :::
 
-**Signal-specific calibration notes:**
+**Signal-specific calibration and verification notes:**
 | Signal | Method | Key output |
 |---|---|---|
 | Skin temperature / CBT (contact sensors) | Stirred water bath, 3–5 temperature points | Individual linear correction equation per sensor unit |
