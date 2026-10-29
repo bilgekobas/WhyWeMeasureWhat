@@ -72,24 +72,35 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Data access conditions | 1 | Open / Restricted / Embargoed (with date) / Available on request | "Available on request" alone is insufficient for reproducibility; prefer open or restricted with documented process |
 |  | Metadata availability | 1 | Whether structured metadata (this schema) is shared independently of raw data | Metadata can often be shared even when raw data cannot |
 
-| **Provenance** | Related paper(s) and DOI(s) | 1 | Linked citations and DOIs | Supplementary field; conditional where applicable |
+|  **Provenance**  | Related paper(s) | 1 | Publication references |  Supplementary field; conditional where applicable  |
+|  **Provenance**  | Related paper DOI(s) | 1 | DOI list |  Supplementary field; conditional where applicable  |
 | **Governance** | Ethics status | 1 | approved / pending / exempt / not_reported | Supplementary field; conditional where applicable |
 | **Governance** | Registration timing | 2 | prospective / retrospective / not_applicable | Supplementary field; conditional where applicable |
-| **Exposure** | Temperature-series type and target temperatures | 2 / 1 | Preserve minimum, maximum and targets separately | Supplementary field; conditional where applicable |
+|  **Exposure**  | Temperature-series type | 2 | fixed / stepped / ramped / mixed |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature minimum (°C) | 1 | Numeric / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature maximum (°C) | 1 | Numeric / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature targets (°C) | 1 | Controlled list / not_applicable |  Supplementary field; conditional where applicable  |
 | **Allocation** | Randomisation used | 1 | yes / no / not_applicable | Supplementary field; conditional where applicable |
 | **Allocation** | Allocation concealment | 2 | yes / no / not_reported | Supplementary field; conditional where applicable |
 | **Allocation** | Investigator blinding | 2 | separate from participant blinding | Supplementary field; conditional where applicable |
 | **Timing** | Typical normalisation (min) | 1 | Planned duration | Supplementary field; conditional where applicable |
-| **Timing** | Planned sessions and intersession rule | 1 / 2 | Separate fields | Supplementary field; conditional where applicable |
+|  **Timing**  | Planned sessions per participant | 1 | Integer |  Supplementary field; conditional where applicable  |
+|  **Timing**  | Intersession rule | 2 | Washout / interval / schedule |  Supplementary field; conditional where applicable  |
 | **Sample** | Sample-size method | 1 | a priori / feasibility / pilot | Supplementary field; conditional where applicable |
-| **Sample** | Screened / enrolled / randomised / completed N | 2 | Separate denominators | Supplementary field; conditional where applicable |
+|  **Sample**  | Screened N | 2 | Integer |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Enrolled N | 2 | Integer |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Randomised N | 2 | Integer / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Completed N | 2 | Integer |  Supplementary field; conditional where applicable  |
 | **Sample** | Primary-analysis N | 1 | Primary analytical denominator | Supplementary field; conditional where applicable |
 | **Scientific rationale** | Primary research question | 1 | Explicit question | Supplementary field; conditional where applicable |
 | **Scientific rationale** | Target physiological process | 1 | Mechanistic construct | Supplementary field; conditional where applicable |
 | **Scientific rationale** | Primary outcome definition | 1 | Operational definition | Supplementary field; conditional where applicable |
 | **Analysis** | Primary analysis approach | 1 | Model / method | Supplementary field; conditional where applicable |
-| **Environment** | Planned environmental variables and instrument heights | 1 | Separate measurement descriptors | Supplementary field; conditional where applicable |
-| **Data** | Raw-data access / processed-data access / code access | 1 | Separate fields | Supplementary field; conditional where applicable |
+|  **Environment**  | Planned environmental variables | 1 | Controlled list |  Supplementary field; conditional where applicable  |
+|  **Environment**  | Environmental instrument heights | 1 | Height and units |  Supplementary field; conditional where applicable  |
+|  **Data**  | Raw-data access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
+|  **Data**  | Processed-data access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
+|  **Data**  | Code access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
 | **Data** | Licence | 2 | Data and code where applicable | Supplementary field; conditional where applicable |
 | **Sample** | Optional demographic summary counts | 2 | Derive from participant records | Supplementary field; conditional where applicable |
 :::
