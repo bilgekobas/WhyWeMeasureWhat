@@ -89,6 +89,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Physiology-data reference | 1 | URI / filename | Participant/session/time linkage |
 |  | Environmental-data reference | 1 | URI / filename | Exposure data linkage |
 | **Devices & sensor application** | Sensor application record reference | 1 | URI / table ID | One row per physical unit per session; inherit defaults |
+
 :::
 
 + For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate *sensor_application.tsv* with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.
