@@ -32,6 +32,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | | Body fat % | 2 | Numeric (%) | BIA, DXA, skinfolds, BodPod, etc. |
 | | Muscle (%) | 2 | Percentage | Specify measurement method |
 | | BMR/RMR (kcal/day) | 2 | Numeric | Specify measured or estimated |
+|  | Estimated energy requirement (kcal/day) | 3 (conditional) | Numeric; specify formula, inputs and activity factor | Participant-level estimate; not equivalent to BMR/RMR and only relevant for nutritional control |
 | | Body-composition method | 2 | BIA / DXA / predictive equation / other | Record provenance |
 | | Ethnic background / nationality | 3 | Categorical or free text; optional | — (decide based on ethics and purpose) |
 | **Thermal history & occupation** | Thermal history / {ref}`acclimation <label-acclimation>` background | 1 | Free text or categories (e.g. “>5 y in hot climate”, “recently relocated from cold climate”) | Short structured items |
