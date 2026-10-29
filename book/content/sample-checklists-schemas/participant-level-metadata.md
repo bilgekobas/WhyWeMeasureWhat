@@ -21,7 +21,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Core IDs** | Participant ID | 1 | Text ID (e.g. P01, SL23_001) | — (lab-defined) |
 |  | Study / cohort | 1 | Text (e.g. PMV05 – Red, ACvsFR – AC) | — (lab-defined) |
 | **Demographics & morphology** | Age | 1 | Numeric (years at first session) | Direct (derived from DOB if stored). If ethics committees do not allow, then age group according to a medically agreed on standard {cite:p}`diaz_call_2021` |
-|  | Sex | 1 | Categorical: female / male / trans f2m / trans m2f | Trans categories only for active transitioning at the time of the experiment |
+|  | Sex-related variable | 1 | Coding defined by study purpose | Record operational definition; transgender status is not a sex category |
 |  | Gender identity (optional) | 2 | Categorical or free text | — (lab-defined wording) |
 |  | Height | 1 | Numeric (cm), self-reported or measured (flag which) | Stadiometer; self-report |
 |  | Weight | 1 | Numeric (kg), self-reported or measured | Scale or self-report. If measured, note method (e.g. nude, underwear, fasting morning, etc.) |
@@ -68,22 +68,17 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 |  | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
 
+| **Linkage** | Experiment ID | 1 | Foreign key to experiment | Supplementary field; conditional where applicable |
+| **Linkage** | Arm/group | 1 | Participant allocation / not_applicable | Supplementary field; conditional where applicable |
+| **Morphology** | Muscle (%) | 2 | Specify measurement method | Supplementary field; conditional where applicable |
+| **Morphology** | BMR/RMR (kcal/day) | 2 | Specify measured versus estimated | Supplementary field; conditional where applicable |
+| **Morphology** | Body-composition method | 2 | BIA / DXA / equation / other | Supplementary field; conditional where applicable |
+| **Hormonal context** | Pregnancy status | 1 conditional | Applicable, relevant and ethically appropriate | Supplementary field; conditional where applicable |
+| **Provenance** | Assessment/data reference | 2 | Instrument or data-source identifier | Supplementary field; conditional where applicable |
 :::
 
 Note. Some questions may be redundant when already used as an exclusion criterion, e.g., if having any CV history is an exclusion reason, then no need to repeat it in participant metadata.
 
-## Reconciled additions from published supplementary schema
 
-These fields are part of the merged schema and supplement the existing table. Tier 1 is Core when applicable.
 
-| Group | Field name | Tier | Definition / coding |
-|---|---|---|---|
-| Linkage | Experiment ID | 1 | Foreign key to experiment |
-| Linkage | Arm/group | 1 | Participant allocation / not_applicable |
-| Morphology | Muscle (%) | 2 | Specify measurement method |
-| Morphology | BMR/RMR (kcal/day) | 2 | Specify measured versus estimated |
-| Morphology | Body-composition method | 2 | BIA / DXA / equation / other |
-| Hormonal context | Pregnancy status | 1 conditional | Applicable, relevant and ethically appropriate |
-| Provenance | Assessment/data reference | 2 | Instrument or data-source identifier |
-
-Sex-related and gender-related variables must be coded separately, with explicit operational definitions; transgender status must not be encoded as a sex category. General diagnosis and medication information is Core, while specific diagnoses and hormonal therapies are conditional. Chronotype, thermal preference and hormonal contraception follow the approved Tier 1 decisions.
+Sex-related and gender-related variables must be coded separately with explicit operational definitions. Specific diagnoses and hormonal therapies are conditional and require scientific and ethical justification.
