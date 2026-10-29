@@ -21,10 +21,9 @@ Major releases are archived through Zenodo and assigned version-specific DOIs so
 
 **Peer-reviewed framework paper**
 
-Kobas, B. (2026). *Toward Interoperable Indoor Thermal Physiology Research in the Built Environment: An Interpretive Framework for Physiological Measurement and Metadata Architecture*. *Building and Environment*. https://doi.org/10.1016/j.buildenv.2026.115269
+> Kobas, B. (2026). *Toward Interoperable Indoor Thermal Physiology Research in the Built Environment: An Interpretive Framework for Physiological Measurement and Metadata Architecture*. *Building and Environment*. https://doi.org/10.1016/j.buildenv.2026.115269
 
 **Versioned online resource**
-
 
 For the scientific framework, cite the peer-reviewed paper above. When using particular wiki content, templates, or a specific version of this evolving resource, also cite the archived Zenodo release corresponding to the version used during analysis or manuscript preparation.
 
@@ -36,7 +35,7 @@ Because the resource is periodically updated, including either the version numbe
 
 Example:
 
-> Accessed Version 1.0 (2026-05-07)
+> Accessed Version 0.1.0 (2026-05-07)
 
 or
 
