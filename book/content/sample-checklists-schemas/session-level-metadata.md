@@ -42,7 +42,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Skin preparation per device | 2 | Device ID → method (e.g. EDA-03 → alcohol wipe + dry / TMP-01 → none) | — |
 | | Sensor deviations | 2 | Free text (e.g. "TMP-02 detached at 19:30, reattached 19:35"; "ECG-A lost signal 20:10–20:15") | Any deviation from standard placement or signal interruption |
 | **Environment & exposure (session context)** | Clothing description | 1 | Free text description (e.g. “T-shirt, jeans, socks”) | — |
-| | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on [ISO 9920:2007](https://www.iso.org/standard/39257.html) clothing-insulation tables; or lab-specific lookup |
+| | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
 | | Planned activity | 1 | Protocol-defined activity | Separate from deviations |
 | | Estimated MET | 2 | Numeric | Include estimation method |
 | | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
