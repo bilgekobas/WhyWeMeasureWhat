@@ -44,7 +44,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
 |  | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
 |  | Use of additional personal conditioning | 2–3 | Yes/No; type (fan, blanket, personal heater, etc.) | Observed + logged when allowed by protocol |
-| **Protocol adherence** | Pre-session restriction compliance | 1–2 | Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”) | Checklist based on study instructions (no alcohol, no caffeine, etc.) |
+| **Protocol adherence** | Pre-session restriction compliance | 2 | Yes/No; if No: short description (e.g. “coffee 2 h before”, “ran to lab”) | Checklist based on study instructions (no alcohol, no caffeine, etc.) |
 |  | Arrival time to lab | 2 | Clock time | — |
 |  | Waiting / acclimation period | 2 | Minutes from arrival to session start (numeric) | Derived from times; duration should be standardised |
 | **Scheduling & circadian context** | Sleep-wake times | 1–2 | Clock time, 24 h | Sleep log / app |
@@ -65,7 +65,7 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Melatonin taken (last 4 h) | 2 | Yes/No; if Yes: dose (mg) and time taken | Exogenous melatonin raises distal Tsk and DPG; acutely relevant for skin temperature and sleep protocols {cite:p}`krauchi_thermoregulatory_2006` |
 |  | NSAIDs or analgesics taken (last 12 h) | 2 | Yes/No; if Yes: drug name and approximate time | NSAIDs can transiently alter autonomic tone; document alongside other acute medications {cite:p}`thayer_relationship_2010` |
 |  | Smoking / vaping today | 2–3 | Yes/No; approximate cigarettes/vapes since waking | — |
-| **Hormonal & reproductive (per session info)** | Menstrual {ref}`phase <label-phase>` at session | 1 | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
+| **Hormonal & reproductive (per session info)** | Menstrual {ref}`phase <label-phase>` at session | 1 conditional | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 |  | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
 | **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | End-of-session log entry |
 |  | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
@@ -75,6 +75,23 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 |  | Major protocol deviations | 1–2 | Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”) | Protocol deviation form |
 |  | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
+| **Linkage** | Experiment ID | 1 | Foreign key to experiment | Supplementary field; conditional where applicable |
+| **Timing** | Actual normalisation duration (min) | 1 | Separate from waiting time | Supplementary field; conditional where applicable |
+| **Timing** | Previous-session interval (days) | 2 | Actual elapsed interval | Supplementary field; conditional where applicable |
+| **Hormonal context** | Menstrual cycle day | 1 conditional | When applicable | Supplementary field; conditional where applicable |
+| **Activity** | Planned activity | 1 | Protocol-defined activity | Supplementary field; conditional where applicable |
+| **Activity** | Estimated MET | 2 | Numeric and estimation method | Supplementary field; conditional where applicable |
+| **Activity** | Activity deviation | 2 | Realised versus planned | Supplementary field; conditional where applicable |
+| **Adherence** | Overall protocol compliance | 1 | Separate from restrictions | Supplementary field; conditional where applicable |
+|  **Adherence**  | Fixed clothing compliance | 1 (conditional) | yes / no / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Adherence**  | Controlled movement compliance | 1 (conditional) | yes / no / not_applicable |  Supplementary field; conditional where applicable  |
+| **Resources** | Session log/resource | 2 | Identifier or URI | Supplementary field; conditional where applicable |
+| **Resources** | Physiology-data reference | 1 | Linked time series | Supplementary field; conditional where applicable |
+| **Resources** | Environmental-data reference | 1 | Linked exposure | Supplementary field; conditional where applicable |
 :::
 
 + For studies applying many sensors simultaneously, these per-device fields may be implemented as a separate *sensor_application.tsv* with one row per device per session, using the same field definitions. The Device IDs used and Calibration IDs active fields in the session row then serve as a summary index pointing to that file.
+
+
+
+Experiment-level definitions are inherited; actual device applications, recording times, and deviations belong in the [linked sensor-application table](linked-measurement-definitions). Menstrual cycle day and phase are conditionally Core.

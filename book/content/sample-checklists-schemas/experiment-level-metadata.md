@@ -33,8 +33,8 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 | **Study type** | Study environment | 1 | Laboratory / Field / Hybrid | — |
 |  | Study design | 1 | Controlled / Observational / Interventional | — |
 |  | Experimental structure | 2 | Between-subjects, Within-subjects, Repeated measures, Crossover, Pre–Post | Multiple can apply |
-|  | Randomisation | 2 | Yes/No; method (simple, block, Latin square) | Link to randomisation table if available |
-|  | Blinding | 1 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
+|  | Randomisation method | 2 | Yes/No; method (simple, block, Latin square) | Link to randomisation table if available |
+|  | Participant blinding | 2 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
 | **Timing & schedule** | Start date of experiment | 1 | YYYY-MM-DD | — |
 |  | End date of experiment | 1 | YYYY-MM-DD | — |
 |  | Typical session duration | 1 | Minutes or hours | — |
@@ -52,7 +52,7 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Exclusion criteria | 1 | Free text or list | — |
 | **Intervention** | Study domain(s) | 1 | Thermal / Humidity / Air movement / Light / IAQ / Acoustics | Multiple allowed |
 |  | Intervention description | 1 | Free text | Describe manipulated variables |
-|  | Number of conditions | 2 | Integer | — |
+|  | Number of conditions | 1 | Integer | — |
 |  | Condition labels | 2 | Text labels | — |
 |  | Standardised behaviour rules | 1 | Resting, sitting, acclimatisation / normalisation, movement, eating, drinking protocols | — |
 | **Environment & equipment (experiment-level)** | Spatial typology | 1 | Office / Residential / Educational / Public / etc. | — |
@@ -65,11 +65,46 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | I – Intervention / exposure | 1 | Summary of main exposure(s) or experimental condition(s) | “14-day heat {ref}`acclimation <label-acclimation>`: AC at 26 °C vs free-running apartment (summer conditions)” |
 |  | C – Comparison / control conditions | 1 | Description of comparator condition(s) | “Free-running cooling vs constant AC; within-subject crossover” |
 |  | O – Primary outcomes | 1 | Main endpoints and quantification | “Core body temperature, neck/ankle skin temperature, HR, BP, HRV (RMSSD), thermal sensation” |
-|  | O – Secondary outcomes | 1 | Additional exploratory endpoints | “Sleep {ref}`onset <label-onset>` latency, actigraphy-based sleep efficiency, melatonin AUC” |
+|  | O – Secondary outcomes | 2 | Additional exploratory endpoints | “Sleep {ref}`onset <label-onset>` latency, actigraphy-based sleep efficiency, melatonin AUC” |
 |  | T – Time frame | 1 | Time horizon for effect and measurement | “Pre–post mild heat-stress test before and after 14-day exposure; tests between 09:00–16:00” |
 | **Data availability** | Data repository | 1 | OSF / Zenodo / Figshare / institutional repository / none | Where the dataset will be or is deposited |
 |  | Dataset DOI / link | 1 | URL or DOI; "in preparation" if not yet available | — |
 |  | Data access conditions | 1 | Open / Restricted / Embargoed (with date) / Available on request | "Available on request" alone is insufficient for reproducibility; prefer open or restricted with documented process |
 |  | Metadata availability | 1 | Whether structured metadata (this schema) is shared independently of raw data | Metadata can often be shared even when raw data cannot |
 
+|  **Provenance**  | Related paper(s) | 1 | Publication references |  Supplementary field; conditional where applicable  |
+|  **Provenance**  | Related paper DOI(s) | 1 | DOI list |  Supplementary field; conditional where applicable  |
+| **Governance** | Ethics status | 1 | approved / pending / exempt / not_reported | Supplementary field; conditional where applicable |
+| **Governance** | Registration timing | 2 | prospective / retrospective / not_applicable | Supplementary field; conditional where applicable |
+|  **Exposure**  | Temperature-series type | 2 | fixed / stepped / ramped / mixed |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature minimum (°C) | 1 | Numeric / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature maximum (°C) | 1 | Numeric / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Exposure**  | Tested temperature targets (°C) | 1 | Controlled list / not_applicable |  Supplementary field; conditional where applicable  |
+| **Allocation** | Randomisation used | 1 | yes / no / not_applicable | Supplementary field; conditional where applicable |
+| **Allocation** | Allocation concealment | 2 | yes / no / not_reported | Supplementary field; conditional where applicable |
+| **Allocation** | Investigator blinding | 2 | separate from participant blinding | Supplementary field; conditional where applicable |
+| **Timing** | Typical normalisation (min) | 1 | Planned duration | Supplementary field; conditional where applicable |
+|  **Timing**  | Planned sessions per participant | 1 | Integer |  Supplementary field; conditional where applicable  |
+|  **Timing**  | Intersession rule | 2 | Washout / interval / schedule |  Supplementary field; conditional where applicable  |
+| **Sample** | Sample-size method | 1 | a priori / feasibility / pilot | Supplementary field; conditional where applicable |
+|  **Sample**  | Screened N | 2 | Integer |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Enrolled N | 2 | Integer |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Randomised N | 2 | Integer / not_applicable |  Supplementary field; conditional where applicable  |
+|  **Sample**  | Completed N | 2 | Integer |  Supplementary field; conditional where applicable  |
+| **Sample** | Primary-analysis N | 1 | Primary analytical denominator | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Primary research question | 1 | Explicit question | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Target physiological process | 1 | Mechanistic construct | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Primary outcome definition | 1 | Operational definition | Supplementary field; conditional where applicable |
+| **Analysis** | Primary analysis approach | 1 | Model / method | Supplementary field; conditional where applicable |
+|  **Environment**  | Planned environmental variables | 1 | Controlled list |  Supplementary field; conditional where applicable  |
+|  **Environment**  | Environmental instrument heights | 1 | Height and units |  Supplementary field; conditional where applicable  |
+|  **Data**  | Raw-data access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
+|  **Data**  | Processed-data access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
+|  **Data**  | Code access | 1 | Access status and reference |  Supplementary field; conditional where applicable  |
+| **Data** | Licence | 2 | Data and code where applicable | Supplementary field; conditional where applicable |
+| **Sample** | Optional demographic summary counts | 2 | Derive from participant records | Supplementary field; conditional where applicable |
 :::
+
+
+
+Questionnaire/task definitions and direct signal–device–placement definitions are maintained as [linked tables](linked-measurement-definitions). Demographic summary counts should be derived from participant records.

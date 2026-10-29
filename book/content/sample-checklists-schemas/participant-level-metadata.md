@@ -21,7 +21,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Core IDs** | Participant ID | 1 | Text ID (e.g. P01, SL23_001) | — (lab-defined) |
 |  | Study / cohort | 1 | Text (e.g. PMV05 – Red, ACvsFR – AC) | — (lab-defined) |
 | **Demographics & morphology** | Age | 1 | Numeric (years at first session) | Direct (derived from DOB if stored). If ethics committees do not allow, then age group according to a medically agreed on standard {cite:p}`diaz_call_2021` |
-|  | Sex | 1 | Categorical: female / male / trans f2m / trans m2f | Trans categories only for active transitioning at the time of the experiment |
+|  | Sex-related variable | 1 | Coding defined by study purpose | Record operational definition; transgender status is not a sex category |
 |  | Gender identity (optional) | 2 | Categorical or free text | — (lab-defined wording) |
 |  | Height | 1 | Numeric (cm), self-reported or measured (flag which) | Stadiometer; self-report |
 |  | Weight | 1 | Numeric (kg), self-reported or measured | Scale or self-report. If measured, note method (e.g. nude, underwear, fasting morning, etc.) |
@@ -29,13 +29,13 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Body surface area (BSA) | 2 | Numeric (m²) | Du Bois & Du Bois, Mosteller, etc. (formula documented) |
 |  | Body fat % | 2 | Numeric (%) | BIA, DXA, skinfolds, BodPod, etc. |
 |  | Ethnic background / nationality | 3 | Categorical or free text; optional | — (decide based on ethics and purpose) |
-| **Thermal history & occupation** | Thermal history / {ref}`acclimation <label-acclimation>` background | 2 | Free text or categories (e.g. “>5 y in hot climate”, “recently relocated from cold climate”) | Short structured items |
+| **Thermal history & occupation** | Thermal history / {ref}`acclimation <label-acclimation>` background | 1 | Free text or categories (e.g. “>5 y in hot climate”, “recently relocated from cold climate”) | Short structured items |
 |  | Occupation / profession | 3 | Categorical or free text (e.g. student, office worker, outdoor labour) | — (decide based on ethics and purpose) |
 |  | Education level | 3 | Categorical (e.g. secondary / bachelor / master / PhD) | — (decide based on ethics and purpose) |
-| **Lifestyle & exposure** | Smoking status | 1 | Never / former / current; pack-years if known | PAR-Q+ {cite:p}`warburton_validation_2011` or simple screening form |
+| **Lifestyle & exposure** | Smoking status | 2 | Never / former / current; pack-years if known | PAR-Q+ {cite:p}`warburton_validation_2011` or simple screening form |
 |  | Alcohol use (habitual) | 2 | Units per week or categories (none / occasional / regular) | AUDIT-C {cite:p}`lawford_alcohol_2012` or simple frequency |
 |  | Regular caffeine intake | 2 | Cups per day or categories (low / moderate / high) | Simple frequency question |
-|  | Physical activity / fitness level (habitual) | 1–2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
+|  | Physical activity / fitness level (habitual) | 2 | MET-min/week + category (low / moderate / high) | IPAQ-SF, IPAQ-LF {cite:p}`lee_validity_2011`, or GPAQ (WHO) {cite:p}`bull_global_2009` |
 |  | Habitual compression garment use | 3 | Yes/No; if Yes: type (medical stockings / sports compression / post-surgical) + typical sites covered | Compression at measurement sites lowers local Tsk by 0.5–1.5 °C; relevant when lower-limb skin temperature is a study outcome {cite:p}`partsch_compression_2012` |
 | **Health & diagnoses** | Overall health status | 1 | Healthy / controlled condition(s) / other + notes | Summary from screening; may combine PAR-Q+ with brief medical history |
 |  | Cardiovascular diagnoses | 1 | Yes/No per condition (hypertension, arrhythmia, CAD, HF, etc.) | PAR-Q+, Charlson comorbidity list {cite:p}`charlson_charlson_2022`, or tailored checklist |
@@ -52,9 +52,9 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Reproductive & hormonal** | Menstrual / reproductive status | 1 | Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating | Simple categorical items |
 |  | Cycle length & regularity | 2 | Numeric (days) + regular / irregular | Short structured questions |
 |  | Hormonal contraception | 1 | Type (combined pill, progestin-only, IUD, implant, injection, none) + duration | Structured questionnaire |
-|  | HRT (hormone replacement therapy) | 1 | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
-|  | GAHT (gender-affirming hormone therapy) | 1 | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
-| **Thermal sensitivity / preference & psychological traits** | Thermal sensitivity / preference | 1–2 | Scores + groupings (e.g. cold / neutral / warm-preferring) | ETSRS {cite:p}`van_someren_experienced_2016` or similar |
+|  | HRT (hormone replacement therapy) | 2 | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
+|  | GAHT (gender-affirming hormone therapy) | 2 | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
+| **Thermal sensitivity / preference & psychological traits** | Thermal sensitivity / preference | 1 | Scores + groupings (e.g. cold / neutral / warm-preferring) | ETSRS {cite:p}`van_someren_experienced_2016` or similar |
 |  | Personality traits | 3 | Scores | Big Five {cite:p}`kang_validation_2024,rammstedt_measuring_2007`, BIS/BAS, {cite:p}`maack_re-examination_2018` etc. |
 |  | General sensory / emotional sensitivity | 3 | Score(s) | Highly Sensitive Person Scale (HSPS) {cite:p}`aron_highly_2011` |
 |  | Psychological / psychiatric scales | 2–3 | Scores; cut-offs for depression, anxiety, etc. | PHQ-9, GAD-7, DASS-21 |
@@ -68,6 +68,17 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 |  | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
 
+| **Linkage** | Experiment ID | 1 | Foreign key to experiment | Supplementary field; conditional where applicable |
+| **Linkage** | Arm/group | 1 | Participant allocation / not_applicable | Supplementary field; conditional where applicable |
+| **Morphology** | Muscle (%) | 2 | Specify measurement method | Supplementary field; conditional where applicable |
+| **Morphology** | BMR/RMR (kcal/day) | 2 | Specify measured versus estimated | Supplementary field; conditional where applicable |
+| **Morphology** | Body-composition method | 2 | BIA / DXA / equation / other | Supplementary field; conditional where applicable |
+| **Hormonal context** | Pregnancy status | 1 conditional | Applicable, relevant and ethically appropriate | Supplementary field; conditional where applicable |
+| **Provenance** | Assessment/data reference | 2 | Instrument or data-source identifier | Supplementary field; conditional where applicable |
 :::
 
 Note. Some questions may be redundant when already used as an exclusion criterion, e.g., if having any CV history is an exclusion reason, then no need to repeat it in participant metadata.
+
+
+
+Sex-related and gender-related variables must be coded separately with explicit operational definitions. Specific diagnoses and hormonal therapies are conditional and require scientific and ethical justification.
