@@ -26,8 +26,6 @@ chapters:
       - file: content/sample-checklists-schemas/participant-level-metadata
       - file: content/sample-checklists-schemas/session-level-metadata
       - file: content/sample-checklists-schemas/sensor-device-metadata
-      - file: content/sample-checklists-schemas/linked-measurement-definitions
-      - file: content/sample-checklists-schemas/schema-reconciliation
 
   - file: content/contribution/index
     sections:
