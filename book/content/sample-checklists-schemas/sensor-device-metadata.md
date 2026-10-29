@@ -22,11 +22,16 @@ A third table, *Sensor Application*, captures per-session placement and configur
 | | Serial number | 1 | Alphanumeric from device label | — |
 | | Firmware / software version | 2 | v3.2.1 / HOBOware 3.7 | Record at time of study; can change between experiments |
 | **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | From manufacturer specification sheet |
-| | Sampling rate (Hz) | 2 | 1 / 256 / 4 | As configured; not maximum capability |
+| | Supported sampling rate(s) | 2 | Supported range or selectable rates (Hz) | Model capability only; configured sampling belongs to experiment measurement definitions |
 | | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | From specification sheet |
 | **History** | Date first used | 3 | YYYY-MM-DD | Useful for tracking drift over device lifetime |
 | | Notes | 3 | Free text | Hardware faults, repairs, firmware updates, modifications |
 
+| **Model–signal relationship** | Device model ID | 1 | Unique manufacturer/model identifier | Link physical units to a model |
+|  | Supported direct signal / modality | 1 | One record per model–signal combination | Multimodal devices can have multiple signals |
+|  | Measurement range | 2 | Numeric range and units | Manufacturer specification |
+|  | Sampling capability | 2 | Supported rates / spot measurement | Not actual configured rate |
+|  | Verification summary | 2 | Status, method, reference, date | Detailed calibration events remain in calibration log |
 :::
 Notes. One row per physical device unit. If a lab owns three iButton loggers, each has its own row and its own ID — they may have different calibration curves.
 
@@ -62,3 +67,5 @@ Notes. One row per physical device unit. If a lab owns three iButton loggers, ea
 | Oscillometric BP | Manometer verification against traceable reference | Bias at rest; acceptance threshold (typically ±3 mmHg) |
 
 Notes. One row per calibration event per device. A device may appear multiple times as it is recalibrated across studies or time periods.
+
+**Identity and sampling:** The model–signal catalogue describes device-model capabilities, while the Device Registry above identifies each physical unit. Experiment-level measurement definitions record the actual configured sampling rate and default placement. Session records document actual applications and overrides. Retain both a verification summary and the per-device calibration-event log.
