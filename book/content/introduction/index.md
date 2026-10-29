@@ -4,6 +4,8 @@ Physiological measurements describe how the human body responds to its thermal e
 
 This resource exists to bridge that gap.
 
+The scientific rationale and interpretive framework are presented in the peer-reviewed paper [*Toward Interoperable Indoor Thermal Physiology Research in the Built Environment: An Interpretive Framework for Physiological Measurement and Metadata Architecture*](https://doi.org/10.1016/j.buildenv.2026.115269), published in *Building and Environment*.
+
 ## What this resource is
 
 *Why We Measure What, How and Where* is an open, version-controlled reference for physiological signal measurement in indoor thermal environment studies. It is aimed at researchers who measure human physiological responses in building experiments — whether in controlled climate chambers, living labs, or occupied field settings — and who want their work to be grounded in established physiological reasoning and comparable with other studies.
@@ -65,7 +67,7 @@ Contributions are welcome. See [how to contribute](../contribution/how-to-contri
 
 ## About this resource
 
-This resource was developed at the Chair of Building Technology and Climate Responsive Design, Technical University of Munich. It accompanies a peer-reviewed methods paper that describes the framework in detail, provides empirical evidence for the fragmentation problem from a metadata analysis of 250 indoor thermal physiology studies, and positions the resource within the broader landscape of reproducibility infrastructure in environmental research.
+This resource was developed at the Chair of Building Technology and Climate Responsive Design, Technical University of Munich. It accompanies the [peer-reviewed *Building and Environment* methods paper](https://doi.org/10.1016/j.buildenv.2026.115269) that describes the framework in detail, provides empirical evidence for the fragmentation problem from a metadata analysis of 273 publications encompassing 295 indoor thermal physiology experiments, and positions the resource within the broader landscape of reproducibility infrastructure in environmental research.
 
 The underlying literature corpus integrates publications spanning thermophysiology, psychophysiology, sports and exercise science, chronobiology, clinical monitoring, and indoor environmental research. Priority was given to meta-analyses, systematic reviews, international standards, and methodological position papers.
 
