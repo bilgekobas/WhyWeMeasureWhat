@@ -45,13 +45,12 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Clothing insulation (clo) | 1 | Numeric clo value (approx. 0.5–1.5 etc.) | Estimation based on ISO 9920 tables {cite:p}`noauthor_iso_2007`; or lab-specific lookup |
 | | Planned activity | 1 | Protocol-defined activity | Separate from deviations |
 | | Estimated MET | 2 | Numeric | Include estimation method |
-| | Activity deviation | 2 | Text / none | Actual activity versus plan |
 | | Outdoor weather context | 2–3 | Simple categories: “cold spell”, “typical”, “heatwave”, or link to local weather series | Researcher notes — weather data assumed to be measured or obtained from nearest meteorological station |
 | | Use of additional personal conditioning | 2–3 | Yes/No; type (fan, blanket, personal heater, etc.) | Observed + logged when allowed by protocol |
-| **Protocol adherence** | Overall compliance | 1 | Yes / No / Partial; describe deviation | Summary of adherence to the session protocol |
+| **Protocol adherence** | Overall compliance | 1 | Yes / No / Partial; describe deviation | Summary adherence assessment; details of specific incidents belong in Protocol deviations |
 |  | Pre-session compliance | 2 | Yes / No / Partial / not_applicable | Compliance with pre-session restrictions |
 |  | Clothing compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to prescribed clothing |
-|  | Described activity compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to protocol-defined activity |
+|  | Activity compliance | 1 (conditional) | Yes / No / Partial / not_applicable; describe any departure | Compare actual activity with prescribed activity; record timing and nature of departures |
 |  | Timing compliance | 1 (conditional) | Yes / No / Partial / not_applicable | Relative to scheduled exposure and measurement timing |
 | **Scheduling & circadian context** | Sleep-wake times | 2 | Clock time, 24 h | Sleep log / app |
 | | Sleep duration last night | 2 | Numeric (hours slept; e.g. 6.8) | Derived from log |
@@ -73,8 +72,8 @@ Session metadata can be recorded via paper logs, REDCap/Qualtrics forms, or digi
 | | Menstrual {ref}`phase <label-phase>` at session | 1 (conditional) | Categorical (e.g. early follicular, late follicular, mid-luteal, perimenopausal, postmenopausal, unknown) | Derived from self-reported menstrual dates; optionally hormone assays |
 | | Pregnancy / breastfeeding status | 2 | Yes/No; if Yes: notes | Pregnancy tests can be done before each experiment/session when needed |
 | **Food & drink intake (realised)** | Food / drink consumed during session | 2 (conditional) | Item, quantity and time; optional kcal | Record actual intake or link to a separate time-stamped intake/event log; planned provision belongs to experiment level |
-| **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | End-of-session log entry |
-| | Major protocol deviations | 1–2 | Free text (e.g. “session ended early”, “CBT probe dislodged”, “BP failed for 30 min”) | Protocol deviation form |
+| **Events & deviations** | Acute events during session | 1–2 | Free text (e.g. “felt faint at 20:10, paused”, “strong emotional phone call at 21:00”) | Physiological, behavioural or other unexpected events; describe time and consequences |
+|  | Protocol deviations | 1 (conditional) | Description, timestamp, duration and consequence; none if absent | Specific departures from planned protocol, including measurement interruptions; avoid repeating the overall compliance judgement |
 | | Bathroom visits | 2–3 | Times or time ranges; optional volume where measured | Manually logged; useful for future detection of outside-lab/uncontrolled exposure times |
 | | Free-text notes | 2 | Any other remarks that help interpret data | — |
 
