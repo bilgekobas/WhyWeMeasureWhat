@@ -33,8 +33,8 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 | **Study type** | Study environment | 1 | Laboratory / Field / Hybrid | — |
 |  | Study design | 1 | Controlled / Observational / Interventional | — |
 |  | Experimental structure | 2 | Between-subjects, Within-subjects, Repeated measures, Crossover, Pre–Post | Multiple can apply |
-|  | Randomisation | 2 | Yes/No; method (simple, block, Latin square) | Link to randomisation table if available |
-|  | Blinding | 2 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
+|  | Randomisation method | 2 | Yes/No; method (simple, block, Latin square) | Link to randomisation table if available |
+|  | Participant blinding | 2 | None / Single-blind / Double-blind | If none, a brief explanation recommended |
 | **Timing & schedule** | Start date of experiment | 1 | YYYY-MM-DD | — |
 |  | End date of experiment | 1 | YYYY-MM-DD | — |
 |  | Typical session duration | 1 | Minutes or hours | — |
@@ -72,33 +72,28 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Data access conditions | 1 | Open / Restricted / Embargoed (with date) / Available on request | "Available on request" alone is insufficient for reproducibility; prefer open or restricted with documented process |
 |  | Metadata availability | 1 | Whether structured metadata (this schema) is shared independently of raw data | Metadata can often be shared even when raw data cannot |
 
+| **Provenance** | Related paper(s) and DOI(s) | 1 | Linked citations and DOIs | Supplementary field; conditional where applicable |
+| **Governance** | Ethics status | 1 | approved / pending / exempt / not_reported | Supplementary field; conditional where applicable |
+| **Governance** | Registration timing | 2 | prospective / retrospective / not_applicable | Supplementary field; conditional where applicable |
+| **Exposure** | Temperature-series type and target temperatures | 2 / 1 | Preserve minimum, maximum and targets separately | Supplementary field; conditional where applicable |
+| **Allocation** | Randomisation used | 1 | yes / no / not_applicable | Supplementary field; conditional where applicable |
+| **Allocation** | Allocation concealment | 2 | yes / no / not_reported | Supplementary field; conditional where applicable |
+| **Allocation** | Investigator blinding | 2 | separate from participant blinding | Supplementary field; conditional where applicable |
+| **Timing** | Typical normalisation (min) | 1 | Planned duration | Supplementary field; conditional where applicable |
+| **Timing** | Planned sessions and intersession rule | 1 / 2 | Separate fields | Supplementary field; conditional where applicable |
+| **Sample** | Sample-size method | 1 | a priori / feasibility / pilot | Supplementary field; conditional where applicable |
+| **Sample** | Screened / enrolled / randomised / completed N | 2 | Separate denominators | Supplementary field; conditional where applicable |
+| **Sample** | Primary-analysis N | 1 | Primary analytical denominator | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Primary research question | 1 | Explicit question | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Target physiological process | 1 | Mechanistic construct | Supplementary field; conditional where applicable |
+| **Scientific rationale** | Primary outcome definition | 1 | Operational definition | Supplementary field; conditional where applicable |
+| **Analysis** | Primary analysis approach | 1 | Model / method | Supplementary field; conditional where applicable |
+| **Environment** | Planned environmental variables and instrument heights | 1 | Separate measurement descriptors | Supplementary field; conditional where applicable |
+| **Data** | Raw-data access / processed-data access / code access | 1 | Separate fields | Supplementary field; conditional where applicable |
+| **Data** | Licence | 2 | Data and code where applicable | Supplementary field; conditional where applicable |
+| **Sample** | Optional demographic summary counts | 2 | Derive from participant records | Supplementary field; conditional where applicable |
 :::
 
-## Reconciled additions from published supplementary schema
 
-These fields are part of the merged schema and supplement the existing table. Tier 1 is Core when applicable.
 
-| Group | Field name | Tier | Definition / coding |
-|---|---|---|---|
-| Provenance | Related paper(s) and DOI(s) | 1 | Linked citations and DOIs |
-| Governance | Ethics status | 1 | approved / pending / exempt / not_reported |
-| Governance | Registration timing | 2 | prospective / retrospective / not_applicable |
-| Exposure | Temperature-series type and target temperatures | 2 / 1 | Preserve minimum, maximum and targets separately |
-| Allocation | Randomisation used | 1 | yes / no / not_applicable |
-| Allocation | Allocation concealment | 2 | yes / no / not_reported |
-| Allocation | Investigator blinding | 2 | separate from participant blinding |
-| Timing | Typical normalisation (min) | 1 | Planned duration |
-| Timing | Planned sessions and intersession rule | 1 / 2 | Separate fields |
-| Sample | Sample-size method | 1 | a priori / feasibility / pilot |
-| Sample | Screened / enrolled / randomised / completed N | 2 | Separate denominators |
-| Sample | Primary-analysis N | 1 | Primary analytical denominator |
-| Scientific rationale | Primary research question | 1 | Explicit question |
-| Scientific rationale | Target physiological process | 1 | Mechanistic construct |
-| Scientific rationale | Primary outcome definition | 1 | Operational definition |
-| Analysis | Primary analysis approach | 1 | Model / method |
-| Environment | Planned environmental variables and instrument heights | 1 | Separate measurement descriptors |
-| Data | Raw-data access / processed-data access / code access | 1 | Separate fields |
-| Data | Licence | 2 | Data and code where applicable |
-| Sample | Optional demographic summary counts | 2 | Derive from participant records |
-
-Randomisation status is Tier 1, while the existing Randomisation field now represents the Tier 2 method. Participant and investigator blinding are separately Tier 2; the existing Blinding row refers to participant blinding. Secondary outcomes are Tier 2. Linked questionnaire and signal measurement definitions are documented separately.
+Questionnaire/task definitions and direct signal–device–placement definitions are maintained as [linked tables](linked-measurement-definitions). Demographic summary counts should be derived from participant records.
