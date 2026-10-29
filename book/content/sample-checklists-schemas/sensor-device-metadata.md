@@ -22,7 +22,7 @@ A third table, *Sensor Application*, captures per-session placement and configur
 | | Serial number | 1 | Alphanumeric from device label | — |
 | | Firmware / software version | 2 | v3.2.1 / HOBOware 3.7 | Record at time of study; can change between experiments |
 | **Specifications** | Nominal accuracy | 2 | ±0.5 °C / ±3 mmHg / ±0.001 µS | From manufacturer specification sheet |
-| | Supported sampling rate(s) | 2 | 1 / 256 / 4 | Model capability only; actual configured rate belongs to experiment measurement definition |
+| | Sampling rate (Hz) | 2 | 1 / 256 / 4 | As configured; not maximum capability |
 | | Resolution | 2 | 0.0625 °C / 1 ms IBI / 0.001 µS | From specification sheet |
 | **History** | Date first used | 3 | YYYY-MM-DD | Useful for tracking drift over device lifetime |
 | | Notes | 3 | Free text | Hardware faults, repairs, firmware updates, modifications |
@@ -62,5 +62,3 @@ Notes. One row per physical device unit. If a lab owns three iButton loggers, ea
 | Oscillometric BP | Manometer verification against traceable reference | Bias at rest; acceptance threshold (typically ±3 mmHg) |
 
 Notes. One row per calibration event per device. A device may appear multiple times as it is recalibrated across studies or time periods.
-
-Device models, direct signals and physical units are distinct: the Device Registry above identifies physical units; model–signal capabilities and experiment-level configured sampling belong to the corresponding measurement-definition records. The calibration summary is retained alongside the per-event Calibration Log. Session-level application records inherit default placement/configuration and record actual unit IDs, times and overrides.
