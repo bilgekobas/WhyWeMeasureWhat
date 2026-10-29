@@ -45,7 +45,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Relevant medical conditions | 1 (conditional) | None / Present / Unknown; specify condition(s) where relevant | Broad medical context, including cardiovascular, metabolic, neurological, sleep-related or post-viral conditions where applicable; avoid mandatory diagnosis-specific checklists |
 | | Relevant medications (by class) | 1 | None / Present / Unknown; classes or medications relevant to physiology | Single medication screening field; record classes, and use notes for dose/timing where justified |
 | | Thermally relevant medication notes | 2 | Free text (drug names, dose, duration) | Structured notes |
-| | Habitual melatonin supplementation | 2 | Yes/No; if Yes: typical dose (mg) and timing | Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Acute use captured at session level |
+| | Habitual melatonin supplementation | 2 | Yes/No; if Yes: typical dose (mg) and timing | Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Recent use can be recorded in the session-level medication/supplement field |
 | **Reproductive & hormonal** | Menstrual / reproductive status | 1 | Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating | Simple categorical items |
 | | Pregnancy status | 1 (conditional) | Yes / No / Unknown / not_applicable | Only when justified and ethically appropriate |
 | | Cycle length & regularity | 2 | Numeric (days) + regular / irregular | Short structured questions |
