@@ -20,6 +20,8 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |---|---|---|---|---|
 | **Core IDs** | Participant ID | 1 | Text ID (e.g. P01, SL23_001) | — (lab-defined) |
 |  | Study / cohort | 1 | Text (e.g. PMV05 – Red, ACvsFR – AC) | — (lab-defined) |
+| **Core IDs** | Experiment ID | 1 | Stable experiment code | Foreign key |
+| **Provenance** | Assessment / data reference | 2 | Record, instrument or filename | Distinguish directly assessed from protocol-derived |
 | **Demographics & morphology** | Age | 1 | Numeric (years at first session) | Direct (derived from DOB if stored). If ethics committees do not allow, then age group according to a medically agreed on standard {cite:p}`diaz_call_2021` |
 |  | Sex-related variable | 1 | Study-defined sex-related measure/category | Define construct and coding; transgender identity is not a sex category |
 |  | Gender identity (optional; separately coded) | 2 | Categorical or free text | — (lab-defined wording) |
@@ -29,6 +31,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Body surface area (BSA) | 2 | Numeric (m²) | Du Bois & Du Bois, Mosteller, etc. (formula documented) |
 |  | Body fat % | 2 | Numeric (%) | BIA, DXA, skinfolds, BodPod, etc. |
 |  | Ethnic background / nationality | 3 | Categorical or free text; optional | — (decide based on ethics and purpose) |
+| **Demographics & morphology** | Muscle (%) | 2 | Percentage | Specify measurement method |
 | **Thermal history & occupation** | Thermal history / {ref}`acclimation <label-acclimation>` background | 1 | Free text or categories (e.g. “>5 y in hot climate”, “recently relocated from cold climate”) | Short structured items |
 |  | Occupation / profession | 3 | Categorical or free text (e.g. student, office worker, outdoor labour) | — (decide based on ethics and purpose) |
 |  | Education level | 3 | Categorical (e.g. secondary / bachelor / master / PhD) | — (decide based on ethics and purpose) |
@@ -46,14 +49,17 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Neurodivergent diagnosis | 2–3 | None / ASD / ADHD / other / prefer not to say | Self-report; may link to ASD/ADHD screening tools |
 |  | Other diagnoses relevant to thermoregulation | 2–3 | Free text + coded categories | Examples: autoimmune disease, large burns/grafts, chronic infection |
 |  | Post-viral dysautonomia / long COVID | 2 | Yes/No; if Yes: symptoms present (temperature dysregulation / abnormal sweating / orthostatic intolerance / POTS / other) | Screen specifically; not captured by standard medical history questions. See CBT, HR/HRV and Sweat/EDA confounders sections {cite:p}`dani_autonomic_2021,davis_long_2023` |
+| **Health & diagnoses** | Relevant diagnosis (general) | 1 | Yes / No / Unknown; category | Specific diagnoses conditionally collected |
 | **Medication** | Chronic medications (by class) | 1 | Yes/No per class (β-blockers, antihypertensives, anticholinergics, SSRIs, stimulants, etc.) | Simple class checklist; optionally ATC codes |
 |  | Thermally relevant medication notes | 2 | Free text (drug names, dose, duration) | Structured notes |
 |  | Habitual melatonin supplementation | 2 | Yes/No; if Yes: typical dose (mg) and timing | Melatonin raises distal Tsk and DPG; relevant for sleep and circadian protocols. Acute use captured at session level |
+| **Medication** | Relevant medication (general) | 1 | Yes / No / Unknown; class | Specific drug details conditionally collected |
 | **Reproductive & hormonal** | Menstrual / reproductive status | 1 | Eumenorrheic / perimenopausal / postmenopausal / amenorrheic / pregnant / lactating | Simple categorical items |
 |  | Cycle length & regularity | 2 | Numeric (days) + regular / irregular | Short structured questions |
 |  | Hormonal contraception | 1 | Type (combined pill, progestin-only, IUD, implant, injection, none) + duration | Structured questionnaire |
 |  | HRT (hormone replacement therapy) | 2 (conditional) | Regimen (oestrogen, oestrogen+progestin, other) + duration | Medical history question |
 |  | GAHT (gender-affirming hormone therapy) | 2 (conditional) | Yes/No; regimen (e.g. oestradiol, testosterone, blockers) + duration | Optional and ethics-dependent |
+| **Reproductive & hormonal** | Pregnancy status | 1 (conditional) | Yes / No / Unknown / not_applicable | Only when justified and ethically appropriate |
 | **Thermal sensitivity / preference & psychological traits** | Thermal sensitivity / preference | 1 | Scores + groupings (e.g. cold / neutral / warm-preferring) | ETSRS {cite:p}`van_someren_experienced_2016` or similar |
 |  | Personality traits | 3 | Scores | Big Five {cite:p}`kang_validation_2024,rammstedt_measuring_2007`, BIS/BAS, {cite:p}`maack_re-examination_2018` etc. |
 |  | General sensory / emotional sensitivity | 3 | Score(s) | Highly Sensitive Person Scale (HSPS) {cite:p}`aron_highly_2011` |
@@ -67,16 +73,9 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 |  | Typical bedroom temperature | 3 | °C or cool/neutral/warm category | Self-estimate question |
 | **Vision & sensory (for light/EEG-heavy protocols)** | Vision status | 3 | Normal with/without correction / impaired | Snellen or LogMAR chart; self-report |
 |  | Colour vision | 3 | Normal / red–green deficiency / other | Ishihara plates or equivalent test |
-
-| **Core IDs** | Experiment ID | 1 | Stable experiment code | Foreign key |
 |  | Arm / group | 1 | Allocation label / not_applicable | If assigned |
-| **Demographics & morphology** | Muscle (%) | 2 | Percentage | Specify measurement method |
 |  | BMR/RMR (kcal/day) | 2 | Numeric | Specify measured or estimated |
 |  | Body-composition method | 2 | BIA / DXA / predictive equation / other | Record provenance |
-| **Health & diagnoses** | Relevant diagnosis (general) | 1 | Yes / No / Unknown; category | Specific diagnoses conditionally collected |
-| **Medication** | Relevant medication (general) | 1 | Yes / No / Unknown; class | Specific drug details conditionally collected |
-| **Reproductive & hormonal** | Pregnancy status | 1 (conditional) | Yes / No / Unknown / not_applicable | Only when justified and ethically appropriate |
-| **Provenance** | Assessment / data reference | 2 | Record, instrument or filename | Distinguish directly assessed from protocol-derived |
 
 :::
 
