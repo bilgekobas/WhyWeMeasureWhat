@@ -77,6 +77,7 @@ The participant metadata table can be implemented in a spreadsheet, REDCap form,
 | **Medication** | Relevant medication (general) | 1 | Yes / No / Unknown; class | Specific drug details conditionally collected |
 | **Reproductive & hormonal** | Pregnancy status | 1 (conditional) | Yes / No / Unknown / not_applicable | Only when justified and ethically appropriate |
 | **Provenance** | Assessment / data reference | 2 | Record, instrument or filename | Distinguish directly assessed from protocol-derived |
+
 :::
 
 Note. Some questions may be redundant when already used as an exclusion criterion, e.g., if having any CV history is an exclusion reason, then no need to repeat it in participant metadata.
