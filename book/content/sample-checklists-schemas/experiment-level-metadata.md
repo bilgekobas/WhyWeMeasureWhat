@@ -24,12 +24,14 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Lab(s) | 1 | Lab or unit name | — |
 |  | Institute(s) | 1 | Organisational affiliation | — |
 |  | Location(s) | 1 | City, country; optionally coordinates or street address | High-resolution location information enables automated climate data and time-zone alignment |
+| **Publication & provenance** | Related paper(s) | 1 | Publication title(s) / stable IDs | Link publications |
 | **Ethics & governance** | Ethics committee | 1 | Full name | — |
 |  | Ethics approval ID / Code | 1 | Approval number | — |
 |  | Approval date | 2 | YYYY-MM-DD | — |
 |  | Amendments / versions | 2 | Yes/No; brief notes | — |
 |  | Data protection compliance | 1 | GDPR, HIPAA, other | — |
 |  | Preregistration ID | 2–3 | OSF / clinicaltrials.gov link | — |
+| **Ethics & governance** | Ethics status | 1 | Approved / exempt / pending / not_reported | Separate from committee and approval ID |
 | **Study type** | Study environment | 1 | Laboratory / Field / Hybrid | — |
 |  | Study design | 1 | Controlled / Observational / Interventional | — |
 |  | Experimental structure | 2 | Between-subjects, Within-subjects, Repeated measures, Crossover, Pre–Post | Multiple can apply |
@@ -40,45 +42,47 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Typical session duration | 1 | Minutes or hours | — |
 |  | Standard session start time | 1 | hh:mm (24-h format) | — |
 |  | Standard session end time | 1 | hh:mm (24-h format) | — |
+| **Timing & schedule** | Typical normalisation duration (min) | 1 | Numeric minutes | Planned; actual recorded per session |
 | **Study population** | Target {ref}`sample size <label-sample-size>` | 2 | Integer | — |
 |  | Completed N | 2 | Integer | — |
 |  | Age range | 1 | Minimum–maximum | e.g. “21–35 years” |
 |  | Population description | 1 | Free text | e.g. “Healthy university students”, “Sedentary adults aged 20–40” |
 |  | Inclusion criteria | 1 | Free text or list | — |
 |  | Exclusion criteria | 1 | Free text or list | — |
+| **Study population** | Sample-size method | 1 | A priori / pilot / feasibility / other | State method or calculation |
 | **Intervention** | Study domain(s) | 1 | Thermal / Humidity / Air movement / Light / IAQ / Acoustics | Multiple allowed |
 |  | Intervention description | 1 | Free text | Describe manipulated variables |
 |  | Number of conditions | 1 | Integer | — |
 |  | Condition labels | 2 | Text labels | — |
 |  | Standardised behaviour rules | 1 | Resting, sitting, acclimatisation / normalisation, movement, eating, drinking protocols | — |
+| **Intervention** | Temperature-series type | 2 | Fixed / stepped / variable / mixed / not_applicable | For thermal exposure |
 | **Environment & equipment (experiment-level)** | Spatial typology | 1 | Office / Residential / Educational / Public / etc. | — |
 |  | HVAC system description | 2 | AC model, radiant panel specifications, air-velocity sources | — |
 |  | Room dimensions | 3 | m² or m³ | — |
 |  | {ref}`Baseline <label-baseline>` environmental control | 1 | Air temperature, radiant temperature, humidity, lighting ranges | Multiple allowed |
 |  | Primary instruments used | 1 | List of Device IDs (e.g. TMP-01, TMP-02, ECG-A) | Foreign keys to devices.tsv (Device Registry); full specifications recorded there |
 |  | Calibration reference | 2 | Link to calibration log entries for this study | Foreign key to calibrations.tsv; replaces free-text calibration notes |
+| **Environment & equipment (experiment-level)** | Planned environmental variables | 1 | List of quantities | Define methods and sampling in linked data |
+| **Measurement definitions** | Questionnaire/task definitions reference | 1 | URI / table identifier | Exact wording, codes, anchors, language, timing |
 | **PICOT summary** | P – Population | 1 | Short description of target group and key eligibility criteria | “Healthy adults 18–35, BMI 18–25, non-smokers; no cardiovascular/metabolic disease; regular sleep schedule” |
 |  | I – Intervention / exposure | 1 | Summary of main exposure(s) or experimental condition(s) | “14-day heat {ref}`acclimation <label-acclimation>`: AC at 26 °C vs free-running apartment (summer conditions)” |
 |  | C – Comparison / control conditions | 1 | Description of comparator condition(s) | “Free-running cooling vs constant AC; within-subject crossover” |
 |  | O – Primary outcomes | 1 | Main endpoints and quantification | “Core body temperature, neck/ankle skin temperature, HR, BP, HRV (RMSSD), thermal sensation” |
 |  | O – Secondary outcomes | 2 | Additional exploratory endpoints | “Sleep {ref}`onset <label-onset>` latency, actigraphy-based sleep efficiency, melatonin AUC” |
 |  | T – Time frame | 1 | Time horizon for effect and measurement | “Pre–post mild heat-stress test before and after 14-day exposure; tests between 09:00–16:00” |
+| **Scientific rationale** | Primary research question | 1 | Text | Distinct from PICOT synopsis |
 | **Data availability** | Data repository | 1 | OSF / Zenodo / Figshare / institutional repository / none | Where the dataset will be or is deposited |
 |  | Dataset DOI / link | 1 | URL or DOI; "in preparation" if not yet available | — |
 |  | Data access conditions | 1 | Open / Restricted / Embargoed (with date) / Available on request | "Available on request" alone is insufficient for reproducibility; prefer open or restricted with documented process |
 |  | Metadata availability | 1 | Whether structured metadata (this schema) is shared independently of raw data | Metadata can often be shared even when raw data cannot |
-
-| **Publication & provenance** | Related paper(s) | 1 | Publication title(s) / stable IDs | Link publications |
 |  | Related paper DOI(s) | 1 | DOI list | One or multiple papers |
-| **Ethics & governance** | Ethics status | 1 | Approved / exempt / pending / not_reported | Separate from committee and approval ID |
 |  | Registration timing | 2 | Prospective / retrospective / not_applicable | If registered |
+| **Data availability** | Raw-data access | 1 | Open / restricted / request / unavailable | Separate from processed data |
 | **Design** | Randomisation used | 1 | Yes / No / not_applicable | Separate from Tier 2 method |
 |  | Allocation concealment | 2 | Yes / No / not_reported / not_applicable | When applicable |
 |  | Investigator blinding | 2 | Yes / No / not feasible | Separate from participant blinding |
-| **Timing & schedule** | Typical normalisation duration (min) | 1 | Numeric minutes | Planned; actual recorded per session |
 |  | Planned sessions per participant | 1 | Integer | Protocol-defined |
 |  | Intersession rule | 2 | Washout / interval / scheduling rule | Planned minimum interval |
-| **Study population** | Sample-size method | 1 | A priori / pilot / feasibility / other | State method or calculation |
 |  | Screened N | 2 | Integer | Recruitment denominator |
 |  | Enrolled N | 2 | Integer | Recruitment denominator |
 |  | Randomised N | 2 | Integer / not_applicable | Allocation denominator |
@@ -86,20 +90,15 @@ To aid cross-study comparison, we also include a concise {ref}`PICOT <label-pico
 |  | Recruitment method | 3 | Text | Recruitment provenance |
 |  | Compensation | 2 | Amount, currency and conditions | If applicable |
 |  | Demographic summary counts (derived) | 2 | Counts calculated from participant records | Optional; do not duplicate manual sex/gender coding |
-| **Intervention** | Temperature-series type | 2 | Fixed / stepped / variable / mixed / not_applicable | For thermal exposure |
 |  | Tested temperature minimum (°C) | 1 | Numeric / not_applicable | If temperature is manipulated |
 |  | Tested temperature maximum (°C) | 1 | Numeric / not_applicable | If temperature is manipulated |
 |  | Tested temperature targets (°C) | 1 | List / not_applicable | All planned targets |
 |  | Condition notes | 2 | Text | Describe exposure schedule |
-| **Environment & equipment (experiment-level)** | Planned environmental variables | 1 | List of quantities | Define methods and sampling in linked data |
 |  | Environmental instrument heights | 1 | Height(s) and units | When applicable |
-| **Scientific rationale** | Primary research question | 1 | Text | Distinct from PICOT synopsis |
 |  | Target physiological process / construct | 1 | Text | Mechanistic rationale |
 |  | Primary outcome definition | 1 | Operational definition | Include analysis windows and metrics |
 |  | Primary analysis approach | 1 | Method / statistical model | Link plan or code |
-| **Measurement definitions** | Questionnaire/task definitions reference | 1 | URI / table identifier | Exact wording, codes, anchors, language, timing |
 |  | Direct measurement definitions reference | 1 | URI / table identifier | Signal, device, default placement, configured rate, derived metrics |
-| **Data availability** | Raw-data access | 1 | Open / restricted / request / unavailable | Separate from processed data |
 |  | Processed-data access | 1 | Open / restricted / request / unavailable | Separate from raw data |
 |  | Code access | 1 | Repository URL or access status | Analysis and processing scripts |
 |  | Licence | 2 | Licence identifier | For data/code as applicable |
